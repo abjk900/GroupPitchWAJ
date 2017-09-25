@@ -1,0 +1,6 @@
+framework module Pods_g_erms {
+  umbrella header "Pods-g-erms-umbrella.h"
+
+  export *
+  module * { export * }
+}
