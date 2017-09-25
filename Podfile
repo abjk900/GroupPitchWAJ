@@ -10,6 +10,7 @@ target 'g-erms' do
    pod 'Firebase/Database’
    pod 'Firebase/Auth'
    pod 'Firebase/Storage'
+   pod 'CountryPickerSwift'
 
   target 'g-ermsTests' do
     inherit! :search_paths

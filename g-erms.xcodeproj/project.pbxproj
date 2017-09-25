@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		88ECA7143BB25BC9F7BEBA74 /* Pods_g_ermsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */; };
 		BE83C4BAB1FB7F1EC7C2658C /* Pods_g_ermsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */; };
+		C0270AF11F7903AB00652117 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0270AF01F7903AB00652117 /* Auth.storyboard */; };
+		C0270AF31F79041800652117 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF21F79041800652117 /* LoginViewController.swift */; };
+		C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF41F79043800652117 /* SignUpViewController.swift */; };
+		C0270AFB1F7910D100652117 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0270AFA1F79109300652117 /* GoogleService-Info.plist */; };
 		F71ECEE3825E4A554807E0E1 /* Pods_g_erms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F985632E2D86F4928F98186 /* Pods_g_erms.framework */; };
 		F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817900D1F78F7FF00A8C92C /* AppDelegate.swift */; };
 		F81790101F78F7FF00A8C92C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817900F1F78F7FF00A8C92C /* ViewController.swift */; };
@@ -42,7 +46,10 @@
 		4A28CC14822047DAE0DE63A0 /* Pods-g-ermsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		730A678E70F60522AF378B97 /* Pods-g-erms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-erms.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-erms/Pods-g-erms.release.xcconfig"; sourceTree = "<group>"; };
 		9E56BB67DFC769FB178BC6B2 /* Pods-g-ermsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsTests/Pods-g-ermsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C0270AEF1F78FC2700652117 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C0270AF01F7903AB00652117 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		C0270AF21F79041800652117 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C0270AF41F79043800652117 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C0270AFA1F79109300652117 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C5B91018BEE41F4E5C218E61 /* Pods-g-erms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-erms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-erms/Pods-g-erms.debug.xcconfig"; sourceTree = "<group>"; };
 		CADCD97EF5DCE2B501499981 /* Pods-g-ermsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsTests/Pods-g-ermsTests.release.xcconfig"; sourceTree = "<group>"; };
 		E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_ermsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,10 +148,13 @@
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
+				C0270AF01F7903AB00652117 /* Auth.storyboard */,
+				C0270AF21F79041800652117 /* LoginViewController.swift */,
+				C0270AF41F79043800652117 /* SignUpViewController.swift */,
 				F81790141F78F7FF00A8C92C /* Assets.xcassets */,
 				F81790161F78F7FF00A8C92C /* LaunchScreen.storyboard */,
 				F81790191F78F7FF00A8C92C /* Info.plist */,
-				C0270AEF1F78FC2700652117 /* GoogleService-Info.plist */,
+				C0270AFA1F79109300652117 /* GoogleService-Info.plist */,
 			);
 			path = "g-erms";
 			sourceTree = "<group>";
@@ -244,7 +254,7 @@
 				TargetAttributes = {
 					F81790091F78F7FF00A8C92C = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					F817901D1F78F7FF00A8C92C = {
 						CreatedOnToolsVersion = 9.0;
@@ -283,6 +293,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0270AFB1F7910D100652117 /* GoogleService-Info.plist in Resources */,
+				C0270AF11F7903AB00652117 /* Auth.storyboard in Resources */,
 				F81790181F78F7FF00A8C92C /* LaunchScreen.storyboard in Resources */,
 				F81790151F78F7FF00A8C92C /* Assets.xcassets in Resources */,
 				F81790131F78F7FF00A8C92C /* Main.storyboard in Resources */,
@@ -346,6 +358,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-g-erms/Pods-g-erms-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -353,6 +366,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -466,7 +480,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0270AF31F79041800652117 /* LoginViewController.swift in Sources */,
 				F81790101F78F7FF00A8C92C /* ViewController.swift in Sources */,
+				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
 				F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,12 +650,13 @@
 			baseConfigurationReference = C5B91018BEE41F4E5C218E61 /* Pods-g-erms.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77P5578ZUS;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "g-erms/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -650,12 +667,13 @@
 			baseConfigurationReference = 730A678E70F60522AF378B97 /* Pods-g-erms.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77P5578ZUS;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "g-erms/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
