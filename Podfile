@@ -11,6 +11,10 @@ target 'g-erms' do
    pod 'Firebase/Auth'
    pod 'Firebase/Storage'
    pod 'CountryPickerSwift'
+   pod 'FBSDKCoreKit'
+   pod 'FBSDKShareKit'
+   pod 'FBSDKLoginKit'
+   pod 'SDWebImage'
 
   target 'g-ermsTests' do
     inherit! :search_paths

@@ -31,7 +31,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ui-Wh-0v7">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ui-Wh-0v7" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="140" y="416" width="94" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Facebook"/>
@@ -61,6 +61,12 @@
                         <viewLayoutGuide key="safeArea" id="udx-ZT-m5u"/>
                     </view>
                     <navigationItem key="navigationItem" id="VVI-y6-q3a"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Hp3-nD-9lQ" id="Ixd-aj-NSo"/>
+                        <outlet property="fbLoginButton" destination="1Ui-Wh-0v7" id="YLs-Uy-3kn"/>
+                        <outlet property="loginButton" destination="mPu-cO-vEj" id="cJp-A0-xt3"/>
+                        <outlet property="passwordTextField" destination="XQs-eZ-cSM" id="IKM-JB-xyc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6Y-Gd-3iZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
