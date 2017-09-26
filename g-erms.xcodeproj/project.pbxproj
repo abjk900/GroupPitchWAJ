@@ -166,6 +166,7 @@
 		F817900C1F78F7FF00A8C92C /* g-erms */ = {
 			isa = PBXGroup;
 			children = (
+				F8EF04151F7A59F200B9A590 /* Login */,
 				C037993F1F79E78300DCB144 /* g-erms.entitlements */,
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
@@ -180,9 +181,6 @@
 				F83FF4331F7A228400D7B8D1 /* LeaderTableViewCell.swift */,
 				F83FF42F1F7A219800D7B8D1 /* EventViewController.swift */,
 				F83FF4311F7A21C300D7B8D1 /* EventTableViewCell.swift */,
-				C0270AF01F7903AB00652117 /* Auth.storyboard */,
-				C0270AF21F79041800652117 /* LoginViewController.swift */,
-				C0270AF41F79043800652117 /* SignUpViewController.swift */,
 				F81790141F78F7FF00A8C92C /* Assets.xcassets */,
 				F81790161F78F7FF00A8C92C /* LaunchScreen.storyboard */,
 				F81790191F78F7FF00A8C92C /* Info.plist */,
@@ -207,6 +205,16 @@
 				F817902F1F78F7FF00A8C92C /* Info.plist */,
 			);
 			path = "g-ermsUITests";
+			sourceTree = "<group>";
+		};
+		F8EF04151F7A59F200B9A590 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C0270AF01F7903AB00652117 /* Auth.storyboard */,
+				C0270AF21F79041800652117 /* LoginViewController.swift */,
+				C0270AF41F79043800652117 /* SignUpViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
