@@ -9,6 +9,12 @@
 import UIKit
 
 class StreamingTableViewCell: UITableViewCell {
+    
+    //****** All the object library *******
+    @IBOutlet weak var videoNameLabel: UILabel!
+    
+    @IBOutlet weak var videoViewLabel: UIView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

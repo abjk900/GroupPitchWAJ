@@ -49,6 +49,10 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoNameLabel" destination="PMf-x7-J0w" id="QW1-Y7-KVK"/>
+                                            <outlet property="videoViewLabel" destination="cjx-Gb-zN9" id="24v-Gu-1QY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -60,6 +64,10 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Customer" id="4F6-dS-NbA"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="List" id="eSm-cl-a0f"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="7Y0-ev-0Xb" id="4re-gY-CYj"/>
+                        <outlet property="streamingTableView" destination="wCQ-aD-h9f" id="UkV-Ib-j4W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbm-Hq-4OJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,6 +213,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="subtitleLabel" destination="FAu-IB-0sK" id="fir-3y-H3r"/>
+                                            <outlet property="titleLabel" destination="XHm-d0-DTP" id="jWe-Xd-Oco"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -222,6 +234,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="gDq-Ux-bkc"/>
+                    <connections>
+                        <outlet property="leaderboardTableView" destination="bkl-aQ-Ldt" id="whW-PR-ttJ"/>
+                        <outlet property="segmentedController" destination="6Dg-aM-7W5" id="i6W-P8-aNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,6 +282,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="subtitleLabel" destination="MuS-Ls-YHi" id="j5l-2B-AJh"/>
+                                            <outlet property="titleLabel" destination="n2e-7m-vIP" id="JdM-3G-ery"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -283,6 +303,10 @@
                         <viewLayoutGuide key="safeArea" id="oib-dg-X6J"/>
                     </view>
                     <navigationItem key="navigationItem" id="OA8-lD-kqJ"/>
+                    <connections>
+                        <outlet property="searchBar" destination="NiQ-Qr-ghZ" id="xzb-bt-bgJ"/>
+                        <outlet property="tableView" destination="A72-bk-NDO" id="fNg-3O-3x4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooC-UO-4Su" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -321,6 +345,9 @@
                         <viewLayoutGuide key="safeArea" id="aq6-Vd-6oR"/>
                     </view>
                     <navigationItem key="navigationItem" id="QdD-7A-sn4"/>
+                    <connections>
+                        <outlet property="eventViewTableView" destination="gx5-ua-VNE" id="Csw-Xh-dlG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBN-Bv-NzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
