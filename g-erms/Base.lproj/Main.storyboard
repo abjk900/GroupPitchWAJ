@@ -35,7 +35,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="P81-Xb-ut5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="6DL-V2-bNg"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Activity Feed" id="6DL-V2-bNg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gv0-NT-HFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="-119" y="-280"/>
         </scene>
-        <!--Events-->
+        <!--View Controller-->
         <scene sceneID="7QQ-2T-6Wh">
             <objects>
                 <viewController id="Ots-rp-yqo" sceneMemberID="viewController">
@@ -104,11 +104,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="aq6-Vd-6oR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" id="cFT-xD-WnC"/>
+                    <tabBarItem key="tabBarItem" title="" id="cFT-xD-WnC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBN-Bv-NzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="866" y="-280"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Activity Feed" width="26" height="26"/>
+    </resources>
 </document>
