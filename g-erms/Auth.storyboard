@@ -109,7 +109,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Py0-hl-ipz" customClass="CountryPicker" customModule="CountryPicker">
-                                <rect key="frame" x="0.0" y="511" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="476" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rty-FU-xtY">
@@ -126,12 +126,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-rn-6cc">
+                                <rect key="frame" x="147" y="596" width="81" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SignUp"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="mkv-bZ-7V2"/>
                     </view>
                     <connections>
+                        <outlet property="confirmPasswordTextField" destination="qcK-lC-vg5" id="9DD-mH-dwd"/>
+                        <outlet property="emailTextField" destination="SQd-cM-rPV" id="PYe-Lt-D3w"/>
+                        <outlet property="firstnameTextField" destination="xb8-uL-dme" id="BTn-Fh-hLv"/>
+                        <outlet property="lastnameTextField" destination="dbs-Cg-xon" id="j1j-Xj-8pP"/>
+                        <outlet property="passwordTextField" destination="Rty-FU-xtY" id="tkh-kH-o1c"/>
                         <outlet property="picker" destination="Py0-hl-ipz" id="Zfy-iA-AeB"/>
+                        <outlet property="signupButtonTapped" destination="wvq-rn-6cc" id="IWU-3N-TWc"/>
+                        <outlet property="usernameTextField" destination="qRt-TQ-8OT" id="1HZ-z0-Ykv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZN-Gj-Dbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,7 +153,7 @@
         <!--Navigation Controller-->
         <scene sceneID="mYF-0s-OTa">
             <objects>
-                <navigationController storyboardIdentifier="Auth" automaticallyAdjustsScrollViewInsets="NO" id="XVH-0n-88l" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AuthNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="XVH-0n-88l" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TBn-BL-Qn9">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

@@ -12,10 +12,10 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-var fbloginID : String = ""
+    var fbloginID : String = ""
     
     @IBOutlet weak var emailTextField: UITextField!
-
+    
     @IBOutlet weak var loginButton: UIButton!{
         didSet{
             loginButton.addTarget(self, action: #selector(loginUser), for: .touchUpInside)
@@ -25,25 +25,27 @@ var fbloginID : String = ""
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
-      
+        
         super.viewDidLoad()
-        //Login Email
+        
+        
         if Auth.auth().currentUser != nil {
-            guard let vc = storyboard?.instantiateViewController(withIdentifier: "tabBarController") as? UITabBarController else { return }
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "NavigationController") as? UINavigationController else { return }
             
             //skip login page straight to homepage
             present(vc, animated:  true, completion:  nil)
         }
         
-        //let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         
-        //view.addGestureRecognizer(tapGesture)
+        view.addGestureRecognizer(tapGesture)
         
         
-
+        
         
     }
-
+    
     @IBOutlet weak var fbLoginButton: FBSDKLoginButton!{
         didSet{
             fbLoginButton.delegate = self
@@ -63,13 +65,13 @@ var fbloginID : String = ""
         }
         print("Successfully logged in with Facebook...")
         
-     
+    }
     
-}
- func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
     //****Normal Email Login ********
     @objc func loginUser() {
         guard let email = emailTextField.text else { return }
@@ -93,7 +95,7 @@ var fbloginID : String = ""
             
             if let validUser = user {
                 print(validUser)
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController") as? UITabBarController else { return }
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AuthNavigationController") as? UINavigationController else { return }
                 
                 
                 self.present(vc, animated:  true, completion:  nil)
@@ -102,6 +104,47 @@ var fbloginID : String = ""
             
         }
         
+    }
+    
+    func fbSignUpCreateNewUser() {
+        //Get Email Address from FB
+        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, first_name, last_name, email"]).start { (connection, result, error) in
+            
+            if error != nil {
+                print("Failed to start graph request:", error ?? "")
+                return
+            }
+            
+            if let info = result as? [String:Any],
+                let name = info["name"] as? String,
+                let email = info["email"] as? String,
+                let firstName = info["first_name"] as? String,
+                let lastName = info["last_name"] as? String {
+                //let uid = info["id"] as? String {
+                
+                
+                
+                //save to FIRDatabase
+                let ref = Database.database().reference()
+                
+                let post : [String:Any] = ["id": self.fbloginID ,"name": name, "email": email, "firstName": firstName,"lastName": lastName, "imageURL": "","imageFilename": ""]
+                
+                //ref.child("Users").child(uid).setValue(post)
+                ref.child("Users").child(self.fbloginID).setValue(post)
+                
+                //self.navigationController?.popViewController(animated: true)
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController") as? UITabBarController else { return }
+                
+                //skip login page straight to homepage
+                self.present(vc, animated:  true, completion:  nil)
+                
+                
+                
+            }
+            
+            print(result ?? "")
+            
+        }
     }
     
     func createErrorAlert(_ title: String, _ message: String) {
