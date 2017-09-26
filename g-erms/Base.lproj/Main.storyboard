@@ -220,13 +220,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="oib-dg-X6J"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Friends" selectedImage="Friends" id="cjz-Pn-Yxi"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="Friends" selectedImage="Friends" id="cjz-Pn-Yxi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooC-UO-4Su" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="559.20000000000005" y="-280.20989505247377"/>
         </scene>
-        <!--View Controller-->
+        <!--Events-->
         <scene sceneID="7QQ-2T-6Wh">
             <objects>
                 <viewController id="Ots-rp-yqo" sceneMemberID="viewController">
@@ -236,7 +236,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="aq6-Vd-6oR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Event" id="cFT-xD-WnC"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="Event" id="cFT-xD-WnC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBN-Bv-NzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
