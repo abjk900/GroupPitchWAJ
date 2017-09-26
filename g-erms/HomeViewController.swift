@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var newsTableViewCell: UITableView!
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    
+    @IBAction func signOutButton(_ sender: Any) {
+        signOutUser()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,22 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func signOutUser() {
+        do {
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+            
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     
 
-    
+
 }
