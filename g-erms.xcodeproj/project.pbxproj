@@ -21,6 +21,16 @@
 		F81790181F78F7FF00A8C92C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81790161F78F7FF00A8C92C /* LaunchScreen.storyboard */; };
 		F81790231F78F7FF00A8C92C /* g_ermsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81790221F78F7FF00A8C92C /* g_ermsTests.swift */; };
 		F817902E1F78F7FF00A8C92C /* g_ermsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817902D1F78F7FF00A8C92C /* g_ermsUITests.swift */; };
+		F83FF4301F7A219800D7B8D1 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF42F1F7A219800D7B8D1 /* EventViewController.swift */; };
+		F83FF4321F7A21C300D7B8D1 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4311F7A21C300D7B8D1 /* EventTableViewCell.swift */; };
+		F83FF4341F7A228400D7B8D1 /* LeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4331F7A228400D7B8D1 /* LeaderTableViewCell.swift */; };
+		F83FF4361F7A22B600D7B8D1 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */; };
+		F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4371F7A250C00D7B8D1 /* FriendViewController.swift */; };
+		F83FF43A1F7A251F00D7B8D1 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4391F7A251F00D7B8D1 /* FriendTableViewCell.swift */; };
+		F83FF43C1F7A259700D7B8D1 /* StreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43B1F7A259700D7B8D1 /* StreamingViewController.swift */; };
+		F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift */; };
+		F83FF4401F7A283300D7B8D1 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */; };
+		F83FF4421F7A284200D7B8D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +77,16 @@
 		F81790291F78F7FF00A8C92C /* g-ermsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "g-ermsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F817902D1F78F7FF00A8C92C /* g_ermsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = g_ermsUITests.swift; sourceTree = "<group>"; };
 		F817902F1F78F7FF00A8C92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F83FF42F1F7A219800D7B8D1 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		F83FF4311F7A21C300D7B8D1 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		F83FF4331F7A228400D7B8D1 /* LeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderTableViewCell.swift; sourceTree = "<group>"; };
+		F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		F83FF4371F7A250C00D7B8D1 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		F83FF4391F7A251F00D7B8D1 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		F83FF43B1F7A259700D7B8D1 /* StreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingViewController.swift; sourceTree = "<group>"; };
+		F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingTableViewCell.swift; sourceTree = "<group>"; };
+		F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_ermsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -150,6 +170,16 @@
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
+				F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */,
+				F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */,
+				F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift */,
+				F83FF43B1F7A259700D7B8D1 /* StreamingViewController.swift */,
+				F83FF4371F7A250C00D7B8D1 /* FriendViewController.swift */,
+				F83FF4391F7A251F00D7B8D1 /* FriendTableViewCell.swift */,
+				F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */,
+				F83FF4331F7A228400D7B8D1 /* LeaderTableViewCell.swift */,
+				F83FF42F1F7A219800D7B8D1 /* EventViewController.swift */,
+				F83FF4311F7A21C300D7B8D1 /* EventTableViewCell.swift */,
 				C0270AF01F7903AB00652117 /* Auth.storyboard */,
 				C0270AF21F79041800652117 /* LoginViewController.swift */,
 				C0270AF41F79043800652117 /* SignUpViewController.swift */,
@@ -497,9 +527,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83FF4321F7A21C300D7B8D1 /* EventTableViewCell.swift in Sources */,
+				F83FF4301F7A219800D7B8D1 /* EventViewController.swift in Sources */,
+				F83FF4401F7A283300D7B8D1 /* HomeTableViewCell.swift in Sources */,
 				C0270AF31F79041800652117 /* LoginViewController.swift in Sources */,
 				F81790101F78F7FF00A8C92C /* ViewController.swift in Sources */,
+				F83FF4421F7A284200D7B8D1 /* HomeViewController.swift in Sources */,
+				F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift in Sources */,
 				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
+				F83FF43C1F7A259700D7B8D1 /* StreamingViewController.swift in Sources */,
+				F83FF4341F7A228400D7B8D1 /* LeaderTableViewCell.swift in Sources */,
+				F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */,
+				F83FF43A1F7A251F00D7B8D1 /* FriendTableViewCell.swift in Sources */,
+				F83FF4361F7A22B600D7B8D1 /* LeaderboardViewController.swift in Sources */,
 				F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
