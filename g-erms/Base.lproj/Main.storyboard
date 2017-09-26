@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -118,7 +119,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="yfH-Sj-GIR">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Customer" id="S0k-gx-s0g"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="List" id="ybR-QZ-tom"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="List" id="ybR-QZ-tom"/>
+                            <barButtonItem title="Sign out" id="KP1-0F-5DW">
+                                <connections>
+                                    <action selector="signOutButton:" destination="LfP-oy-TDW" id="FLK-XF-5hM"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gv0-NT-HFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -312,7 +320,7 @@
         <!--Home-->
         <scene sceneID="sFT-Ex-g1V">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cDO-xe-dXi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="cDO-xe-dXi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Activity Feed" id="6DL-V2-bNg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b3l-Sz-YPJ">
