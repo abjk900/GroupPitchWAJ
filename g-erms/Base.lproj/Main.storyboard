@@ -150,15 +150,15 @@
             </objects>
             <point key="canvasLocation" x="-3242" y="690"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="uxw-3e-aSj">
             <objects>
-                <viewController id="ntb-Hn-B4r" sceneMemberID="viewController">
+                <viewController id="ntb-Hn-B4r" customClass="ProfileViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HfM-Lc-Oc5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMq-9q-JX6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="GMq-9q-JX6">
                                 <rect key="frame" x="109" y="54" width="157" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -206,10 +206,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Kgl-8q-2xM"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="gnY-mH-YUh" id="zUP-mk-Ed0"/>
+                        <outlet property="firstNameTextField" destination="CQd-5e-BLh" id="cja-8f-brc"/>
+                        <outlet property="imageView" destination="GMq-9q-JX6" id="cFN-4M-oUW"/>
+                        <outlet property="lastNameTextField" destination="sEc-wd-OUa" id="S3L-Yg-BTh"/>
+                        <outlet property="usernameTextField" destination="g7e-0O-1Vk" id="QIb-8u-qEN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJM-gK-8at" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1276" y="-991.75412293853083"/>
+            <point key="canvasLocation" x="-1465" y="-994"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="n1V-TZ-Be2">
@@ -518,5 +525,6 @@
         <image name="List" width="26" height="26"/>
         <image name="Trophy" width="26" height="26"/>
         <image name="Video Playlist" width="26" height="26"/>
+        <image name="profileImage" width="128" height="128"/>
     </resources>
 </document>
