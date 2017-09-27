@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailLabel: UILabel!
     
+    @IBOutlet weak var picker: UIPickerView!
     
     
     override func viewDidLoad() {

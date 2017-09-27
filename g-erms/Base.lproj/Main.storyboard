@@ -219,6 +219,7 @@
                         <outlet property="firstNameTextField" destination="CQd-5e-BLh" id="cja-8f-brc"/>
                         <outlet property="imageView" destination="GMq-9q-JX6" id="cFN-4M-oUW"/>
                         <outlet property="lastNameTextField" destination="sEc-wd-OUa" id="S3L-Yg-BTh"/>
+                        <outlet property="picker" destination="rcS-zR-FYJ" id="Rw7-yL-xno"/>
                         <outlet property="usernameTextField" destination="g7e-0O-1Vk" id="QIb-8u-qEN"/>
                     </connections>
                 </viewController>
