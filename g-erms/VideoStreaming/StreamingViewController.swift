@@ -17,8 +17,6 @@ class StreamingViewController: UIViewController {
     @IBOutlet weak var streamingTableView: UITableView!
     
     
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

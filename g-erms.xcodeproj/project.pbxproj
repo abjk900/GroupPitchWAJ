@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B054D1F7B407200A260BA /* ProfileViewController.swift */; };
 		88ECA7143BB25BC9F7BEBA74 /* Pods_g_ermsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */; };
 		BE83C4BAB1FB7F1EC7C2658C /* Pods_g_ermsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */; };
 		C0270AF11F7903AB00652117 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0270AF01F7903AB00652117 /* Auth.storyboard */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		161FECC69669707DD6D94D4C /* Pods-g-ermsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		194B054D1F7B407200A260BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F985632E2D86F4928F98186 /* Pods_g_erms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_erms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A28CC14822047DAE0DE63A0 /* Pods-g-ermsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		730A678E70F60522AF378B97 /* Pods-g-erms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-erms.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-erms/Pods-g-erms.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		194B054C1F7B35A100A260BA /* VideoStreaming */ = {
+			isa = PBXGroup;
+			children = (
+				F83FF43B1F7A259700D7B8D1 /* StreamingViewController.swift */,
+				F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift */,
+			);
+			path = VideoStreaming;
+			sourceTree = "<group>";
+		};
 		4C94141B0B5D4C971F5F1B3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +177,7 @@
 		F817900C1F78F7FF00A8C92C /* g-erms */ = {
 			isa = PBXGroup;
 			children = (
+				194B054C1F7B35A100A260BA /* VideoStreaming */,
 				F8EF04151F7A59F200B9A590 /* Login */,
 				C037993F1F79E78300DCB144 /* g-erms.entitlements */,
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
@@ -173,14 +185,13 @@
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
 				F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */,
 				F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */,
-				F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift */,
-				F83FF43B1F7A259700D7B8D1 /* StreamingViewController.swift */,
 				F83FF4371F7A250C00D7B8D1 /* FriendViewController.swift */,
 				F83FF4391F7A251F00D7B8D1 /* FriendTableViewCell.swift */,
 				F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */,
 				F83FF4331F7A228400D7B8D1 /* LeaderTableViewCell.swift */,
 				F83FF42F1F7A219800D7B8D1 /* EventViewController.swift */,
 				F83FF4311F7A21C300D7B8D1 /* EventTableViewCell.swift */,
+				194B054D1F7B407200A260BA /* ProfileViewController.swift */,
 				F81790141F78F7FF00A8C92C /* Assets.xcassets */,
 				F81790161F78F7FF00A8C92C /* LaunchScreen.storyboard */,
 				F81790191F78F7FF00A8C92C /* Info.plist */,
@@ -547,6 +558,7 @@
 				F83FF4341F7A228400D7B8D1 /* LeaderTableViewCell.swift in Sources */,
 				F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */,
 				F83FF43A1F7A251F00D7B8D1 /* FriendTableViewCell.swift in Sources */,
+				194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */,
 				F83FF4361F7A22B600D7B8D1 /* LeaderboardViewController.swift in Sources */,
 				F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */,
 			);
