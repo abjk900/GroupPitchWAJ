@@ -13,8 +13,14 @@ import FirebaseStorage
 
 class EventDetailViewController: UIViewController {
 
-   @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var gameNameTextField: UITextField!
+    @IBOutlet weak var gameEventNameTextField: UITextField!
+    @IBOutlet weak var gameDatePicker: UIDatePicker!
+    @IBOutlet weak var player1nameTextField: UITextField!
+    @IBOutlet weak var player2nameTextField: UITextField!
+    @IBOutlet weak var picker1: UIPickerView!
+    @IBOutlet weak var picker2: UIPickerView!
     
     
     override func viewDidLoad() {
@@ -24,6 +30,10 @@ class EventDetailViewController: UIViewController {
     }
 
     @IBAction func buttonUploadTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func buttonSaveTapped(_ sender: Any) {
         
     }
     

@@ -508,6 +508,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nca-5u-eRD">
+                                <rect key="frame" x="67" y="81" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWe-OO-Z6U">
                                 <rect key="frame" x="138" y="243" width="99" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -549,18 +553,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S2q-9x-uOH">
-                                <rect key="frame" x="219" y="470" width="102" height="55"/>
+                                <rect key="frame" x="219" y="470" width="88" height="55"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaY-Ch-3TT">
                                 <rect key="frame" x="67" y="548" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H1U-nz-wgp">
-                                <rect key="frame" x="222" y="548" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -573,20 +570,33 @@
                                     <!--2017-09-28 02:17:42 +0000-->
                                 </date>
                             </datePicker>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nca-5u-eRD">
-                                <rect key="frame" x="67" y="81" width="240" height="128"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H1U-nz-wgp">
+                                <rect key="frame" x="219" y="548" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="R1a-D7-rR7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="n5b-fv-Q0R">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="xm1-cr-yqV"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="xm1-cr-yqV">
+                            <connections>
+                                <action selector="buttonSaveTapped:" destination="jpL-tA-Yyo" id="05j-tU-lPX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="gameDatePicker" destination="iuP-dS-VuZ" id="e2i-t7-NOq"/>
+                        <outlet property="gameEventNameTextField" destination="Ks0-cB-QLY" id="1rd-3K-8of"/>
                         <outlet property="gameNameTextField" destination="OyY-xq-9la" id="Rb9-5z-sHe"/>
                         <outlet property="imageView" destination="Nca-5u-eRD" id="8d6-lg-bp9"/>
+                        <outlet property="picker1" destination="VWk-p8-NHv" id="k0E-my-GNR"/>
+                        <outlet property="picker2" destination="S2q-9x-uOH" id="Yhh-dd-2OZ"/>
+                        <outlet property="player1nameTextField" destination="gaY-Ch-3TT" id="bYd-9x-fLK"/>
+                        <outlet property="player2nameTextField" destination="H1U-nz-wgp" id="m6M-oX-b4y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4x-b4-ReY" userLabel="First Responder" sceneMemberID="firstResponder"/>
