@@ -36,7 +36,7 @@ class Home  {
             description = aDescription
         }
         
-        if let anUrlImage = homeData["urlImage"] as? String {
+        if let anUrlImage = homeData["urlToImage"] as? String {
             urlImage = anUrlImage
         }
         

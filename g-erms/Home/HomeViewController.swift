@@ -114,7 +114,9 @@ extension HomeViewController : UITableViewDataSource {
         cell.newsArticleTitleLabel.text = aNews.title
         cell.newsSummaryTextView.text = aNews.description
         
-        cell.newsImageView.loadImage(from: aNews.urlImage)
+        guard let urlImage = aNews.urlImage else
+        { return UITableViewCell() }
+        cell.newsImageView.loadImage(from: urlImage)
         
         
        // cell.textLabel?.text = "\(indexPath.row + 1)"
@@ -124,4 +126,22 @@ extension HomeViewController : UITableViewDataSource {
     }
     
 }
+
+extension HomeViewController : UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //move to the next view
+        guard let targetVC = storyboard?.instantiateViewController(withIdentifier: "HomeDetailsViewController" )
+            as? HomeDetailsViewController
+            else { return }
+        //setup
+        targetVC.selectedNews = news[indexPath.row]
+        
+        navigationController?.pushViewController(targetVC, animated: true)
+    }
+}
+
+
+
+
 
