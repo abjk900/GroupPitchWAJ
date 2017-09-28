@@ -17,7 +17,7 @@ class EventViewController: UIViewController {
 
     //****** All the object library *******
     var ref : DatabaseReference!
-    var contacts : [Contact] = []
+    var events : [Event] = []
     
     
     @IBOutlet weak var eventViewTableView: UITableView!
@@ -44,19 +44,17 @@ class EventViewController: UIViewController {
 extension EventViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return events.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
         
-        let rec = contacts[indexPath.row]
-       // cell.  .text = rec.name
-       // cell.detailTextLabel?.text = "\(std.id ?? "No ID") : \(std.age)"
-        
-        
-        
+        let rec = events[indexPath.row]
+        cell.gameNameLabel.text = rec.eventGameName
+        cell.gameEventNameLabel.text = rec.eventName
+        cell.countryPlayerLabel.text = "\(rec.player1Name) vs \(rec.player2Name)"
         
         return cell
     }
@@ -66,7 +64,7 @@ extension EventViewController : UITableViewDataSource {
 
 extension EventViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedContact = contacts[indexPath.row]
+        let selectedEvent = events[indexPath.row]
         
         //move to next VC
         //1. storyboard
@@ -78,7 +76,7 @@ extension EventViewController : UITableViewDelegate {
         guard let targetVC = mainStoryBoard.instantiateViewController(withIdentifier: "EventDetailViewController") as? EventDetailViewController
             else {return}
         
-        targetVC.selectedContact = selectedContact
+        targetVC.selectedEvent = selectedEvent
         
         present(targetVC, animated: true, completion: nil)
         

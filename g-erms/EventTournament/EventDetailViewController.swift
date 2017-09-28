@@ -13,7 +13,7 @@ import FirebaseStorage
 
 class EventDetailViewController: UIViewController {
 
-    var selectedContact : Contact?
+    var selectedEvent : Event?
     var ref : DatabaseReference!
     var currFilename : String = ""
     var imagePicURL : String = ""
