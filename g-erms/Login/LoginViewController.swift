@@ -31,7 +31,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         if Auth.auth().currentUser != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            guard let vc = storyboard.instantiateViewController(withIdentifier: "NavigationController") as? UINavigationController else { return }
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "tabBarController") as? UITabBarController else { return }
             
             //skip login page straight to homepage
             present(vc, animated:  true, completion:  nil)
