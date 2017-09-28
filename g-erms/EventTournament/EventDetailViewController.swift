@@ -13,8 +13,20 @@ import FirebaseStorage
 
 class EventDetailViewController: UIViewController {
 
+    var selectedStudent : Student?
+    var ref : DatabaseReference!
+    var idEdit : Bool = true
+    
+    var profilePicURL : String = ""
+    
+    
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var gameNameTextField: UITextField!
+    @IBOutlet weak var gameNameTextField: UITextField! {
+        didSet {
+            gameNameTextField.isUserInteractionEnabled = false  //cannot tapped
+            
+        }
+    }
     @IBOutlet weak var gameEventNameTextField: UITextField!
     @IBOutlet weak var gameDatePicker: UIDatePicker!
     @IBOutlet weak var player1nameTextField: UITextField!
@@ -27,10 +39,27 @@ class EventDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
+        guard let name = selectedStudent?.name,
+            let age = selectedStudent?.age,
+            let imageURL = selectedStudent?.imageURL
+            else {return}
+        
+        nameTextField.text = name
+        ageTextField.text = "\(age)"
+        editButton.titleLabel?.text = "Edit"
+        
+        
+        profileImageView.loadImage(from: imageURL)
+        
+        
+        
+    } //end viewDidLoad
 
     @IBAction func buttonUploadTapped(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func buttonSaveTapped(_ sender: Any) {
@@ -38,26 +67,66 @@ class EventDetailViewController: UIViewController {
     }
     
     
-    
+    func uploadToStorage(_ image: UIImage) {
+        let ref = Storage.storage().reference()  //link to own storage in firebase
+        
+        guard let xfilename = selectedStudent?.filename else {return}
+        print(xfilename)
+        
+        //let profilePicRef = ref.child(autoGenerateUid+"/profile_pic.jpg")
+        guard let imageData = UIImageJPEGRepresentation(image, 0.5) else {return} //compreess to half quality
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        
+        
+        
+        ref.child("\(xfilename)").putData(imageData, metadata: metaData) { (meta, error) in
+            if let validError = error {
+                print(validError.localizedDescription)
+            }
+            
+            if let downloadPath = meta?.downloadURL()?.absoluteString
+            {
+                self.profilePicURL = downloadPath
+                self.profileImageView.image = image
+            }
+        }
+        
+        
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-  
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+
+} //End EventDetailViewController
+
+extension EventDetailViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        defer {
+            dismiss(animated: true, completion: nil)
+        }
+        
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            return
+        }
+        
+        uploadToStorage(image)
+        
     }
-    */
-
 }
+
+
+
+
+
+
+
+

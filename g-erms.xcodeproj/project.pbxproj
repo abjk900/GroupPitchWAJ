@@ -35,6 +35,7 @@
 		F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift */; };
 		F83FF4401F7A283300D7B8D1 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */; };
 		F83FF4421F7A284200D7B8D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */; };
+		F88EF6FE1F7CB23A00E1CFF8 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingTableViewCell.swift; sourceTree = "<group>"; };
 		F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
 		FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_ermsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 				F81790161F78F7FF00A8C92C /* LaunchScreen.storyboard */,
 				F81790191F78F7FF00A8C92C /* Info.plist */,
 				C0270AFA1F79109300652117 /* GoogleService-Info.plist */,
+				F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */,
 			);
 			path = "g-erms";
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				C0270AF31F79041800652117 /* LoginViewController.swift in Sources */,
 				F81790101F78F7FF00A8C92C /* ViewController.swift in Sources */,
 				F83FF4421F7A284200D7B8D1 /* HomeViewController.swift in Sources */,
+				F88EF6FE1F7CB23A00E1CFF8 /* helper.swift in Sources */,
 				F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift in Sources */,
 				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
 				C06C51CF1F7C86C7007D35CE /* Helper.swift in Sources */,
