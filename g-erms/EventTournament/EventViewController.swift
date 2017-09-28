@@ -13,6 +13,7 @@ class EventViewController: UIViewController {
     //****** All the object library *******
     @IBOutlet weak var eventViewTableView: UITableView!
     
+    @IBOutlet weak var selectionSegmentControl: UISegmentedControl!
     
     
     override func viewDidLoad() {
@@ -21,5 +22,10 @@ class EventViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
+    @IBAction func segmentedControl(_ sender: Any) {
+        
+    }
+    
     
 }

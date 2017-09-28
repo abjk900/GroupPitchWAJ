@@ -14,6 +14,8 @@
 		C0270AF31F79041800652117 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF21F79041800652117 /* LoginViewController.swift */; };
 		C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF41F79043800652117 /* SignUpViewController.swift */; };
 		C0270AFB1F7910D100652117 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0270AFA1F79109300652117 /* GoogleService-Info.plist */; };
+		C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C51CC1F7C5BD0007D35CE /* Home.swift */; };
+		C06C51CF1F7C86C7007D35CE /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C51CE1F7C86C7007D35CE /* Helper.swift */; };
 		F71ECEE3825E4A554807E0E1 /* Pods_g_erms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F985632E2D86F4928F98186 /* Pods_g_erms.framework */; };
 		F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817900D1F78F7FF00A8C92C /* AppDelegate.swift */; };
 		F81790101F78F7FF00A8C92C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817900F1F78F7FF00A8C92C /* ViewController.swift */; };
@@ -63,6 +65,8 @@
 		C0270AF41F79043800652117 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C0270AFA1F79109300652117 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C037993F1F79E78300DCB144 /* g-erms.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "g-erms.entitlements"; sourceTree = "<group>"; };
+		C06C51CC1F7C5BD0007D35CE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		C06C51CE1F7C86C7007D35CE /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		C5B91018BEE41F4E5C218E61 /* Pods-g-erms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-erms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-erms/Pods-g-erms.debug.xcconfig"; sourceTree = "<group>"; };
 		CADCD97EF5DCE2B501499981 /* Pods-g-ermsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsTests/Pods-g-ermsTests.release.xcconfig"; sourceTree = "<group>"; };
 		E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_ermsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,21 +181,18 @@
 		F817900C1F78F7FF00A8C92C /* g-erms */ = {
 			isa = PBXGroup;
 			children = (
+				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
+				F81790111F78F7FF00A8C92C /* Main.storyboard */,
+				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
+				C037993F1F79E78300DCB144 /* g-erms.entitlements */,
 				194B054C1F7B35A100A260BA /* VideoStreaming */,
 				F8EF04151F7A59F200B9A590 /* Login */,
-				C037993F1F79E78300DCB144 /* g-erms.entitlements */,
-				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
-				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
-				F81790111F78F7FF00A8C92C /* Main.storyboard */,
-				F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */,
-				F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */,
+				F81C6C3F1F7B6BC200AEE677 /* Home */,
 				F83FF4371F7A250C00D7B8D1 /* FriendViewController.swift */,
 				F83FF4391F7A251F00D7B8D1 /* FriendTableViewCell.swift */,
 				F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */,
 				F83FF4331F7A228400D7B8D1 /* LeaderTableViewCell.swift */,
-				F83FF42F1F7A219800D7B8D1 /* EventViewController.swift */,
-				F83FF4311F7A21C300D7B8D1 /* EventTableViewCell.swift */,
-				194B054D1F7B407200A260BA /* ProfileViewController.swift */,
+				F81C6C401F7B88A500AEE677 /* EventTournament */,
 				F81790141F78F7FF00A8C92C /* Assets.xcassets */,
 				F81790161F78F7FF00A8C92C /* LaunchScreen.storyboard */,
 				F81790191F78F7FF00A8C92C /* Info.plist */,
@@ -216,6 +217,27 @@
 				F817902F1F78F7FF00A8C92C /* Info.plist */,
 			);
 			path = "g-ermsUITests";
+			sourceTree = "<group>";
+		};
+		F81C6C3F1F7B6BC200AEE677 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C06C51CC1F7C5BD0007D35CE /* Home.swift */,
+				F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */,
+				F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */,
+				C06C51CE1F7C86C7007D35CE /* Helper.swift */,
+				194B054D1F7B407200A260BA /* ProfileViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F81C6C401F7B88A500AEE677 /* EventTournament */ = {
+			isa = PBXGroup;
+			children = (
+				F83FF42F1F7A219800D7B8D1 /* EventViewController.swift */,
+				F83FF4311F7A21C300D7B8D1 /* EventTableViewCell.swift */,
+			);
+			path = EventTournament;
 			sourceTree = "<group>";
 		};
 		F8EF04151F7A59F200B9A590 /* Login */ = {
@@ -554,12 +576,14 @@
 				F83FF4421F7A284200D7B8D1 /* HomeViewController.swift in Sources */,
 				F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift in Sources */,
 				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
+				C06C51CF1F7C86C7007D35CE /* Helper.swift in Sources */,
 				F83FF43C1F7A259700D7B8D1 /* StreamingViewController.swift in Sources */,
 				F83FF4341F7A228400D7B8D1 /* LeaderTableViewCell.swift in Sources */,
 				F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */,
 				F83FF43A1F7A251F00D7B8D1 /* FriendTableViewCell.swift in Sources */,
 				194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */,
 				F83FF4361F7A22B600D7B8D1 /* LeaderboardViewController.swift in Sources */,
+				C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */,
 				F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
