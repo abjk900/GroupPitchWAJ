@@ -94,12 +94,16 @@ class HomeViewController: UIViewController {
         task.resume()
     }
     
+    
+    
 }
+
 
 extension HomeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return news.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //1.get the cell
@@ -110,7 +114,7 @@ extension HomeViewController : UITableViewDataSource {
         cell.newsArticleTitleLabel.text = aNews.title
         cell.newsSummaryTextView.text = aNews.description
         
-      //  cell.newsImageView.image = aNews.urlImage
+        cell.newsImageView.loadImage(from: aNews.urlImage)
         
         
        // cell.textLabel?.text = "\(indexPath.row + 1)"
