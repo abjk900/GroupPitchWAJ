@@ -36,6 +36,7 @@
 		F83FF4401F7A283300D7B8D1 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */; };
 		F83FF4421F7A284200D7B8D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */; };
 		F88EF6FE1F7CB23A00E1CFF8 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */; };
+		F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF6FF1F7CC06F00E1CFF8 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
+		F88EF6FF1F7CC06F00E1CFF8 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_ermsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 			children = (
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
+				F88EF7011F7CC1F600E1CFF8 /* Model */,
 				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
 				C037993F1F79E78300DCB144 /* g-erms.entitlements */,
 				194B054C1F7B35A100A260BA /* VideoStreaming */,
@@ -201,7 +204,6 @@
 				F81790161F78F7FF00A8C92C /* LaunchScreen.storyboard */,
 				F81790191F78F7FF00A8C92C /* Info.plist */,
 				C0270AFA1F79109300652117 /* GoogleService-Info.plist */,
-				F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */,
 			);
 			path = "g-erms";
 			sourceTree = "<group>";
@@ -244,6 +246,15 @@
 				F81C6C411F7C94B400AEE677 /* EventDetailViewController.swift */,
 			);
 			path = EventTournament;
+			sourceTree = "<group>";
+		};
+		F88EF7011F7CC1F600E1CFF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F88EF6FF1F7CC06F00E1CFF8 /* Contact.swift */,
+				F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F8EF04151F7A59F200B9A590 /* Login */ = {
@@ -586,6 +597,7 @@
 				C06C51CF1F7C86C7007D35CE /* Helper.swift in Sources */,
 				F83FF43C1F7A259700D7B8D1 /* StreamingViewController.swift in Sources */,
 				F83FF4341F7A228400D7B8D1 /* LeaderTableViewCell.swift in Sources */,
+				F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */,
 				F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */,
 				F81C6C421F7C94B400AEE677 /* EventDetailViewController.swift in Sources */,
 				F83FF43A1F7A251F00D7B8D1 /* FriendTableViewCell.swift in Sources */,
