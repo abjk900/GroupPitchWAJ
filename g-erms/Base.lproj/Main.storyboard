@@ -142,8 +142,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="newsTableViewCell" destination="LOd-8A-oaD" id="lO0-Jm-elf"/>
-                        <outlet property="searchBar" destination="SzY-SM-ecE" id="ubw-hh-SpR"/>
+                        <outlet property="tableView" destination="LOd-8A-oaD" id="3gM-I3-7ms"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gv0-NT-HFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
