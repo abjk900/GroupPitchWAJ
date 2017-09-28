@@ -60,6 +60,10 @@ class EventDetailViewController: UIViewController {
         print(post)
         //dig paths to reach a specific student
         ref.child("Events").childByAutoId().updateChildValues(post)
+        
+        
+        dismiss(animated: true, completion: nil)
+        
     }
     
     

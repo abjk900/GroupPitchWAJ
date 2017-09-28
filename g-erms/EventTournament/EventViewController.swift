@@ -27,7 +27,9 @@ class EventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        eventViewTableView.delegate = self
+        eventViewTableView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
 
@@ -47,10 +49,10 @@ extension EventViewController : UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
         
         let rec = contacts[indexPath.row]
-       // cell.textLabel?.text = rec.name
+       // cell.  .text = rec.name
        // cell.detailTextLabel?.text = "\(std.id ?? "No ID") : \(std.age)"
         
         
@@ -76,7 +78,7 @@ extension EventViewController : UITableViewDelegate {
         guard let targetVC = mainStoryBoard.instantiateViewController(withIdentifier: "EventDetailViewController") as? EventDetailViewController
             else {return}
         
-        targetVC.contact = selectedContact
+        targetVC.selectedContact = selectedContact
         
         present(targetVC, animated: true, completion: nil)
         
