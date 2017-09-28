@@ -56,8 +56,8 @@ class EventDetailViewController: UIViewController {
         let date = gameDatePicker.date.timeIntervalSince1970
         //let createdDate = Date(timeIntervalSince1970: date)
         //let formattedDate = DateFormatter.dateFormat(fromTemplate: <#T##String#>, options: <#T##Int#>, locale: <#T##Locale?#>)
-        let post : [String : Any] = ["gameName" : gameName, "eventName" : gameEventName, "eventDate" : date, "imageURL" : self.imagePicURL, "player1Name" : player1Name, "player2Name" : player2Name ]
-        
+        let post : [String : Any] = ["gameName" : gameName, "eventName" : gameEventName, "eventDate" : date, "imageURL" : self.imagePicURL,"imageFilename" : currFilename,  "player1Name" : player1Name, "player2Name" : player2Name ]
+        print(post)
         //dig paths to reach a specific student
         ref.child("Events").childByAutoId().updateChildValues(post)
     }
