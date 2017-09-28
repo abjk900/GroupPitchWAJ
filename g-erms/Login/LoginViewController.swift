@@ -46,6 +46,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
+    //******FB Login***************
     @IBOutlet weak var fbLoginButton: FBSDKLoginButton!{
         didSet{
             fbLoginButton.delegate = self
@@ -65,6 +66,86 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         print("Successfully logged in with Facebook...")
         
+        showEmailAddress()
+        
+    }
+    
+    func showEmailAddress() {
+        let accessToken = FBSDKAccessToken.current()
+        guard let accessTokenString = accessToken?.tokenString else {return}
+        
+        
+        let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        
+        Auth.auth().signIn(with: credentials) { (user, error) in
+            if error != nil {
+                print("Someting went wrong with our FB User :", error ?? "")
+                return
+            }
+            print("Successfully logged in with our user: ", user ?? "")
+            
+            //later consider changing
+            guard let id = user?.uid else {return}
+            self.fbloginID = id
+            
+            //read from Firebase and check if FB Login already Created
+            //            let ref = Database.database().reference()
+            //            ref.child("Users").child(id).observe(.value, with: { (snapshot) in
+            //                if let name = snapshot.["name"] as? String {
+            
+            
+            //       } else {
+            //Create New User in Database using FB details
+            self.fbSignUpCreateNewUser()
+            //      }
+            //   })
+            
+            
+            
+            
+        }
+    }
+    
+    
+    func fbSignUpCreateNewUser() {
+        //Get Email Address from FB
+        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, first_name, last_name, email"]).start { (connection, result, error) in
+            
+            if error != nil {
+                print("Failed to start graph request:", error ?? "")
+                return
+            }
+            
+            if let info = result as? [String:Any],
+                let name = info["name"] as? String,
+                let email = info["email"] as? String,
+                let firstName = info["first_name"] as? String,
+                let lastName = info["last_name"] as? String {
+                //let uid = info["id"] as? String {
+                
+                
+                
+                //save to FIRDatabase
+                let ref = Database.database().reference()
+                
+                let post : [String:Any] = ["id": self.fbloginID ,"name": name, "email": email, "firstName": firstName,"lastName": lastName, "imageURL": "","imageFilename": ""]
+                
+                //ref.child("Users").child(uid).setValue(post)
+                ref.child("Users").child(self.fbloginID).setValue(post)
+                
+                //self.navigationController?.popViewController(animated: true)
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AuthNavigationController") as? UINavigationController else { return }
+                
+                //skip login page straight to homepage
+                self.present(vc, animated:  true, completion:  nil)
+                
+                
+                
+            }
+            
+            print(result ?? "")
+            
+        }
     }
     
     @objc func dismissKeyboard() {
@@ -106,46 +187,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
-    func fbSignUpCreateNewUser() {
-        //Get Email Address from FB
-        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, first_name, last_name, email"]).start { (connection, result, error) in
-            
-            if error != nil {
-                print("Failed to start graph request:", error ?? "")
-                return
-            }
-            
-            if let info = result as? [String:Any],
-                let name = info["name"] as? String,
-                let email = info["email"] as? String,
-                let firstName = info["first_name"] as? String,
-                let lastName = info["last_name"] as? String {
-                //let uid = info["id"] as? String {
-                
-                
-                
-                //save to FIRDatabase
-                let ref = Database.database().reference()
-                
-                let post : [String:Any] = ["id": self.fbloginID ,"name": name, "email": email, "firstName": firstName,"lastName": lastName, "imageURL": "","imageFilename": ""]
-                
-                //ref.child("Users").child(uid).setValue(post)
-                ref.child("Users").child(self.fbloginID).setValue(post)
-                
-                //self.navigationController?.popViewController(animated: true)
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController") as? UITabBarController else { return }
-                
-                //skip login page straight to homepage
-                self.present(vc, animated:  true, completion:  nil)
-                
-                
-                
-            }
-            
-            print(result ?? "")
-            
-        }
-    }
+
     
     func createErrorAlert(_ title: String, _ message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
