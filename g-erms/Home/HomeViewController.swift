@@ -8,11 +8,13 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController , UISearchBarDelegate{
     var news : [Home] = []
+    var searchActive : Bool = false
+    var filtered:[Home] = []
     
-
     @IBAction func signOutButton(_ sender: Any) {
         signOutUser()
     }
@@ -20,21 +22,62 @@ class HomeViewController: UIViewController {
         didSet {
             tableView.estimatedRowHeight = 350
             tableView.rowHeight = UITableViewAutomaticDimension
-
+            
         }
     }
+    @IBOutlet weak var searchTextFieldBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchData()
+        
         tableView.dataSource = self
         tableView.delegate = self
+        searchTextFieldBar.delegate = self
         
-
+        fetchData()
         // Do any additional setup after loading the view.
     }
-
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        
+        //filtered = data.filter({ (text) -> Bool in
+        if searchText.characters.count == 0 {
+            
+            filtered = news
+            
+        } else {
+        filtered = news.filter({ (item) -> Bool in
+            let tmp: NSString = item.title as! NSString
+            let range = tmp.range(of: searchText, options: .caseInsensitive)
+            return range.location != NSNotFound
+        })
+        }
+//        if(filtered.count == 0){
+//            searchActive = false;
+//        } else {
+//            searchActive = true;
+//        }
+        self.tableView.reloadData()
+    }
+    
+    
     func signOutUser() {
         do {
             try Auth.auth().signOut()
@@ -87,7 +130,9 @@ class HomeViewController: UIViewController {
                 let newHome = Home(homeData: homeData)
                 self.news.append(newHome)
                 
+                
             }
+            self.filtered = self.news
             
             print(self.news.count)
             
@@ -108,7 +153,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return news.count
+        return filtered.count
     }
     
     
@@ -116,12 +161,13 @@ extension HomeViewController : UITableViewDataSource {
         //1.get the cell
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
         
-        //2.setup
-        let aNews = news[indexPath.row]
+        
+        let aNews = filtered[indexPath.row]
         cell.newsArticleTitleLabel.text = aNews.title
         cell.newsSummaryTextView.text = aNews.description
         cell.newsPublishedTime.text = aNews.publishedTime
-        
+        cell.newsImageView.loadImage(from: aNews.urlImage ?? "")
+        //2.setup fot the time format
         let RFC3339DateFormatter = DateFormatter()
         RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
         RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
@@ -129,24 +175,38 @@ extension HomeViewController : UITableViewDataSource {
         guard let string = cell.newsPublishedTime.text else { return UITableViewCell() }
         guard let date1 = RFC3339DateFormatter.date(from: string) else { return UITableViewCell() }
         print(date1 , "testing 12345")
-       //aNews.publishedTime = Date(date1)
+        //aNews.publishedTime = Date(date1)
         cell.newsPublishedTime.text = String(describing: date1)
         
-        cell.tag = indexPath.row
-        
-        DispatchQueue.main.async {
-            if cell.tag == indexPath.row {
-                guard let urlImage = aNews.urlImage else
-                { return }
-                cell.newsImageView.loadImage(from: urlImage)
-            }
-        }
+        //cell.tag = indexPath.row
         
         
+//        if searchActive {
+//            let filter = filtered[indexPath.row]
+//            cell.newsArticleTitleLabel.text = filter.title
+//            //cell.fullnameLabel.text = "\(filter.fullname) Following"
+//
+//            let imageURL = filter.urlImage
+//            cell.newsImageView.loadImage(from: imageURL!)
+//
+//        } else {
+//            let aNews = news[indexPath.row]
+//            cell.newsArticleTitleLabel.text = aNews.title
+//            //cell.fullnameLa.text = "\(aNews.fullname) Following"
+//
+//            let imageURL = aNews.urlImage
+//            cell.newsImageView.loadImage(from: imageURL!)
+//        }
         
-       // cell.textLabel?.text = "\(indexPath.row + 1)"
-      // cell.detailTextLabel?.text = news[indexPath.row].title
+//        DispatchQueue.main.async {
+//            if cell.tag == indexPath.row {
+//                guard let urlImage = aNews.urlImage else
+//                { return }
+//                cell.newsImageView.loadImage(from: urlImage)
+//            }
+//        }
         
+     
         return cell
     }
     

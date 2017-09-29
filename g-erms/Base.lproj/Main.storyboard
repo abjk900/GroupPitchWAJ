@@ -201,6 +201,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <connections>
+                        <outlet property="searchTextFieldBar" destination="SzY-SM-ecE" id="BZm-ni-VFd"/>
                         <outlet property="tableView" destination="LOd-8A-oaD" id="3gM-I3-7ms"/>
                     </connections>
                 </viewController>
