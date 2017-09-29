@@ -34,17 +34,17 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //get corrent country
+        //get current country
         let locale = Locale.current
         let code = (locale as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String?
         //init Picker
-        //picker1.countryPickerDelegate = self
-        //picker1.showPhoneNumbers = false
-        //picker1.setCountry(code!)
+        picker1.countryPickerDelegate = self
+        picker1.showPhoneNumbers = false
+        picker1.setCountry(code!)
         
-        //picker2.countryPickerDelegate = self
-        //picker2.showPhoneNumbers = false
-        //picker2.setCountry(code!)
+        picker2.countryPickerDelegate = self
+        picker2.showPhoneNumbers = false
+        picker2.setCountry(code!)
         
     } //end viewDidLoad
     
