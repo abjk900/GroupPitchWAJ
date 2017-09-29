@@ -17,6 +17,7 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var newsSummaryTextView: UITextView!
     
+    @IBOutlet weak var newsPublishedTime: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

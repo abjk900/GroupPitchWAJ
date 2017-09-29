@@ -16,7 +16,13 @@ class HomeViewController: UIViewController {
     @IBAction func signOutButton(_ sender: Any) {
         signOutUser()
     }
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.estimatedRowHeight = 350
+            tableView.rowHeight = UITableViewAutomaticDimension
+
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,10 +119,19 @@ extension HomeViewController : UITableViewDataSource {
         let aNews = news[indexPath.row]
         cell.newsArticleTitleLabel.text = aNews.title
         cell.newsSummaryTextView.text = aNews.description
+        cell.newsPublishedTime.text = aNews.publishedTime
         
-        guard let urlImage = aNews.urlImage else
-        { return UITableViewCell() }
-        cell.newsImageView.loadImage(from: urlImage)
+        
+        cell.tag = indexPath.row
+        
+        DispatchQueue.main.async {
+            if cell.tag == indexPath.row {
+                guard let urlImage = aNews.urlImage else
+                { return }
+                cell.newsImageView.loadImage(from: urlImage)
+            }
+        }
+        
         
         
        // cell.textLabel?.text = "\(indexPath.row + 1)"

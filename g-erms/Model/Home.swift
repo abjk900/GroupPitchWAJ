@@ -14,7 +14,7 @@ class Home  {
     var title : String?
     var description : String?
     var urlImage : String?
-    var publishedTime : Double?
+    var publishedTime : String?
     
     
     
@@ -40,7 +40,7 @@ class Home  {
             urlImage = anUrlImage
         }
         
-        if let aPublishedTime = homeData["publishedTime"] as? Double {
+        if let aPublishedTime = homeData["publishedAt"] as? String {
             publishedTime = aPublishedTime
         }
     }
