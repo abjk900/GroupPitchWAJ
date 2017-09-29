@@ -28,8 +28,8 @@ class StreamingViewController: UIViewController {
     @IBOutlet weak var streamingTableView: UITableView!{
         didSet{
             streamingTableView.dataSource = self
-//            streamingTableView.delegate = self
             //making fit window that for shwoing the videos
+            //need to type the view's heighy then can make auto.
             streamingTableView.estimatedRowHeight = 220
             streamingTableView.rowHeight = UITableViewAutomaticDimension
         }
@@ -96,7 +96,7 @@ extension StreamingViewController : UITableViewDataSource {
         cell.videoNameLabel?.text = videos[indexPath.row].title
         
         
-            let str = "<iframe src=\"http://player.twitch.tv/?video=\(videos[indexPath.row]._id)4&autoplay=false\" height=\"\(self.view.frame.height)\" width=\"\(self.view.frame.width)\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\"> </iframe>"
+            let str = "<iframe src=\"http://player.twitch.tv/?video=\(videos[indexPath.row]._id)4&autoplay=false\" height=\"\(cell.videoView.frame.height)\" width=\"\(cell.videoView.frame.width)\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\"> </iframe>"
         
 
        
