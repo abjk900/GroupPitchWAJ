@@ -35,11 +35,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="220.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cjx-Gb-zN9">
-                                                    <rect key="frame" x="11" y="43" width="352" height="169"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMf-x7-J0w">
                                                     <rect key="frame" x="11" y="7" width="352" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,11 +42,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4nQ-s0-d2R">
+                                                    <rect key="frame" x="11" y="46" width="352" height="167"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </webView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="videoNameLabel" destination="PMf-x7-J0w" id="QW1-Y7-KVK"/>
-                                            <outlet property="videoViewLabel" destination="cjx-Gb-zN9" id="24v-Gu-1QY"/>
+                                            <outlet property="videoView" destination="4nQ-s0-d2R" id="g33-F5-sYo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -71,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbm-Hq-4OJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1770" y="690"/>
+            <point key="canvasLocation" x="-1770.4000000000001" y="689.5052473763119"/>
         </scene>
         <!--Home-->
         <scene sceneID="Fcz-6a-8Da">

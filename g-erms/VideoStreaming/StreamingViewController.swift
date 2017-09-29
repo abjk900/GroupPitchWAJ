@@ -95,7 +95,8 @@ extension StreamingViewController : UITableViewDataSource {
         
             let str = "<iframe src=\"http://player.twitch.tv/?video=\(videos[indexPath.row]._id)4&autoplay=false\" height=\"180\" width=\"313\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\"> </iframe>"
         
-        
+
+       
         cell.videoView?.loadHTMLString(str, baseURL: nil)
         
         
