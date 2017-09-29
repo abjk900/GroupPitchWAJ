@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -524,80 +523,10 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="149" id="6Mb-ac-Na1" customClass="EventTableViewCell" customModule="g_erms" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="149"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Mb-ac-Na1" id="kda-Dj-xtz" customClass="EventTableViewCell" customModule="g_erms" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Mb-ac-Na1" id="kda-Dj-xtz" customClass="EventViewCell" customModule="g_erms" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="148.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bSd-l8-xq7">
-                                                    <rect key="frame" x="8" y="8" width="359" height="33"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AC.png" translatesAutoresizingMaskIntoConstraints="NO" id="ylo-4Z-AVY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="33"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="d1L-U4-ny6"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kam-w7-QQz">
-                                                            <rect key="frame" x="60" y="0.0" width="253" height="33"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loA-x2-rJq">
-                                                            <rect key="frame" x="323" y="0.0" width="36" height="33"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="33" id="O1d-vd-JsA"/>
-                                                    </constraints>
-                                                </stackView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok_green" translatesAutoresizingMaskIntoConstraints="NO" id="hn4-Xd-wgx">
-                                                    <rect key="frame" x="327" y="41" width="40" height="103"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="UOk-N1-P5N"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tcz-SI-TeH">
-                                                    <rect key="frame" x="8" y="41" width="311" height="103"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="2017 GSL Super Tournament 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psy-wk-z2F">
-                                                            <rect key="frame" x="0.0" y="0.0" width="311" height="51.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhU-3j-Tez">
-                                                            <rect key="frame" x="0.0" y="51.5" width="311" height="51.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bSd-l8-xq7" secondAttribute="trailing" id="5mb-R1-gea"/>
-                                                <constraint firstItem="hn4-Xd-wgx" firstAttribute="top" secondItem="tcz-SI-TeH" secondAttribute="top" id="G7y-eb-iaX"/>
-                                                <constraint firstAttribute="bottom" secondItem="tcz-SI-TeH" secondAttribute="bottom" constant="4.5" id="Pj5-1e-RY2"/>
-                                                <constraint firstItem="tcz-SI-TeH" firstAttribute="leading" secondItem="kda-Dj-xtz" secondAttribute="leadingMargin" id="UJ1-DV-iMb"/>
-                                                <constraint firstItem="bSd-l8-xq7" firstAttribute="top" secondItem="kda-Dj-xtz" secondAttribute="topMargin" id="UvI-JK-vgi"/>
-                                                <constraint firstItem="hn4-Xd-wgx" firstAttribute="bottom" secondItem="tcz-SI-TeH" secondAttribute="bottom" id="VYo-8h-nwB"/>
-                                                <constraint firstItem="bSd-l8-xq7" firstAttribute="leading" secondItem="kda-Dj-xtz" secondAttribute="leadingMargin" id="XAI-ga-Nbz"/>
-                                                <constraint firstItem="tcz-SI-TeH" firstAttribute="top" secondItem="bSd-l8-xq7" secondAttribute="bottom" id="aVS-9J-hdd"/>
-                                                <constraint firstItem="hn4-Xd-wgx" firstAttribute="leading" secondItem="tcz-SI-TeH" secondAttribute="trailing" constant="8" id="laK-0l-aQ9"/>
-                                                <constraint firstItem="hn4-Xd-wgx" firstAttribute="trailing" secondItem="kda-Dj-xtz" secondAttribute="trailingMargin" id="sI3-Rx-vUm"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="countryPlayerLabel" destination="rhU-3j-Tez" id="iq1-KJ-IlN"/>
-                                            <outlet property="gameDateLabel" destination="loA-x2-rJq" id="9RN-FP-wfM"/>
-                                            <outlet property="gameEventNameLabel" destination="Psy-wk-z2F" id="rep-mc-qWM"/>
-                                            <outlet property="gameLogo" destination="ylo-4Z-AVY" id="3N2-GE-SOZ"/>
-                                            <outlet property="gameNameLabel" destination="Kam-w7-QQz" id="IgY-UA-Fa0"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -844,7 +773,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AC.png" width="40" height="30"/>
         <image name="Activity Feed" width="26" height="26"/>
         <image name="Customer" width="26" height="26"/>
         <image name="Event" width="26" height="26"/>
@@ -853,7 +781,6 @@
         <image name="Trophy" width="26" height="26"/>
         <image name="Video Playlist" width="26" height="26"/>
         <image name="imageDefault" width="128" height="128"/>
-        <image name="ok_green" width="24" height="24"/>
         <image name="profileImage" width="128" height="128"/>
     </resources>
 </document>
