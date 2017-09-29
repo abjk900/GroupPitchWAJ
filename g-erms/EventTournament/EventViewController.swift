@@ -76,7 +76,7 @@ extension EventViewController : UITableViewDelegate {
         guard let targetVC = mainStoryBoard.instantiateViewController(withIdentifier: "EventDetailViewController") as? EventDetailViewController
             else {return}
         
-        targetVC.contact = selectedContact
+        //targetVC.contact = selectedContact
         
         present(targetVC, animated: true, completion: nil)
         
