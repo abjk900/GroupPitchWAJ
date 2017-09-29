@@ -17,7 +17,7 @@ class EventViewController: UIViewController {
 
     //****** All the object library *******
     var ref : DatabaseReference!
-    var events : [Event] = []
+    var contacts : [Contact] = []
     
     
     @IBOutlet weak var eventViewTableView: UITableView!
@@ -27,9 +27,7 @@ class EventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        eventViewTableView.delegate = self
-        eventViewTableView.dataSource = self
-        
+
         // Do any additional setup after loading the view.
     }
 
@@ -44,17 +42,19 @@ class EventViewController: UIViewController {
 extension EventViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        return contacts.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let rec = events[indexPath.row]
-        cell.gameNameLabel.text = rec.eventGameName
-        cell.gameEventNameLabel.text = rec.eventName
-        cell.countryPlayerLabel.text = "\(rec.player1Name) vs \(rec.player2Name)"
+        let rec = contacts[indexPath.row]
+       // cell.textLabel?.text = rec.name
+       // cell.detailTextLabel?.text = "\(std.id ?? "No ID") : \(std.age)"
+        
+        
+        
         
         return cell
     }
@@ -64,7 +64,7 @@ extension EventViewController : UITableViewDataSource {
 
 extension EventViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedEvent = events[indexPath.row]
+        let selectedContact = contacts[indexPath.row]
         
         //move to next VC
         //1. storyboard
@@ -76,7 +76,7 @@ extension EventViewController : UITableViewDelegate {
         guard let targetVC = mainStoryBoard.instantiateViewController(withIdentifier: "EventDetailViewController") as? EventDetailViewController
             else {return}
         
-        targetVC.selectedEvent = selectedEvent
+        targetVC.contact = selectedContact
         
         present(targetVC, animated: true, completion: nil)
         
