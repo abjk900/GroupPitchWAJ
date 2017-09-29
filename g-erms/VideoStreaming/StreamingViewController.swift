@@ -10,10 +10,13 @@ import UIKit
 
 //matching with url dictionary
 struct SwitchVideo : Decodable {
-    let id : String
-    let name : String
-    let link : String
-    let imageUrl : String
+    let title : String
+    let url : String
+    let _id : String
+}
+
+struct VOD : Decodable {
+    let videos : [SwitchVideo]
 }
 
 class StreamingViewController: UIViewController {
@@ -22,23 +25,31 @@ class StreamingViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    @IBOutlet weak var streamingTableView: UITableView!
+    @IBOutlet weak var streamingTableView: UITableView!{
+        didSet{
+            streamingTableView.dataSource = self
+//            streamingTableView.delegate = self
+        }
+    }
     
+    var videos : [SwitchVideo] = []
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        feachVideo()
     }
     
     func feachVideo() {
         //using with url
-        let jsonUrlString = "http://api.letsbuildthatapp.com/jsondecondable/course"
+        let jsonUrlString = "https://api.twitch.tv/kraken/videos/top"
         
         guard let url = URL(string : jsonUrlString) else { return }
+        //        request.addValue("value", forHTTPHeaderField: "Key")
+        var request = URLRequest(url: url)
+        request.addValue("fc2eeba2o05hvyoss3ku2k5nazaqc0", forHTTPHeaderField: "Client-ID")
+        request.addValue("application/vnd.twitchtv.v5+json", forHTTPHeaderField: "accccpet")
         
-        URLSession.shared.dataTask(with: url) { (data, response, err) in
+        URLSession.shared.dataTask(with: request) { (data, response, err) in
             if let err = err {
                 print("DataTask Error : \(err.localizedDescription)")
                 return
@@ -52,14 +63,44 @@ class StreamingViewController: UIViewController {
             //do could be using instead of guald let
             do{
                 //the "SwitchVideo" need to be chnaged if it has covering array or dictionary.
-                let videoStreaming = try JSONDecoder().decode(SwitchVideo.self, from: data)
+                let vods = try JSONDecoder().decode(VOD.self, from: data)
+                self.videos = vods.videos
+                //this is for what?
+                DispatchQueue.main.async {
+                    self.streamingTableView.reloadData()
+                }
+                
             } catch let jsonErr {
                 print("Error serializing json:", jsonErr)
             }
-        }
-        
+        }.resume()
     }
 
-   
-
 }
+
+extension StreamingViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return videos.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "streamingCell", for: indexPath) as? StreamingTableViewCell
+        else {
+            return UITableViewCell()
+        }
+        
+        cell.videoNameLabel?.text = videos[indexPath.row].title
+        
+        
+            let str = "<iframe src=\"http://player.twitch.tv/?video=\(videos[indexPath.row]._id)4&autoplay=false\" height=\"180\" width=\"313\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\"> </iframe>"
+        
+        
+        cell.videoView?.loadHTMLString(str, baseURL: nil)
+        
+        
+        return cell
+    }
+    
+}
+

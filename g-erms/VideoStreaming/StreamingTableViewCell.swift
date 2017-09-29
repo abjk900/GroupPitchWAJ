@@ -13,9 +13,8 @@ class StreamingTableViewCell: UITableViewCell {
     //****** All the object library *******
     @IBOutlet weak var videoNameLabel: UILabel!
     
-    @IBOutlet weak var videoViewLabel: UIView!
+    @IBOutlet weak var videoView: UIWebView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
