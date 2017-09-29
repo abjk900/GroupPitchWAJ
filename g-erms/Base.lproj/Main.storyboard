@@ -202,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="-3242.4000000000001" y="689.5052473763119"/>
         </scene>
-        <!--Home Details View Controller-->
+        <!--View Controller-->
         <scene sceneID="B4z-Xk-u5v">
             <objects>
-                <viewController storyboardIdentifier="HomeDetailsViewController" id="ERb-p4-7w1" customClass="HomeDetailsViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ERb-p4-7w1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sog-yk-1uV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +233,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8z-ot-29n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3242.4000000000001" y="1481.1094452773614"/>
+            <point key="canvasLocation" x="-4612" y="1218"/>
+        </scene>
+        <!--Home Details View Controller-->
+        <scene sceneID="1KO-aB-WH0">
+            <objects>
+                <viewController storyboardIdentifier="HomeDetailsViewController" id="49q-YD-uGn" customClass="HomeDetailsViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gZJ-bz-Jxy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SqD-Ka-rlG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2iH-dW-Qdy">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SqD-Ka-rlG" firstAttribute="top" secondItem="hJH-4n-bV9" secondAttribute="top" id="Hx3-Ap-2ze"/>
+                            <constraint firstItem="hJH-4n-bV9" firstAttribute="bottom" secondItem="SqD-Ka-rlG" secondAttribute="bottom" id="Mpw-oM-0pW"/>
+                            <constraint firstItem="hJH-4n-bV9" firstAttribute="trailing" secondItem="SqD-Ka-rlG" secondAttribute="trailing" id="RC3-dn-KyD"/>
+                            <constraint firstItem="SqD-Ka-rlG" firstAttribute="leading" secondItem="hJH-4n-bV9" secondAttribute="leading" id="fUm-LX-qCD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hJH-4n-bV9"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingView" destination="2iH-dW-Qdy" id="ROv-de-C1q"/>
+                        <outlet property="variableWebView" destination="SqD-Ka-rlG" id="uqW-PX-2FW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZl-yG-cyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3242" y="1425"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="uxw-3e-aSj">

@@ -10,6 +10,7 @@
 		194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B054D1F7B407200A260BA /* ProfileViewController.swift */; };
 		88ECA7143BB25BC9F7BEBA74 /* Pods_g_ermsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */; };
 		BE83C4BAB1FB7F1EC7C2658C /* Pods_g_ermsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */; };
+		C008E0D61F7E280F00044122 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C008E0D51F7E280F00044122 /* WebViewController.swift */; };
 		C0270AF11F7903AB00652117 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0270AF01F7903AB00652117 /* Auth.storyboard */; };
 		C0270AF31F79041800652117 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF21F79041800652117 /* LoginViewController.swift */; };
 		C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF41F79043800652117 /* SignUpViewController.swift */; };
@@ -66,6 +67,7 @@
 		4A28CC14822047DAE0DE63A0 /* Pods-g-ermsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		730A678E70F60522AF378B97 /* Pods-g-erms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-erms.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-erms/Pods-g-erms.release.xcconfig"; sourceTree = "<group>"; };
 		9E56BB67DFC769FB178BC6B2 /* Pods-g-ermsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsTests/Pods-g-ermsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C008E0D51F7E280F00044122 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C0270AF01F7903AB00652117 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C0270AF21F79041800652117 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0270AF41F79043800652117 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */,
+				C008E0D51F7E280F00044122 /* WebViewController.swift */,
 				F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */,
 				C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */,
 				194B054D1F7B407200A260BA /* ProfileViewController.swift */,
@@ -609,6 +612,7 @@
 				F83FF4341F7A228400D7B8D1 /* LeaderTableViewCell.swift in Sources */,
 				F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */,
 				F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */,
+				C008E0D61F7E280F00044122 /* WebViewController.swift in Sources */,
 				F81C6C421F7C94B400AEE677 /* EventDetailViewController.swift in Sources */,
 				F83FF43A1F7A251F00D7B8D1 /* FriendTableViewCell.swift in Sources */,
 				194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */,

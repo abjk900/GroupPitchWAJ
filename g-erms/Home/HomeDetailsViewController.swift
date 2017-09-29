@@ -8,54 +8,44 @@
 
 import UIKit
 
-class HomeDetailsViewController: UIViewController {
+class HomeDetailsViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate {
 
     var selectedNews : Home?
     
+    @IBOutlet weak var variableWebView: UIWebView!
     
-    @IBOutlet weak var newsImageView: UIImageView!
-    @IBOutlet weak var textfieldView: UITextView!
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        variableWebView.delegate = self
+        loadurl(with: (selectedNews?.url)!)
     }
-
-    func fetchNewsDetails (news : Home){
-        textfieldView.text = news.description
+    func loadurl(with string: String){
+        guard let url = URL(string: string) else {
+            return
+        }
         
-        //1. url
-        guard let url = URL(string : news.url!)
-            else { return }
-        
-        //2. session
-        let session = URLSession.shared
-        
-        //3.task
-        let task = session.dataTask(with: url) { (data,  response, error) in
-            if let error = error {
-                print("Error : \(error.localizedDescription)")
-                return
-            }
-            
-            guard let data = data,
-                let jsonData = try? JSONSerialization.jsonObject(with: data, options: []),
-                let jsonDict = jsonData as? [String : Any]
-                
-                else {
-                    print( "Invalid Json")
-                    return
-            }
-            
-            if let news = jsonDict["url"] as? String {
-                DispatchQueue.main.async {
-                    self.textfieldView.text = "\(url)"
-                }
-        
+        let request = URLRequest(url: url)
+        variableWebView.loadRequest(request)
     }
     
-        }
-    task.resume()
-}
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        loadingView.startAnimating()
+        print("start loading")
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
+        print("finish loading")
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        print("fail with error :\(error.localizedDescription)")
+        loadingView.stopAnimating()
+    }
+    
+    
 }
