@@ -195,6 +195,7 @@
 			children = (
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
+				F8F3AEC51F7E37CE003F72EA /* Helper */,
 				F88EF7011F7CC1F600E1CFF8 /* Model */,
 				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
 				C037993F1F79E78300DCB144 /* g-erms.entitlements */,
@@ -261,7 +262,6 @@
 				C06C51CC1F7C5BD0007D35CE /* Home.swift */,
 				F88EF6FF1F7CC06F00E1CFF8 /* Contact.swift */,
 				F88EF7201F7D444800E1CFF8 /* Event.swift */,
-				F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,6 +274,14 @@
 				C0270AF41F79043800652117 /* SignUpViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		F8F3AEC51F7E37CE003F72EA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
