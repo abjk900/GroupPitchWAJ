@@ -121,6 +121,15 @@ extension HomeViewController : UITableViewDataSource {
         cell.newsSummaryTextView.text = aNews.description
         cell.newsPublishedTime.text = aNews.publishedTime
         
+        let RFC3339DateFormatter = DateFormatter()
+        RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0800)
+        guard let string = cell.newsPublishedTime.text else { return UITableViewCell() }
+        guard let date1 = RFC3339DateFormatter.date(from: string) else { return UITableViewCell() }
+        print(date1 , "testing 12345")
+       //aNews.publishedTime = Date(date1)
+        cell.newsPublishedTime.text = String(describing: date1)
         
         cell.tag = indexPath.row
         
