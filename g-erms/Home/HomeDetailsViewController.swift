@@ -22,5 +22,40 @@ class HomeDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func fetchNewsDetails (news : Home){
+        textfieldView.text = news.description
+        
+        //1. url
+        guard let url = URL(string : news.url!)
+            else { return }
+        
+        //2. session
+        let session = URLSession.shared
+        
+        //3.task
+        let task = session.dataTask(with: url) { (data,  response, error) in
+            if let error = error {
+                print("Error : \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = data,
+                let jsonData = try? JSONSerialization.jsonObject(with: data, options: []),
+                let jsonDict = jsonData as? [String : Any]
+                
+                else {
+                    print( "Invalid Json")
+                    return
+            }
+            
+            if let news = jsonDict["url"] as? String {
+                DispatchQueue.main.async {
+                    self.textfieldView.text = "\(url)"
+                }
+        
+    }
     
+        }
+    task.resume()
+}
 }

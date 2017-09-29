@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
         
         fetchData()
         tableView.dataSource = self
+        tableView.delegate = self
         
 
         // Do any additional setup after loading the view.
@@ -124,7 +125,7 @@ extension HomeViewController : UITableViewDataSource {
         let RFC3339DateFormatter = DateFormatter()
         RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
         RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-        RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0800)
+        RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 4800)
         guard let string = cell.newsPublishedTime.text else { return UITableViewCell() }
         guard let date1 = RFC3339DateFormatter.date(from: string) else { return UITableViewCell() }
         print(date1 , "testing 12345")
