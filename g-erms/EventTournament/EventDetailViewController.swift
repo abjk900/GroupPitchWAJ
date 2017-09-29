@@ -9,14 +9,16 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
+import CountryPicker
 
 
-class EventDetailViewController: UIViewController {
+class EventDetailViewController: UIViewController, CountryPickerDelegate {
     
     var selectedEvent : Event?
     var ref : DatabaseReference!
     var currFilename : String = ""
     var imagePicURL : String = ""
+
     
     
     @IBOutlet weak var imageView: UIImageView!
@@ -25,15 +27,32 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var gameDatePicker: UIDatePicker!
     @IBOutlet weak var player1nameTextField: UITextField!
     @IBOutlet weak var player2nameTextField: UITextField!
-    @IBOutlet weak var picker1: UIPickerView!
-    @IBOutlet weak var picker2: UIPickerView!
+    @IBOutlet weak var picker1: CountryPicker!
+    @IBOutlet weak var picker2: CountryPicker!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //get corrent country
+        let locale = Locale.current
+        let code = (locale as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String?
+        //init Picker
+        //picker1.countryPickerDelegate = self
+        //picker1.showPhoneNumbers = false
+        //picker1.setCountry(code!)
+        
+        //picker2.countryPickerDelegate = self
+        //picker2.showPhoneNumbers = false
+        //picker2.setCountry(code!)
         
     } //end viewDidLoad
+    
+    // a picker item was selected
+    func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
+        //pick up anythink
+        //code.text = phoneCode
+    }
     
     @IBAction func buttonUploadTapped(_ sender: Any) {
         let imagePicker = UIImagePickerController()

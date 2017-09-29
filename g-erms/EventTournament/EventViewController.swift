@@ -20,7 +20,13 @@ class EventViewController: UIViewController {
     var events : [Event] = []
     
     
-    @IBOutlet weak var eventViewTableView: UITableView!
+    @IBOutlet weak var eventViewTableView: UITableView! {
+        didSet{
+            eventViewTableView.estimatedRowHeight = 100
+            eventViewTableView.rowHeight = UITableViewAutomaticDimension
+            eventViewTableView.register(EventViewCell.cellNib, forCellReuseIdentifier: EventViewCell.cellIdentifier)
+        }
+    }
     
     @IBOutlet weak var selectionSegmentControl: UISegmentedControl!
     
@@ -29,6 +35,7 @@ class EventViewController: UIViewController {
         super.viewDidLoad()
         eventViewTableView.delegate = self
         eventViewTableView.dataSource = self
+        
         
         fetchEvents()
         
@@ -142,12 +149,15 @@ extension EventViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
         
+        guard let cell2 = tableView.dequeueReusableCell(withIdentifier: EventViewCell.cellIdentifier) as? EventViewCell else {return UITableViewCell()}
+        
+        
         let rec = events[indexPath.row]
         cell.gameNameLabel.text = rec.eventGameName
         cell.gameEventNameLabel.text = rec.eventName
         cell.countryPlayerLabel.text = "\(rec.player1Name) vs \(rec.player2Name)"
         
-        return cell
+        return cell2
     }
     
 }
