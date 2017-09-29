@@ -35,19 +35,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="220.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMf-x7-J0w">
-                                                    <rect key="frame" x="11" y="7" width="352" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMf-x7-J0w">
+                                                    <rect key="frame" x="0.0" y="7" width="375" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="EBd-Fe-wdn"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4nQ-s0-d2R">
-                                                    <rect key="frame" x="11" y="46" width="352" height="167"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nQ-s0-d2R">
+                                                    <rect key="frame" x="0.0" y="35" width="375" height="185.5"/>
                                                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="185.5" id="6Re-SR-jfi"/>
+                                                    </constraints>
                                                 </webView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="PMf-x7-J0w" secondAttribute="trailing" id="D6X-qY-zK5"/>
+                                                <constraint firstAttribute="bottom" secondItem="4nQ-s0-d2R" secondAttribute="bottom" id="IzP-jS-s2X"/>
+                                                <constraint firstItem="PMf-x7-J0w" firstAttribute="leading" secondItem="4my-cK-JXn" secondAttribute="leading" id="MHc-B3-O1Y"/>
+                                                <constraint firstItem="4nQ-s0-d2R" firstAttribute="top" secondItem="PMf-x7-J0w" secondAttribute="bottom" id="d8M-ZE-vpo"/>
+                                                <constraint firstItem="4nQ-s0-d2R" firstAttribute="leading" secondItem="4my-cK-JXn" secondAttribute="leading" id="fZq-KK-Fsd"/>
+                                                <constraint firstAttribute="trailing" secondItem="4nQ-s0-d2R" secondAttribute="trailing" id="iDd-pI-8kf"/>
+                                                <constraint firstItem="PMf-x7-J0w" firstAttribute="top" secondItem="4my-cK-JXn" secondAttribute="top" constant="7" id="p79-7N-zLU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="videoNameLabel" destination="PMf-x7-J0w" id="QW1-Y7-KVK"/>
