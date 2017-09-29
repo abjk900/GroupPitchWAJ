@@ -147,9 +147,9 @@ extension EventViewController : UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
+      //  let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
         
-        guard let cell2 = tableView.dequeueReusableCell(withIdentifier: EventViewCell.cellIdentifier) as? EventViewCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: EventViewCell.cellIdentifier) as? EventViewCell else {return UITableViewCell()}
         
         
         let rec = events[indexPath.row]
@@ -157,7 +157,7 @@ extension EventViewController : UITableViewDataSource {
         cell.gameEventNameLabel.text = rec.eventName
         cell.countryPlayerLabel.text = "\(rec.player1Name) vs \(rec.player2Name)"
         
-        return cell2
+        return cell
     }
     
 }

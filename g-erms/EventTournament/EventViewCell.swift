@@ -13,12 +13,21 @@ class EventViewCell: UITableViewCell {
     static let cellIdentifier = "EventViewCell"
     static let cellNib = UINib(nibName: "EventViewCell", bundle: Bundle.main)
     
+    @IBOutlet weak var gameLogo: UIImageView!
+    @IBOutlet weak var gameNameLabel: UILabel!
+    @IBOutlet weak var gameDateLabel: UILabel!
+    @IBOutlet weak var gameEventNameLabel: UILabel!
+    @IBOutlet weak var countryPlayerLabel: UILabel!
+    
+    @IBOutlet weak var imageFollowingTapped: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

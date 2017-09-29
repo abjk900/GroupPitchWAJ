@@ -83,6 +83,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="countryPlayerLabel" destination="ufn-ov-ZVE" id="UPn-4o-9l6"/>
+                <outlet property="gameDateLabel" destination="4Yo-DF-OrX" id="28v-Pq-Q0X"/>
+                <outlet property="gameEventNameLabel" destination="hiQ-iE-jF2" id="cXt-5Y-SEY"/>
+                <outlet property="gameLogo" destination="rUG-QS-N0n" id="nx4-Mn-xad"/>
+                <outlet property="gameNameLabel" destination="vOh-yp-lC1" id="nWd-Fo-SGm"/>
+                <outlet property="imageFollowingTapped" destination="ind-82-hP2" id="P2v-9r-5fv"/>
+            </connections>
             <point key="canvasLocation" x="34" y="130"/>
         </tableViewCell>
     </objects>
