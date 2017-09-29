@@ -21,6 +21,7 @@ class EventTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     @IBAction func buttonFollowingTapped(_ sender: Any) {
