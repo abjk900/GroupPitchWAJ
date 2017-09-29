@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="EventViewCell" customModule="g_erms" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="81.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zNq-pr-6kU">
+                        <rect key="frame" x="8" y="8" width="304" height="25"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AC.png" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-QS-N0n">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="25"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOh-yp-lC1">
+                                <rect key="frame" x="50" y="0.0" width="208" height="25"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yo-DF-OrX">
+                                <rect key="frame" x="268" y="0.0" width="36" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="P8g-K6-c64"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HKf-e7-jBx">
+                        <rect key="frame" x="8" y="33" width="264" height="41"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="2017 GSL Super Tournament 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiQ-iE-jF2">
+                                <rect key="frame" x="0.0" y="0.0" width="264" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufn-ov-ZVE">
+                                <rect key="frame" x="0.0" y="20.5" width="264" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="41" id="zPs-0O-Qyp"/>
+                        </constraints>
+                    </stackView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok_green" translatesAutoresizingMaskIntoConstraints="NO" id="ind-82-hP2">
+                        <rect key="frame" x="272" y="33" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="0Qt-5m-iKM"/>
+                            <constraint firstAttribute="width" constant="40" id="xd9-2L-Ag0"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zNq-pr-6kU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="0wz-b1-KcN"/>
+                    <constraint firstItem="ind-82-hP2" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Cib-GI-SGV"/>
+                    <constraint firstItem="zNq-pr-6kU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Kgf-PR-cfV"/>
+                    <constraint firstItem="ind-82-hP2" firstAttribute="leading" secondItem="HKf-e7-jBx" secondAttribute="trailing" id="Ubw-oC-wAg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zNq-pr-6kU" secondAttribute="trailing" id="ZVL-9E-aFq"/>
+                    <constraint firstItem="ind-82-hP2" firstAttribute="top" secondItem="zNq-pr-6kU" secondAttribute="bottom" id="aL3-Qu-cMw"/>
+                    <constraint firstItem="HKf-e7-jBx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dUH-ZM-Pa3"/>
+                    <constraint firstItem="HKf-e7-jBx" firstAttribute="top" secondItem="zNq-pr-6kU" secondAttribute="bottom" id="mfY-up-Jet"/>
+                    <constraint firstAttribute="bottom" secondItem="HKf-e7-jBx" secondAttribute="bottom" constant="7.5" id="nQg-aX-jsu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="countryPlayerLabel" destination="ufn-ov-ZVE" id="UPn-4o-9l6"/>
+                <outlet property="gameDateLabel" destination="4Yo-DF-OrX" id="28v-Pq-Q0X"/>
+                <outlet property="gameEventNameLabel" destination="hiQ-iE-jF2" id="cXt-5Y-SEY"/>
+                <outlet property="gameLogo" destination="rUG-QS-N0n" id="nx4-Mn-xad"/>
+                <outlet property="gameNameLabel" destination="vOh-yp-lC1" id="nWd-Fo-SGm"/>
+                <outlet property="imageFollowingTapped" destination="ind-82-hP2" id="P2v-9r-5fv"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="130"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="AC.png" width="40" height="30"/>
+        <image name="ok_green" width="24" height="24"/>
+    </resources>
+</document>
