@@ -22,6 +22,7 @@ class SignUpViewController: UIViewController, CountryPickerDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var signupButtonTapped: UIButton!{
         
         didSet{
@@ -47,6 +48,7 @@ class SignUpViewController: UIViewController, CountryPickerDelegate {
     func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
         //pick up anythink
         //code.text = phoneCode
+       countryLabel.text = name
     }
     
     @objc func signUp() {
@@ -57,8 +59,8 @@ class SignUpViewController: UIViewController, CountryPickerDelegate {
             let confirmPassword = confirmPasswordTextField.text,
             let userName = usernameTextField.text,
             let firstName = firstnameTextField.text,
-            let lastName = lastnameTextField.text
-           // let countryPicker = picker.textInputContextIdentifier
+            let lastName = lastnameTextField.text,
+           let countryName = countryLabel.text
             
             else {return}
         
@@ -80,7 +82,7 @@ class SignUpViewController: UIViewController, CountryPickerDelegate {
                 let ref = Database.database().reference()
                 
                 // let post : [String:Any] = ["email": email, "name": userName]
-                let post : [String:Any] = ["name": userName, "email": email, "firstName": firstName ,"lastName": lastName, "imageURL": "","imageFilename": ""]
+                let post : [String:Any] = ["name": userName, "email": email, "firstName": firstName ,"lastName": lastName, "imageURL": "","imageFilename": "","country": countryName]
                 
                 ref.child("Users").child(validUser.uid).setValue(post)
                 

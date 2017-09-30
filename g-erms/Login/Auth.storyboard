@@ -126,7 +126,7 @@
                                 </subviews>
                             </stackView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Py0-hl-ipz" customClass="CountryPicker" customModule="CountryPicker">
-                                <rect key="frame" x="0.0" y="476" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="488" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-rn-6cc">
@@ -145,6 +145,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2R0-Gc-Wlb">
+                                <rect key="frame" x="115" y="456" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -155,6 +162,7 @@
                     </view>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="qcK-lC-vg5" id="9DD-mH-dwd"/>
+                        <outlet property="countryLabel" destination="2R0-Gc-Wlb" id="dV8-gZ-Fpe"/>
                         <outlet property="emailTextField" destination="SQd-cM-rPV" id="PYe-Lt-D3w"/>
                         <outlet property="firstnameTextField" destination="xb8-uL-dme" id="BTn-Fh-hLv"/>
                         <outlet property="lastnameTextField" destination="dbs-Cg-xon" id="j1j-Xj-8pP"/>
