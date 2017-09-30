@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class FriendViewController: UIViewController, UISearchBarDelegate {
 
@@ -24,10 +25,8 @@ class FriendViewController: UIViewController, UISearchBarDelegate {
         didSet{
             tableView.delegate = self
             tableView.dataSource = self
-            
         }
     }
-    
 
     
     override func viewDidLoad() {
@@ -39,8 +38,7 @@ class FriendViewController: UIViewController, UISearchBarDelegate {
     }
 
     func fetchContacts() {
-        
-        
+   
         ref = Database.database().reference()
         
         //observer child added works as a loop return each child individually
@@ -54,21 +52,20 @@ class FriendViewController: UIViewController, UISearchBarDelegate {
                 let firstname = info["firstName"] as? String,
                 let lastname = info["lastName"] as? String,
                 let email = info["email"] as? String,
-                //let country = info["country"] as? String,
+                let country = info["country"] as? String,
                 let imageURL = info["imageURL"] as? String,
                 let filename = info["imageFilename"] as? String {
                 
                 
                 let fullname =  "\(firstname) \(lastname)"
                 //create new contact object
-                let newContact = Contact(anID: snapshot.key, aUsername: username, aFullname: fullname, anEmail: email, anImageURL: imageURL, anFilename: filename, aFirstname: firstname, aLastname: lastname, aCountry: "")
+                let newContact = Contact(anID: snapshot.key, aUsername: username, aFullname: fullname, anEmail: email, anImageURL: imageURL, anFilename: filename, aFirstname: firstname, aLastname: lastname, aCountry: country)
                 
                 print(newContact)
                 
                 //append to contact array
                 self.contacts.append(newContact)
-                
-                
+
                 //this is more efficient
                 //insert indv rows as we retrive idv items
                 
@@ -89,21 +86,28 @@ class FriendViewController: UIViewController, UISearchBarDelegate {
             guard let info = snapshot.value as? [String:Any] else {return}
             
             guard let username = info["name"] as? String,
-                let fullname = info["fullname"] as? String,
-                let imageURL = info["imageURL"] as? String
+                let firstname = info["firstName"] as? String,
+                let lastname = info["lastName"] as? String,
+                let email = info["email"] as? String,
+                let country = info["country"] as? String,
+                let imageURL = info["imageURL"] as? String,
+                let filename = info["imageFilename"] as? String
                 else {return}
+            
+            let fullname1 =  "\(firstname) \(lastname)"
             
             if let matchedIndex = self.contacts.index(where: { (contact) -> Bool in
                 return contact.id == snapshot.key
             }) {
                 let changedContact = self.contacts[matchedIndex]
                 changedContact.username = username
-                changedContact.fullname = fullname
+                changedContact.fullname = fullname1
                 changedContact.imageURL = imageURL
                 
-                
-                let indexPath = IndexPath(row: matchedIndex, section: 0)
-                self.tableView.reloadRows(at: [indexPath], with: .none)
+                DispatchQueue.main.async {
+                    let indexPath = IndexPath(row: matchedIndex, section: 0)
+                    self.tableView.reloadRows(at: [indexPath], with: .none)
+                }
             }
         })
         
@@ -157,7 +161,7 @@ extension FriendViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as?
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as?
             FriendTableViewCell
             else { return UITableViewCell() }
         

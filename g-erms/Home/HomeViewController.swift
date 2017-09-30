@@ -64,7 +64,7 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
             
         } else {
         filtered = news.filter({ (item) -> Bool in
-            let tmp: NSString = item.title as! NSString
+            let tmp: NSString = item.title! as NSString
             let range = tmp.range(of: searchText, options: .caseInsensitive)
             return range.location != NSNotFound
         })
