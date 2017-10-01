@@ -69,12 +69,12 @@ class FriendViewController: UIViewController, UISearchBarDelegate {
                 //this is more efficient
                 //insert indv rows as we retrive idv items
                 
-                DispatchQueue.main.async {
+              //  DispatchQueue.main.async {
                     let  index = self.contacts.count - 1
                     let indexPath = IndexPath(row: index, section: 0)
                     
                     self.tableView.insertRows(at: [indexPath], with: .right)
-                }
+              //  }
                 
                 
             }
