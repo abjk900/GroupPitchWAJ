@@ -34,9 +34,20 @@ class FriendViewController: UIViewController, UISearchBarDelegate {
 
         searchBar.delegate = self
         
+        //dismiss keybaord when tap on vc
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
+        
         fetchContacts()
     }
 
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    
     func fetchContacts() {
    
         ref = Database.database().reference()
@@ -102,7 +113,12 @@ class FriendViewController: UIViewController, UISearchBarDelegate {
                 let changedContact = self.contacts[matchedIndex]
                 changedContact.username = username
                 changedContact.fullname = fullname1
+                changedContact.email = email
+                changedContact.firstname = firstname
+                changedContact.lastname = lastname
+                changedContact.country = country
                 changedContact.imageURL = imageURL
+                changedContact.filename = filename
                 
                 DispatchQueue.main.async {
                     let indexPath = IndexPath(row: matchedIndex, section: 0)
@@ -170,7 +186,7 @@ extension FriendViewController : UITableViewDataSource {
         if searchActive {
             let filter = filtered[indexPath.row]
             cell.usernameLabel.text = filter.username
-            cell.fullnameLabel.text = "\(filter.fullname) Following"
+            cell.fullnameLabel.text = "\(filter.fullname) :\(filter.country)"
             
             //let imageURL = filter.imageURL
             //cell.searchImageView.loadImage(from: imageURL)
@@ -178,7 +194,7 @@ extension FriendViewController : UITableViewDataSource {
         } else {
             let contact = contacts[indexPath.row]
             cell.usernameLabel.text = contact.username
-            cell.fullnameLabel.text = "\(contact.fullname) Following"
+            cell.fullnameLabel.text = "\(contact.fullname) :\(contact.country)"
             
             //let imageURL = contact.imageURL
             //cell.searchImageView.loadImage(from: imageURL)
@@ -189,7 +205,6 @@ extension FriendViewController : UITableViewDataSource {
     }
     
 }
-
 
 
 extension FriendViewController : UITableViewDelegate {
@@ -204,8 +219,6 @@ extension FriendViewController : UITableViewDelegate {
         
         
     }
-    
-    
     
 }
 
