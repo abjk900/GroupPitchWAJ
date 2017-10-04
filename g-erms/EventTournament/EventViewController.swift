@@ -36,6 +36,7 @@ class EventViewController: UIViewController {
         eventViewTableView.delegate = self
         eventViewTableView.dataSource = self
         
+        selectionSegmentControl.selectedSegmentIndex = 1  //set the segment to Current Events
         
         fetchEvents()
         
