@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol FriendsCellDelegate {
+    func triggerPopUp(_ friend: Contact)
+}
+
 class FriendTableViewCell: UITableViewCell {
     
     //****** All the object library *******
@@ -15,13 +19,26 @@ class FriendTableViewCell: UITableViewCell {
     
     @IBOutlet weak var fullnameLabel: UILabel!
     
+    var friend : Contact?
+    var delegate: FriendsCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     @IBAction func buttonAddFriend(_ sender: Any) {
+        if delegate != nil,
+            let validFriend = friend {
+                delegate?.triggerPopUp(validFriend)
+        }
+       
+        //hide button after tapped
+        guard let button = sender as? UIButton else {return}
+        button.isHidden = true
+        
     }
+    
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,5 +46,7 @@ class FriendTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
 
 }

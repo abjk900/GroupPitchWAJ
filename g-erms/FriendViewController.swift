@@ -187,6 +187,8 @@ extension FriendViewController : UITableViewDataSource {
             let filter = filtered[indexPath.row]
             cell.usernameLabel.text = filter.username
             cell.fullnameLabel.text = "\(filter.fullname) :\(filter.country)"
+            cell.delegate = self
+            cell.friend = filter
             
             //let imageURL = filter.imageURL
             //cell.searchImageView.loadImage(from: imageURL)
@@ -195,6 +197,9 @@ extension FriendViewController : UITableViewDataSource {
             let contact = contacts[indexPath.row]
             cell.usernameLabel.text = contact.username
             cell.fullnameLabel.text = "\(contact.fullname) :\(contact.country)"
+            cell.delegate = self
+            cell.friend = contact
+            
             
             //let imageURL = contact.imageURL
             //cell.searchImageView.loadImage(from: imageURL)
@@ -220,5 +225,24 @@ extension FriendViewController : UITableViewDelegate {
         
     }
     
+}
+
+extension FriendViewController : FriendsCellDelegate {
+    func triggerPopUp(_ friend: Contact) {
+        //Show alert popup
+        let alert = UIAlertController(title: "Add Friend \(friend.username)", message: "Are You Sure ?", preferredStyle: .alert)
+
+        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+            //get the name
+        }
+
+        alert.addAction(ok)
+
+        present(alert, animated: true, completion: nil)
+        
+        
+        
+        
+    }
 }
 
