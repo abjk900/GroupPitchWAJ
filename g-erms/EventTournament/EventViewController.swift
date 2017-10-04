@@ -66,10 +66,12 @@ class EventViewController: UIViewController {
                 let imageURL = info["imageURL"] as? String,
                 let filename = info["imageFilename"] as? String,
                 let player1Name = info["player1Name"] as? String,
-                let player2Name = info["player2Name"] as? String {
+                let player2Name = info["player2Name"] as? String,
+                let player1Country = info["player1Country"] as? String,
+                let player2Country = info["player2Country"] as? String {
                 
                 //create new event object
-                let newEvent = Event(anEventId: snapshot.key, aGameName: gameName, anEventName: eventName, anEventDate: "30/09/2017", anImageURL: imageURL, aFilename: filename, aPlayer1Name: player1Name, aPlayer2Name: player2Name)
+                let newEvent = Event(anEventId: snapshot.key, aGameName: gameName, anEventName: eventName, anEventDate: "30/09/2017", anImageURL: imageURL, aFilename: filename, aPlayer1Name: player1Name, aPlayer2Name: player2Name, aPlayer1Country: player1Country, aPlayer2Country: player2Country)
                 
                 //append to event array
                 self.events.append(newEvent)
@@ -156,7 +158,7 @@ extension EventViewController : UITableViewDataSource {
         let rec = events[indexPath.row]
         cell.gameNameLabel.text = rec.eventGameName
         cell.gameEventNameLabel.text = rec.eventName
-        cell.countryPlayerLabel.text = "\(rec.player1Name) vs \(rec.player2Name)"
+        cell.countryPlayerLabel.text = "\(rec.player1Country) vs \(rec.player2Country)"
         
         return cell
     }

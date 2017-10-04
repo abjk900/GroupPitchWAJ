@@ -29,6 +29,8 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
     @IBOutlet weak var player2nameTextField: UITextField!
     @IBOutlet weak var picker1: CountryPicker!
     @IBOutlet weak var picker2: CountryPicker!
+    @IBOutlet weak var countryLabel1: UILabel!
+    @IBOutlet weak var countryLabel2: UILabel!
     
     
     override func viewDidLoad() {
@@ -55,6 +57,8 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
     func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
         //pick up anythink
         //code.text = phoneCode
+        countryLabel1.text = name
+        countryLabel2.text = name
     }
     
     @IBAction func buttonUploadTapped(_ sender: Any) {
@@ -70,15 +74,16 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
             let gameEventName = gameEventNameTextField.text,
             //let gameDate = gameDatePicker.date,
             let player1Name = player1nameTextField.text,
-            let player2Name = player2nameTextField.text
-            // let play1Flag =
+            let player2Name = player2nameTextField.text,
+            let player1Country = countryLabel1.text,
+            let player2Country = countryLabel2.text
             //let image = profileImageView.image
             else {return}
         
         let date = gameDatePicker.date.timeIntervalSince1970
         //let createdDate = Date(timeIntervalSince1970: date)
         //let formattedDate = DateFormatter.dateFormat(fromTemplate: <#T##String#>, options: <#T##Int#>, locale: <#T##Locale?#>)
-        let post : [String : Any] = ["gameName" : gameName, "eventName" : gameEventName, "eventDate" : date, "imageURL" : self.imagePicURL,"imageFilename" : currFilename,  "player1Name" : player1Name, "player2Name" : player2Name ]
+        let post : [String : Any] = ["gameName" : gameName, "eventName" : gameEventName, "eventDate" : date, "imageURL" : self.imagePicURL,"imageFilename" : currFilename,  "player1Name" : player1Name, "player2Name" : player2Name, "player1Country" : player1Country, "player2Country" : player2Country ]
         print(post)
         //dig paths to reach a specific student
         ref.child("Events").childByAutoId().updateChildValues(post)
