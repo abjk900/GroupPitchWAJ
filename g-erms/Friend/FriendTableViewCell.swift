@@ -33,11 +33,16 @@ class FriendTableViewCell: UITableViewCell {
                 delegate?.triggerPopUp(validFriend)
         }
        
-        //hide button after tapped
+        
         guard let button = sender as? UIButton else {return}
         button.isHidden = true
+    
         
+     
     }
+    
+   
+    
     
     
     
