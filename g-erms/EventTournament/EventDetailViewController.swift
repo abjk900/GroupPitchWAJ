@@ -109,21 +109,15 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
         let ref = Storage.storage().reference()  //link to own storage in firebase
         
         let timeStamp = Date().timeIntervalSince1970  //generate auto id for the imageName
-        currFilename = "\(timeStamp).jpeg"
-        
-        
-        //        guard let xfilename = selectedContact?.filename else {return}
-        //        print(xfilename)
-        
         //let profilePicRef = ref.child(autoGenerateUid+"/profile_pic.jpg")
         guard let imageData = UIImageJPEGRepresentation(image, 0.5) else {return} //compreess to half quality
         
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
         
+        currFilename = "\(timeStamp).jpeg"
         
-        
-        ref.child("\(currFilename)").putData(imageData, metadata: metaData) { (meta, error) in
+        ref.child("\(timeStamp).jpeg").putData(imageData, metadata: metaData) { (meta, error) in
             if let validError = error {
                 print(validError.localizedDescription)
             }

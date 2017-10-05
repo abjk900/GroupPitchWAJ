@@ -172,6 +172,8 @@ extension EventViewController : UITableViewDataSource {
         cell.gameNameLabel.text = rec.eventGameName
         cell.gameEventNameLabel.text = rec.eventName
         cell.gameDateLabel.text = rec.eventDate
+        let imageURL = rec.imageURL
+        cell.gameLogo.loadImage(from: imageURL)
        
         // create an NSMutableAttributedString that we'll append everything to
         let fullString = NSMutableAttributedString(string: "")
@@ -194,12 +196,7 @@ extension EventViewController : UITableViewDataSource {
 
         // draw the result in a label
         cell.countryPlayerLabel.attributedText = fullString
-        
-    
-        
-     //   cell.countryPlayerLabel.text = "\(UIImage(rec.player1FlagImage))\(rec.player1Name) vs \(rec.player2Name)"
-        
-    
+   
         
         return cell
     }
