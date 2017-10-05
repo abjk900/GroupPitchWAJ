@@ -19,7 +19,10 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
     var currFilename : String = ""
     var imagePicURL : String = ""
 
-    
+    var country1 : String = ""
+    var country2 : String = ""
+    var flagImg1 : UIImage? = UIImage()
+    var flagImg2 : UIImage? = UIImage()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var gameNameTextField: UITextField!
@@ -29,8 +32,7 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
     @IBOutlet weak var player2nameTextField: UITextField!
     @IBOutlet weak var picker1: CountryPicker!
     @IBOutlet weak var picker2: CountryPicker!
-    @IBOutlet weak var countryLabel1: UILabel!
-    @IBOutlet weak var countryLabel2: UILabel!
+
     
     
     override func viewDidLoad() {
@@ -57,8 +59,14 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
     func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
         //pick up anythink
         //code.text = phoneCode
-        countryLabel1.text = name
-        countryLabel2.text = name
+        
+        if picker == picker1 {
+            country1 = name
+            flagImg1 = flag
+        } else {
+            country2 = name
+            flagImg2 = flag
+        }
     }
     
     @IBAction func buttonUploadTapped(_ sender: Any) {
@@ -74,22 +82,21 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
             let gameEventName = gameEventNameTextField.text,
             //let gameDate = gameDatePicker.date,
             let player1Name = player1nameTextField.text,
-            let player2Name = player2nameTextField.text,
-            let player1Country = countryLabel1.text,
-            let player2Country = countryLabel2.text
+            let player2Name = player2nameTextField.text
             //let image = profileImageView.image
             else {return}
         
         let date = gameDatePicker.date.timeIntervalSince1970
         //let createdDate = Date(timeIntervalSince1970: date)
         //let formattedDate = DateFormatter.dateFormat(fromTemplate: <#T##String#>, options: <#T##Int#>, locale: <#T##Locale?#>)
-        let post : [String : Any] = ["gameName" : gameName, "eventName" : gameEventName, "eventDate" : date, "imageURL" : self.imagePicURL,"imageFilename" : currFilename,  "player1Name" : player1Name, "player2Name" : player2Name, "player1Country" : player1Country, "player2Country" : player2Country ]
+        let post : [String : Any] = ["gameName" : gameName, "eventName" : gameEventName, "eventDate" : date, "imageURL" : self.imagePicURL,"imageFilename" : currFilename,  "player1Name" : player1Name, "player2Name" : player2Name, "player1Country" : country1, "player2Country" : country2, "player1Flag" : flagImg1 ?? UIImage(), "player2Flag" : flagImg2 ?? UIImage()]
         print(post)
-        //dig paths to reach a specific student
+        //dig paths to reach a specific contact
         ref.child("Events").childByAutoId().updateChildValues(post)
         
-        
-        dismiss(animated: true, completion: nil)
+
+        self.navigationController?.popViewController(animated: true)
+        //dismiss(animated: true, completion: nil)
         
     }
     

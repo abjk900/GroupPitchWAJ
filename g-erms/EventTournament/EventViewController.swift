@@ -68,10 +68,12 @@ class EventViewController: UIViewController {
                 let player1Name = info["player1Name"] as? String,
                 let player2Name = info["player2Name"] as? String,
                 let player1Country = info["player1Country"] as? String,
-                let player2Country = info["player2Country"] as? String {
+                let player2Country = info["player2Country"] as? String,
+                let player1Flag = info["player1Flag"] as? UIImage,
+                let player2Flag = info["player2Flag"] as? UIImage {
                 
                 //create new event object
-                let newEvent = Event(anEventId: snapshot.key, aGameName: gameName, anEventName: eventName, anEventDate: "30/09/2017", anImageURL: imageURL, aFilename: filename, aPlayer1Name: player1Name, aPlayer2Name: player2Name, aPlayer1Country: player1Country, aPlayer2Country: player2Country)
+                let newEvent = Event(anEventId: snapshot.key, aGameName: gameName, anEventName: eventName, anEventDate: "30/09/2017", anImageURL: imageURL, aFilename: filename, aPlayer1Name: player1Name, aPlayer2Name: player2Name, aPlayer1Country: player1Country, aPlayer2Country: player2Country, aplayer1FlagImage: player1Flag, aplayer2FlagImage: player2Flag)
                 
                 //append to event array
                 self.events.append(newEvent)

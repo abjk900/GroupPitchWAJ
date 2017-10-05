@@ -5,7 +5,7 @@
 //  Created by Audrey Lim on 28/09/2017.
 //  Copyright © 2017 Audrey Lim. All rights reserved.
 //
-
+import UIKit
 import Foundation
 
 class Event {
@@ -19,9 +19,10 @@ class Event {
     var player2Name : String = ""
     var player1Country : String = ""
     var player2Country : String = ""
- 
+    var player1FlagImage : UIImage = UIImage()
+    var player2FlagImage : UIImage = UIImage()
     
-    init(anEventId : String, aGameName : String, anEventName : String, anEventDate : String, anImageURL : String, aFilename : String, aPlayer1Name : String, aPlayer2Name : String, aPlayer1Country : String, aPlayer2Country : String) {
+    init(anEventId : String, aGameName : String, anEventName : String, anEventDate : String, anImageURL : String, aFilename : String, aPlayer1Name : String, aPlayer2Name : String, aPlayer1Country : String, aPlayer2Country : String, aplayer1FlagImage : UIImage, aplayer2FlagImage : UIImage) {
         eventId = anEventId
         eventGameName = aGameName
         eventName = anEventName
@@ -32,6 +33,8 @@ class Event {
         player2Name = aPlayer2Name
         player1Country = aPlayer1Country
         player2Country = aPlayer2Country
+        player1FlagImage = aplayer1FlagImage
+        player2FlagImage = aplayer2FlagImage
     }
     
 }
