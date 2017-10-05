@@ -11,6 +11,8 @@
 		88ECA7143BB25BC9F7BEBA74 /* Pods_g_ermsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */; };
 		BE83C4BAB1FB7F1EC7C2658C /* Pods_g_ermsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */; };
 		C008E0D61F7E280F00044122 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C008E0D51F7E280F00044122 /* WebViewController.swift */; };
+		C01B25F91F861D430049B7AD /* Top10DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01B25F81F861D430049B7AD /* Top10DetailsViewController.swift */; };
+		C01B25FB1F8633F90049B7AD /* Gamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01B25FA1F8633F90049B7AD /* Gamer.swift */; };
 		C0270AF11F7903AB00652117 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0270AF01F7903AB00652117 /* Auth.storyboard */; };
 		C0270AF31F79041800652117 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF21F79041800652117 /* LoginViewController.swift */; };
 		C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF41F79043800652117 /* SignUpViewController.swift */; };
@@ -70,6 +72,8 @@
 		730A678E70F60522AF378B97 /* Pods-g-erms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-erms.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-erms/Pods-g-erms.release.xcconfig"; sourceTree = "<group>"; };
 		9E56BB67DFC769FB178BC6B2 /* Pods-g-ermsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsTests/Pods-g-ermsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C008E0D51F7E280F00044122 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C01B25F81F861D430049B7AD /* Top10DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10DetailsViewController.swift; sourceTree = "<group>"; };
+		C01B25FA1F8633F90049B7AD /* Gamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gamer.swift; sourceTree = "<group>"; };
 		C0270AF01F7903AB00652117 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C0270AF21F79041800652117 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0270AF41F79043800652117 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				F80A349E1F84E8F1006C5C90 /* Friend */,
 				F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */,
 				F83FF4331F7A228400D7B8D1 /* LeaderTableViewCell.swift */,
+				C01B25F81F861D430049B7AD /* Top10DetailsViewController.swift */,
 				F81C6C401F7B88A500AEE677 /* EventTournament */,
 				F81790141F78F7FF00A8C92C /* Assets.xcassets */,
 				F81790161F78F7FF00A8C92C /* LaunchScreen.storyboard */,
@@ -278,6 +283,7 @@
 				C06C51CC1F7C5BD0007D35CE /* Home.swift */,
 				F88EF6FF1F7CC06F00E1CFF8 /* Contact.swift */,
 				F88EF7201F7D444800E1CFF8 /* Event.swift */,
+				C01B25FA1F8633F90049B7AD /* Gamer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -641,8 +647,10 @@
 				F83FF4361F7A22B600D7B8D1 /* LeaderboardViewController.swift in Sources */,
 				C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */,
 				F88EF7211F7D444800E1CFF8 /* Event.swift in Sources */,
+				C01B25FB1F8633F90049B7AD /* Gamer.swift in Sources */,
 				F893D17F1F84F566002C2007 /* UploadVideoViewController.swift in Sources */,
 				F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */,
+				C01B25F91F861D430049B7AD /* Top10DetailsViewController.swift in Sources */,
 				F8F3AEA31F7E1F97003F72EA /* EventViewCell.swift in Sources */,
 				C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */,
 			);
