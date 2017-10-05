@@ -18,6 +18,7 @@
 		C0270AFB1F7910D100652117 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0270AFA1F79109300652117 /* GoogleService-Info.plist */; };
 		C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C51CC1F7C5BD0007D35CE /* Home.swift */; };
 		C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */; };
+		C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */; };
 		F71ECEE3825E4A554807E0E1 /* Pods_g_erms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F985632E2D86F4928F98186 /* Pods_g_erms.framework */; };
 		F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817900D1F78F7FF00A8C92C /* AppDelegate.swift */; };
 		F81790101F78F7FF00A8C92C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817900F1F78F7FF00A8C92C /* ViewController.swift */; };
@@ -39,7 +40,7 @@
 		F88EF6FE1F7CB23A00E1CFF8 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */; };
 		F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF6FF1F7CC06F00E1CFF8 /* Contact.swift */; };
 		F88EF7211F7D444800E1CFF8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF7201F7D444800E1CFF8 /* Event.swift */; };
-		F893D17F1F84F566002C2007 /* UploadVideoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893D17E1F84F566002C2007 /* UploadVideoViewController2.swift */; };
+		F8F3293C1F8606F3008EDC3F /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8F3293B1F85F56A008EDC3F /* Flags.xcassets */; };
 		F8F3AEA31F7E1F97003F72EA /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3AEA11F7E1F97003F72EA /* EventViewCell.swift */; };
 		F8F3AEA41F7E1F97003F72EA /* EventViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F3AEA21F7E1F97003F72EA /* EventViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		C037993F1F79E78300DCB144 /* g-erms.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "g-erms.entitlements"; sourceTree = "<group>"; };
 		C06C51CC1F7C5BD0007D35CE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
+		C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10ViewController.swift; sourceTree = "<group>"; };
 		C5B91018BEE41F4E5C218E61 /* Pods-g-erms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-erms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-erms/Pods-g-erms.debug.xcconfig"; sourceTree = "<group>"; };
 		CADCD97EF5DCE2B501499981 /* Pods-g-ermsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsTests/Pods-g-ermsTests.release.xcconfig"; sourceTree = "<group>"; };
 		E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_ermsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +108,8 @@
 		F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
 		F88EF6FF1F7CC06F00E1CFF8 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		F88EF7201F7D444800E1CFF8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		F893D17E1F84F566002C2007 /* UploadVideoViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoViewController2.swift; sourceTree = "<group>"; };
+		F893D17E1F84F566002C2007 /* UploadVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoViewController.swift; sourceTree = "<group>"; };
+		F8F3293B1F85F56A008EDC3F /* Flags.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Flags.xcassets; sourceTree = "<group>"; };
 		F8F3AEA11F7E1F97003F72EA /* EventViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
 		F8F3AEA21F7E1F97003F72EA /* EventViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventViewCell.xib; sourceTree = "<group>"; };
 		FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_ermsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +156,7 @@
 			children = (
 				F83FF43B1F7A259700D7B8D1 /* StreamingViewController2.swift */,
 				F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift */,
-				F893D17E1F84F566002C2007 /* UploadVideoViewController2.swift */,
+				F893D17E1F84F566002C2007 /* UploadVideoViewController.swift */,
 			);
 			path = VideoStreaming2;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				19059E5B1F85E09E00C612B3 /* VideoStreaming */,
+				F8F3293B1F85F56A008EDC3F /* Flags.xcassets */,
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
 				F8F3AEC51F7E37CE003F72EA /* Helper */,
@@ -292,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				C0270AF01F7903AB00652117 /* Auth.storyboard */,
+				C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */,
 				C0270AF21F79041800652117 /* LoginViewController.swift */,
 				C0270AF41F79043800652117 /* SignUpViewController.swift */,
 			);
@@ -427,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8F3293C1F8606F3008EDC3F /* Flags.xcassets in Resources */,
 				C0270AFB1F7910D100652117 /* GoogleService-Info.plist in Resources */,
 				C0270AF11F7903AB00652117 /* Auth.storyboard in Resources */,
 				F81790181F78F7FF00A8C92C /* LaunchScreen.storyboard in Resources */,
@@ -646,9 +652,9 @@
 				F83FF4361F7A22B600D7B8D1 /* LeaderboardViewController.swift in Sources */,
 				C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */,
 				F88EF7211F7D444800E1CFF8 /* Event.swift in Sources */,
-				F893D17F1F84F566002C2007 /* UploadVideoViewController2.swift in Sources */,
 				F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */,
 				F8F3AEA31F7E1F97003F72EA /* EventViewCell.swift in Sources */,
+				C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
