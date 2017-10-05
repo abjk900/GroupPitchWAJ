@@ -62,7 +62,7 @@ class EventViewController: UIViewController {
             //cast snapshot.value to correct Datatype
             if let gameName = info["gameName"] as? String,
                 let eventName = info["eventName"] as? String,
-                //let eventDate = info["eventDate"] as? String,
+                let eventDate = info["eventDate"] as? Double,
                 let imageURL = info["imageURL"] as? String,
                 let filename = info["imageFilename"] as? String,
                 let player1Name = info["player1Name"] as? String,
@@ -72,8 +72,10 @@ class EventViewController: UIViewController {
                 let player1Flag = info["player1Flag"] as? String,
                 let player2Flag = info["player2Flag"] as? String {
                 
+                
+                
                 //create new event object
-                let newEvent = Event(anEventId: snapshot.key, aGameName: gameName, anEventName: eventName, anEventDate: "30/09/2017", anImageURL: imageURL, aFilename: filename, aPlayer1Name: player1Name, aPlayer2Name: player2Name, aPlayer1Country: player1Country, aPlayer2Country: player2Country, aplayer1FlagImage: player1Flag, aplayer2FlagImage: player2Flag)
+                let newEvent = Event(anEventId: snapshot.key, aGameName: gameName, anEventName: eventName, anEventDate: self.createDateString(eventDate), anImageURL: imageURL, aFilename: filename, aPlayer1Name: player1Name, aPlayer2Name: player2Name, aPlayer1Country: player1Country, aPlayer2Country: player2Country, aplayer1FlagImage: player1Flag, aplayer2FlagImage: player2Flag)
                 
                 //append to event array
                 self.events.append(newEvent)
@@ -139,6 +141,15 @@ class EventViewController: UIViewController {
         
     } // fetchEvents
     
+    func createDateString(_ timeStamp: Double) -> String {
+        let date = Date(timeIntervalSince1970: timeStamp)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "dd/MM/yyyy"
+        
+        return dateFormatter.string(from: date)
+    }
+    
     
     
     
@@ -160,6 +171,7 @@ extension EventViewController : UITableViewDataSource {
         let rec = events[indexPath.row]
         cell.gameNameLabel.text = rec.eventGameName
         cell.gameEventNameLabel.text = rec.eventName
+        cell.gameDateLabel.text = rec.eventDate
        
         // create an NSMutableAttributedString that we'll append everything to
         let fullString = NSMutableAttributedString(string: "")

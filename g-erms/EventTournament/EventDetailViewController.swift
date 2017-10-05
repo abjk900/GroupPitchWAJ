@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 import CountryPicker
@@ -85,11 +86,14 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
             let player2Name = player2nameTextField.text
             //let image = profileImageView.image
             else {return}
-        
+       
+        let timestmp = ServerValue.timestamp()
+
         let date = gameDatePicker.date.timeIntervalSince1970
+        
         //let createdDate = Date(timeIntervalSince1970: date)
         //let formattedDate = DateFormatter.dateFormat(fromTemplate: <#T##String#>, options: <#T##Int#>, locale: <#T##Locale?#>)
-        let post : [String : Any] = ["gameName" : gameName, "eventName" : gameEventName, "eventDate" : date, "imageURL" : self.imagePicURL,"imageFilename" : currFilename,  "player1Name" : player1Name, "player2Name" : player2Name, "player1Country" : country1, "player2Country" : country2, "player1Flag" : flagImg1, "player2Flag" : flagImg2]
+        let post : [String : Any] = ["gameName" : gameName, "eventName" : gameEventName, "eventDate" : date, "imageURL" : self.imagePicURL,"imageFilename" : currFilename,  "player1Name" : player1Name, "player2Name" : player2Name, "player1Country" : country1, "player2Country" : country2, "player1Flag" : flagImg1, "player2Flag" : flagImg2, "DateRecCreated": timestmp]
         print(post)
         //dig paths to reach a specific contact
         ref.child("Events").childByAutoId().updateChildValues(post)
