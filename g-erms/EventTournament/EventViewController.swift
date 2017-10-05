@@ -69,8 +69,8 @@ class EventViewController: UIViewController {
                 let player2Name = info["player2Name"] as? String,
                 let player1Country = info["player1Country"] as? String,
                 let player2Country = info["player2Country"] as? String,
-                let player1Flag = info["player1Flag"] as? UIImage,
-                let player2Flag = info["player2Flag"] as? UIImage {
+                let player1Flag = info["player1Flag"] as? String,
+                let player2Flag = info["player2Flag"] as? String {
                 
                 //create new event object
                 let newEvent = Event(anEventId: snapshot.key, aGameName: gameName, anEventName: eventName, anEventDate: "30/09/2017", anImageURL: imageURL, aFilename: filename, aPlayer1Name: player1Name, aPlayer2Name: player2Name, aPlayer1Country: player1Country, aPlayer2Country: player2Country, aplayer1FlagImage: player1Flag, aplayer2FlagImage: player2Flag)
@@ -160,7 +160,34 @@ extension EventViewController : UITableViewDataSource {
         let rec = events[indexPath.row]
         cell.gameNameLabel.text = rec.eventGameName
         cell.gameEventNameLabel.text = rec.eventName
-        cell.countryPlayerLabel.text = "\(rec.player1Country) vs \(rec.player2Country)"
+       
+        // create an NSMutableAttributedString that we'll append everything to
+        let fullString = NSMutableAttributedString(string: "")
+
+        // create our NSTextAttachment
+        let image1Attachment = NSTextAttachment()
+        image1Attachment.image = UIImage(named: rec.player1FlagImage.lowercased())
+        let image2Attachment = NSTextAttachment()
+        image2Attachment.image = UIImage(named: rec.player2FlagImage.lowercased())
+
+        // wrap the attachment in its own attributed string so we can append it
+        let image1String = NSAttributedString(attachment: image1Attachment)
+        let image2String = NSAttributedString(attachment: image2Attachment)
+
+        // add the NSTextAttachment wrapper to our full string, then add some more text.
+        fullString.append(image1String)
+        fullString.append(NSAttributedString(string: " \(rec.player1Name) vs "))
+        fullString.append(image2String)
+        fullString.append(NSAttributedString(string: " \(rec.player2Name)"))
+
+        // draw the result in a label
+        cell.countryPlayerLabel.attributedText = fullString
+        
+    
+        
+     //   cell.countryPlayerLabel.text = "\(UIImage(rec.player1FlagImage))\(rec.player1Name) vs \(rec.player2Name)"
+        
+    
         
         return cell
     }
