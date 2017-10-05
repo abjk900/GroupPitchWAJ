@@ -21,8 +21,8 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
 
     var country1 : String = ""
     var country2 : String = ""
-    var flagImg1 : UIImage? = UIImage()
-    var flagImg2 : UIImage? = UIImage()
+    var flagImg1 : String = ""
+    var flagImg2 : String = ""
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var gameNameTextField: UITextField!
@@ -62,10 +62,10 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
         
         if picker == picker1 {
             country1 = name
-            flagImg1 = flag
+            flagImg1 = "\(countryCode).png"
         } else {
             country2 = name
-            flagImg2 = flag
+            flagImg2 = "\(countryCode).png"
         }
     }
     
@@ -89,7 +89,7 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
         let date = gameDatePicker.date.timeIntervalSince1970
         //let createdDate = Date(timeIntervalSince1970: date)
         //let formattedDate = DateFormatter.dateFormat(fromTemplate: <#T##String#>, options: <#T##Int#>, locale: <#T##Locale?#>)
-        let post : [String : Any] = ["gameName" : gameName, "eventName" : gameEventName, "eventDate" : date, "imageURL" : self.imagePicURL,"imageFilename" : currFilename,  "player1Name" : player1Name, "player2Name" : player2Name, "player1Country" : country1, "player2Country" : country2, "player1Flag" : flagImg1 ?? UIImage(), "player2Flag" : flagImg2 ?? UIImage()]
+        let post : [String : Any] = ["gameName" : gameName, "eventName" : gameEventName, "eventDate" : date, "imageURL" : self.imagePicURL,"imageFilename" : currFilename,  "player1Name" : player1Name, "player2Name" : player2Name, "player1Country" : country1, "player2Country" : country2, "player1Flag" : flagImg1, "player2Flag" : flagImg2]
         print(post)
         //dig paths to reach a specific contact
         ref.child("Events").childByAutoId().updateChildValues(post)

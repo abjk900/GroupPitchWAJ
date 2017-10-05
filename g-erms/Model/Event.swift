@@ -19,10 +19,10 @@ class Event {
     var player2Name : String = ""
     var player1Country : String = ""
     var player2Country : String = ""
-    var player1FlagImage : UIImage = UIImage()
-    var player2FlagImage : UIImage = UIImage()
+    var player1FlagImage : String = ""
+    var player2FlagImage : String = ""
     
-    init(anEventId : String, aGameName : String, anEventName : String, anEventDate : String, anImageURL : String, aFilename : String, aPlayer1Name : String, aPlayer2Name : String, aPlayer1Country : String, aPlayer2Country : String, aplayer1FlagImage : UIImage, aplayer2FlagImage : UIImage) {
+    init(anEventId : String, aGameName : String, anEventName : String, anEventDate : String, anImageURL : String, aFilename : String, aPlayer1Name : String, aPlayer2Name : String, aPlayer1Country : String, aPlayer2Country : String, aplayer1FlagImage : String, aplayer2FlagImage : String) {
         eventId = anEventId
         eventGameName = aGameName
         eventName = anEventName
