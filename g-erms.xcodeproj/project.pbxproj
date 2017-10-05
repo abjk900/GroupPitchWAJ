@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */; };
 		194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B054D1F7B407200A260BA /* ProfileViewController.swift */; };
 		88ECA7143BB25BC9F7BEBA74 /* Pods_g_ermsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */; };
 		BE83C4BAB1FB7F1EC7C2658C /* Pods_g_ermsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */; };
@@ -33,14 +34,13 @@
 		F83FF4361F7A22B600D7B8D1 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */; };
 		F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4371F7A250C00D7B8D1 /* FriendViewController.swift */; };
 		F83FF43A1F7A251F00D7B8D1 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4391F7A251F00D7B8D1 /* FriendTableViewCell.swift */; };
-		F83FF43C1F7A259700D7B8D1 /* StreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43B1F7A259700D7B8D1 /* StreamingViewController.swift */; };
-		F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift */; };
+		F83FF43C1F7A259700D7B8D1 /* StreamingViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43B1F7A259700D7B8D1 /* StreamingViewController2.swift */; };
+		F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift */; };
 		F83FF4401F7A283300D7B8D1 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */; };
 		F83FF4421F7A284200D7B8D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */; };
 		F88EF6FE1F7CB23A00E1CFF8 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */; };
 		F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF6FF1F7CC06F00E1CFF8 /* Contact.swift */; };
 		F88EF7211F7D444800E1CFF8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF7201F7D444800E1CFF8 /* Event.swift */; };
-		F893D17F1F84F566002C2007 /* UploadVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893D17E1F84F566002C2007 /* UploadVideoViewController.swift */; };
 		F8F3293C1F8606F3008EDC3F /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8F3293B1F85F56A008EDC3F /* Flags.xcassets */; };
 		F8F3AEA31F7E1F97003F72EA /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3AEA11F7E1F97003F72EA /* EventViewCell.swift */; };
 		F8F3AEA41F7E1F97003F72EA /* EventViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F3AEA21F7E1F97003F72EA /* EventViewCell.xib */; };
@@ -65,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		161FECC69669707DD6D94D4C /* Pods-g-ermsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoController.swift; sourceTree = "<group>"; };
 		194B054D1F7B407200A260BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F985632E2D86F4928F98186 /* Pods_g_erms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_erms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A28CC14822047DAE0DE63A0 /* Pods-g-ermsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,8 +103,8 @@
 		F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		F83FF4371F7A250C00D7B8D1 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		F83FF4391F7A251F00D7B8D1 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
-		F83FF43B1F7A259700D7B8D1 /* StreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingViewController.swift; sourceTree = "<group>"; };
-		F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingTableViewCell.swift; sourceTree = "<group>"; };
+		F83FF43B1F7A259700D7B8D1 /* StreamingViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingViewController2.swift; sourceTree = "<group>"; };
+		F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingTableViewCell2.swift; sourceTree = "<group>"; };
 		F83FF43F1F7A283300D7B8D1 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F88EF6FD1F7CB23A00E1CFF8 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
@@ -144,14 +145,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		194B054C1F7B35A100A260BA /* VideoStreaming */ = {
+		19059E5B1F85E09E00C612B3 /* VideoStreaming */ = {
 			isa = PBXGroup;
 			children = (
-				F83FF43B1F7A259700D7B8D1 /* StreamingViewController.swift */,
-				F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift */,
-				F893D17E1F84F566002C2007 /* UploadVideoViewController.swift */,
+				19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */,
 			);
 			path = VideoStreaming;
+			sourceTree = "<group>";
+		};
+		194B054C1F7B35A100A260BA /* VideoStreaming2 */ = {
+			isa = PBXGroup;
+			children = (
+				F83FF43B1F7A259700D7B8D1 /* StreamingViewController2.swift */,
+				F83FF43D1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift */,
+				F893D17E1F84F566002C2007 /* UploadVideoViewController.swift */,
+			);
+			path = VideoStreaming2;
 			sourceTree = "<group>";
 		};
 		4C94141B0B5D4C971F5F1B3A /* Frameworks */ = {
@@ -211,6 +220,7 @@
 		F817900C1F78F7FF00A8C92C /* g-erms */ = {
 			isa = PBXGroup;
 			children = (
+				19059E5B1F85E09E00C612B3 /* VideoStreaming */,
 				F8F3293B1F85F56A008EDC3F /* Flags.xcassets */,
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
@@ -218,7 +228,6 @@
 				F88EF7011F7CC1F600E1CFF8 /* Model */,
 				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
 				C037993F1F79E78300DCB144 /* g-erms.entitlements */,
-				194B054C1F7B35A100A260BA /* VideoStreaming */,
 				F8EF04151F7A59F200B9A590 /* Login */,
 				F81C6C3F1F7B6BC200AEE677 /* Home */,
 				F80A349E1F84E8F1006C5C90 /* Friend */,
@@ -229,6 +238,7 @@
 				F81790161F78F7FF00A8C92C /* LaunchScreen.storyboard */,
 				F81790191F78F7FF00A8C92C /* Info.plist */,
 				C0270AFA1F79109300652117 /* GoogleService-Info.plist */,
+				194B054C1F7B35A100A260BA /* VideoStreaming2 */,
 			);
 			path = "g-erms";
 			sourceTree = "<group>";
@@ -630,7 +640,8 @@
 				F81790101F78F7FF00A8C92C /* ViewController.swift in Sources */,
 				F83FF4421F7A284200D7B8D1 /* HomeViewController.swift in Sources */,
 				F88EF6FE1F7CB23A00E1CFF8 /* helper.swift in Sources */,
-				F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell.swift in Sources */,
+				19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */,
+				F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift in Sources */,
 				C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */,
 				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
 				F83FF43C1F7A259700D7B8D1 /* StreamingViewController.swift in Sources */,
@@ -818,10 +829,10 @@
 				CODE_SIGN_ENTITLEMENTS = "g-erms/g-erms.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77P5578ZUS;
+				DEVELOPMENT_TEAM = QENNCHR6YZ;
 				INFOPLIST_FILE = "g-erms/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -837,10 +848,10 @@
 				CODE_SIGN_ENTITLEMENTS = "g-erms/g-erms.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77P5578ZUS;
+				DEVELOPMENT_TEAM = QENNCHR6YZ;
 				INFOPLIST_FILE = "g-erms/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
