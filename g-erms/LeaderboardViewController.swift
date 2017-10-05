@@ -29,9 +29,10 @@ class LeaderboardViewController: UIViewController {
         super.viewDidLoad()
         
         fetchGamers()
-        
         leaderboardTableView.dataSource = self
         leaderboardTableView.delegate = self
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -50,11 +51,11 @@ class LeaderboardViewController: UIViewController {
                 let earnings = info["earnings"] as? String,
                 let game = info["game"] as? String,
                 let playerID = info["playerID"] as? String,
-                let tournament = info["tournamnet"] as? String,
+                let tournament = info["tournament"] as? String,
                 let profileImageURL = info["profileImageURL"] as? String
          {
                 
-                let newGamers = Gamer(aName: name, aGameTypes: game, aTournament: tournament, anEarnings: earnings, aPlayerID: playerID, aProfileImage: profileImageURL)
+            let newGamers = Gamer(aName: name, aGameTypes: game, aTournament: tournament, anEarnings: earnings, aPlayerID: playerID, aProfileImage: profileImageURL)
                 
                 self.selectedGamer = newGamers
                 
@@ -65,7 +66,14 @@ class LeaderboardViewController: UIViewController {
                 
                 
                 // self.contacts.removeAll()
+            DispatchQueue.main.async {
                 self.gamers.append(newGamers)
+                
+                let index = self.gamers.count - 1
+                let indexPath = IndexPath(row: index, section: 0)
+                self.leaderboardTableView.insertRows(at: [indexPath], with: .right)
+            }
+            
                 
                 return
             }
@@ -92,6 +100,8 @@ extension LeaderboardViewController : UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCell") else {return UITableViewCell() }
         
         let gamer = gamers[indexPath.row]
+        
+        
         
         cell.textLabel?.text = gamer.name
         cell.detailTextLabel?.text = gamer.earnings

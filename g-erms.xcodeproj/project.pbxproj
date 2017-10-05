@@ -30,7 +30,6 @@
 		F817902E1F78F7FF00A8C92C /* g_ermsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817902D1F78F7FF00A8C92C /* g_ermsUITests.swift */; };
 		F81C6C421F7C94B400AEE677 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81C6C411F7C94B400AEE677 /* EventDetailViewController.swift */; };
 		F83FF4301F7A219800D7B8D1 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF42F1F7A219800D7B8D1 /* EventViewController.swift */; };
-		F83FF4341F7A228400D7B8D1 /* LeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4331F7A228400D7B8D1 /* LeaderTableViewCell.swift */; };
 		F83FF4361F7A22B600D7B8D1 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */; };
 		F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4371F7A250C00D7B8D1 /* FriendViewController.swift */; };
 		F83FF43A1F7A251F00D7B8D1 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FF4391F7A251F00D7B8D1 /* FriendTableViewCell.swift */; };
@@ -100,7 +99,6 @@
 		F817902F1F78F7FF00A8C92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F81C6C411F7C94B400AEE677 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		F83FF42F1F7A219800D7B8D1 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
-		F83FF4331F7A228400D7B8D1 /* LeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderTableViewCell.swift; sourceTree = "<group>"; };
 		F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		F83FF4371F7A250C00D7B8D1 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		F83FF4391F7A251F00D7B8D1 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 				F81C6C3F1F7B6BC200AEE677 /* Home */,
 				F80A349E1F84E8F1006C5C90 /* Friend */,
 				F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */,
-				F83FF4331F7A228400D7B8D1 /* LeaderTableViewCell.swift */,
 				C01B25F81F861D430049B7AD /* Top10DetailsViewController.swift */,
 				F81C6C401F7B88A500AEE677 /* EventTournament */,
 				F81790141F78F7FF00A8C92C /* Assets.xcassets */,
@@ -637,7 +634,6 @@
 				C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */,
 				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
 				F83FF43C1F7A259700D7B8D1 /* StreamingViewController.swift in Sources */,
-				F83FF4341F7A228400D7B8D1 /* LeaderTableViewCell.swift in Sources */,
 				F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */,
 				F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */,
 				C008E0D61F7E280F00044122 /* WebViewController.swift in Sources */,
