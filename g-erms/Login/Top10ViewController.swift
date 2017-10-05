@@ -6,11 +6,14 @@
 //  Copyright © 2017 Audrey Lim. All rights reserved.
 //
 
+// NOTE FOR THE USE OF UPLOAD TOP 10 PLAYERS TO THE FIREBASE
+
+
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
-
+// NOTE FOR THE USE OF UPLOAD TOP 10 PLAYERS TO THE FIREBASE
 class Top10ViewController: UIViewController {
     
     let picker = UIImagePickerController()
@@ -28,7 +31,8 @@ class Top10ViewController: UIViewController {
     @IBOutlet weak var tournamentTextField: UITextField!
     @IBOutlet weak var earningsTextField: UITextField!
     
-   
+    @IBOutlet weak var playerIDTextField: UITextField!
+    
     @IBAction func uploadImageBtnTapped(_ sender: Any) {
         updateProfilePicEnable()
     }
@@ -39,11 +43,12 @@ class Top10ViewController: UIViewController {
             let gameTypes = typesOfGamesTextField.text,
             let tournament = tournamentTextField.text,
             let earnings = earningsTextField.text,
+            let playerID = playerIDTextField.text,
             let profileImage = profileImageView.image
             
             else { return }
         
-        let post : [String:Any] = ["name": name, "Games": gameTypes, "tournament": tournament, "earnings": earnings,"profileImageURL": self.profilePicURL]
+        let post : [String:Any] = ["name": name,"playerID" : playerID, "game": gameTypes, "tournament": tournament, "earnings": earnings,"profileImageURL": self.profilePicURL]
         
         ref.child("Top10Gamers").childByAutoId().updateChildValues(post)
         
