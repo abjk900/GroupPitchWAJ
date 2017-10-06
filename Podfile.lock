@@ -6,6 +6,7 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
   - CountryPickerSwift (1.4.4)
+  - FastOnBoarding (0.1.0)
   - FBSDKCoreKit (4.26.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.26.0):
@@ -69,6 +70,7 @@ PODS:
 
 DEPENDENCIES:
   - CountryPickerSwift
+  - FastOnBoarding
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -81,6 +83,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   CountryPickerSwift: e31e67f2b95eb1fa6ad230e9eb0b49b020526d99
+  FastOnBoarding: 2e9eb96074b499428cc3f291ac8c1f1370f344ab
   FBSDKCoreKit: c8b8582311ec11b145451d8b9717dc6cc2ae5a76
   FBSDKLoginKit: f3f03b94c21eb834af243c0a881d48641f47ca60
   FBSDKShareKit: 320712d8293fde6392872c91eb80ef0da5d73cc3
@@ -97,6 +100,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
 
-PODFILE CHECKSUM: 9f462d38ae2dbc23018e0c84a4f9de7f1d33790d
+PODFILE CHECKSUM: 45a4bf08fd01315fab8e117a9a7433d57e5cdc2b
 
 COCOAPODS: 1.3.1
