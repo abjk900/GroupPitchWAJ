@@ -128,7 +128,6 @@
             </objects>
             <point key="canvasLocation" x="-1620" y="2278"/>
         </scene>
-<<<<<<< HEAD
         <!--Streaming Controller-->
         <scene sceneID="Ogl-Ls-qht">
             <objects>
@@ -230,9 +229,6 @@
             <point key="canvasLocation" x="-1770.4000000000001" y="714.69265367316348"/>
         </scene>
         <!--Top10 Details View Controller-->
-=======
-        <!--Details-->
->>>>>>> 43221589d9094f1dcf28a9ab37f9578c5071f478
         <scene sceneID="VAe-66-rDQ">
             <objects>
                 <viewController storyboardIdentifier="Top10DetailsViewController" title="Details" id="Zww-a9-UtM" customClass="Top10DetailsViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
@@ -440,15 +436,11 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-<<<<<<< HEAD
-                            <barButtonItem title="Item" image="List" id="Mww-df-xdl"/>
-=======
                             <barButtonItem title="Candy Count : " image="icons8-christmas_candy-1" id="ybR-QZ-tom">
                                 <connections>
                                     <segue destination="ERb-p4-7w1" kind="show" id="Uyp-CN-Ny9"/>
                                 </connections>
                             </barButtonItem>
->>>>>>> 43221589d9094f1dcf28a9ab37f9578c5071f478
                             <barButtonItem title="Sign out" id="KP1-0F-5DW">
                                 <connections>
                                     <action selector="signOutButton:" destination="LfP-oy-TDW" id="FLK-XF-5hM"/>
