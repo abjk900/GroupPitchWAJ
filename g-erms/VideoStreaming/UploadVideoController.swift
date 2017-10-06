@@ -58,7 +58,7 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
 //            print("a")
 //        }.resume()
         
-        let uploadTask = Storage.storage().reference().child("MovieFolder").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
+        let uploadTask = Storage.storage().reference().child("gameVideo").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
             
             if let error = error {
                 print(error.localizedDescription)
@@ -73,9 +73,8 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
         
         uploadTask.observe(.progress) { (snapshot) in
             if let completedUnitCount = snapshot.progress?.completedUnitCount,
-                let total = snapshot.progress?.totalUnitCount {
-                
-                
+                let total = snapshot.progress?.totalUnitCount{
+                self.videoUploadProgress.progress = Float(completedUnitCount)/Float(total)
             }
             
         }
