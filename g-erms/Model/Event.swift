@@ -13,6 +13,7 @@ class Event {
     var eventGameName : String = ""
     var eventName : String = ""
     var eventDate : String = ""
+    var eventTime : String = ""
     var imageURL : String = ""
     var filename : String = ""
     var player1Name : String = ""
@@ -22,11 +23,12 @@ class Event {
     var player1FlagImage : String = ""
     var player2FlagImage : String = ""
     
-    init(anEventId : String, aGameName : String, anEventName : String, anEventDate : String, anImageURL : String, aFilename : String, aPlayer1Name : String, aPlayer2Name : String, aPlayer1Country : String, aPlayer2Country : String, aplayer1FlagImage : String, aplayer2FlagImage : String) {
+    init(anEventId : String, aGameName : String, anEventName : String, anEventDate : String, anEventTime : String, anImageURL : String, aFilename : String, aPlayer1Name : String, aPlayer2Name : String, aPlayer1Country : String, aPlayer2Country : String, aplayer1FlagImage : String, aplayer2FlagImage : String) {
         eventId = anEventId
         eventGameName = aGameName
         eventName = anEventName
         eventDate = anEventDate
+        eventTime = anEventTime
         imageURL = anImageURL
         filename = aFilename
         player1Name = aPlayer1Name

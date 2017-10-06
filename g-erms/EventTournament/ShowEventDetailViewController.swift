@@ -30,6 +30,7 @@ class ShowEventDetailViewController: UIViewController {
         guard let eventName = selectedEvent?.eventName,
               let gameName = selectedEvent?.eventGameName,
               let eventDate = selectedEvent?.eventDate,
+              let eventTime = selectedEvent?.eventTime,
               let player1 = selectedEvent?.player1Name,
               let player2 = selectedEvent?.player2Name,
               let country1 = selectedEvent?.player1Country,
@@ -46,7 +47,7 @@ class ShowEventDetailViewController: UIViewController {
         playerName1.text = player1
         playerName2.text = player2
         dateLabel.text = eventDate
-       // timeLabel.text = DateHelper.createTimeString(gameDate)
+        timeLabel.text = eventTime
    
         gameLogo.loadImage(from: imageURL)
         
