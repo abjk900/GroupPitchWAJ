@@ -15,6 +15,8 @@ import FirebaseStorage
 
 class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var videoUploadProgress: UIProgressView!
+    
     let imagePicketController = UIImagePickerController()
     var videoURL : URL?
     
@@ -55,7 +57,6 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
 //        Storage.storage().reference().child("vidoImage22.mov").putFile(from: videoURL, metadata: nil) { (meta, error) in
 //            print("a")
 //        }.resume()
-        
         
         Storage.storage().reference().child("MovieFolder").child("abc.mov").putFile(from: videoURL, metadata: nil) { (meta, error) in
             if let error = error {
