@@ -13,17 +13,17 @@
         <!--Streaming-->
         <scene sceneID="zmf-Uh-Xqp">
             <objects>
-                <viewController storyboardIdentifier="StreamingViewController" id="fBj-yR-6PU" customClass="StreamingViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StreamingViewController" id="fBj-yR-6PU" customClass="StreamingController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ydU-ns-D9v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="7Y0-ev-0Xb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wCQ-aD-h9f">
-                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="streamingCell" rowHeight="287" id="vuL-lZ-Tew" customClass="StreamingTableViewCell" customModule="g_erms" customModuleProvider="target">
@@ -42,27 +42,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nQ-s0-d2R">
-                                                    <rect key="frame" x="0.0" y="35" width="375" height="251.5"/>
-                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="251.5" id="jCv-7r-I67"/>
-                                                    </constraints>
-                                                </webView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzV-lt-tJd">
+                                                    <rect key="frame" x="325" y="43" width="42" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="Video Playlist"/>
+                                                    <connections>
+                                                        <segue destination="Pof-kI-nmH" kind="show" id="uPf-fg-Dog"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="PMf-x7-J0w" secondAttribute="trailing" id="D6X-qY-zK5"/>
-                                                <constraint firstAttribute="bottom" secondItem="4nQ-s0-d2R" secondAttribute="bottom" id="IzP-jS-s2X"/>
                                                 <constraint firstItem="PMf-x7-J0w" firstAttribute="leading" secondItem="4my-cK-JXn" secondAttribute="leading" id="MHc-B3-O1Y"/>
-                                                <constraint firstItem="4nQ-s0-d2R" firstAttribute="top" secondItem="PMf-x7-J0w" secondAttribute="bottom" id="d8M-ZE-vpo"/>
-                                                <constraint firstItem="4nQ-s0-d2R" firstAttribute="leading" secondItem="4my-cK-JXn" secondAttribute="leading" id="fZq-KK-Fsd"/>
-                                                <constraint firstAttribute="trailing" secondItem="4nQ-s0-d2R" secondAttribute="trailing" id="iDd-pI-8kf"/>
                                                 <constraint firstItem="PMf-x7-J0w" firstAttribute="top" secondItem="4my-cK-JXn" secondAttribute="top" constant="7" id="p79-7N-zLU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="videoNameLabel" destination="PMf-x7-J0w" id="QW1-Y7-KVK"/>
-                                            <outlet property="videoView" destination="4nQ-s0-d2R" id="g33-F5-sYo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -91,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbm-Hq-4OJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2287" y="1424"/>
+            <point key="canvasLocation" x="-1743.2" y="669.71514242878561"/>
         </scene>
         <!--Upload Video View Controller-->
         <scene sceneID="Iz8-ps-Ny0">
@@ -132,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9X-Je-kie" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1562" y="1424"/>
+            <point key="canvasLocation" x="-1620" y="2278"/>
         </scene>
         <!--Top10 Details View Controller-->
         <scene sceneID="VAe-66-rDQ">
@@ -196,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQi-eV-bKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-735" y="1424"/>
+            <point key="canvasLocation" x="-793" y="2278"/>
         </scene>
         <!--Home-->
         <scene sceneID="Fcz-6a-8Da">
@@ -842,7 +838,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Pof-kI-nmH" kind="relationship" relationship="rootViewController" id="9u8-7c-AGV"/>
+                        <segue destination="fBj-yR-6PU" kind="relationship" relationship="rootViewController" id="A5g-KN-vzh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ee1-IF-0n9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -966,7 +962,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1770" y="690"/>
+            <point key="canvasLocation" x="-1743" y="1424"/>
         </scene>
     </scenes>
     <resources>

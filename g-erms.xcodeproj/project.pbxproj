@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */; };
 		194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B054D1F7B407200A260BA /* ProfileViewController.swift */; };
+		19FE16391F864F3B00352A1D /* StreamingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE16381F864F3B00352A1D /* StreamingController.swift */; };
 		88ECA7143BB25BC9F7BEBA74 /* Pods_g_ermsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */; };
 		BE83C4BAB1FB7F1EC7C2658C /* Pods_g_ermsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */; };
 		C008E0D61F7E280F00044122 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C008E0D51F7E280F00044122 /* WebViewController.swift */; };
@@ -67,6 +68,7 @@
 		161FECC69669707DD6D94D4C /* Pods-g-ermsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoController.swift; sourceTree = "<group>"; };
 		194B054D1F7B407200A260BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		19FE16381F864F3B00352A1D /* StreamingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingController.swift; sourceTree = "<group>"; };
 		1F985632E2D86F4928F98186 /* Pods_g_erms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_erms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A28CC14822047DAE0DE63A0 /* Pods-g-ermsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		730A678E70F60522AF378B97 /* Pods-g-erms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-erms.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-erms/Pods-g-erms.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */,
+				19FE16381F864F3B00352A1D /* StreamingController.swift */,
 			);
 			path = VideoStreaming;
 			sourceTree = "<group>";
@@ -644,10 +647,11 @@
 				F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift in Sources */,
 				C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */,
 				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
-				F83FF43C1F7A259700D7B8D1 /* StreamingViewController.swift in Sources */,
+				F83FF43C1F7A259700D7B8D1 /* StreamingViewController2.swift in Sources */,
 				F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */,
 				F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */,
 				C008E0D61F7E280F00044122 /* WebViewController.swift in Sources */,
+				19FE16391F864F3B00352A1D /* StreamingController.swift in Sources */,
 				F81C6C421F7C94B400AEE677 /* EventDetailViewController.swift in Sources */,
 				F83FF43A1F7A251F00D7B8D1 /* FriendTableViewCell.swift in Sources */,
 				194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */,
@@ -655,7 +659,6 @@
 				C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */,
 				F88EF7211F7D444800E1CFF8 /* Event.swift in Sources */,
 				C01B25FB1F8633F90049B7AD /* Gamer.swift in Sources */,
-				F893D17F1F84F566002C2007 /* UploadVideoViewController.swift in Sources */,
 				F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */,
 				C01B25F91F861D430049B7AD /* Top10DetailsViewController.swift in Sources */,
 				F8F3AEA31F7E1F97003F72EA /* EventViewCell.swift in Sources */,

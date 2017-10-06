@@ -143,3 +143,17 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
         
     }
 }
+
+struct FormVideoInfo {
+    
+    let videoName : String
+    let videoDescription : String
+    let videoUrl : String
+    
+    init(dictionary : [String : Any]){
+        self.videoName = dictionary["videoName"] as? String ?? ""
+        self.videoDescription = dictionary["videoDescription"] as? String ?? ""
+        self.videoUrl = dictionary["videoUrl"] as? String ?? ""
+        
+    }
+}
