@@ -26,7 +26,7 @@ class StreamingController: UIViewController {
     func fetchPosts() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let ref = Database.database().reference().child(<#T##pathString: String##String#>)
+       
         
     }
 

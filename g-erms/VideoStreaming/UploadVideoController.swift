@@ -77,22 +77,38 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
 
         //currently logined uid
         guard let uid = Auth.auth().currentUser?.uid else { return }
-
-        //the videoURL must be converted with string then can save in firebase.
-        let uploadValue = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
-
-        let values = [uid : uploadValue]
-
-        Database.database().reference().child("PostVideo").updateChildValues(values) { (err, ref) in
-            if let err = err{
-                print("Failed to save use info db", err)
-            }
-
-            print("uploaded succesfully")
-        }
         
-        self.dismiss(animated: true, completion: nil)
-        //navigation to videoplayController
+        let userPostRef = Database.database().reference().child("postVideo").child(uid)
+        
+        let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
+        
+        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
+        
+        ref.updateChildValues(values) { (err, ref) in
+            if let err = err {
+                print("Failed to save post to DB", err)
+                return
+            }
+            
+            print("Successfully save post to DB")
+            
+        }
+
+//        //the videoURL must be converted with string then can save in firebase.
+//        let uploadValue = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
+//
+//        let values = [uid : uploadValue]
+//
+//        Database.database().reference().child("PostVideo").updateChildValues(values) { (err, ref) in
+//            if let err = err{
+//                print("Failed to save use info db", err)
+//            }
+//
+//            print("uploaded succesfully")
+//        }
+//
+//        self.dismiss(animated: true, completion: nil)
+//        //navigation to videoplayController
         
     }
     
