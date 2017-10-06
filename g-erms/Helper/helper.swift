@@ -33,3 +33,25 @@ extension UIImageView {
     }
 }
 
+class DateHelper {
+    static func createDateString(_ timeStamp: Double) -> String {
+        let date = Date(timeIntervalSince1970: timeStamp)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "dd/MM/yyyy"
+        
+        return dateFormatter.string(from: date)
+    }
+    
+    static func createTimeString(_ timeStamp: Double) -> String {
+        let date = Date(timeIntervalSince1970: timeStamp)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "hh:mm a"
+        
+        return dateFormatter.string(from: date)
+    }
+}
+
+
+
