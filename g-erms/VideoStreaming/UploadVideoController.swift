@@ -54,10 +54,6 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
         
         let videoName = NSUUID().uuidString
         
-//        Storage.storage().reference().child("vidoImage22.mov").putFile(from: videoURL, metadata: nil) { (meta, error) in
-//            print("a")
-//        }.resume()
-        
         let uploadTask = Storage.storage().reference().child("gameVideo").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
             
             if let error = error {
@@ -78,33 +74,25 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
             }
             
         }
-//        Storage.storage().reference().child("vidoImage").child(imagename).putData(uploadData, metadata: nil) { (metadata, err) in
-//
-//            if let err = err {
-//                print("Faild to upload image", err)
-//                return
-//            } else {
-//                print("successfully uploaded")
-//            }
-//        }
 
-//        //currently logined uid
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//
-//        //the videoURL must be converted with string then can save in firebase.
-//        let uploadValue = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
-//
-//        let values = [uid : uploadValue]
-//
-//        Database.database().reference().child("PostVideo").updateChildValues(values) { (err, ref) in
-//            if let err = err{
-//                print("Failed to save use info db", err)
-//            }
-//
-//            print("uploaded succesfully")
-//        }
-//
+        //currently logined uid
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+
+        //the videoURL must be converted with string then can save in firebase.
+        let uploadValue = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
+
+        let values = [uid : uploadValue]
+
+        Database.database().reference().child("PostVideo").updateChildValues(values) { (err, ref) in
+            if let err = err{
+                print("Failed to save use info db", err)
+            }
+
+            print("uploaded succesfully")
+        }
         
+        self.dismiss(animated: true, completion: nil)
+        //navigation to videoplayController
         
     }
     

@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class StreamingController: UIViewController {
 
     @IBOutlet weak var streamingTableView: UITableView!
     
+    var videoPost = [videoInfo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,13 @@ class StreamingController: UIViewController {
         streamingTableView.dataSource = self
 //        streamingTableView.delegate = self
 
-
+    }
+    
+    func fetchPosts() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let ref = Database.database().reference().child(<#T##pathString: String##String#>)
+        
     }
 
 }
