@@ -9,7 +9,9 @@
 import UIKit
 import AVKit
 import AVFoundation
+import MobileCoreServices
 import Firebase
+import FirebaseStorage
 
 class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -26,7 +28,7 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
         
         imagePicketController.sourceType = .photoLibrary
         imagePicketController.delegate = self
-        imagePicketController.mediaTypes = ["public.image", "public.movie"]
+        imagePicketController.mediaTypes = [kUTTypeImage as String, kUTTypeMovie as String]//["public.image", "public.movie"]
         
         present(imagePicketController, animated: true, completion: nil)
     }
@@ -50,10 +52,24 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
         
         let imagename = NSUUID().uuidString
         
-        Storage.storage().reference().child("vidoImage22.mov").putFile(from: videoURL, metadata: nil) { (meta, error) in
-            print("a")
-        }.resume()
+//        Storage.storage().reference().child("vidoImage22.mov").putFile(from: videoURL, metadata: nil) { (meta, error) in
+//            print("a")
+//        }.resume()
         
+        
+        Storage.storage().reference().child("MovieFolder").child("abc.mov").putFile(from: videoURL, metadata: nil) { (meta, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let videoURL = meta?.downloadURL()?.absoluteString {
+                print("done")
+                print(videoURL)
+            }
+            
+            
+        }
 //        Storage.storage().reference().child("vidoImage").child(imagename).putData(uploadData, metadata: nil) { (metadata, err) in
 //
 //            if let err = err {
@@ -63,7 +79,7 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
 //                print("successfully uploaded")
 //            }
 //        }
-//
+
 //        //currently logined uid
 //        guard let uid = Auth.auth().currentUser?.uid else { return }
 //
@@ -79,7 +95,7 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
 //
 //            print("uploaded succesfully")
 //        }
-        
+//
         
         
     }
@@ -107,8 +123,8 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        videoURL = info["UIImagePickerControllerReferenceURL"] as? URL
+        //need this one "UIImagePickerControllerMediaURL" , not UIImagePickerControllerRefurenceURL
+        videoURL = info["UIImagePickerControllerMediaURL"] as? URL
         
         print(videoURL)
         
@@ -140,6 +156,20 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
             
         }
         
+        
+    }
+}
+
+struct FormVideoInfo {
+    
+    let videoName : String
+    let videoDescription : String
+    let videoUrl : String
+    
+    init(dictionary : [String : Any]){
+        self.videoName = dictionary["videoName"] as? String ?? ""
+        self.videoDescription = dictionary["videoDescription"] as? String ?? ""
+        self.videoUrl = dictionary["videoUrl"] as? String ?? ""
         
     }
 }
