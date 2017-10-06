@@ -20,6 +20,8 @@
 		C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF41F79043800652117 /* SignUpViewController.swift */; };
 		C0270AFB1F7910D100652117 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0270AFA1F79109300652117 /* GoogleService-Info.plist */; };
 		C03622621F87546500B659D5 /* SweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622611F87546500B659D5 /* SweetsViewController.swift */; };
+		C03622641F875CF100B659D5 /* ShowEventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622631F875CF100B659D5 /* ShowEventDetailViewController.swift */; };
+		C03622661F875DB400B659D5 /* StreamingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */; };
 		C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C51CC1F7C5BD0007D35CE /* Home.swift */; };
 		C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */; };
 		C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */; };
@@ -44,7 +46,6 @@
 		F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF6FF1F7CC06F00E1CFF8 /* Contact.swift */; };
 		F88EF7211F7D444800E1CFF8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF7201F7D444800E1CFF8 /* Event.swift */; };
 		F8F3293C1F8606F3008EDC3F /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8F3293B1F85F56A008EDC3F /* Flags.xcassets */; };
-		F8F3293E1F87110C008EDC3F /* ShowEventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3293D1F87110C008EDC3F /* ShowEventDetailViewController.swift */; };
 		F8F3AEA31F7E1F97003F72EA /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3AEA11F7E1F97003F72EA /* EventViewCell.swift */; };
 		F8F3AEA41F7E1F97003F72EA /* EventViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F3AEA21F7E1F97003F72EA /* EventViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,8 @@
 		C0270AF41F79043800652117 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C0270AFA1F79109300652117 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C03622611F87546500B659D5 /* SweetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetsViewController.swift; sourceTree = "<group>"; };
+		C03622631F875CF100B659D5 /* ShowEventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowEventDetailViewController.swift; path = EventTournament/ShowEventDetailViewController.swift; sourceTree = "<group>"; };
+		C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingTableViewCell.swift; sourceTree = "<group>"; };
 		C037993F1F79E78300DCB144 /* g-erms.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "g-erms.entitlements"; sourceTree = "<group>"; };
 		C06C51CC1F7C5BD0007D35CE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +120,6 @@
 		F88EF7201F7D444800E1CFF8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F893D17E1F84F566002C2007 /* UploadVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoViewController.swift; sourceTree = "<group>"; };
 		F8F3293B1F85F56A008EDC3F /* Flags.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Flags.xcassets; sourceTree = "<group>"; };
-		F8F3293D1F87110C008EDC3F /* ShowEventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEventDetailViewController.swift; sourceTree = "<group>"; };
 		F8F3AEA11F7E1F97003F72EA /* EventViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
 		F8F3AEA21F7E1F97003F72EA /* EventViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventViewCell.xib; sourceTree = "<group>"; };
 		FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_ermsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */,
+				C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */,
 				19FE16381F864F3B00352A1D /* StreamingController.swift */,
 			);
 			path = VideoStreaming;
@@ -232,7 +235,7 @@
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
 				C03622611F87546500B659D5 /* SweetsViewController.swift */,
-				F8F3293D1F87110C008EDC3F /* ShowEventDetailViewController.swift */,
+				C03622631F875CF100B659D5 /* ShowEventDetailViewController.swift */,
 				F8F3AEC51F7E37CE003F72EA /* Helper */,
 				F88EF7011F7CC1F600E1CFF8 /* Model */,
 				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
@@ -655,8 +658,8 @@
 				C03622621F87546500B659D5 /* SweetsViewController.swift in Sources */,
 				F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift in Sources */,
 				C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */,
-				F8F3293E1F87110C008EDC3F /* ShowEventDetailViewController.swift in Sources */,
 				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
+				C03622641F875CF100B659D5 /* ShowEventDetailViewController.swift in Sources */,
 				F83FF43C1F7A259700D7B8D1 /* StreamingViewController2.swift in Sources */,
 				F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */,
 				F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */,
@@ -670,6 +673,7 @@
 				F88EF7211F7D444800E1CFF8 /* Event.swift in Sources */,
 				C01B25FB1F8633F90049B7AD /* Gamer.swift in Sources */,
 				F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */,
+				C03622661F875DB400B659D5 /* StreamingTableViewCell.swift in Sources */,
 				C01B25F91F861D430049B7AD /* Top10DetailsViewController.swift in Sources */,
 				F8F3AEA31F7E1F97003F72EA /* EventViewCell.swift in Sources */,
 				C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */,
