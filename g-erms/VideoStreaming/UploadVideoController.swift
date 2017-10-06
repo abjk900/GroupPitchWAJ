@@ -15,10 +15,10 @@ import FirebaseStorage
 
 class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var videoUploadProgress: UIProgressView!
+    
     let imagePicketController = UIImagePickerController()
     var videoURL : URL?
-    
-    @IBOutlet weak var videoUploadProgress: UIProgressView!
     
     @IBOutlet weak var videoNameTextField: UITextField!
     
@@ -54,11 +54,7 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
         
         let videoName = NSUUID().uuidString
         
-//        Storage.storage().reference().child("vidoImage22.mov").putFile(from: videoURL, metadata: nil) { (meta, error) in
-//            print("a")
-//        }.resume()
-        
-        let uploadTask = Storage.storage().reference().child("MovieFolder").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
+        let uploadTask = Storage.storage().reference().child("gameVideo").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
             
             if let error = error {
                 print(error.localizedDescription)
@@ -73,25 +69,31 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
         
         uploadTask.observe(.progress) { (snapshot) in
             if let completedUnitCount = snapshot.progress?.completedUnitCount,
-                let total = snapshot.progress?.totalUnitCount {
-                
-                
+                let total = snapshot.progress?.totalUnitCount{
+                self.videoUploadProgress.progress = Float(completedUnitCount)/Float(total)
             }
             
         }
-//        Storage.storage().reference().child("vidoImage").child(imagename).putData(uploadData, metadata: nil) { (metadata, err) in
-//
-//            if let err = err {
-//                print("Faild to upload image", err)
-//                return
-//            } else {
-//                print("successfully uploaded")
-//            }
-//        }
 
-//        //currently logined uid
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//
+        //currently logined uid
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let userPostRef = Database.database().reference().child("postVideo").child(uid)
+        
+        let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
+        
+        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
+        
+        ref.updateChildValues(values) { (err, ref) in
+            if let err = err {
+                print("Failed to save post to DB", err)
+                return
+            }
+            
+            print("Successfully save post to DB")
+            
+        }
+
 //        //the videoURL must be converted with string then can save in firebase.
 //        let uploadValue = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
 //
@@ -105,7 +107,8 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
 //            print("uploaded succesfully")
 //        }
 //
-        
+//        self.dismiss(animated: true, completion: nil)
+//        //navigation to videoplayController
         
     }
     
