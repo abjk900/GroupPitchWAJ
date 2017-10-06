@@ -34,8 +34,8 @@ class ShowEventDetailViewController: UIViewController {
               let player2Name = selectedEvent?.player2Name,
               let player1Country = selectedEvent?.player1Country,
               let player2Country = selectedEvent?.player2Country,
-              let flagImag1 = selectedEvent?.player1FlagImage,
-              let flagImag2 = selectedEvent?.player2FlagImage,
+            //  let flagImag1 = selectedEvent?.player1FlagImage,
+            //  let flagImag2 = selectedEvent?.player2FlagImage,
               let imageURL = selectedEvent?.imageURL
             else {return}
         

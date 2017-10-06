@@ -228,7 +228,7 @@
             </objects>
             <point key="canvasLocation" x="-1770.4000000000001" y="714.69265367316348"/>
         </scene>
-        <!--Top10 Details View Controller-->
+        <!--Details-->
         <scene sceneID="VAe-66-rDQ">
             <objects>
                 <viewController storyboardIdentifier="Top10DetailsViewController" title="Details" id="Zww-a9-UtM" customClass="Top10DetailsViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
@@ -1003,7 +1003,7 @@
         <!--Show Event Detail View Controller-->
         <scene sceneID="IbZ-7d-j7f">
             <objects>
-                <viewController id="MHH-uM-Ute" customClass="ShowEventDetailViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowEventDetailViewController" id="MHH-uM-Ute" customClass="ShowEventDetailViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ul6-ed-ljx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
