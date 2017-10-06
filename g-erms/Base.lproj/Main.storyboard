@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +14,7 @@
         <!--Streaming-->
         <scene sceneID="zmf-Uh-Xqp">
             <objects>
-                <viewController storyboardIdentifier="StreamingViewController" id="fBj-yR-6PU" customClass="StreamingController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StreamingViewController" id="fBj-yR-6PU" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ydU-ns-D9v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,6 +127,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9X-Je-kie" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1620" y="2278"/>
+        </scene>
+        <!--Streaming Controller-->
+        <scene sceneID="Ogl-Ls-qht">
+            <objects>
+                <viewController id="M1J-C6-ZyH" customClass="StreamingController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="teO-AZ-4lX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eCK-sq-am4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="8X7-0b-QzF"/>
+                                    <constraint firstAttribute="height" constant="56" id="Ht9-vE-28g"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ok-zn-agO" customClass="Stre">
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playingVideoCell" rowHeight="251" id="Y1a-xN-mpm" customClass="StreamingTableViewCell" customModule="g_erms" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="251"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y1a-xN-mpm" id="BNk-xx-czW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WKp-WL-hM9">
+                                                    <rect key="frame" x="8" y="8" width="359" height="170"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldj-6C-udo">
+                                                    <rect key="frame" x="8" y="186" width="245" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S7-eo-SSk">
+                                                    <rect key="frame" x="8" y="217" width="342" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoDescriptionLabel" destination="1S7-eo-SSk" id="u4O-Tr-Tia"/>
+                                            <outlet property="videoNameLabel" destination="ldj-6C-udo" id="6K8-HL-laH"/>
+                                            <outlet property="videoView" destination="WKp-WL-hM9" id="T6p-9o-lQj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KEI-hA-e8d" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Ok-zn-agO" secondAttribute="trailing" id="2NR-hh-c3h"/>
+                            <constraint firstItem="KEI-hA-e8d" firstAttribute="bottom" secondItem="6Ok-zn-agO" secondAttribute="bottom" id="2XC-BL-X4o"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="centerX" secondItem="6Ok-zn-agO" secondAttribute="centerX" id="6cz-An-p0G"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="centerX" secondItem="teO-AZ-4lX" secondAttribute="centerX" id="AOe-IU-c1x"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="leading" secondItem="teO-AZ-4lX" secondAttribute="leading" id="BCl-LM-Q2j"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="top" secondItem="teO-AZ-4lX" secondAttribute="topMargin" id="D6i-rS-gJS"/>
+                            <constraint firstItem="6Ok-zn-agO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KEI-hA-e8d" secondAttribute="leading" id="Frb-bB-iPA"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="leading" secondItem="KEI-hA-e8d" secondAttribute="leading" id="II6-sd-21b"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Ok-zn-agO" secondAttribute="leading" id="J92-oN-YYe"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="top" secondItem="teO-AZ-4lX" secondAttribute="top" constant="64" id="NVz-RD-hVp"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="top" secondItem="KEI-hA-e8d" secondAttribute="top" id="O2D-Or-Bvp"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="leading" secondItem="teO-AZ-4lX" secondAttribute="leading" id="QOE-Q1-aF3"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="trailing" secondItem="KEI-hA-e8d" secondAttribute="trailing" id="Zqb-RV-rWb"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="leading" secondItem="teO-AZ-4lX" secondAttribute="leading" id="aR1-mq-6zT"/>
+                            <constraint firstItem="6Ok-zn-agO" firstAttribute="top" secondItem="eCK-sq-am4" secondAttribute="bottom" id="bwk-Qc-Knz"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="top" secondItem="teO-AZ-4lX" secondAttribute="top" constant="64" id="fIK-ed-yur"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Ok-zn-agO" secondAttribute="trailing" id="hHI-xs-mJQ"/>
+                            <constraint firstItem="eCK-sq-am4" firstAttribute="top" secondItem="KEI-hA-e8d" secondAttribute="top" id="i2e-2c-xQf"/>
+                            <constraint firstAttribute="trailing" secondItem="eCK-sq-am4" secondAttribute="trailing" id="mAp-rq-S5H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KEI-hA-e8d"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eqt-t5-Btp">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Customer" id="NsP-MD-hEG"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="Bulleted List" id="Bm3-IS-bSP"/>
+                            <barButtonItem title="Item" image="videoUpload" id="VdV-Rz-pOO">
+                                <connections>
+                                    <segue destination="Pof-kI-nmH" kind="show" id="OvB-wH-LuA"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="streamingTableView" destination="6Ok-zn-agO" id="62i-sH-WA4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjy-nO-DBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1770.4000000000001" y="714.69265367316348"/>
         </scene>
         <!--Top10 Details View Controller-->
         <scene sceneID="VAe-66-rDQ">
@@ -293,7 +394,7 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="List" id="ybR-QZ-tom"/>
+                            <barButtonItem title="Item" image="List" id="Mww-df-xdl"/>
                             <barButtonItem title="Sign out" id="KP1-0F-5DW">
                                 <connections>
                                     <action selector="signOutButton:" destination="LfP-oy-TDW" id="FLK-XF-5hM"/>
@@ -958,7 +1059,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Pof-kI-nmH" kind="relationship" relationship="rootViewController" id="Kle-7Q-zcE"/>
+                        <segue destination="M1J-C6-ZyH" kind="relationship" relationship="rootViewController" id="EJR-u1-znv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ee1-IF-0n9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1082,11 +1183,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1770" y="690"/>
+            <point key="canvasLocation" x="-1770" y="1424"/>
         </scene>
     </scenes>
     <resources>
         <image name="Activity Feed" width="26" height="26"/>
+        <image name="Bulleted List" width="26" height="26"/>
         <image name="Customer" width="26" height="26"/>
         <image name="Event" width="26" height="26"/>
         <image name="Friends" width="26" height="26"/>
