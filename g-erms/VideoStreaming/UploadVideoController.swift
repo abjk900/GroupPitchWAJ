@@ -18,6 +18,8 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
     let imagePicketController = UIImagePickerController()
     var videoURL : URL?
     
+    @IBOutlet weak var videoUploadProgress: UIProgressView!
+    
     @IBOutlet weak var videoNameTextField: UITextField!
     
     @IBOutlet weak var videoDescription: UITextField!
@@ -50,14 +52,14 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
         
         guard let uploadData = UIImageJPEGRepresentation(image, 0.3) else { return }
         
-        let imagename = NSUUID().uuidString
+        let videoName = NSUUID().uuidString
         
 //        Storage.storage().reference().child("vidoImage22.mov").putFile(from: videoURL, metadata: nil) { (meta, error) in
 //            print("a")
 //        }.resume()
         
-        
-        Storage.storage().reference().child("MovieFolder").child("abc.mov").putFile(from: videoURL, metadata: nil) { (meta, error) in
+        let uploadTask = Storage.storage().reference().child("MovieFolder").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
+            
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -67,7 +69,14 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
                 print("done")
                 print(videoURL)
             }
-            
+        }
+        
+        uploadTask.observe(.progress) { (snapshot) in
+            if let completedUnitCount = snapshot.progress?.completedUnitCount,
+                let total = snapshot.progress?.totalUnitCount {
+                
+                
+            }
             
         }
 //        Storage.storage().reference().child("vidoImage").child(imagename).putData(uploadData, metadata: nil) { (metadata, err) in

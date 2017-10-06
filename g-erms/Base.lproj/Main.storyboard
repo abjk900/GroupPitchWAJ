@@ -1253,6 +1253,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Upload"/>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-bx-TWH">
+                                <rect key="frame" x="67" y="383" width="240" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="8ro-gV-Jvu"/>
@@ -1268,6 +1272,7 @@
                         <outlet property="uploadVideoButton" destination="CIv-cl-biH" id="fdm-N8-b74"/>
                         <outlet property="videoDescription" destination="ELz-gb-D5Z" id="MCm-Re-hk6"/>
                         <outlet property="videoNameTextField" destination="Avc-Qj-eqD" id="v9r-T0-cRQ"/>
+                        <outlet property="videoUploadProgress" destination="ktA-bx-TWH" id="RME-HS-Vgi"/>
                         <outlet property="videoView" destination="3Ai-a3-t92" id="h6x-vs-dH1"/>
                     </connections>
                 </viewController>
@@ -1278,7 +1283,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1770" y="1424"/>
+            <point key="canvasLocation" x="-1770.4000000000001" y="1423.5382308845578"/>
         </scene>
     </scenes>
     <resources>
