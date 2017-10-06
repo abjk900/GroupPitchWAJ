@@ -179,7 +179,7 @@
         <!--Top10 View Controller-->
         <scene sceneID="n5W-uA-6xP">
             <objects>
-                <viewController id="CSD-B8-8EC" customClass="Top10ViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Top10ViewController" id="CSD-B8-8EC" customClass="Top10ViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bgl-lJ-9Cd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
