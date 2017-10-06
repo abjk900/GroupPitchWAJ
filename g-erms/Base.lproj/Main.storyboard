@@ -155,11 +155,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WKp-WL-hM9">
-                                                    <rect key="frame" x="8" y="8" width="359" height="170"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldj-6C-udo">
                                                     <rect key="frame" x="8" y="186" width="245" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -174,12 +169,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5D-Dh-bC9">
+                                                    <rect key="frame" x="8" y="8" width="359" height="170"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="videoDescriptionLabel" destination="1S7-eo-SSk" id="u4O-Tr-Tia"/>
                                             <outlet property="videoNameLabel" destination="ldj-6C-udo" id="6K8-HL-laH"/>
-                                            <outlet property="videoView" destination="WKp-WL-hM9" id="T6p-9o-lQj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -213,7 +212,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Customer" id="NsP-MD-hEG"/>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="Bulleted List" id="Bm3-IS-bSP"/>
-                            <barButtonItem title="Item" image="videoUpload" id="VdV-Rz-pOO">
+                            <barButtonItem title="Item" image="Video Playlist" id="VdV-Rz-pOO">
                                 <connections>
                                     <segue destination="Pof-kI-nmH" kind="show" id="OvB-wH-LuA"/>
                                 </connections>

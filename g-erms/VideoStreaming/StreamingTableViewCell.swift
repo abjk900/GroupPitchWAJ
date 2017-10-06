@@ -10,7 +10,7 @@ import UIKit
 
 class StreamingTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var videoView: UIView!
+    
     
     @IBOutlet weak var videoNameLabel: UILabel!
     
