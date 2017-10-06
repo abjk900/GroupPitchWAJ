@@ -15,6 +15,7 @@ target 'g-erms' do
    pod 'FBSDKShareKit'
    pod 'FBSDKLoginKit'
    pod 'SDWebImage'
+   pod 'FastOnBoarding'
 
   target 'g-ermsTests' do
     inherit! :search_paths

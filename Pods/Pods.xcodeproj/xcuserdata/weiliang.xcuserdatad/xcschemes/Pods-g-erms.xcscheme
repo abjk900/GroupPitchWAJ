@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4DE01D215321411F9BF4E649E582A05E"
+               BlueprintIdentifier = "ED9F878E63C670614814E0A9CC579C9B"
                BuildableName = "Pods_g_erms.framework"
                BlueprintName = "Pods-g-erms"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4DE01D215321411F9BF4E649E582A05E"
+            BlueprintIdentifier = "ED9F878E63C670614814E0A9CC579C9B"
             BuildableName = "Pods_g_erms.framework"
             BlueprintName = "Pods-g-erms"
             ReferencedContainer = "container:Pods.xcodeproj">

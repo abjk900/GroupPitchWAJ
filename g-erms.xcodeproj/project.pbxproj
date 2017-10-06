@@ -43,6 +43,7 @@
 		F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF6FF1F7CC06F00E1CFF8 /* Contact.swift */; };
 		F88EF7211F7D444800E1CFF8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EF7201F7D444800E1CFF8 /* Event.swift */; };
 		F8F3293C1F8606F3008EDC3F /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8F3293B1F85F56A008EDC3F /* Flags.xcassets */; };
+		F8F3293E1F87110C008EDC3F /* ShowEventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3293D1F87110C008EDC3F /* ShowEventDetailViewController.swift */; };
 		F8F3AEA31F7E1F97003F72EA /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F3AEA11F7E1F97003F72EA /* EventViewCell.swift */; };
 		F8F3AEA41F7E1F97003F72EA /* EventViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F3AEA21F7E1F97003F72EA /* EventViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -114,6 +115,7 @@
 		F88EF7201F7D444800E1CFF8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F893D17E1F84F566002C2007 /* UploadVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoViewController.swift; sourceTree = "<group>"; };
 		F8F3293B1F85F56A008EDC3F /* Flags.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Flags.xcassets; sourceTree = "<group>"; };
+		F8F3293D1F87110C008EDC3F /* ShowEventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEventDetailViewController.swift; sourceTree = "<group>"; };
 		F8F3AEA11F7E1F97003F72EA /* EventViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
 		F8F3AEA21F7E1F97003F72EA /* EventViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventViewCell.xib; sourceTree = "<group>"; };
 		FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_ermsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +229,7 @@
 				F8F3293B1F85F56A008EDC3F /* Flags.xcassets */,
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
+				F8F3293D1F87110C008EDC3F /* ShowEventDetailViewController.swift */,
 				F8F3AEC51F7E37CE003F72EA /* Helper */,
 				F88EF7011F7CC1F600E1CFF8 /* Model */,
 				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
@@ -510,6 +513,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FastOnBoarding/FastOnBoarding.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -523,6 +527,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FastOnBoarding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -646,6 +651,7 @@
 				19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */,
 				F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift in Sources */,
 				C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */,
+				F8F3293E1F87110C008EDC3F /* ShowEventDetailViewController.swift in Sources */,
 				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
 				F83FF43C1F7A259700D7B8D1 /* StreamingViewController2.swift in Sources */,
 				F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */,
