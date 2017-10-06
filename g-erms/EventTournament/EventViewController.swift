@@ -206,21 +206,14 @@ extension EventViewController : UITableViewDataSource {
 
 extension EventViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let destination = storyboard?.instantiateViewController(withIdentifier: "ShowEventDetailViewController") as? ShowEventDetailViewController else {return}
+        
+        
         let selectedEvent = events[indexPath.row]
         
-        //move to next VC
-        //1. storyboard
-        //2. instantiate the Target View Controller
-        //3. setup
-        //4. present
-        
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let targetVC = mainStoryBoard.instantiateViewController(withIdentifier: "EventDetailViewController") as? EventDetailViewController
-            else {return}
-        
-        targetVC.selectedEvent = selectedEvent
-        
-        present(targetVC, animated: true, completion: nil)
+        destination.selectedEvent = selectedEvent
+        navigationController?.pushViewController(destination, animated: true)
         
         
     }

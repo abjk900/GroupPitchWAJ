@@ -226,7 +226,6 @@
 				F8F3293B1F85F56A008EDC3F /* Flags.xcassets */,
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
-				F8F3293D1F87110C008EDC3F /* ShowEventDetailViewController.swift */,
 				F8F3AEC51F7E37CE003F72EA /* Helper */,
 				F88EF7011F7CC1F600E1CFF8 /* Model */,
 				F817900F1F78F7FF00A8C92C /* ViewController.swift */,
@@ -283,6 +282,7 @@
 				F8F3AEA21F7E1F97003F72EA /* EventViewCell.xib */,
 				F83FF42F1F7A219800D7B8D1 /* EventViewController.swift */,
 				F81C6C411F7C94B400AEE677 /* EventDetailViewController.swift */,
+				F8F3293D1F87110C008EDC3F /* ShowEventDetailViewController.swift */,
 			);
 			path = EventTournament;
 			sourceTree = "<group>";
@@ -834,10 +834,10 @@
 				CODE_SIGN_ENTITLEMENTS = "g-erms/g-erms.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QENNCHR6YZ;
+				DEVELOPMENT_TEAM = 77P5578ZUS;
 				INFOPLIST_FILE = "g-erms/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -853,10 +853,10 @@
 				CODE_SIGN_ENTITLEMENTS = "g-erms/g-erms.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QENNCHR6YZ;
+				DEVELOPMENT_TEAM = 77P5578ZUS;
 				INFOPLIST_FILE = "g-erms/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
