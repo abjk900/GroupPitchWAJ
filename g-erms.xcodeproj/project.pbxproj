@@ -22,6 +22,10 @@
 		C03622621F87546500B659D5 /* SweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622611F87546500B659D5 /* SweetsViewController.swift */; };
 		C03622641F875CF100B659D5 /* ShowEventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622631F875CF100B659D5 /* ShowEventDetailViewController.swift */; };
 		C03622661F875DB400B659D5 /* StreamingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */; };
+		C03622691F87842B00B659D5 /* Top10TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622671F87842B00B659D5 /* Top10TableViewCell.swift */; };
+		C036226A1F87842B00B659D5 /* Top10TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C03622681F87842B00B659D5 /* Top10TableViewCell.xib */; };
+		C036226D1F87844200B659D5 /* BetaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C036226B1F87844200B659D5 /* BetaTableViewCell.swift */; };
+		C036226E1F87844200B659D5 /* BetaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C036226C1F87844200B659D5 /* BetaTableViewCell.xib */; };
 		C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C51CC1F7C5BD0007D35CE /* Home.swift */; };
 		C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */; };
 		C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */; };
@@ -86,6 +90,10 @@
 		C03622611F87546500B659D5 /* SweetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetsViewController.swift; sourceTree = "<group>"; };
 		C03622631F875CF100B659D5 /* ShowEventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowEventDetailViewController.swift; path = EventTournament/ShowEventDetailViewController.swift; sourceTree = "<group>"; };
 		C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingTableViewCell.swift; sourceTree = "<group>"; };
+		C03622671F87842B00B659D5 /* Top10TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10TableViewCell.swift; sourceTree = "<group>"; };
+		C03622681F87842B00B659D5 /* Top10TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Top10TableViewCell.xib; sourceTree = "<group>"; };
+		C036226B1F87844200B659D5 /* BetaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaTableViewCell.swift; sourceTree = "<group>"; };
+		C036226C1F87844200B659D5 /* BetaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetaTableViewCell.xib; sourceTree = "<group>"; };
 		C037993F1F79E78300DCB144 /* g-erms.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "g-erms.entitlements"; sourceTree = "<group>"; };
 		C06C51CC1F7C5BD0007D35CE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +255,10 @@
 				C01B25F81F861D430049B7AD /* Top10DetailsViewController.swift */,
 				F81C6C401F7B88A500AEE677 /* EventTournament */,
 				F81790141F78F7FF00A8C92C /* Assets.xcassets */,
+				C03622671F87842B00B659D5 /* Top10TableViewCell.swift */,
+				C03622681F87842B00B659D5 /* Top10TableViewCell.xib */,
+				C036226B1F87844200B659D5 /* BetaTableViewCell.swift */,
+				C036226C1F87844200B659D5 /* BetaTableViewCell.xib */,
 				F81790161F78F7FF00A8C92C /* LaunchScreen.storyboard */,
 				F81790191F78F7FF00A8C92C /* Info.plist */,
 				C0270AFA1F79109300652117 /* GoogleService-Info.plist */,
@@ -449,10 +461,12 @@
 			files = (
 				F8F329421F876566008EDC3F /* Flags.xcassets in Resources */,
 				C0270AFB1F7910D100652117 /* GoogleService-Info.plist in Resources */,
+				C036226E1F87844200B659D5 /* BetaTableViewCell.xib in Resources */,
 				C0270AF11F7903AB00652117 /* Auth.storyboard in Resources */,
 				F81790181F78F7FF00A8C92C /* LaunchScreen.storyboard in Resources */,
 				F81790151F78F7FF00A8C92C /* Assets.xcassets in Resources */,
 				F81790131F78F7FF00A8C92C /* Main.storyboard in Resources */,
+				C036226A1F87842B00B659D5 /* Top10TableViewCell.xib in Resources */,
 				F8F3AEA41F7E1F97003F72EA /* EventViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +662,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C036226D1F87844200B659D5 /* BetaTableViewCell.swift in Sources */,
 				F83FF4301F7A219800D7B8D1 /* EventViewController.swift in Sources */,
 				F83FF4401F7A283300D7B8D1 /* HomeTableViewCell.swift in Sources */,
 				C0270AF31F79041800652117 /* LoginViewController.swift in Sources */,
@@ -656,6 +671,7 @@
 				F88EF6FE1F7CB23A00E1CFF8 /* helper.swift in Sources */,
 				19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */,
 				C03622621F87546500B659D5 /* SweetsViewController.swift in Sources */,
+				C03622691F87842B00B659D5 /* Top10TableViewCell.swift in Sources */,
 				F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift in Sources */,
 				C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */,
 				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
