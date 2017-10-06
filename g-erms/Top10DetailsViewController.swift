@@ -28,7 +28,7 @@ class Top10DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "LeaderBoard"
+        
         guard let anImage = selectedGamer?.profileImage else {return}
         loadImage(urlString : anImage)
         playerIDLabel.text = selectedGamer?.playerID

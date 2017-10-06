@@ -17,6 +17,7 @@ class LeaderboardViewController: UIViewController {
     var ref : DatabaseReference!
     var userId : String = ""
     var gamers : [Gamer] = []
+   
     
     //****** All the object library *******
     @IBOutlet weak var segmentedController: UISegmentedControl!
