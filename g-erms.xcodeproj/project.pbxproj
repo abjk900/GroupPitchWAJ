@@ -19,6 +19,7 @@
 		C0270AF31F79041800652117 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF21F79041800652117 /* LoginViewController.swift */; };
 		C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF41F79043800652117 /* SignUpViewController.swift */; };
 		C0270AFB1F7910D100652117 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0270AFA1F79109300652117 /* GoogleService-Info.plist */; };
+		C03622621F87546500B659D5 /* SweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622611F87546500B659D5 /* SweetsViewController.swift */; };
 		C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C51CC1F7C5BD0007D35CE /* Home.swift */; };
 		C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */; };
 		C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */; };
@@ -81,6 +82,7 @@
 		C0270AF21F79041800652117 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0270AF41F79043800652117 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C0270AFA1F79109300652117 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C03622611F87546500B659D5 /* SweetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetsViewController.swift; sourceTree = "<group>"; };
 		C037993F1F79E78300DCB144 /* g-erms.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "g-erms.entitlements"; sourceTree = "<group>"; };
 		C06C51CC1F7C5BD0007D35CE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				F8F3293B1F85F56A008EDC3F /* Flags.xcassets */,
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
+				C03622611F87546500B659D5 /* SweetsViewController.swift */,
 				F8F3293D1F87110C008EDC3F /* ShowEventDetailViewController.swift */,
 				F8F3AEC51F7E37CE003F72EA /* Helper */,
 				F88EF7011F7CC1F600E1CFF8 /* Model */,
@@ -649,6 +652,7 @@
 				F83FF4421F7A284200D7B8D1 /* HomeViewController.swift in Sources */,
 				F88EF6FE1F7CB23A00E1CFF8 /* helper.swift in Sources */,
 				19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */,
+				C03622621F87546500B659D5 /* SweetsViewController.swift in Sources */,
 				F83FF43E1F7A25CD00D7B8D1 /* StreamingTableViewCell2.swift in Sources */,
 				C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */,
 				F8F3293E1F87110C008EDC3F /* ShowEventDetailViewController.swift in Sources */,
@@ -841,7 +845,7 @@
 				DEVELOPMENT_TEAM = QENNCHR6YZ;
 				INFOPLIST_FILE = "g-erms/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -860,7 +864,7 @@
 				DEVELOPMENT_TEAM = QENNCHR6YZ;
 				INFOPLIST_FILE = "g-erms/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
