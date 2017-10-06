@@ -75,7 +75,7 @@ class EventViewController: UIViewController {
                 
                 
                 //create new event object
-                let newEvent = Event(anEventId: snapshot.key, aGameName: gameName, anEventName: eventName, anEventDate: self.createDateString(eventDate), anImageURL: imageURL, aFilename: filename, aPlayer1Name: player1Name, aPlayer2Name: player2Name, aPlayer1Country: player1Country, aPlayer2Country: player2Country, aplayer1FlagImage: player1Flag, aplayer2FlagImage: player2Flag)
+                let newEvent = Event(anEventId: snapshot.key, aGameName: gameName, anEventName: eventName, anEventDate: self.createDateString(eventDate), anEventTime: self.createTimeString(eventDate), anImageURL: imageURL, aFilename: filename, aPlayer1Name: player1Name, aPlayer2Name: player2Name, aPlayer1Country: player1Country, aPlayer2Country: player2Country, aplayer1FlagImage: player1Flag, aplayer2FlagImage: player2Flag)
                 
                 //append to event array
                 self.events.append(newEvent)
@@ -149,7 +149,15 @@ class EventViewController: UIViewController {
         
         return dateFormatter.string(from: date)
     }
-    
+  
+    func createTimeString(_ timeStamp: Double) -> String {
+        let date = Date(timeIntervalSince1970: timeStamp)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "hh:mm a"
+        
+        return dateFormatter.string(from: date)
+    }
     
     
     
