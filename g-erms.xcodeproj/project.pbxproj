@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1904FFCB1F877D770069CBCF /* videoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904FFCA1F877D770069CBCF /* videoInfo.swift */; };
+		1904FFCB1F877D770069CBCF /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904FFCA1F877D770069CBCF /* VideoInfo.swift */; };
 		19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */; };
 		194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B054D1F7B407200A260BA /* ProfileViewController.swift */; };
 		19FE16391F864F3B00352A1D /* StreamingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE16381F864F3B00352A1D /* StreamingController.swift */; };
@@ -74,7 +74,7 @@
 
 /* Begin PBXFileReference section */
 		161FECC69669707DD6D94D4C /* Pods-g-ermsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1904FFCA1F877D770069CBCF /* videoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoInfo.swift; sourceTree = "<group>"; };
+		1904FFCA1F877D770069CBCF /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 		19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoController.swift; sourceTree = "<group>"; };
 		194B054D1F7B407200A260BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		19FE16381F864F3B00352A1D /* StreamingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingController.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */,
 				19FE16381F864F3B00352A1D /* StreamingController.swift */,
 				C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */,
-				1904FFCA1F877D770069CBCF /* videoInfo.swift */,
+				1904FFCA1F877D770069CBCF /* VideoInfo.swift */,
 			);
 			path = VideoStreaming;
 			sourceTree = "<group>";
@@ -667,7 +667,7 @@
 			files = (
 				C036226D1F87844200B659D5 /* BetaTableViewCell.swift in Sources */,
 				F83FF4301F7A219800D7B8D1 /* EventViewController.swift in Sources */,
-				1904FFCB1F877D770069CBCF /* videoInfo.swift in Sources */,
+				1904FFCB1F877D770069CBCF /* VideoInfo.swift in Sources */,
 				F83FF4401F7A283300D7B8D1 /* HomeTableViewCell.swift in Sources */,
 				C0270AF31F79041800652117 /* LoginViewController.swift in Sources */,
 				F81790101F78F7FF00A8C92C /* ViewController.swift in Sources */,

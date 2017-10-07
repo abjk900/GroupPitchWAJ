@@ -54,7 +54,8 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
         
         let videoName = NSUUID().uuidString
         
-        let uploadTask = Storage.storage().reference().child("gameVideo").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
+        // 1.For video file
+        let uploadVideoTask = Storage.storage().reference().child("gameVideo").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
             
             if let error = error {
                 print(error.localizedDescription)
@@ -62,19 +63,35 @@ class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, U
             }
             
             if let videoURL = meta?.downloadURL()?.absoluteString {
-                print("done")
+                print("Successfully uploaded video file")
                 print(videoURL)
             }
         }
         
-        uploadTask.observe(.progress) { (snapshot) in
+        uploadVideoTask.observe(.progress) { (snapshot) in
             if let completedUnitCount = snapshot.progress?.completedUnitCount,
                 let total = snapshot.progress?.totalUnitCount{
                 self.videoUploadProgress.progress = Float(completedUnitCount)/Float(total)
             }
             
         }
-
+        
+        // 2. For video image
+        let uploadVideoImageTask = Storage.storage().reference().child("gameVideoImage").child(videoName).putData(uploadData, metadata: nil) { (meta, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let videoImageURL = meta?.downloadURL()?.absoluteString {
+                print("Successfully uploaded video image")
+                print(videoImageURL)
+            }
+        }
+        
+        //3. For data base
+        
         //currently logined uid
         guard let uid = Auth.auth().currentUser?.uid else { return }
         

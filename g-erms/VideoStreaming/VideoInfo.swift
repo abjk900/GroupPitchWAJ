@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct videoInfo {
+struct VideoInfo {
     let videoUrl : String
     
     init(dictionary : [String : Any]) {

@@ -13,7 +13,7 @@ class StreamingController: UIViewController {
 
     @IBOutlet weak var streamingTableView: UITableView!
     
-    var videoPost = [videoInfo]()
+    var videoPosts : [VideoInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class StreamingController: UIViewController {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
        
-        
+
     }
 
 }
@@ -38,7 +38,10 @@ extension StreamingController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //1. get the cell
         guard let cell = streamingTableView.dequeueReusableCell(withIdentifier: "playingVideoCell", for: indexPath) as? StreamingTableViewCell  else { return UITableViewCell() }
+        
+        //2. setup
         
         return cell
     }
