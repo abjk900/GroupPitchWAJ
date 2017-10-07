@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class StreamingTableViewCell: UITableViewCell {
+    
+    let avPlayerViewController = AVPlayerViewController()
+    var avPlayer : AVPlayer?
     
     var videoInfo : VideoInfo? {
         didSet {
@@ -16,16 +21,6 @@ class StreamingTableViewCell: UITableViewCell {
             guard let videoDescription = videoInfo?.videoDescription else { return }
             guard let videoUrl = videoInfo?.videoUrl else { return }
         }
-    }
-    
-    @IBOutlet weak var playbutton: UIButton!{
-        didSet{
-            playbutton.addTarget(self, action: #selector(handlePlayVideo), for: .touchUpInside)
-        }
-    }
-    
-    @objc func handlePlayVideo() {
-        
     }
     
     
