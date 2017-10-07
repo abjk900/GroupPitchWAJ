@@ -18,6 +18,13 @@ class EventViewController: UIViewController {
     //****** All the object library *******
     var ref : DatabaseReference!
     var events : [Event] = []
+    let currDate : Date = Date()
+    
+    var filteredEvents : [Event] = []
+    
+//    var pastEvents : [Event] = []
+//    var ongoingEvents : [Event] = []
+//    var comingEvents : [Event] = []
     
     
     @IBOutlet weak var eventViewTableView: UITableView! {
@@ -36,22 +43,72 @@ class EventViewController: UIViewController {
         eventViewTableView.delegate = self
         eventViewTableView.dataSource = self
         
-        selectionSegmentControl.selectedSegmentIndex = 1  //set the segment to Current Events
-        
         fetchEvents()
         
+        selectionSegmentControl.selectedSegmentIndex = 1  //set the segment to Current Events
+        segmentedControl(1)
+       
         // Do any additional setup after loading the view.
     }
 
     
     @IBAction func segmentedControl(_ sender: Any) {
+        filteredEvents = []
+        let tmpDate = currDate.timeIntervalSince1970
+        let dummDate = DateHelper.createDateString(tmpDate)
         
-    }
+        if selectionSegmentControl.selectedSegmentIndex == 0 {  //pass event
+        
+            for (index , each) in events.enumerated() {
+                if each.eventDate < dummDate {
+                    filteredEvents[index] = events[index]
+                }
+            }
+            
+        } //0
+        
+        if selectionSegmentControl.selectedSegmentIndex == 1 {  //ongoing = current
+            for (index , each) in events.enumerated() {
+                if each.eventDate == dummDate {
+                    filteredEvents[index] = events[index]
+                }
+            }
+            
+        }  //1
+        
+        if selectionSegmentControl.selectedSegmentIndex == 2 {  //coming events
+            for (index , each) in events.enumerated() {
+                if each.eventDate > dummDate {
+                    filteredEvents[index] = events[index]
+                }
+            }
+            
+        } //2
+           
+           
+         //end selection Segment
+
+        
+    } //end segmentedControl
     
     func fetchEvents() {
         ref = Database.database().reference()
         
+        
+        
+        
         //observer child added works as a loop return each child individually
+    //    ref.child("Users").queryOrdered(byChild: "eventDate").queryEqual(toValue: currDate).observe(.childAdded, with: { (snapshot) in
+        //   ref.child("Users").queryOrdered(byChild: "eventDate").queryEqual(toValue: currDate).observe(.childAdded, with: { (snapshot) in
+        //ref.orderByChild("gender").equalTo("Male").on("child_added", function(snapshot) {
+        
+            // Find all dinosaurs that are at least three meters tall.
+ /*           var ref = firebase.database().ref("dinosaurs");
+            ref.orderByChild("height").startAt(3).on("child_added", function(snapshot) {
+                console.log(snapshot.key)
+            });
+ */
+        
         ref.child("Events").observe(.childAdded, with: { (snapshot) in
             guard let info =  snapshot.value as? [String : Any] else {return}
             print("info : \(info)")
@@ -166,7 +223,12 @@ class EventViewController: UIViewController {
 extension EventViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        if filteredEvents.count == 0 {
+            return events.count
+        } else {
+            return filteredEvents.count
+        }
+        //return filteredEvents.count  //events.count
     }
     
     
@@ -176,7 +238,42 @@ extension EventViewController : UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EventViewCell.cellIdentifier) as? EventViewCell else {return UITableViewCell()}
         
         
-        let rec = events[indexPath.row]
+        if filteredEvents.count == 0 {
+            let rec = events[indexPath.row]
+            
+            cell.gameNameLabel.text = rec.eventGameName
+            cell.gameEventNameLabel.text = rec.eventName
+            cell.gameDateLabel.text = rec.eventDate
+            let imageURL = rec.imageURL
+            cell.gameLogo.loadImage(from: imageURL)
+            
+            // create an NSMutableAttributedString that we'll append everything to
+            let fullString = NSMutableAttributedString(string: "")
+            
+            // create our NSTextAttachment
+            let image1Attachment = NSTextAttachment()
+            image1Attachment.image = UIImage(named: rec.player1FlagImage.lowercased())
+            let image2Attachment = NSTextAttachment()
+            image2Attachment.image = UIImage(named: rec.player2FlagImage.lowercased())
+            
+            // wrap the attachment in its own attributed string so we can append it
+            let image1String = NSAttributedString(attachment: image1Attachment)
+            let image2String = NSAttributedString(attachment: image2Attachment)
+            
+            // add the NSTextAttachment wrapper to our full string, then add some more text.
+            fullString.append(image1String)
+            fullString.append(NSAttributedString(string: " \(rec.player1Name) vs "))
+            fullString.append(image2String)
+            fullString.append(NSAttributedString(string: " \(rec.player2Name)"))
+            
+            // draw the result in a label
+            cell.countryPlayerLabel.attributedText = fullString
+        }
+        
+        else {
+            
+        let rec = filteredEvents[indexPath.row]   //let rec = events[indexPath.row]
+        
         cell.gameNameLabel.text = rec.eventGameName
         cell.gameEventNameLabel.text = rec.eventName
         cell.gameDateLabel.text = rec.eventDate
@@ -205,6 +302,8 @@ extension EventViewController : UITableViewDataSource {
         // draw the result in a label
         cell.countryPlayerLabel.attributedText = fullString
    
+        }
+        
         
         return cell
     }
@@ -218,7 +317,7 @@ extension EventViewController : UITableViewDelegate {
         guard let destination = storyboard?.instantiateViewController(withIdentifier: "ShowEventDetailViewController") as? ShowEventDetailViewController else {return}
         
         
-        let selectedEvent = events[indexPath.row]
+        let selectedEvent = filteredEvents[indexPath.row]      //events[indexPath.row]
         
         destination.selectedEvent = selectedEvent
         navigationController?.pushViewController(destination, animated: true)

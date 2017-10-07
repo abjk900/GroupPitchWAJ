@@ -866,7 +866,7 @@
 				CODE_SIGN_ENTITLEMENTS = "g-erms/g-erms.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XS77XABE92;
+				DEVELOPMENT_TEAM = 77P5578ZUS;
 				INFOPLIST_FILE = "g-erms/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms";
@@ -885,7 +885,7 @@
 				CODE_SIGN_ENTITLEMENTS = "g-erms/g-erms.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XS77XABE92;
+				DEVELOPMENT_TEAM = 77P5578ZUS;
 				INFOPLIST_FILE = "g-erms/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ixchel.g-erms";
