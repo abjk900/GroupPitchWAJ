@@ -173,12 +173,16 @@
                                                     <rect key="frame" x="8" y="8" width="359" height="170"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="videoPlayButton:" destination="Y1a-xN-mpm" eventType="touchUpInside" id="g3E-nu-wIa"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="videoDescriptionLabel" destination="1S7-eo-SSk" id="u4O-Tr-Tia"/>
                                             <outlet property="videoNameLabel" destination="ldj-6C-udo" id="6K8-HL-laH"/>
+                                            <outlet property="videoPlayButton" destination="x5D-Dh-bC9" id="FQD-ZV-SPI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

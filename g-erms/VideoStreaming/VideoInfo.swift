@@ -10,9 +10,13 @@ import Foundation
 
 struct VideoInfo {
     let videoUrl : String
+    let videoName : String
+    let videoDescription : String
     
     init(dictionary : [String : Any]) {
         self.videoUrl = dictionary["videoUrl"] as? String ?? ""
+        self.videoName = dictionary["videoName"] as? String ?? ""
+        self.videoDescription = dictionary["videoDescription"] as? String ?? ""
         
     }
 }

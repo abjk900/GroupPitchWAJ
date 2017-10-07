@@ -10,7 +10,23 @@ import UIKit
 
 class StreamingTableViewCell: UITableViewCell {
     
+    var videoInfo : VideoInfo? {
+        didSet {
+            guard let videoName = videoInfo?.videoName else { return }
+            guard let videoDescription = videoInfo?.videoDescription else { return }
+            guard let videoUrl = videoInfo?.videoUrl else { return }
+        }
+    }
     
+    @IBOutlet weak var videoPlayButton: UIButton!{
+        didSet {
+            videoPlayButton.addTarget(self, action: #selector(handlePlayVideo), for: .touchUpInside)
+        }
+    }
+    
+    @objc func handlePlayVideo() {
+        
+    }
     
     @IBOutlet weak var videoNameLabel: UILabel!
     
