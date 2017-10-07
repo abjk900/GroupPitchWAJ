@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1902AD151F88DC9800C7BF55 /* Streaming_video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1902AD141F88DC9800C7BF55 /* Streaming_video.storyboard */; };
+		1902AD191F88EA1500C7BF55 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1902AD181F88EA1500C7BF55 /* AVKit.framework */; };
+		1902AD1B1F88EA1C00C7BF55 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1902AD1A1F88EA1C00C7BF55 /* AVFoundation.framework */; };
 		1904FFCB1F877D770069CBCF /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904FFCA1F877D770069CBCF /* VideoInfo.swift */; };
 		19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */; };
 		194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B054D1F7B407200A260BA /* ProfileViewController.swift */; };
@@ -78,6 +80,8 @@
 /* Begin PBXFileReference section */
 		161FECC69669707DD6D94D4C /* Pods-g-ermsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1902AD141F88DC9800C7BF55 /* Streaming_video.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Streaming_video.storyboard; sourceTree = "<group>"; };
+		1902AD181F88EA1500C7BF55 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		1902AD1A1F88EA1C00C7BF55 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1904FFCA1F877D770069CBCF /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 		19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoController.swift; sourceTree = "<group>"; };
 		194B054D1F7B407200A260BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1902AD1B1F88EA1C00C7BF55 /* AVFoundation.framework in Frameworks */,
+				1902AD191F88EA1500C7BF55 /* AVKit.framework in Frameworks */,
 				F71ECEE3825E4A554807E0E1 /* Pods_g_erms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +199,8 @@
 		4C94141B0B5D4C971F5F1B3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1902AD1A1F88EA1C00C7BF55 /* AVFoundation.framework */,
+				1902AD181F88EA1500C7BF55 /* AVKit.framework */,
 				1F985632E2D86F4928F98186 /* Pods_g_erms.framework */,
 				FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */,
 				E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */,

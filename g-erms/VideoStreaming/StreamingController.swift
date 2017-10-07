@@ -17,24 +17,44 @@ import AVKit
 
 class StreamingController: UIViewController {
     
-
-    @IBOutlet weak var streamingTableView: UITableView!
-    
     var videoPosts : [VideoInfo] = []
     var ref : DatabaseReference!
+    let avPlayerViewController = AVPlayerViewController()
+    var avPlayer : AVPlayer?
+    
+    var videoInfos : VideoInfo? {
+        didSet {
+            guard let videoName = videoInfos?.videoName else { return }
+            guard let videoDescription = videoInfos?.videoDescription else { return }
+            guard let videoUrl = videoInfos?.videoUrl else { return }
+        }
+    }
+    
+    @IBAction func videoPlayButton(_ sender: UIButton) {
+        
+        self.present(self.avPlayerViewController, animated: true) {
+            self.avPlayerViewController.player?.play()
+        }
+        
+    }
+    
+    @IBOutlet weak var streamingTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // cell
         streamingTableView.dataSource = self
-//        streamingTableView.delegate = self
         
         //fetchData
         fetchPosts()
         
         //Video
+        let videoUrl = videoInfos?.videoUrl
+        let url = URL(string : videoUrl!)
         
-
+        self.avPlayer = AVPlayer(url: url!)
+        self.avPlayerViewController.player = self.avPlayer
+        
     }
     
     var videoInfo = [VideoInfo]()
@@ -80,6 +100,7 @@ class StreamingController: UIViewController {
 
 
 extension StreamingController : UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videoPosts.count
     }
@@ -90,11 +111,16 @@ extension StreamingController : UITableViewDataSource {
         
         //2. setup
         let videoInfo = videoPosts[indexPath.row]
+//        let videoUrl = videoInfo.videoUrl
+//        let url = URL(string : videoUrl)
+//        let data = try? Data(contentsOf : url!)
 
         cell.videoNameLabel.text = videoInfo.videoName
         cell.videoDescriptionLabel.text = videoInfo.videoDescription
-//        cell.videoPlayButton.imageView?.image
+//        cell.playbutton.imageView?.image = UIImage(data: data!)
         
         return cell
     }
 }
+
+
