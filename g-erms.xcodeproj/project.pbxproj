@@ -33,6 +33,7 @@
 		C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C51CC1F7C5BD0007D35CE /* Home.swift */; };
 		C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */; };
 		C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */; };
+		C0FA130B1F88EA6F00CAB3FE /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FA130A1F88EA6F00CAB3FE /* UpdatesViewController.swift */; };
 		F71ECEE3825E4A554807E0E1 /* Pods_g_erms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F985632E2D86F4928F98186 /* Pods_g_erms.framework */; };
 		F817900E1F78F7FF00A8C92C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817900D1F78F7FF00A8C92C /* AppDelegate.swift */; };
 		F81790101F78F7FF00A8C92C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817900F1F78F7FF00A8C92C /* ViewController.swift */; };
@@ -106,6 +107,7 @@
 		C06C51CC1F7C5BD0007D35CE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
 		C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10ViewController.swift; sourceTree = "<group>"; };
+		C0FA130A1F88EA6F00CAB3FE /* UpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
 		C5B91018BEE41F4E5C218E61 /* Pods-g-erms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-erms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-erms/Pods-g-erms.debug.xcconfig"; sourceTree = "<group>"; };
 		CADCD97EF5DCE2B501499981 /* Pods-g-ermsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsTests/Pods-g-ermsTests.release.xcconfig"; sourceTree = "<group>"; };
 		E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_ermsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +263,7 @@
 				F81C6C3F1F7B6BC200AEE677 /* Home */,
 				F80A349E1F84E8F1006C5C90 /* Friend */,
 				F83FF4351F7A22B600D7B8D1 /* LeaderboardViewController.swift */,
+				C0FA130A1F88EA6F00CAB3FE /* UpdatesViewController.swift */,
 				C01B25F81F861D430049B7AD /* Top10DetailsViewController.swift */,
 				F81C6C401F7B88A500AEE677 /* EventTournament */,
 				F81790141F78F7FF00A8C92C /* Assets.xcassets */,
@@ -691,6 +694,7 @@
 				C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */,
 				C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */,
 				C03622641F875CF100B659D5 /* ShowEventDetailViewController.swift in Sources */,
+				C0FA130B1F88EA6F00CAB3FE /* UpdatesViewController.swift in Sources */,
 				F83FF43C1F7A259700D7B8D1 /* StreamingViewController2.swift in Sources */,
 				F88EF7001F7CC06F00E1CFF8 /* Contact.swift in Sources */,
 				F83FF4381F7A250C00D7B8D1 /* FriendViewController.swift in Sources */,

@@ -1,8 +1,8 @@
 //
-//  LeaderboardViewController.swift
+//  UpdatesViewController.swift
 //  g-erms
 //
-//  Created by Audrey Lim on 26/09/2017.
+//  Created by Tan Wei Liang on 07/10/2017.
 //  Copyright © 2017 Audrey Lim. All rights reserved.
 //
 
@@ -11,21 +11,34 @@ import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
 
-class LeaderboardViewController: UIViewController {
+class UpdatesViewController: UIViewController {
     
     var selectedGamer : Gamer?
     var ref : DatabaseReference!
     var userId : String = ""
     var gamers : [Gamer] = []
-   
+    
     
     //****** All the object library *******
     @IBOutlet weak var segmentedController: UISegmentedControl!
+    @IBAction func segments(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            scrollView.setContentOffset(CGPoint(x: 0, y : 0), animated: true)
+        case 1:
+            scrollView.setContentOffset(CGPoint(x: 375, y : 0), animated: true)
+            
+        default:
+            print ("")
+        }
+    }
     
     @IBOutlet weak var leaderboardTableView: UITableView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,10 +47,10 @@ class LeaderboardViewController: UIViewController {
         leaderboardTableView.delegate = self
         
         
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     func fetchGamers () {
         
         ref = Database.database().reference()
@@ -54,27 +67,27 @@ class LeaderboardViewController: UIViewController {
                 let playerID = info["playerID"] as? String,
                 let tournament = info["tournament"] as? String,
                 let profileImageURL = info["profileImageURL"] as? String
-         {
+            {
                 
-            let newGamers = Gamer(aName: name, aGameTypes: game, aTournament: tournament, anEarnings: earnings, aPlayerID: playerID, aProfileImage: profileImageURL)
+                let newGamers = Gamer(aName: name, aGameTypes: game, aTournament: tournament, anEarnings: earnings, aPlayerID: playerID, aProfileImage: profileImageURL)
                 
                 self.selectedGamer = newGamers
                 
                 print(newGamers)
                 
-            
+                
                 
                 
                 
                 // self.contacts.removeAll()
-            DispatchQueue.main.async {
-                self.gamers.append(newGamers)
+                DispatchQueue.main.async {
+                    self.gamers.append(newGamers)
+                    
+                    let index = self.gamers.count - 1
+                    let indexPath = IndexPath(row: index, section: 0)
+                    self.leaderboardTableView.insertRows(at: [indexPath], with: .right)
+                }
                 
-                let index = self.gamers.count - 1
-                let indexPath = IndexPath(row: index, section: 0)
-                self.leaderboardTableView.insertRows(at: [indexPath], with: .right)
-            }
-            
                 
                 return
             }
@@ -89,16 +102,16 @@ class LeaderboardViewController: UIViewController {
     
     
     
-
+    
 }
 
-extension LeaderboardViewController : UITableViewDataSource {
+extension UpdatesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gamers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCell") else {return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "top10Cell") else {return UITableViewCell() }
         
         let gamer = gamers[indexPath.row]
         
@@ -111,7 +124,7 @@ extension LeaderboardViewController : UITableViewDataSource {
     }
 }
 
-extension LeaderboardViewController : UITableViewDelegate {
+extension UpdatesViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let destination = storyboard?.instantiateViewController(withIdentifier: "Top10DetailsViewController") as? Top10DetailsViewController else {return}
         
@@ -122,4 +135,5 @@ extension LeaderboardViewController : UITableViewDelegate {
         navigationController?.pushViewController(destination, animated: true)
     }
 }
+
 
