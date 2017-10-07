@@ -98,9 +98,8 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
         //dig paths to reach a specific contact
         ref.child("Events").childByAutoId().updateChildValues(post)
         
-
         self.navigationController?.popViewController(animated: true)
-        //dismiss(animated: true, completion: nil)
+        
         
     }
     

@@ -13,6 +13,7 @@ import FirebaseDatabase
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     var fbloginID : String = ""
+    var window: UIWindow?
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -27,6 +28,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        
         
         
         if Auth.auth().currentUser != nil {

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         //***** Add Firebase
-        
+        checkIfLoggedIn()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
@@ -57,6 +57,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func checkIfLoggedIn() {
+        if Auth.auth().currentUser != nil {
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.makeKeyAndVisible()
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "tabBarController") as? UITabBarController else {return}
+            window?.rootViewController = vc
+        } else {
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.makeKeyAndVisible()
+            window?.rootViewController = UINavigationController(rootViewController: OnboardController())
+        }
+    }
+    
 
 }
 
