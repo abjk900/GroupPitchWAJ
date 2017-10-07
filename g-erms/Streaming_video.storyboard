@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Streaming-->
+        <scene sceneID="46f-ld-5ak">
+            <objects>
+                <viewController id="07O-0F-iKu" customClass="StreamingController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uB7-FI-HAO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hQ1-g3-uxF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="cTQ-5y-nZU"/>
+                                    <constraint firstAttribute="height" constant="56" id="xnq-Pj-Zm8"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Q6-x0-ecg" customClass="Stre">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playingVideoCell" rowHeight="251" id="o0O-Eu-BJ4" customClass="StreamingTableViewCell" customModule="g_erms" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="251"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o0O-Eu-BJ4" id="eSh-OM-e4l">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYQ-gC-2lr">
+                                                    <rect key="frame" x="8" y="186" width="245" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xy6-Kp-04G">
+                                                    <rect key="frame" x="8" y="217" width="342" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tku-83-HoO">
+                                                    <rect key="frame" x="8" y="8" width="359" height="170"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="videoPlayButton:" destination="o0O-Eu-BJ4" eventType="touchUpInside" id="fIW-Xc-Vye"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoDescriptionLabel" destination="xy6-Kp-04G" id="H2R-21-gtx"/>
+                                            <outlet property="videoNameLabel" destination="WYQ-gC-2lr" id="QzV-1P-eYf"/>
+                                            <outlet property="videoPlayButton" destination="Tku-83-HoO" id="84r-ai-RlX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Q6-x0-ecg" secondAttribute="leading" id="6Ie-pO-6Qs"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="centerX" secondItem="7Q6-x0-ecg" secondAttribute="centerX" id="96r-9h-Gbq"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="top" secondItem="32A-mp-759" secondAttribute="top" id="9jj-Il-eLM"/>
+                            <constraint firstAttribute="trailing" secondItem="hQ1-g3-uxF" secondAttribute="trailing" id="ABt-eH-esM"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="leading" secondItem="32A-mp-759" secondAttribute="leading" id="BMb-I8-EO8"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="trailing" secondItem="32A-mp-759" secondAttribute="trailing" id="ItC-VL-98N"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="centerX" secondItem="uB7-FI-HAO" secondAttribute="centerX" id="Kxl-gX-tCy"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="top" secondItem="uB7-FI-HAO" secondAttribute="top" constant="64" id="MqN-ol-tiz"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="top" secondItem="32A-mp-759" secondAttribute="top" id="RVC-8a-oZg"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="top" secondItem="uB7-FI-HAO" secondAttribute="top" constant="64" id="Vuf-pe-ksQ"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="top" secondItem="uB7-FI-HAO" secondAttribute="topMargin" id="Vxh-PX-GGP"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="leading" secondItem="uB7-FI-HAO" secondAttribute="leading" id="bSd-7M-F7R"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="leading" secondItem="uB7-FI-HAO" secondAttribute="leading" id="c1l-dP-LoZ"/>
+                            <constraint firstItem="7Q6-x0-ecg" firstAttribute="top" secondItem="hQ1-g3-uxF" secondAttribute="bottom" id="hQu-JD-iv1"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Q6-x0-ecg" secondAttribute="trailing" id="ioh-Gr-tTU"/>
+                            <constraint firstItem="hQ1-g3-uxF" firstAttribute="leading" secondItem="uB7-FI-HAO" secondAttribute="leading" id="jRa-Zk-wLa"/>
+                            <constraint firstItem="32A-mp-759" firstAttribute="bottom" secondItem="7Q6-x0-ecg" secondAttribute="bottom" id="jrF-Zp-7iD"/>
+                            <constraint firstItem="32A-mp-759" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Q6-x0-ecg" secondAttribute="trailing" id="kso-Wu-Qf4"/>
+                            <constraint firstItem="7Q6-x0-ecg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="32A-mp-759" secondAttribute="leading" id="nZZ-2O-P2f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="32A-mp-759"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Streaming" id="fO6-wX-4DJ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Customer" id="Lyx-qd-s7a"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="Bulleted List" id="ELj-uU-clg"/>
+                            <barButtonItem title="Item" image="Video Playlist" id="Tfr-dx-5vK">
+                                <connections>
+                                    <segue destination="4Bf-pp-Swz" kind="show" id="8Hv-j6-9oo">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="streamingTableView" destination="7Q6-x0-ecg" id="v2A-fi-KGX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sV-gq-Ds0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1770.4000000000001" y="714.69265367316348"/>
+        </scene>
+        <!--Streaming-->
+        <scene sceneID="djc-08-kTN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t7s-Gf-UJQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Streaming" image="Video Playlist" id="9pv-Dv-ppn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rnf-nT-hPS">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="07O-0F-iKu" kind="relationship" relationship="rootViewController" id="YXN-I0-xMw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hCb-IB-qoa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1770" y="-152"/>
+        </scene>
+        <!--Upload Video Controller-->
+        <scene sceneID="kFc-vO-5r8">
+            <objects>
+                <viewController id="4Bf-pp-Swz" customClass="UploadVideoController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bFX-bZ-Jii">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xI3-j0-EM0">
+                                <rect key="frame" x="67" y="119" width="240" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="lP3-mh-ZT0" appends="YES" id="2hi-mx-DMx"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Video Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f1u-mv-nOV">
+                                <rect key="frame" x="67" y="404" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lTd-2u-gyb">
+                                <rect key="frame" x="67" y="456" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4WS-Fo-Frc">
+                                <rect key="frame" x="138" y="515" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload"/>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cI7-4c-q4e">
+                                <rect key="frame" x="67" y="383" width="240" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="GMS-cZ-U9X"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q3M-A0-qnP">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="videoUpload" id="py4-1z-diG">
+                            <connections>
+                                <action selector="selectImageFromPhotoLibrary:" destination="4Bf-pp-Swz" id="fdb-5V-3zv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="uploadVideoButton" destination="4WS-Fo-Frc" id="sfo-TC-yfK"/>
+                        <outlet property="videoDescription" destination="lTd-2u-gyb" id="hhb-bO-X1I"/>
+                        <outlet property="videoNameTextField" destination="f1u-mv-nOV" id="7be-d1-zYU"/>
+                        <outlet property="videoUploadProgress" destination="cI7-4c-q4e" id="crK-Qw-nSA"/>
+                        <outlet property="videoView" destination="xI3-j0-EM0" id="RoF-Kp-Ogs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDs-D4-DaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lP3-mh-ZT0">
+                    <connections>
+                        <action selector="videoPlayTapped:" destination="4Bf-pp-Swz" id="pQ2-Ix-NeO"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1770.4000000000001" y="1423.5382308845578"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Bulleted List" width="26" height="26"/>
+        <image name="Customer" width="26" height="26"/>
+        <image name="Video Playlist" width="26" height="26"/>
+        <image name="videoUpload" width="25" height="25"/>
+    </resources>
+</document>

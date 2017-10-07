@@ -18,15 +18,16 @@ class StreamingTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet weak var videoPlayButton: UIButton!{
-        didSet {
-            videoPlayButton.addTarget(self, action: #selector(handlePlayVideo), for: .touchUpInside)
+    @IBOutlet weak var playbutton: UIButton!{
+        didSet{
+            playbutton.addTarget(self, action: #selector(handlePlayVideo), for: .touchUpInside)
         }
     }
     
     @objc func handlePlayVideo() {
         
     }
+    
     
     @IBOutlet weak var videoNameLabel: UILabel!
     

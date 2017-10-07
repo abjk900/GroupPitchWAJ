@@ -155,34 +155,47 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="250.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldj-6C-udo">
-                                                    <rect key="frame" x="8" y="186" width="245" height="25"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VideoName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldj-6C-udo">
+                                                    <rect key="frame" x="8" y="183" width="342" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="342" id="0wF-qk-b5g"/>
+                                                        <constraint firstAttribute="height" constant="25" id="pdO-MA-jWc"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S7-eo-SSk">
-                                                    <rect key="frame" x="8" y="217" width="342" height="25"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5D-Dh-bC9">
-                                                    <rect key="frame" x="8" y="8" width="359" height="170"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5D-Dh-bC9">
+                                                    <rect key="frame" x="8" y="8" width="359" height="175"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="175" id="nfH-cg-RSX"/>
+                                                        <constraint firstAttribute="width" constant="359" id="njr-Z4-2EJ"/>
+                                                    </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="videoPlayButton:" destination="Y1a-xN-mpm" eventType="touchUpInside" id="g3E-nu-wIa"/>
-                                                    </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VideoDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S7-eo-SSk">
+                                                    <rect key="frame" x="8" y="208" width="342" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1S7-eo-SSk" firstAttribute="leading" secondItem="ldj-6C-udo" secondAttribute="leading" id="37w-Nr-FcX"/>
+                                                <constraint firstItem="ldj-6C-udo" firstAttribute="top" secondItem="x5D-Dh-bC9" secondAttribute="bottom" id="5pR-p1-bLW"/>
+                                                <constraint firstItem="1S7-eo-SSk" firstAttribute="trailing" secondItem="ldj-6C-udo" secondAttribute="trailing" id="Gdz-mG-j1X"/>
+                                                <constraint firstItem="x5D-Dh-bC9" firstAttribute="leading" secondItem="BNk-xx-czW" secondAttribute="leadingMargin" id="UI8-zw-IDC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1S7-eo-SSk" secondAttribute="bottom" constant="9.5" id="Vnh-4u-GNF"/>
+                                                <constraint firstItem="ldj-6C-udo" firstAttribute="leading" secondItem="BNk-xx-czW" secondAttribute="leadingMargin" id="X7D-nf-nVI"/>
+                                                <constraint firstItem="1S7-eo-SSk" firstAttribute="top" secondItem="ldj-6C-udo" secondAttribute="bottom" id="c5t-Ew-Ejv"/>
+                                                <constraint firstItem="x5D-Dh-bC9" firstAttribute="trailing" secondItem="BNk-xx-czW" secondAttribute="trailingMargin" id="zBo-63-I4y"/>
+                                                <constraint firstItem="x5D-Dh-bC9" firstAttribute="top" secondItem="BNk-xx-czW" secondAttribute="topMargin" id="zdO-gK-8kz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="playbutton" destination="x5D-Dh-bC9" id="Uxn-l9-Rak"/>
                                             <outlet property="videoDescriptionLabel" destination="1S7-eo-SSk" id="u4O-Tr-Tia"/>
                                             <outlet property="videoNameLabel" destination="ldj-6C-udo" id="6K8-HL-laH"/>
-                                            <outlet property="videoPlayButton" destination="x5D-Dh-bC9" id="FQD-ZV-SPI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

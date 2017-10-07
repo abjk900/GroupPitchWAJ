@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1902AD151F88DC9800C7BF55 /* Streaming_video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1902AD141F88DC9800C7BF55 /* Streaming_video.storyboard */; };
 		1904FFCB1F877D770069CBCF /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904FFCA1F877D770069CBCF /* VideoInfo.swift */; };
 		19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */; };
 		194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B054D1F7B407200A260BA /* ProfileViewController.swift */; };
@@ -76,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		161FECC69669707DD6D94D4C /* Pods-g-ermsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1902AD141F88DC9800C7BF55 /* Streaming_video.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Streaming_video.storyboard; sourceTree = "<group>"; };
 		1904FFCA1F877D770069CBCF /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 		19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoController.swift; sourceTree = "<group>"; };
 		194B054D1F7B407200A260BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				F8F329411F876556008EDC3F /* Flags.xcassets */,
 				19059E5B1F85E09E00C612B3 /* VideoStreaming */,
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
+				1902AD141F88DC9800C7BF55 /* Streaming_video.storyboard */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
 				C03622611F87546500B659D5 /* SweetsViewController.swift */,
 				F8F3AEC51F7E37CE003F72EA /* Helper */,
@@ -475,6 +478,7 @@
 				F81790181F78F7FF00A8C92C /* LaunchScreen.storyboard in Resources */,
 				F81790151F78F7FF00A8C92C /* Assets.xcassets in Resources */,
 				F81790131F78F7FF00A8C92C /* Main.storyboard in Resources */,
+				1902AD151F88DC9800C7BF55 /* Streaming_video.storyboard in Resources */,
 				C036226A1F87842B00B659D5 /* Top10TableViewCell.xib in Resources */,
 				F8F3AEA41F7E1F97003F72EA /* EventViewCell.xib in Resources */,
 			);

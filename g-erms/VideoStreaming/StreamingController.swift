@@ -11,6 +11,8 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
+import AVFoundation
+import AVKit
 
 
 class StreamingController: UIViewController {
@@ -23,11 +25,15 @@ class StreamingController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // cell
         streamingTableView.dataSource = self
 //        streamingTableView.delegate = self
         
+        //fetchData
         fetchPosts()
+        
+        //Video
+        
 
     }
     
@@ -49,15 +55,24 @@ class StreamingController: UIViewController {
                 //dictionaries 에 모든 값을 저장시키고 그 값을 dictionary로 분류시키는데 여기서 데이터베이스에 있는 정보를 videoInfo에 넣는다.
                 guard let dictionary = value as? [String:Any] else { return }
         
-                let newVideoInfo = VideoInfo(dictionary: dictionary)
-              
+                let videoInfo = VideoInfo(dictionary: dictionary)
+                print(videoInfo.videoName)
+                print(videoInfo.videoDescription)
+                print(videoInfo.videoUrl)
                 //append to event array
-                self.videoPosts.append(newVideoInfo)
+                self.videoPosts.append(videoInfo)
+                
+//                let index = self.streamingTableView.count - 1
+//                let indexPath = IndexPath(row: index, section: 0)
+//                self.streamingTableView.insertRows(at: [indexPath], with: .right)
         
             })
             self.streamingTableView?.reloadData()
             }
-
+//        DispatchQueue.main.async {
+//
+//        }
+              self.streamingTableView?.reloadData()
     }
 
 }
@@ -78,7 +93,7 @@ extension StreamingController : UITableViewDataSource {
 
         cell.videoNameLabel.text = videoInfo.videoName
         cell.videoDescriptionLabel.text = videoInfo.videoDescription
-//        cell.videoPlayButton.imageView?.image.
+//        cell.videoPlayButton.imageView?.image
         
         return cell
     }
