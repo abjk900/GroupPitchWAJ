@@ -20,6 +20,7 @@
 		C0270AF31F79041800652117 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF21F79041800652117 /* LoginViewController.swift */; };
 		C0270AF51F79043800652117 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0270AF41F79043800652117 /* SignUpViewController.swift */; };
 		C0270AFB1F7910D100652117 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0270AFA1F79109300652117 /* GoogleService-Info.plist */; };
+		C02D30411F88749D0062A490 /* OnboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D30401F88749D0062A490 /* OnboardController.swift */; };
 		C03622621F87546500B659D5 /* SweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622611F87546500B659D5 /* SweetsViewController.swift */; };
 		C03622641F875CF100B659D5 /* ShowEventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622631F875CF100B659D5 /* ShowEventDetailViewController.swift */; };
 		C03622661F875DB400B659D5 /* StreamingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */; };
@@ -89,6 +90,7 @@
 		C0270AF21F79041800652117 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0270AF41F79043800652117 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C0270AFA1F79109300652117 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C02D30401F88749D0062A490 /* OnboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardController.swift; sourceTree = "<group>"; };
 		C03622611F87546500B659D5 /* SweetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetsViewController.swift; sourceTree = "<group>"; };
 		C03622631F875CF100B659D5 /* ShowEventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEventDetailViewController.swift; sourceTree = "<group>"; };
 		C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingTableViewCell.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */,
 				C0270AF21F79041800652117 /* LoginViewController.swift */,
 				C0270AF41F79043800652117 /* SignUpViewController.swift */,
+				C02D30401F88749D0062A490 /* OnboardController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -536,9 +539,9 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FastOnBoarding/FastOnBoarding.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Onboard/Onboard.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -550,9 +553,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FastOnBoarding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Onboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -697,6 +700,7 @@
 				C01B25F91F861D430049B7AD /* Top10DetailsViewController.swift in Sources */,
 				F8F3AEA31F7E1F97003F72EA /* EventViewCell.swift in Sources */,
 				C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */,
+				C02D30411F88749D0062A490 /* OnboardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
