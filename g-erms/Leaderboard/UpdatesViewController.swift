@@ -31,6 +31,7 @@ class UpdatesViewController: UIViewController {
             scrollView.setContentOffset(CGPoint(x: 0, y : 0), animated: true)
         case 1:
             scrollView.setContentOffset(CGPoint(x: 375, y : 0), animated: true)
+            fetchUpdates()
             
         default:
             print ("")
@@ -46,12 +47,16 @@ class UpdatesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchGamers()
-        fetchUpdates()
         leaderboardTableView.dataSource = self
         leaderboardTableView.delegate = self
         updateTableView.dataSource = self
         updateTableView.delegate = self
+        
+        segmentedController.selectedSegmentIndex = 0 //default to Top10 gamers
+        
+        fetchGamers()
+        
+
         
         
         
@@ -121,21 +126,21 @@ class UpdatesViewController: UIViewController {
                 
                 let newUpdates = Updates(aName: name, anUpdatesURL: gameURL, aGameImage: gameImageURL)
                 
-                self.selectedUpdates = newUpdates
-                
+                //self.selectedUpdates = newUpdates
+               
                 print(newUpdates)
                 
-                
-                
+               
                 
                 
                 // self.contacts.removeAll()
                 DispatchQueue.main.async {
-                    self.update.append(newUpdates)
-                    
+                     self.update.append(newUpdates)
                     let index = self.update.count - 1
                     let indexPath = IndexPath(row: index, section: 0)
                     self.updateTableView.insertRows(at: [indexPath], with: .right)
+                    
+              
                 }
                 
                 
@@ -157,7 +162,7 @@ class UpdatesViewController: UIViewController {
 extension UpdatesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentedController.selectedSegmentIndex == 0 {
-        return gamers.count
+            return gamers.count
         } else {
             return update.count
         }
