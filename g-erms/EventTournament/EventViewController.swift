@@ -49,7 +49,7 @@ class EventViewController: UIViewController {
         fetchEvents()
         
         selectionSegmentControl.selectedSegmentIndex = 1  //set the segment to Current Events
-        segmentedControl(1)
+       // segmentedControl(1)
        
         // Do any additional setup after loading the view.
     }
@@ -70,7 +70,7 @@ class EventViewController: UIViewController {
         default:
             print("Do Nothing Sesgment Control default")
         }
-        reload()
+      //  reload()
 
         
 //
@@ -260,13 +260,13 @@ class EventViewController: UIViewController {
 extension EventViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch dataFilter {
-        case 0: return pastEvents.count
-        case 1: return ongoingEvents.count
-        case 2 : return comingEvents.count
-        default:
+//        switch dataFilter {
+//        case 0: return pastEvents.count
+//        case 1: return ongoingEvents.count
+//        case 2 : return comingEvents.count
+//        default:
             return events.count
-        }
+    //    }
         //return filteredEvents.count  //events.count    //filteredEvents.count
     }
     
@@ -278,16 +278,16 @@ extension EventViewController : UITableViewDataSource {
         
         var rec = events[indexPath.row]
         
-        switch dataFilter {
-        case 0:
-            rec = pastEvents[indexPath.row]
-        case 1:
-            rec = ongoingEvents[indexPath.row]
-        case 2:
-           rec = comingEvents[indexPath.row]
-        default :
-            rec = events[indexPath.row]
-        }
+//        switch dataFilter {
+//        case 0:
+//            rec = pastEvents[indexPath.row]
+//        case 1:
+//            rec = ongoingEvents[indexPath.row]
+//        case 2:
+//           rec = comingEvents[indexPath.row]
+//        default :
+//            rec = events[indexPath.row]
+//        }
 
             
         cell.gameNameLabel.text = rec.eventGameName
@@ -331,7 +331,7 @@ extension EventViewController : UITableViewDelegate {
         guard let destination = storyboard?.instantiateViewController(withIdentifier: "ShowEventDetailViewController") as? ShowEventDetailViewController else {return}
         
         
-        let selectedEvent = filteredEvents[indexPath.row]      //events[indexPath.row]
+        let selectedEvent = events[indexPath.row]      //events[indexPath.row]
         
         destination.selectedEvent = selectedEvent
         navigationController?.pushViewController(destination, animated: true)
