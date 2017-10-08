@@ -33,6 +33,14 @@ class SweetsViewController: UIViewController {
        
     }
     
+    func createErrorAlert(_ title: String, _ message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Error", style: .default, handler: nil)
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion:  nil)
+    }
+    
     func fetchGiftCards () {
         
         ref = Database.database().reference()
@@ -93,6 +101,8 @@ extension SweetsViewController : UITableViewDataSource {
         cell.sweetsLabel.text = giftCards.description
         cell.requirementLabel.text = giftCards.requirements
         cell.sweetsImageView.loadImage(from: giftCards.imageURL!)
+        
+        
         
         return cell
     }

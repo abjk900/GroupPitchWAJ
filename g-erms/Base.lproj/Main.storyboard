@@ -552,7 +552,7 @@
                                                     <rect key="frame" x="286" y="38" width="89" height="23"/>
                                                     <state key="normal" title="Redeem"/>
                                                     <connections>
-                                                        <action selector="redeemBtnTapped:" destination="fda-tI-ahS" eventType="touchUpInside" id="Chs-qW-K4C"/>
+                                                        <action selector="redeemBtnTapped:" destination="fda-tI-ahS" eventType="touchUpInside" id="iFV-O4-w7c"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

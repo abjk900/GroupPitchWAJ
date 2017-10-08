@@ -8,17 +8,32 @@
 
 import UIKit
 
-class SweetsTableViewCell: UITableViewCell {
+class SweetsTableViewCell: UITableViewCell{
     
     @IBOutlet weak var sweetsImageView: UIImageView!
     
     @IBOutlet weak var sweetsLabel: UILabel!
     
     @IBOutlet weak var requirementLabel: UILabel!
-    
+        
     
     @IBAction func redeemBtnTapped(_ sender: UIButton) {
+        
+        var alert = UIAlertView(title: "Sorry ", message: "You have not enough candy to redeem this item", delegate: nil, cancelButtonTitle: "Ok")
+        alert.show()
     }
+    
+    
+        
+    
+    
+    
+    
+    
+   
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
