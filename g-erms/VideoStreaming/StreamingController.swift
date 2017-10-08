@@ -67,37 +67,12 @@ class StreamingController: UIViewController {
         }
         
         
-        //        var videoPosts : [VideoInfo] = []
-        //        let videoUrlName = videoPosts.
-        //
-        //        let starsRef = Storage.storage().reference().child("gameVideo").child(<#T##path: String##String#>)
-        //        starsRef.ob
-        //
-        //
-        //        (of: .value) { (snapshot) in
-        //            //for saving whole value that in each uid(user)
-        //            guard let dictionaries = snapshot.value as? [String:Any] else {return}
-        //
-        //            dictionaries.forEach({ (key, value) in
-        //                //for saving each value in uid
-        //                //dictionaries 에 모든 값을 저장시키고 그 값을 dictionary로 분류시키는데 여기서 데이터베이스에 있는 정보를 videoInfo에 넣는다.
-        //                guard let dictionary = value as? [String:Any] else { return }
-        //
-        //                let videoInfo = VideoInfo(dictionary: dictionary)
-        //                print(videoInfo.videoName)
-        //                print(videoInfo.videoDescription)
-        //                print(videoInfo.videoUrl)
-        //                //append to event array
-        //                self.videoPosts.append(videoInfo)
-        //
-        //            })
+     
         
-        DispatchQueue.main.async {
-            self.streamingTableView?.reloadData()
-        }
+        
     }
-    
 }
+
 
 
 
@@ -137,11 +112,23 @@ extension StreamingController : UITableViewDataSource {
 extension StreamingController: StreamingTableViewCellDelegate {
     func videoButtonPressedWithUrl(videoUrl: String) {
         //Video
-        let url = URL(string : videoUrl)
-        let player = AVPlayer(url: url!)
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        self.present(playerViewController, animated: true, completion: nil)
+        let starsRef = Storage.storage().reference().child("gameVideo/\(videoUrl)")
+        
+        starsRef.downloadURL { (url, err) in
+            if let err = err {
+                print("err", err)
+            } else {
+                DispatchQueue.main.async {
+                    let player = AVPlayer(url: url!)
+                    let playerViewController = AVPlayerViewController()
+                    playerViewController.player = player
+                    self.present(playerViewController, animated: true, completion: nil)
+                    
+                }
+                
+            }
+        }
+       
     }
     
 }
