@@ -695,7 +695,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zU-d9-9jG">
                                 <rect key="frame" x="282" y="78" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Edit"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="buttonEditTapped:" destination="ntb-Hn-B4r" eventType="touchUpInside" id="ShL-tJ-het"/>
                                 </connections>
