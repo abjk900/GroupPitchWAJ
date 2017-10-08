@@ -11,13 +11,13 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class EventViewController: UIViewController {
-
+    
     var ref : DatabaseReference!
     let currDate : Date = Date()
     var tmpDate : Double = 0.0
     var dummDate : String = ""
     var dataFilter = 0
-   
+    
     var events : [Event] = []
     var filteredEvents : [Event] = []
     
@@ -46,84 +46,78 @@ class EventViewController: UIViewController {
         eventViewTableView.delegate = self
         eventViewTableView.dataSource = self
         
-        fetchEvents()
+        dataFilter = 1
+        
+        
         
         selectionSegmentControl.selectedSegmentIndex = 1  //set the segment to Current Events
-       // segmentedControl(1)
-       
+        // segmentedControl(1)
+        
+        fetchEvents()
+        
         // Do any additional setup after loading the view.
     }
-
+    
     
     @IBAction func segmentedControl(_ sender: Any) {
         filteredEvents = []
         
-//        let tmpDate = currDate.timeIntervalSince1970
-//        let dummDate = DateHelper.createDateString(tmpDate)
         switch selectionSegmentControl.selectedSegmentIndex {
         case 0:
             dataFilter = 0
+            if events.count != 0 {
+                for (index , each) in events.enumerated() {
+                    if each.eventDate < dummDate {
+                        self.filteredEvents.append(events[index])
+                    }
+                }
+                self.eventViewTableView.reloadData()
+            }
+            
         case 1:
             dataFilter = 1
+            if events.count != 0 {
+                for (index , each) in events.enumerated() {
+                    if each.eventDate == dummDate {
+                        self.filteredEvents.append(events[index])
+                    }
+                }
+                self.eventViewTableView.reloadData()
+            }
         case 2:
             dataFilter = 2
+            if events.count != 0 {
+                for (index , each) in events.enumerated() {
+                    if each.eventDate > dummDate {
+                        self.filteredEvents.append(events[index])
+                    }
+                }
+                self.eventViewTableView.reloadData()
+            }
         default:
             print("Do Nothing Sesgment Control default")
         }
-      //  reload()
-
         
-//
-//        if selectionSegmentControl.selectedSegmentIndex == 0 {  //pass event
-//
-//            for (index , each) in events.enumerated() {
-//                if each.eventDate < dummDate {
-//                    filteredEvents[index] = events[index]
-//                }
-//            }
-//
-//        } //0
-//
-//        if selectionSegmentControl.selectedSegmentIndex == 1 {  //ongoing = current
-//
-//            for (index , each) in events.enumerated() {
-//                if each.eventDate == dummDate {
-//                    filteredEvents[index] = events[index]
-//                }
-//            }
-//
-//        }  //1
-//
-//        if selectionSegmentControl.selectedSegmentIndex == 2 {  //coming events
-//            for (index , each) in events.enumerated() {
-//                if each.eventDate > dummDate {
-//                    filteredEvents[index] = events[index]
-//                }
-//            }
-//
-//        } //2
         
-           
-         //end selection Segment
-
+        //  reload()
         
     } //end segmentedControl
     
     func fetchEvents() {
         ref = Database.database().reference()
-  
+        
         
         //observer child added works as a loop return each child individually
-    //    ref.child("Users").queryOrdered(byChild: "eventDate").queryEqual(toValue: currDate).observe(.childAdded, with: { (snapshot) in
+        //    ref.child("Users").queryOrdered(byChild: "eventDate").queryEqual(toValue: currDate).observe(.childAdded, with: { (snapshot) in
         //   ref.child("Users").queryOrdered(byChild: "eventDate").queryEqual(toValue: currDate).observe(.childAdded, with: { (snapshot) in
         //ref.orderByChild("gender").equalTo("Male").on("child_added", function(snapshot) {
         
-            // Find all dinosaurs that are at least three meters tall.
- /*           var ref = firebase.database().ref("dinosaurs");
-            ref.orderByChild("height").startAt(3).on("child_added", function(snapshot) {
-                console.log(snapshot.key)
-            });
- */
+        // Find all dinosaurs that are at least three meters tall.
+        /*           var ref = firebase.database().ref("dinosaurs");
+         ref.orderByChild("height").startAt(3).on("child_added", function(snapshot) {
+         console.log(snapshot.key)
+         });
+         */
         
         ref.child("Events").observe(.childAdded, with: { (snapshot) in
             guard let info =  snapshot.value as? [String : Any] else {return}
@@ -152,88 +146,91 @@ class EventViewController: UIViewController {
                 
                 //append to event array
                 //dummDate
-                self.events.append(newEvent)
+                
                 
                 let cvtDate = DateHelper.createDateString(eventDate)
-                
-                switch cvtDate {
-                case _ where cvtDate < self.dummDate:
-                    self.pastEvents.append(newEvent)
-                case _ where cvtDate == self.dummDate:
-                    self.ongoingEvents.append(newEvent)
-                case _ where cvtDate > self.dummDate:
-                    self.comingEvents.append(newEvent)
-                default :
-                    self.comingEvents.append(newEvent)
+                if cvtDate == self.dummDate {
+                    //self.filteredEvents.append(newEvent)
                 }
-  
-                //this is more efficient
-                //insert indv rows as we retrive idv items
+                
+                self.events.append(newEvent)
                 let  index = self.events.count - 1
                 let indexPath = IndexPath(row: index, section: 0)
                 self.eventViewTableView.insertRows(at: [indexPath], with: .right)
+                
+                //                switch cvtDate {
+                //                case _ where cvtDate < self.dummDate:
+                //                    self.pastEvents.append(newEvent)
+                //                case _ where cvtDate == self.dummDate:
+                //                    self.ongoingEvents.append(newEvent)
+                //                case _ where cvtDate > self.dummDate:
+                //                    self.comingEvents.append(newEvent)
+                //                default :
+                //                    print("Do Nothing...fetchEvents()")
+                //                    //self.comingEvents.append(newEvent)
+                //                }
+                
+                
+                
+                
+                
                 
                 
             }
         })
         
-//        ref.child("students").observe(.value, with: {
-//            (snapshot) in
-//            guard let info = snapshot.value as? [String : Any]
-//                else {return}
-//            print(info)
-//        })
+        //        ref.child("students").observe(.value, with: {
+        //            (snapshot) in
+        //            guard let info = snapshot.value as? [String : Any]
+        //                else {return}
+        //            print(info)
+        //        })
         
-//        ref.child("students").observe(.childRemoved, with: { (snapshot) in
-//            guard let info = snapshot.value as? [String:Any] else {return}
-//            print(info)
-//
-//            let deletedID = snapshot.key
-//
-//            //filters through students returns index where Boolean condition is fullfilled
-//            if let deletedIndex = self.events.index(where: { (event) -> Bool in
-//                return event.id == deletedID
-//            }) {
-//                //remove event when deletedIndex is found
-//                self.events.remove(at: deletedIndex)
-//                //let index = self.students.count - 1
-//                let indexPath = IndexPath(row: deletedIndex, section: 0)
-//
-//                self.eventViewTableView.deleteRows(at: [indexPath], with: .fade)
-//            }
-//        })
+        //        ref.child("students").observe(.childRemoved, with: { (snapshot) in
+        //            guard let info = snapshot.value as? [String:Any] else {return}
+        //            print(info)
+        //
+        //            let deletedID = snapshot.key
+        //
+        //            //filters through students returns index where Boolean condition is fullfilled
+        //            if let deletedIndex = self.events.index(where: { (event) -> Bool in
+        //                return event.id == deletedID
+        //            }) {
+        //                //remove event when deletedIndex is found
+        //                self.events.remove(at: deletedIndex)
+        //                //let index = self.students.count - 1
+        //                let indexPath = IndexPath(row: deletedIndex, section: 0)
+        //
+        //                self.eventViewTableView.deleteRows(at: [indexPath], with: .fade)
+        //            }
+        //        })
         
-//        ref.child("Events").observe(.childChanged, with: { (snapshot) in
-//            guard let info = snapshot.value as? [String:Any] else {return}
-//
-//            guard let name = info["name"] as? String,
-//                let age = info["age"] as? Int,
-//                let imageURL = info["imageURL"] as? String
-//                else {return}
-//
-//            if let matchedIndex = self.events.index(where: { (event) -> Bool in
-//                return event.id == snapshot.key
-//            }) {
-//                let changedEvent = self.events[matchedIndex]
-//                changedEvent.age = age
-//                changedEvent.name = name
-//                changedEvent.imageURL = imageURL
-//
-//
-//                let indexPath = IndexPath(row: matchedIndex, section: 0)
-//                self.eventViewTableView.reloadRows(at: [indexPath], with: .none)
-//            }
-//        })
+        //        ref.child("Events").observe(.childChanged, with: { (snapshot) in
+        //            guard let info = snapshot.value as? [String:Any] else {return}
+        //
+        //            guard let name = info["name"] as? String,
+        //                let age = info["age"] as? Int,
+        //                let imageURL = info["imageURL"] as? String
+        //                else {return}
+        //
+        //            if let matchedIndex = self.events.index(where: { (event) -> Bool in
+        //                return event.id == snapshot.key
+        //            }) {
+        //                let changedEvent = self.events[matchedIndex]
+        //                changedEvent.age = age
+        //                changedEvent.name = name
+        //                changedEvent.imageURL = imageURL
+        //
+        //
+        //                let indexPath = IndexPath(row: matchedIndex, section: 0)
+        //                self.eventViewTableView.reloadRows(at: [indexPath], with: .none)
+        //            }
+        //        })
         
         
     } // fetchEvents
     
-    func reload() {
-        DispatchQueue.main.async {
-            self.eventViewTableView.reloadData()
-        }
-    }
-   
+    
     
     func createDateString(_ timeStamp: Double) -> String {
         let date = Date(timeIntervalSince1970: timeStamp)
@@ -243,7 +240,7 @@ class EventViewController: UIViewController {
         
         return dateFormatter.string(from: date)
     }
-  
+    
     func createTimeString(_ timeStamp: Double) -> String {
         let date = Date(timeIntervalSince1970: timeStamp)
         
@@ -260,36 +257,26 @@ class EventViewController: UIViewController {
 extension EventViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        switch dataFilter {
-//        case 0: return pastEvents.count
-//        case 1: return ongoingEvents.count
-//        case 2 : return comingEvents.count
-//        default:
+        if filteredEvents.count == 0 {
             return events.count
-    //    }
-        //return filteredEvents.count  //events.count    //filteredEvents.count
+        } else {
+            return filteredEvents.count
+        }
+        
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      //  let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
+        //  let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EventViewCell.cellIdentifier) as? EventViewCell else {return UITableViewCell()}
         
         var rec = events[indexPath.row]
         
-//        switch dataFilter {
-//        case 0:
-//            rec = pastEvents[indexPath.row]
-//        case 1:
-//            rec = ongoingEvents[indexPath.row]
-//        case 2:
-//           rec = comingEvents[indexPath.row]
-//        default :
-//            rec = events[indexPath.row]
-//        }
-
-            
+        if filteredEvents.count != 0 {
+            rec = filteredEvents[indexPath.row]
+        }
+        
         cell.gameNameLabel.text = rec.eventGameName
         cell.gameEventNameLabel.text = rec.eventName
         cell.gameDateLabel.text = rec.eventDate
@@ -317,7 +304,7 @@ extension EventViewController : UITableViewDataSource {
         
         // draw the result in a label
         cell.countryPlayerLabel.attributedText = fullString
-   
+        
         
         return cell
     }
@@ -342,3 +329,4 @@ extension EventViewController : UITableViewDelegate {
     
     
 }
+
