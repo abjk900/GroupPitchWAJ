@@ -18,6 +18,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var videoUploadProgress: UIProgressView!
     
     let imagePicketController = UIImagePickerController()
+    var videoName = ""
     var videoURL : URL?
     
     @IBOutlet weak var videoNameTextField: UITextField!
@@ -52,7 +53,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         
         guard let uploadData = UIImageJPEGRepresentation(image, 0.3) else { return }
         
-        let videoName = NSUUID().uuidString
+        videoName = NSUUID().uuidString
         
         // 1.For video file
         let uploadVideoTask = Storage.storage().reference().child("gameVideo").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
@@ -99,7 +100,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         
         let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
         
-        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
+        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : "\(videoName)"] as [String : Any]
         
         ref.updateChildValues(values) { (err, ref) in
             if let err = err {

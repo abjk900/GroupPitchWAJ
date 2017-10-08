@@ -15,6 +15,7 @@
 		19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */; };
 		194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B054D1F7B407200A260BA /* ProfileViewController.swift */; };
 		19A104B51F889F5A00468001 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A104B41F889F5A00468001 /* Video.swift */; };
+		19FDFAF61F8A26A600922CFD /* DownloadVideoUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FDFAF51F8A26A600922CFD /* DownloadVideoUrl.swift */; };
 		19FE16391F864F3B00352A1D /* StreamingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE16381F864F3B00352A1D /* StreamingController.swift */; };
 		88ECA7143BB25BC9F7BEBA74 /* Pods_g_ermsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6FF84EABA0555D751E6FAD1 /* Pods_g_ermsUITests.framework */; };
 		BE83C4BAB1FB7F1EC7C2658C /* Pods_g_ermsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF24563B5B34E9F11C26E379 /* Pods_g_ermsTests.framework */; };
@@ -88,6 +89,7 @@
 		19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoController.swift; sourceTree = "<group>"; };
 		194B054D1F7B407200A260BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		19A104B41F889F5A00468001 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		19FDFAF51F8A26A600922CFD /* DownloadVideoUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadVideoUrl.swift; sourceTree = "<group>"; };
 		19FE16381F864F3B00352A1D /* StreamingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingController.swift; sourceTree = "<group>"; };
 		1F985632E2D86F4928F98186 /* Pods_g_erms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_g_erms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A28CC14822047DAE0DE63A0 /* Pods-g-ermsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-g-ermsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-g-ermsUITests/Pods-g-ermsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */,
 				1904FFCA1F877D770069CBCF /* VideoInfo.swift */,
 				190304141F89C20D0080F7BF /* CustomImageView.swift */,
+				19FDFAF51F8A26A600922CFD /* DownloadVideoUrl.swift */,
 			);
 			path = VideoStreaming;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				F83FF4301F7A219800D7B8D1 /* EventViewController.swift in Sources */,
 				1904FFCB1F877D770069CBCF /* VideoInfo.swift in Sources */,
 				F83FF4401F7A283300D7B8D1 /* HomeTableViewCell.swift in Sources */,
+				19FDFAF61F8A26A600922CFD /* DownloadVideoUrl.swift in Sources */,
 				C0270AF31F79041800652117 /* LoginViewController.swift in Sources */,
 				F83FF4421F7A284200D7B8D1 /* HomeViewController.swift in Sources */,
 				19A104B51F889F5A00468001 /* Video.swift in Sources */,

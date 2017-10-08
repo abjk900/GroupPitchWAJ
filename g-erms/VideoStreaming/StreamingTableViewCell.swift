@@ -18,6 +18,7 @@ class StreamingTableViewCell: UITableViewCell {
     
     let avPlayerViewController = AVPlayerViewController()
     var avPlayer : AVPlayer?
+    
     var videoUrl = ""
     weak var delegate: StreamingTableViewCellDelegate?
     
