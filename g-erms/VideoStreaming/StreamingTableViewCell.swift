@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class StreamingTableViewCell: UITableViewCell {
     
+    let avPlayerViewController = AVPlayerViewController()
+    var avPlayer : AVPlayer?
+    
+    var videoInfo : VideoInfo? {
+        didSet {
+            guard let videoName = videoInfo?.videoName else { return }
+            guard let videoDescription = videoInfo?.videoDescription else { return }
+            guard let videoUrl = videoInfo?.videoUrl else { return }
+        }
+    }
     
     
     @IBOutlet weak var videoNameLabel: UILabel!
