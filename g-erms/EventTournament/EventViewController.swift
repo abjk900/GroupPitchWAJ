@@ -12,11 +12,13 @@ import FirebaseStorage
 
 class EventViewController: UIViewController {
 
+    var ref : DatabaseReference!
     let currDate : Date = Date()
     var tmpDate : Double = 0.0
     var dummDate : String = ""
     var dataFilter = 0
    
+    var events : [Event] = []
     var filteredEvents : [Event] = []
     
     var pastEvents : [Event] = []
