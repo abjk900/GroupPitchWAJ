@@ -17,6 +17,9 @@ class UpdatesViewController: UIViewController {
     var ref : DatabaseReference!
     var userId : String = ""
     var gamers : [Gamer] = []
+    var selectedUpdates : Updates?
+    var update : [Updates] = []
+    var userId2 : String = ""
     
     
     //****** All the object library *******
@@ -38,13 +41,18 @@ class UpdatesViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var updateTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fetchGamers()
+        fetchUpdates()
         leaderboardTableView.dataSource = self
         leaderboardTableView.delegate = self
+        updateTableView.dataSource = self
+        updateTableView.delegate = self
+        
         
         
         
@@ -96,7 +104,48 @@ class UpdatesViewController: UIViewController {
         
     }
     
-    
+    func fetchUpdates () {
+        
+        ref = Database.database().reference()
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        userId2 = uid
+        
+        ref.child("Updates").observe(.childAdded, with: { (snapshot) in
+            
+            guard let info = snapshot.value as? [String : Any] else {return}
+            
+            if  let name = info["name"] as? String,
+                let gameURL = info["gameURL"] as? String,
+                let gameImageURL = info["gameImageURL"] as? String
+            {
+                
+                let newUpdates = Updates(aName: name, anUpdatesURL: gameURL, aGameImage: gameImageURL)
+                
+                self.selectedUpdates = newUpdates
+                
+                print(newUpdates)
+                
+                
+                
+                
+                
+                // self.contacts.removeAll()
+                DispatchQueue.main.async {
+                    self.update.append(newUpdates)
+                    
+                    let index = self.update.count - 1
+                    let indexPath = IndexPath(row: index, section: 0)
+                    self.updateTableView.insertRows(at: [indexPath], with: .right)
+                }
+                
+                
+                return
+            }
+        })
+        
+        
+    }
+
     
     
     
@@ -107,10 +156,17 @@ class UpdatesViewController: UIViewController {
 
 extension UpdatesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if segmentedController.selectedSegmentIndex == 0 {
         return gamers.count
+        } else {
+            return update.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if segmentedController.selectedSegmentIndex == 0 {
+            
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "top10Cell") else {return UITableViewCell() }
         
         let gamer = gamers[indexPath.row]
@@ -122,10 +178,32 @@ extension UpdatesViewController : UITableViewDataSource {
         
         return cell
     }
+     else {
+    
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "updatesCell", for: indexPath) as? UpdatesTableViewCell else {return UITableViewCell() }
+    
+    
+            let updater = update[indexPath.row]
+            
+            cell.gameLabel.text = "\(indexPath.row + 1). " + updater.name
+            cell.gameImage.loadImage(from: updater.gameImage )
+            
+            
+    
+    
+   // cell.textLabel?.text = "\(indexPath.row + 1). " + updater.name
+   // cell.detailTextLabel?.text = update.
+            
+            return cell
+    
+    }
+}
 }
 
 extension UpdatesViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if segmentedController.selectedSegmentIndex == 0 {
         guard let destination = storyboard?.instantiateViewController(withIdentifier: "Top10DetailsViewController") as? Top10DetailsViewController else {return}
         
         let selectedGamer = gamers[indexPath.row]
@@ -134,6 +212,23 @@ extension UpdatesViewController : UITableViewDelegate {
         
         navigationController?.pushViewController(destination, animated: true)
     }
+    
+        else {
+            
+            guard let destination2 = storyboard?.instantiateViewController(withIdentifier: "UpdatesDetailsViewController") as? UpdatesDetailsViewController else {return}
+            
+            let selectedUpdate = update[indexPath.row]
+            
+            destination2.selectedUpdates = selectedUpdate
+            
+            navigationController?.pushViewController(destination2, animated: true)
+            
+            
+    
+    
+            
+        }
 }
 
 
+}
