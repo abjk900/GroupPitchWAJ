@@ -14,6 +14,9 @@ class SweetsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var sweetsLabel: UILabel!
     
+    @IBOutlet weak var requirementLabel: UILabel!
+    
+    
     @IBAction func redeemBtnTapped(_ sender: UIButton) {
     }
     

@@ -31,6 +31,7 @@
 		C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C51CC1F7C5BD0007D35CE /* Home.swift */; };
 		C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */; };
 		C0D74D0A1F8A11E900C49A21 /* SweetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D74D091F8A11E900C49A21 /* SweetsTableViewCell.swift */; };
+		C0D74D0C1F8A217800C49A21 /* Rewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D74D0B1F8A217800C49A21 /* Rewards.swift */; };
 		C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */; };
 		C0FA130B1F88EA6F00CAB3FE /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FA130A1F88EA6F00CAB3FE /* UpdatesViewController.swift */; };
 		C0FA130D1F89260400CAB3FE /* UpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FA130C1F89260400CAB3FE /* UpdatesTableViewCell.swift */; };
@@ -106,6 +107,7 @@
 		C06C51CC1F7C5BD0007D35CE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
 		C0D74D091F8A11E900C49A21 /* SweetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetsTableViewCell.swift; sourceTree = "<group>"; };
+		C0D74D0B1F8A217800C49A21 /* Rewards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rewards.swift; sourceTree = "<group>"; };
 		C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10ViewController.swift; sourceTree = "<group>"; };
 		C0FA130A1F88EA6F00CAB3FE /* UpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
 		C0FA130C1F89260400CAB3FE /* UpdatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesTableViewCell.swift; sourceTree = "<group>"; };
@@ -271,7 +273,6 @@
 				F817900D1F78F7FF00A8C92C /* AppDelegate.swift */,
 				1902AD141F88DC9800C7BF55 /* Streaming_video.storyboard */,
 				F81790111F78F7FF00A8C92C /* Main.storyboard */,
-				C03622611F87546500B659D5 /* SweetsViewController.swift */,
 				F8F3AEC51F7E37CE003F72EA /* Helper */,
 				F88EF7011F7CC1F600E1CFF8 /* Model */,
 				C037993F1F79E78300DCB144 /* g-erms.entitlements */,
@@ -316,6 +317,7 @@
 				F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */,
 				C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */,
 				194B054D1F7B407200A260BA /* ProfileViewController.swift */,
+				C03622611F87546500B659D5 /* SweetsViewController.swift */,
 				C0D74D091F8A11E900C49A21 /* SweetsTableViewCell.swift */,
 			);
 			path = Home;
@@ -342,6 +344,7 @@
 				C01B25FA1F8633F90049B7AD /* Gamer.swift */,
 				19A104B41F889F5A00468001 /* Video.swift */,
 				C0FA130F1F89289500CAB3FE /* Updates.swift */,
+				C0D74D0B1F8A217800C49A21 /* Rewards.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				C0FA13101F89289500CAB3FE /* Updates.swift in Sources */,
 				F83FF43A1F7A251F00D7B8D1 /* FriendTableViewCell.swift in Sources */,
 				C0FC70C71F89CBCB00C7DC9A /* UpdatesDetailsViewController.swift in Sources */,
+				C0D74D0C1F8A217800C49A21 /* Rewards.swift in Sources */,
 				194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */,
 				F83FF4361F7A22B600D7B8D1 /* LeaderboardViewController.swift in Sources */,
 				C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */,
