@@ -10,11 +10,19 @@ import UIKit
 
 class SweetsViewController: UIViewController {
 
+    @IBOutlet weak var candyNumberLabel: UILabel!
+ 
+    @IBOutlet weak var sweetsTableView: UITableView!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
     }
 
    
 }
+

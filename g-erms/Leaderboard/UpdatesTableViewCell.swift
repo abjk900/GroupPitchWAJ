@@ -1,14 +1,19 @@
 //
-//  Top10TableViewCell.swift
+//  UpdatesTableViewCell.swift
 //  g-erms
 //
-//  Created by Tan Wei Liang on 06/10/2017.
+//  Created by Tan Wei Liang on 07/10/2017.
 //  Copyright © 2017 Audrey Lim. All rights reserved.
 //
 
 import UIKit
 
-class Top10TableViewCell: UITableViewCell {
+class UpdatesTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var gameImage: UIImageView!
+    
+    @IBOutlet weak var gameLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +25,5 @@ class Top10TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

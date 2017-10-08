@@ -104,7 +104,7 @@ extension LeaderboardViewController : UITableViewDataSource {
         
         
         
-        cell.textLabel?.text = gamer.name
+        cell.textLabel?.text = "\(indexPath.row + 1). " + gamer.name
         cell.detailTextLabel?.text = gamer.earnings
         
         return cell

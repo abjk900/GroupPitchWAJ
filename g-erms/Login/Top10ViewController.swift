@@ -28,10 +28,7 @@ class Top10ViewController: UIViewController {
     
     @IBOutlet weak var typesOfGamesTextField: UITextField!
     
-    @IBOutlet weak var tournamentTextField: UITextField!
-    @IBOutlet weak var earningsTextField: UITextField!
     
-    @IBOutlet weak var playerIDTextField: UITextField!
     
     @IBAction func uploadImageBtnTapped(_ sender: Any) {
         updateProfilePicEnable()
@@ -40,17 +37,14 @@ class Top10ViewController: UIViewController {
         
         ref = Database.database().reference()
         guard let name = nameTextField.text,
-            let gameTypes = typesOfGamesTextField.text,
-            let tournament = tournamentTextField.text,
-            let earnings = earningsTextField.text,
-            let playerID = playerIDTextField.text,
-            let profileImage = profileImageView.image
+              let gameURL = typesOfGamesTextField.text,
+              let profileImage = profileImageView.image
             
             else { return }
         
-        let post : [String:Any] = ["name": name,"playerID" : playerID, "game": gameTypes, "tournament": tournament, "earnings": earnings,"profileImageURL": self.profilePicURL]
+        let post : [String:Any] = ["name": name,"gameURL": gameURL,"gameImageURL": self.profilePicURL]
         
-        ref.child("Top10Gamers").childByAutoId().updateChildValues(post)
+        ref.child("Updates").childByAutoId().updateChildValues(post)
         
         
         self.navigationController?.popViewController(animated: true)
