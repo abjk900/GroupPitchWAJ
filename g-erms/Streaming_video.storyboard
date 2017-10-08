@@ -57,6 +57,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
+                                                        <action selector="videoButtonPressed:" destination="o0O-Eu-BJ4" eventType="touchUpInside" id="ECe-g8-k4K"/>
                                                         <action selector="videoPlayButton:" destination="o0O-Eu-BJ4" eventType="touchUpInside" id="fIW-Xc-Vye"/>
                                                     </connections>
                                                 </button>
@@ -65,7 +66,6 @@
                                         <connections>
                                             <outlet property="videoDescriptionLabel" destination="xy6-Kp-04G" id="H2R-21-gtx"/>
                                             <outlet property="videoNameLabel" destination="WYQ-gC-2lr" id="QzV-1P-eYf"/>
-                                            <outlet property="videoPlayButton" destination="Tku-83-HoO" id="84r-ai-RlX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

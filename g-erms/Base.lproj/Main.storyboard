@@ -172,9 +172,6 @@
                                                         <constraint firstAttribute="width" constant="359" id="njr-Z4-2EJ"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="videoPlayButton:" destination="M1J-C6-ZyH" eventType="touchUpInside" id="HBC-uj-P3E"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VideoDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S7-eo-SSk">
                                                     <rect key="frame" x="8" y="208" width="342" height="25"/>
@@ -198,6 +195,7 @@
                                         <connections>
                                             <outlet property="videoDescriptionLabel" destination="1S7-eo-SSk" id="u4O-Tr-Tia"/>
                                             <outlet property="videoNameLabel" destination="ldj-6C-udo" id="6K8-HL-laH"/>
+                                            <outlet property="videoPlayButton" destination="x5D-Dh-bC9" id="xm5-e3-Z58"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
