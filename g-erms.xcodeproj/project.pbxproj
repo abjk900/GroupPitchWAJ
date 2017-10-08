@@ -10,6 +10,7 @@
 		1902AD151F88DC9800C7BF55 /* Streaming_video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1902AD141F88DC9800C7BF55 /* Streaming_video.storyboard */; };
 		1902AD191F88EA1500C7BF55 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1902AD181F88EA1500C7BF55 /* AVKit.framework */; };
 		1902AD1B1F88EA1C00C7BF55 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1902AD1A1F88EA1C00C7BF55 /* AVFoundation.framework */; };
+		190304151F89C20D0080F7BF /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190304141F89C20D0080F7BF /* CustomImageView.swift */; };
 		1904FFCB1F877D770069CBCF /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904FFCA1F877D770069CBCF /* VideoInfo.swift */; };
 		19059E5D1F85E0FF00C612B3 /* UploadVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */; };
 		194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194B054D1F7B407200A260BA /* ProfileViewController.swift */; };
@@ -83,6 +84,7 @@
 		1902AD141F88DC9800C7BF55 /* Streaming_video.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Streaming_video.storyboard; sourceTree = "<group>"; };
 		1902AD181F88EA1500C7BF55 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		1902AD1A1F88EA1C00C7BF55 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		190304141F89C20D0080F7BF /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		1904FFCA1F877D770069CBCF /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 		19059E5C1F85E0FF00C612B3 /* UploadVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoController.swift; sourceTree = "<group>"; };
 		194B054D1F7B407200A260BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				19FE16381F864F3B00352A1D /* StreamingController.swift */,
 				C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */,
 				1904FFCA1F877D770069CBCF /* VideoInfo.swift */,
+				190304141F89C20D0080F7BF /* CustomImageView.swift */,
 			);
 			path = VideoStreaming;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				C0FC70C71F89CBCB00C7DC9A /* UpdatesDetailsViewController.swift in Sources */,
 				C0D74D0C1F8A217800C49A21 /* Rewards.swift in Sources */,
 				194B054E1F7B407200A260BA /* ProfileViewController.swift in Sources */,
+				190304151F89C20D0080F7BF /* CustomImageView.swift in Sources */,
 				F83FF4361F7A22B600D7B8D1 /* LeaderboardViewController.swift in Sources */,
 				C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */,
 				F88EF7211F7D444800E1CFF8 /* Event.swift in Sources */,

@@ -51,7 +51,8 @@ class EventViewController: UIViewController {
         
         
         selectionSegmentControl.selectedSegmentIndex = 1  //set the segment to Current Events
-        // segmentedControl(1)
+        
+        //segmentedControl(1)
         
         fetchEvents()
         
@@ -145,36 +146,29 @@ class EventViewController: UIViewController {
                 let newEvent = Event(anEventId: snapshot.key, aGameName: gameName, anEventName: eventName, anEventDate: self.createDateString(eventDate), anEventTime: self.createTimeString(eventDate), anImageURL: imageURL, aFilename: filename, aPlayer1Name: player1Name, aPlayer2Name: player2Name, aPlayer1Country: player1Country, aPlayer2Country: player2Country, aplayer1FlagImage: player1Flag, aplayer2FlagImage: player2Flag)
                 
                 //append to event array
-                //dummDate
-                
+
+                self.events.append(newEvent)   //stored all records later can use for filteredEvents
                 
                 let cvtDate = DateHelper.createDateString(eventDate)
                 if cvtDate == self.dummDate {
-                    //self.filteredEvents.append(newEvent)
+                    
+                    DispatchQueue.main.async {
+                        self.filteredEvents.append(newEvent)
+                        //*** show Today's Events
+                        let  index = self.filteredEvents.count - 1
+                        let indexPath = IndexPath(row: index, section: 0)
+                        self.eventViewTableView.insertRows(at: [indexPath], with: .right)
+                    }
+
                 }
                 
-                self.events.append(newEvent)
-                let  index = self.events.count - 1
-                let indexPath = IndexPath(row: index, section: 0)
-                self.eventViewTableView.insertRows(at: [indexPath], with: .right)
                 
-                //                switch cvtDate {
-                //                case _ where cvtDate < self.dummDate:
-                //                    self.pastEvents.append(newEvent)
-                //                case _ where cvtDate == self.dummDate:
-                //                    self.ongoingEvents.append(newEvent)
-                //                case _ where cvtDate > self.dummDate:
-                //                    self.comingEvents.append(newEvent)
-                //                default :
-                //                    print("Do Nothing...fetchEvents()")
-                //                    //self.comingEvents.append(newEvent)
-                //                }
+//                self.events.append(newEvent)
+//                let  index = self.events.count - 1
+//                let indexPath = IndexPath(row: index, section: 0)
+//                self.eventViewTableView.insertRows(at: [indexPath], with: .right)
                 
-                
-                
-                
-                
-                
+ 
                 
             }
         })

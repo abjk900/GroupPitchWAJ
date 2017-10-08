@@ -68,9 +68,9 @@ class FriendViewController: UIViewController, UISearchBarDelegate {
                 let filename = info["imageFilename"] as? String {
                 
                 
-                let fullname =  "\(firstname) \(lastname)"
+              //  let fullname =  "\(firstname) \(lastname)"
                 //create new contact object
-                let newContact = Contact(anID: snapshot.key, aUsername: username, aFullname: fullname, anEmail: email, anImageURL: imageURL, anFilename: filename, aFirstname: firstname, aLastname: lastname, aCountry: country)
+                let newContact = Contact(anID: snapshot.key, aUsername: username, anEmail: email, anImageURL: imageURL, anFilename: filename, aFirstname: firstname, aLastname: lastname, aCountry: country)
                 
                 print(newContact)
                 

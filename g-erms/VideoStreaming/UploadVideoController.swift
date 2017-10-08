@@ -13,7 +13,7 @@ import MobileCoreServices
 import Firebase
 import FirebaseStorage
 
-class UploadVideoController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var videoUploadProgress: UIProgressView!
     
