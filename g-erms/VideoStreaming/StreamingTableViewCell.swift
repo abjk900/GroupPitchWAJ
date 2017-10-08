@@ -10,34 +10,25 @@ import UIKit
 import AVFoundation
 import AVKit
 
+protocol StreamingTableViewCellDelegate: class {
+    func videoButtonPressedWithUrl(videoUrl: String)
+}
+
 class StreamingTableViewCell: UITableViewCell {
     
     let avPlayerViewController = AVPlayerViewController()
     var avPlayer : AVPlayer?
+    var videoUrl = ""
+    weak var delegate: StreamingTableViewCellDelegate?
     
-    var videoInfo : VideoInfo? {
-        didSet {
-            guard let videoName = videoInfo?.videoName else { return }
-            guard let videoDescription = videoInfo?.videoDescription else { return }
-            guard let videoUrl = videoInfo?.videoUrl else { return }
-        }
-    }
-    
+    @IBOutlet weak var videoPlayButton: UIButton!
     
     @IBOutlet weak var videoNameLabel: UILabel!
     
     @IBOutlet weak var videoDescriptionLabel: UILabel!
     
+    @IBAction func videoButtonPressed(_ sender: Any) {
+        delegate?.videoButtonPressedWithUrl(videoUrl: self.videoUrl)
+    }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
