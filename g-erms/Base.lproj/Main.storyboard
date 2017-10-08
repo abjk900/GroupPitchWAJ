@@ -226,7 +226,11 @@
                         <viewLayoutGuide key="safeArea" id="KEI-hA-e8d"/>
                     </view>
                     <navigationItem key="navigationItem" title="Streaming" id="eqt-t5-Btp">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="Customer" id="NsP-MD-hEG"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Customer" id="NsP-MD-hEG">
+                            <connections>
+                                <segue destination="ntb-Hn-B4r" kind="show" id="IjY-XC-QBh"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="Bulleted List" id="Bm3-IS-bSP"/>
                             <barButtonItem title="Item" image="Video Playlist" id="VdV-Rz-pOO">
@@ -715,7 +719,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJM-gK-8at" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7438" y="690"/>
+            <point key="canvasLocation" x="-4383" y="5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="n1V-TZ-Be2">
@@ -1521,4 +1525,7 @@
         <image name="profileImage" width="128" height="128"/>
         <image name="videoUpload" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IjY-XC-QBh"/>
+    </inferredMetricsTieBreakers>
 </document>
