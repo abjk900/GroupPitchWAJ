@@ -51,7 +51,8 @@ class EventViewController: UIViewController {
         
         
         selectionSegmentControl.selectedSegmentIndex = 1  //set the segment to Current Events
-        // segmentedControl(1)
+        
+        //segmentedControl(1)
         
         fetchEvents()
         
