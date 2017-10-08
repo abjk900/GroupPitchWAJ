@@ -31,7 +31,13 @@ class UpdatesViewController: UIViewController {
             scrollView.setContentOffset(CGPoint(x: 0, y : 0), animated: true)
         case 1:
             scrollView.setContentOffset(CGPoint(x: 375, y : 0), animated: true)
-            fetchUpdates()
+            
+            if update.count >= 1 {
+               return
+                
+            } else {
+                fetchUpdates()
+            }
             
         default:
             print ("")
