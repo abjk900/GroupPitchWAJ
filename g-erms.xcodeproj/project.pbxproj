@@ -30,6 +30,7 @@
 		C03622661F875DB400B659D5 /* StreamingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03622651F875DB400B659D5 /* StreamingTableViewCell.swift */; };
 		C06C51CD1F7C5BD0007D35CE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C51CC1F7C5BD0007D35CE /* Home.swift */; };
 		C0787F901F7D0A4600D8D015 /* HomeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */; };
+		C0D74D0A1F8A11E900C49A21 /* SweetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D74D091F8A11E900C49A21 /* SweetsTableViewCell.swift */; };
 		C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */; };
 		C0FA130B1F88EA6F00CAB3FE /* UpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FA130A1F88EA6F00CAB3FE /* UpdatesViewController.swift */; };
 		C0FA130D1F89260400CAB3FE /* UpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FA130C1F89260400CAB3FE /* UpdatesTableViewCell.swift */; };
@@ -104,6 +105,7 @@
 		C037993F1F79E78300DCB144 /* g-erms.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "g-erms.entitlements"; sourceTree = "<group>"; };
 		C06C51CC1F7C5BD0007D35CE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsViewController.swift; sourceTree = "<group>"; };
+		C0D74D091F8A11E900C49A21 /* SweetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetsTableViewCell.swift; sourceTree = "<group>"; };
 		C0E9CA5D1F85EA6B0082C3BC /* Top10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10ViewController.swift; sourceTree = "<group>"; };
 		C0FA130A1F88EA6F00CAB3FE /* UpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewController.swift; sourceTree = "<group>"; };
 		C0FA130C1F89260400CAB3FE /* UpdatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesTableViewCell.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				F83FF4411F7A284200D7B8D1 /* HomeViewController.swift */,
 				C0787F8F1F7D0A4600D8D015 /* HomeDetailsViewController.swift */,
 				194B054D1F7B407200A260BA /* ProfileViewController.swift */,
+				C0D74D091F8A11E900C49A21 /* SweetsTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				C01B25F91F861D430049B7AD /* Top10DetailsViewController.swift in Sources */,
 				F8F3AEA31F7E1F97003F72EA /* EventViewCell.swift in Sources */,
 				C0E9CA5E1F85EA6B0082C3BC /* Top10ViewController.swift in Sources */,
+				C0D74D0A1F8A11E900C49A21 /* SweetsTableViewCell.swift in Sources */,
 				C02D30411F88749D0062A490 /* OnboardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
