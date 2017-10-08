@@ -28,10 +28,9 @@ class Contact {
     var lastname : String = ""
     var country : String = ""
     
-    init(anID : String, aUsername : String, aFullname : String, anEmail : String, anImageURL : String, anFilename : String, aFirstname : String, aLastname : String, aCountry : String   ) {
+    init(anID : String, aUsername : String, anEmail : String, anImageURL : String, anFilename : String, aFirstname : String, aLastname : String, aCountry : String   ) {
         id = anID
         username = aUsername
-        fullname = aFullname
         email = anEmail
         imageURL = anImageURL
         filename = anFilename
