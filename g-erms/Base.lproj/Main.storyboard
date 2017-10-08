@@ -961,9 +961,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VWk-p8-NHv" customClass="CountryPicker" customModule="CountryPicker">
-                                <rect key="frame" x="16" y="344" width="343" height="79"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWk-p8-NHv" customClass="CountryPicker" customModule="CountryPicker">
+                                <rect key="frame" x="0.0" y="539" width="375" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="p6e-6b-arn"/>
+                                </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvq-G3-WzM">
                                 <rect key="frame" x="16" y="277" width="102" height="21"/>
@@ -1009,11 +1011,30 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S2q-9x-uOH" customClass="CountryPicker" customModule="CountryPicker">
-                                <rect key="frame" x="16" y="524" width="343" height="79"/>
+                                <rect key="frame" x="220" y="233" width="102" height="61"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LPV-Cw-QQX">
+                                <rect key="frame" x="16" y="344" width="334" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0E8-db-oEF">
+                                <rect key="frame" x="16" y="382" width="334" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VWk-p8-NHv" firstAttribute="leading" secondItem="R1a-D7-rR7" secondAttribute="leading" id="0ew-yq-fKA"/>
+                            <constraint firstItem="VWk-p8-NHv" firstAttribute="trailing" secondItem="R1a-D7-rR7" secondAttribute="trailing" id="1Za-S3-BLE"/>
+                            <constraint firstItem="VWk-p8-NHv" firstAttribute="bottom" secondItem="R1a-D7-rR7" secondAttribute="bottom" id="IHq-TR-UKv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="R1a-D7-rR7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="n5b-fv-Q0R">
@@ -1024,6 +1045,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="country1TextField" destination="LPV-Cw-QQX" id="JP2-Pl-pDW"/>
+                        <outlet property="country2TextField" destination="0E8-db-oEF" id="Q4p-DA-K0G"/>
                         <outlet property="gameDatePicker" destination="iuP-dS-VuZ" id="e2i-t7-NOq"/>
                         <outlet property="gameEventNameTextField" destination="Ks0-cB-QLY" id="1rd-3K-8of"/>
                         <outlet property="gameNameTextField" destination="OyY-xq-9la" id="Rb9-5z-sHe"/>
@@ -1036,7 +1059,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4x-b4-ReY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3196" y="1424"/>
+            <point key="canvasLocation" x="3196" y="1423.5382308845578"/>
         </scene>
         <!--Show Event Detail View Controller-->
         <scene sceneID="IbZ-7d-j7f">

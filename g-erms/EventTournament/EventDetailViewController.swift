@@ -34,6 +34,8 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
     @IBOutlet weak var picker1: CountryPicker!
     @IBOutlet weak var picker2: CountryPicker!
 
+    @IBOutlet weak var country1TextField: UITextField!
+    @IBOutlet weak var country2TextField: UITextField!
     
     
     override func viewDidLoad() {
@@ -41,6 +43,7 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
         // Do any additional setup after loading the view.
         
         self.title = "Add New Event"
+        
         
         //get current country
         let locale = Locale.current
@@ -53,6 +56,10 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
         picker2.countryPickerDelegate = self
         picker2.showPhoneNumbers = false
         picker2.setCountry(code!)
+        
+        picker1.isHidden = true
+       // country1TextField.text = picker1
+        
         
     } //end viewDidLoad
     
@@ -69,6 +76,15 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
             flagImg2 = "\(countryCode).png"
         }
     }
+    
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        picker1.isHidden = false
+        return false
+    }
+    
+    
+    
     
     @IBAction func buttonUploadTapped(_ sender: Any) {
         let imagePicker = UIImagePickerController()
