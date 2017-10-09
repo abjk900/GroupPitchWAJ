@@ -39,7 +39,7 @@ class StreamingController: UIViewController {
     func fetchPosts() {
         
         //locating in currentlyUser
-      //  guard let uid  = Auth.auth().currentUser?.uid else { return }
+        guard let uid  = Auth.auth().currentUser?.uid else { return }
         
         //
         let ref = Database.database().reference()
@@ -52,7 +52,7 @@ class StreamingController: UIViewController {
                 let videoDescription = dictionaries["videoDescription"] as? String,
                 let videoUrlName = dictionaries["videoUrlName"] as? String {
                 
-                let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName)
+                let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName, aUserId: uid)
                 
                 self.videoPosts.append(newVideo)
                 
