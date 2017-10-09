@@ -35,8 +35,8 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
         tableView.delegate = self
         searchTextFieldBar.delegate = self
         
-        fetchData()
         fetchData2()
+        fetchData()
         // Do any additional setup after loading the view.
     }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
