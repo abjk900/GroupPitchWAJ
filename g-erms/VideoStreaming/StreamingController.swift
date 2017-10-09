@@ -39,11 +39,13 @@ class StreamingController: UIViewController {
     func fetchPosts() {
         
         //locating in currentlyUser
-        guard let uid  = Auth.auth().currentUser?.uid else { return }
+      //  guard let uid  = Auth.auth().currentUser?.uid else { return }
         
         //
         let ref = Database.database().reference()
-        ref.child("PostVideo").child(uid).observe(.childAdded, with: { (snapshot) in
+        
+        //ref.child("PostVideo").child(uid).observe(.childAdded, with: { (snapshot) in
+        ref.child("PostVideo").observe(.childAdded, with: { (snapshot) in
             guard let dictionaries = snapshot.value as? [String:Any] else {return}
             
             if let videoName = dictionaries["videoName"] as? String,

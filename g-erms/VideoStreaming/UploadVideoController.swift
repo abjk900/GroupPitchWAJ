@@ -100,9 +100,9 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         //3. For database
         
         //currently logined uid
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+      //  guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let userPostRef = Database.database().reference().child("PostVideo").child(uid)
+        let userPostRef = Database.database().reference().child("PostVideo")   //.child(uid)
         
         let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
         
