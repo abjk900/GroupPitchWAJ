@@ -30,6 +30,9 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //dismiss keybaord when tap on vc
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -39,6 +42,12 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
         fetchData()
         // Do any additional setup after loading the view.
     }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;
     }
