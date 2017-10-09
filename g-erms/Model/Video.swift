@@ -8,13 +8,13 @@
 
 
 class Video{
-    let videoUrl : String
+    let videoUrlName : String
     let videoName : String
     let videoDescription : String
     
     
     init (aVideoUrl : String , aVideoName : String , aVideoDescription : String) {
-        videoUrl = aVideoUrl
+        videoUrlName = aVideoUrl
         videoName = aVideoName
         videoDescription = aVideoDescription
         

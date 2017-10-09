@@ -11,7 +11,7 @@ import AVFoundation
 import AVKit
 
 protocol StreamingTableViewCellDelegate: class {
-    func videoButtonPressedWithUrl(videoUrl: String)
+    func videoButtonPressedWithUrl(videoUrlName: String)
 }
 
 class StreamingTableViewCell: UITableViewCell {
@@ -19,7 +19,7 @@ class StreamingTableViewCell: UITableViewCell {
     let avPlayerViewController = AVPlayerViewController()
     var avPlayer : AVPlayer?
     
-    var videoUrl = ""
+    var videoUrlName = ""
     weak var delegate: StreamingTableViewCellDelegate?
     
     @IBOutlet weak var videoPlayButton: UIButton!
@@ -29,7 +29,7 @@ class StreamingTableViewCell: UITableViewCell {
     @IBOutlet weak var videoDescriptionLabel: UILabel!
     
     @IBAction func videoButtonPressed(_ sender: Any) {
-        delegate?.videoButtonPressedWithUrl(videoUrl: self.videoUrl)
+        delegate?.videoButtonPressedWithUrl(videoUrlName: self.videoUrlName)
     }
     
 }

@@ -8,15 +8,18 @@
 
 import Foundation
 
-struct VideoInfo {
-    var videoUrl : String
+class VideoInfo {
+    var id : String = ""
+    var videoUrlName : String
     var videoName : String
     var videoDescription : String
     
-    init(dictionary : [String : Any]) {
-        self.videoUrl = dictionary["videoUrl"] as? String ?? ""
-        self.videoName = dictionary["videoName"] as? String ?? ""
-        self.videoDescription = dictionary["videoDescription"] as? String ?? ""
+    init(anID : String ,aViedoName: String, aVideoDescription: String, aVideoUrlName: String) {
         
+        id = anID
+        videoName = aViedoName
+        videoDescription = aVideoDescription
+        videoUrlName = aVideoUrlName
+
     }
 }
