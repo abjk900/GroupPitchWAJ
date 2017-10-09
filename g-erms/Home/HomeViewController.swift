@@ -232,7 +232,7 @@ extension HomeViewController : UITableViewDataSource {
         RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 4800)
         guard let string = cell.newsPublishedTime.text else { return UITableViewCell() }
         guard let date1 = RFC3339DateFormatter.date(from: string) else { return UITableViewCell() }
-        print(date1 , "testing 12345")
+       // print(date1 , "testing 12345")
         //aNews.publishedTime = Date(date1)
         cell.newsPublishedTime.text = String(describing: date1)
         
