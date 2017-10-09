@@ -64,9 +64,10 @@ class StreamingController: UIViewController {
                 let videoDescription = dictionaries["videoDescription"] as? String,
                 let videoUrlName = dictionaries["videoUrlName"] as? String,
                 let videoUrl = dictionaries["videoUrl"] as? String,
-                let userId = dictionaries["userId"] as? String {
+                let userId = dictionaries["userId"] as? String,
+                let videoImageUrl = dictionaries["imageURL"] as? String {
                 
-                let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName, aVideoUrl: videoUrl, aUserId: userId)
+                let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName, aVideoUrl: videoUrl, aUserId: userId, aVideoImageUrl: videoImageUrl)
                 
                 self.videoPosts.append(newVideo)
                 
@@ -148,12 +149,18 @@ extension StreamingController : UITableViewDataSource {
         
         cell.delegate = self as StreamingTableViewCellDelegate
         
+        let imageURL = videoInfo.videoImageUrl
+        
         cell.videoUrlName = videoInfo.videoUrlName
         cell.videoPlayButton.imageView?.loadImage(from: videoInfo.videoUrl)
-        //cell.videoPlayButton.setBackgroundImage(<#T##image: UIImage?##UIImage?#>, for: .normal)
-        cell.videoImageView.loadImage(from: videoInfo.videoUrl)
+        //cell.videoPlayButton.setBackgroundImage(imageURL, for: .normal)
+        //cell.videoImageView.loadImage(from: videoInfo.videoUrl)
+        cell.videoImageView.loadImage(from: imageURL)
         cell.videoNameLabel.text = videoInfo.videoName
         cell.videoDescriptionLabel.text = videoInfo.videoDescription
+        
+       
+       //self.imageView.loadImage(from: imageURL)
         
         //        let videoUrl = videoInfo.videoUrl
         //        let url = URL(string : videoUrl)
