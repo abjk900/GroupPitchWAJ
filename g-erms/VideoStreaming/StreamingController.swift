@@ -66,15 +66,8 @@ class StreamingController: UIViewController {
             }
         }
         
-        
-     
-        
-        
     }
 }
-
-
-
 
 
 extension StreamingController : UITableViewDataSource {
@@ -103,7 +96,6 @@ extension StreamingController : UITableViewDataSource {
         //        cell.videoPlayButton.imageView?.image = UIImage(data: data!)
         
         
-        
         return cell
     }
     
@@ -124,9 +116,11 @@ extension StreamingController: StreamingTableViewCellDelegate {
                     playerViewController.player = player
                     self.present(playerViewController, animated: true, completion: nil)
                     
+                    
                 }
                 
             }
+            self.streamingTableView.reloadData()
         }
        
     }

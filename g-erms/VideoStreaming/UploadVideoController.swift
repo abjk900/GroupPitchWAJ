@@ -17,6 +17,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var videoUploadProgress: UIProgressView!
     
+    let streamingController = StreamingController()
     let imagePicketController = UIImagePickerController()
     var videoName = ""
     var videoURL : URL?
@@ -55,43 +56,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         
         videoName = NSUUID().uuidString
         
-        // 1.For video file
-        let uploadVideoTask = Storage.storage().reference().child("gameVideo").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
-            
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            if let videoURL = meta?.downloadURL()?.absoluteString {
-                print("Successfully uploaded video file")
-                print(videoURL)
-            }
-        }
-        
-        uploadVideoTask.observe(.progress) { (snapshot) in
-            if let completedUnitCount = snapshot.progress?.completedUnitCount,
-                let total = snapshot.progress?.totalUnitCount{
-                self.videoUploadProgress.progress = Float(completedUnitCount)/Float(total)
-            }
-            
-        }
-        
-        // 2. For video image
-        let uploadVideoImageTask = Storage.storage().reference().child("gameVideoImage").child(videoName).putData(uploadData, metadata: nil) { (meta, error) in
-            
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            if let videoImageURL = meta?.downloadURL()?.absoluteString {
-                print("Successfully uploaded video image")
-                print(videoImageURL)
-            }
-        }
-        
-        //3. For database
+        //1. For database
         
         //currently logined uid
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -111,6 +76,49 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
             print("Successfully save post to DB")
             
         }
+        
+        // 2. For video image
+        let uploadVideoImageTask = Storage.storage().reference().child("gameVideoImage").child(videoName).putData(uploadData, metadata: nil) { (meta, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let videoImageURL = meta?.downloadURL()?.absoluteString {
+                print("Successfully uploaded video image")
+                print(videoImageURL)
+            }
+        }
+        
+        // 3.For video file
+        let uploadVideoTask = Storage.storage().reference().child("gameVideo").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let videoURL = meta?.downloadURL()?.absoluteString {
+                print("Successfully uploaded video file")
+                print(videoURL)
+            }
+        }
+        
+        uploadVideoTask.observe(.progress) { (snapshot) in
+            if let completedUnitCount = snapshot.progress?.completedUnitCount,
+                let total = snapshot.progress?.totalUnitCount{
+                self.videoUploadProgress.progress = Float(completedUnitCount)/Float(total)
+            }
+            self.streamingController.reloadInputViews()
+            
+            guard let vc = self.navigationController?.popViewController(animated: true) else { return }
+            
+            self.present(vc, animated:  true, completion:  nil)
+        }
+        
+        
+        
 
 //        //the videoURL must be converted with string then can save in firebase.
 //        let uploadValue = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
