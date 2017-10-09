@@ -13,13 +13,15 @@ class VideoInfo {
     var videoUrlName : String
     var videoName : String
     var videoDescription : String
+    var videoUrl : String
     
-    init(anID : String ,aViedoName: String, aVideoDescription: String, aVideoUrlName: String) {
+    init(anID : String ,aViedoName: String, aVideoDescription: String, aVideoUrlName: String, aVideoUrl: String) {
         
         id = anID
         videoName = aViedoName
         videoDescription = aVideoDescription
         videoUrlName = aVideoUrlName
+        videoUrl = aVideoUrl
 
     }
 }

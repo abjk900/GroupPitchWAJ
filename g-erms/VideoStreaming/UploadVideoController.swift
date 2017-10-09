@@ -57,21 +57,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         videoUrlName = NSUUID().uuidString
         
 
-        // 1. For video image Storage
-        let uploadVideoImageTask = Storage.storage().reference().child("gameVideoImage").child(videoUrlName).putData(uploadData, metadata: nil) { (meta, error) in
-            
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            if let videoImageURL = meta?.downloadURL()?.absoluteString {
-                print("Successfully uploaded video image")
-                print(videoImageURL)
-            }
-        }
-        
-        // 2. For video file Storage
+        // For video file Storage
         let uploadVideoTask = Storage.storage().reference().child("gameVideo").child(videoUrlName).putFile(from: videoURL, metadata: nil) { (meta, error) in
             
             if let error = error {
@@ -97,7 +83,23 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
             
         }
         
-        //3. For database
+        // For video image Storage
+        let uploadVideoImageTask = Storage.storage().reference().child("gameVideoImage").child(videoUrlName).putData(uploadData, metadata: nil) { (meta, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let videoImageURL = meta?.downloadURL()?.absoluteString {
+                print("Successfully uploaded video image")
+                print(videoImageURL)
+            }
+        }
+        
+        
+        
+        // For database
         
         //currently logined uid
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -106,7 +108,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         
         let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
         
-        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrlName" : "\(videoUrlName)"] as [String : Any]
+        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(videoUrlName)"] as [String : Any]
         
         ref.updateChildValues(values) { (err, ref) in
             if let err = err {
