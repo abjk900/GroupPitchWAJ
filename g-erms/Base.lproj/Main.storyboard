@@ -1448,39 +1448,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ai-a3-t92">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Ai-a3-t92">
                                 <rect key="frame" x="67" y="120" width="240" height="244"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="rp7-NW-1jL"/>
+                                    <constraint firstAttribute="height" constant="244" id="uIP-lg-3xx"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="fVW-ev-eYw" appends="YES" id="O5K-nc-b4o"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Video Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Avc-Qj-eqD">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Video Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Avc-Qj-eqD">
                                 <rect key="frame" x="67" y="405" width="240" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DiF-x1-yhU"/>
+                                    <constraint firstAttribute="width" constant="240" id="qyf-sE-X3u"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELz-gb-D5Z">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ELz-gb-D5Z">
                                 <rect key="frame" x="67" y="457" width="240" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pEf-5b-hzy"/>
+                                    <constraint firstAttribute="width" constant="240" id="ycz-sm-l8x"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIv-cl-biH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIv-cl-biH">
                                 <rect key="frame" x="138" y="516" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="WjO-po-k06"/>
+                                    <constraint firstAttribute="height" constant="30" id="l5O-Ky-ukk"/>
+                                </constraints>
                                 <state key="normal" title="Upload"/>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-bx-TWH">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-bx-TWH">
                                 <rect key="frame" x="67" y="384" width="240" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="Avc-Qj-eqD" secondAttribute="trailing" constant="68" id="31y-HD-CiC"/>
+                            <constraint firstItem="Avc-Qj-eqD" firstAttribute="top" secondItem="ktA-bx-TWH" secondAttribute="bottom" constant="19" id="3GE-w3-hit"/>
+                            <constraint firstItem="8ro-gV-Jvu" firstAttribute="bottom" secondItem="CIv-cl-biH" secondAttribute="bottom" constant="72" id="DmU-hR-NXU"/>
+                            <constraint firstItem="ELz-gb-D5Z" firstAttribute="top" secondItem="Avc-Qj-eqD" secondAttribute="bottom" constant="22" id="G10-78-Scy"/>
+                            <constraint firstItem="CIv-cl-biH" firstAttribute="top" secondItem="ELz-gb-D5Z" secondAttribute="bottom" constant="29" id="Ios-mQ-QFt"/>
+                            <constraint firstItem="ELz-gb-D5Z" firstAttribute="top" secondItem="Avc-Qj-eqD" secondAttribute="bottom" constant="22" id="Jel-tH-rlV"/>
+                            <constraint firstItem="Avc-Qj-eqD" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="67" id="NFc-w1-T1b"/>
+                            <constraint firstItem="ELz-gb-D5Z" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="67" id="RCb-CO-okd"/>
+                            <constraint firstItem="CIv-cl-biH" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="138" id="RDT-Hb-Jxr"/>
+                            <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="ELz-gb-D5Z" secondAttribute="trailing" constant="68" id="YWt-Z4-TO3"/>
+                            <constraint firstItem="ktA-bx-TWH" firstAttribute="top" secondItem="3Ai-a3-t92" secondAttribute="bottom" constant="20" id="c2f-UO-cwq"/>
+                            <constraint firstItem="CIv-cl-biH" firstAttribute="top" secondItem="ELz-gb-D5Z" secondAttribute="bottom" constant="29" id="f0y-Mg-z7N"/>
+                            <constraint firstItem="3Ai-a3-t92" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="67" id="iGB-XO-dvk"/>
+                            <constraint firstItem="3Ai-a3-t92" firstAttribute="top" secondItem="8ro-gV-Jvu" secondAttribute="top" constant="56" id="mOX-Js-SWU"/>
+                            <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="CIv-cl-biH" secondAttribute="trailing" constant="138" id="uYu-kz-Bkv"/>
+                            <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="3Ai-a3-t92" secondAttribute="trailing" constant="68" id="wtK-ih-2FO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8ro-gV-Jvu"/>
                     </view>
                     <navigationItem key="navigationItem" id="ny5-mH-VpF">
