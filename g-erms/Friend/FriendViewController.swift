@@ -186,7 +186,7 @@ extension FriendViewController : UITableViewDataSource {
         if searchActive {
             let filter = filtered[indexPath.row]
             cell.usernameLabel.text = filter.username
-            cell.fullnameLabel.text = "\(filter.fullname) :\(filter.country)"
+            cell.fullnameLabel.text = "\(filter.firstname) \(filter.lastname) :\(filter.country)"
             cell.delegate = self
             cell.friend = filter
             
@@ -196,7 +196,7 @@ extension FriendViewController : UITableViewDataSource {
         } else {
             let contact = contacts[indexPath.row]
             cell.usernameLabel.text = contact.username
-            cell.fullnameLabel.text = "\(contact.fullname) :\(contact.country)"
+            cell.fullnameLabel.text = "\(contact.firstname) \(contact.lastname) :\(contact.country)"
             cell.delegate = self
             cell.friend = contact
             
