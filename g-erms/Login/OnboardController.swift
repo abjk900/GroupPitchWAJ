@@ -13,6 +13,7 @@ class OnboardController: UIViewController {
     
     var window: UIWindow?
     
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,11 +90,19 @@ class OnboardController: UIViewController {
                 self.onboardingCompletionHandler()
         })
         
-        guard let onboardingVC = OnboardingViewController(backgroundImage: UIImage(named: "bg_1"), contents: [firstPage, secondPage, thirdPage, fourthPage]) else { return }
+        
+        
+        
+        guard let onboardingVC = OnboardingViewController(backgroundImage: UIImage(named: "logo1"), contents: [firstPage, secondPage, thirdPage, fourthPage]) else { return }
+        
+//        let imageVC = UIImage(named:"logo1")
+//        var mainVC = UIImageView(image: imageVC)
+//        mainVC.contentMode = .scaleAspectFit
         
         onboardingVC.shouldFadeTransitions = true
         onboardingVC.fadePageControlOnLastPage = true
         onboardingVC.fadeSkipButtonOnLastPage = true
+        onboardingVC.shouldBlurBackground = true
         
         // Customization
         onboardingVC.allowSkipping = true

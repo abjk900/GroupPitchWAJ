@@ -36,6 +36,7 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
         searchTextFieldBar.delegate = self
         
         fetchData()
+        fetchData2()
         // Do any additional setup after loading the view.
     }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -146,6 +147,63 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
         task.resume()
     }
     
+    func fetchData2 () {
+        //send API request
+        //1.get the url
+        let urlString = "https://newsapi.org/v1/articles?source=polygon&sortBy=top&apiKey=11fd246c28ab411f98aa89868f674180"
+        guard let url = URL(string: urlString)
+            else { return }
+        
+        //2. Get a URLSession
+        let session = URLSession.shared
+        
+        //3.Create a URLTask
+        let task = session.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("DataTask Error : \(error.localizedDescription)")
+                return
+            }
+            
+            
+            guard let data = data
+                else{
+                    print("Invalid Data")
+                    return
+            }
+            
+            //print(data)
+            //Convert to Json
+            
+            guard let json = try? JSONSerialization.jsonObject(with: data, options: []),
+                let validJson = json as? [String : Any]
+                else {
+                    return
+            }
+            
+            guard let homeArray = validJson["articles"] as? [[String:Any]]
+                else { return }
+            
+            
+            for homeData in homeArray {
+                
+                let newHome = Home(homeData: homeData)
+                self.news.append(newHome)
+                
+                
+            }
+            self.filtered = self.news
+            
+            print(self.news.count)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+            
+        }
+        //4. Start the task
+        task.resume()
+    }
     
     
 }
