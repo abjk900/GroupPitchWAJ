@@ -39,7 +39,7 @@ class StreamingController: UIViewController {
     func fetchPosts() {
         
         //locating in currentlyUser
-        guard let uid  = Auth.auth().currentUser?.uid else { return }
+      //  guard let uid  = Auth.auth().currentUser?.uid else { return }
         
         //
         let ref = Database.database().reference()
@@ -50,9 +50,10 @@ class StreamingController: UIViewController {
             
             if let videoName = dictionaries["videoName"] as? String,
                 let videoDescription = dictionaries["videoDescription"] as? String,
-                let videoUrlName = dictionaries["videoUrlName"] as? String {
+                let videoUrlName = dictionaries["videoUrlName"] as? String,
+                let videoUrl = dictionaries["videoUrl"] as? String{
                 
-                let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName, aUserId: uid)
+                let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName, aVideoUrl: videoUrl)
                 
                 self.videoPosts.append(newVideo)
                 
@@ -135,6 +136,7 @@ extension StreamingController : UITableViewDataSource {
         cell.delegate = self as StreamingTableViewCellDelegate
         
         cell.videoUrlName = videoInfo.videoUrlName
+        cell.videoPlayButton.imageView?.loadImage(from: videoInfo.videoUrl)
         cell.videoNameLabel.text = videoInfo.videoName
         cell.videoDescriptionLabel.text = videoInfo.videoDescription
         
