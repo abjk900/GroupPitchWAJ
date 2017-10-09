@@ -26,6 +26,10 @@ class StreamingController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //dismiss keybaord when tap on vc
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
         // cell
         streamingTableView.dataSource = self
         streamingTableView.delegate = self as? UITableViewDelegate
@@ -37,6 +41,11 @@ class StreamingController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         streamingTableView.reloadData()
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func fetchPosts() {

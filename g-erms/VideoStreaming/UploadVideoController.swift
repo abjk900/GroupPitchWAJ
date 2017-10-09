@@ -110,7 +110,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         
         let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
         
-        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(videoUrlName)", "imageURL" : videoImageURL, "userId" : uid ] as [String : Any]
+        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(videoUrlName)", "imageURL" : self.videoImageURL, "userId" : uid ] as [String : Any]
         
         ref.updateChildValues(values) { (err, ref) in
             if let err = err {
