@@ -850,7 +850,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJM-gK-8at" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1410.4000000000001" y="-994.45277361319347"/>
+            <point key="canvasLocation" x="-414" y="4136"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="n1V-TZ-Be2">
@@ -1114,11 +1114,11 @@
         <scene sceneID="2Xh-yZ-AzQ">
             <objects>
                 <viewController id="jpL-tA-Yyo" customClass="EventDetailViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jfe-Gx-z4A">
+                    <view key="view" contentMode="scaleAspectFit" id="Jfe-Gx-z4A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Nca-5u-eRD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="Nca-5u-eRD">
                                 <rect key="frame" x="16" y="85" width="86" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1694,11 +1694,11 @@
         <image name="Customer" width="26" height="26"/>
         <image name="Event" width="26" height="26"/>
         <image name="Friends" width="26" height="26"/>
+        <image name="Image-1" width="626" height="626"/>
         <image name="List" width="26" height="26"/>
         <image name="Trophy" width="26" height="26"/>
         <image name="Video Playlist" width="26" height="26"/>
         <image name="icons8-halloween_candy_filled" width="25" height="25"/>
-        <image name="imageDefault" width="128" height="128"/>
         <image name="profileImage" width="128" height="128"/>
         <image name="videoImage" width="256" height="256"/>
         <image name="videoUpload" width="25" height="25"/>
