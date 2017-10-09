@@ -741,14 +741,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="GMq-9q-JX6">
-                                <rect key="frame" x="109" y="92" width="157" height="114"/>
+                                <rect key="frame" x="109" y="92" width="157" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="R2v-SU-9nJ"/>
                                     <constraint firstAttribute="width" constant="157" id="gXg-bN-uvu"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g7e-0O-1Vk">
-                                <rect key="frame" x="57" y="263" width="260" height="30"/>
+                                <rect key="frame" x="57" y="277" width="260" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="7OV-Yc-Uai"/>
                                     <constraint firstAttribute="height" constant="30" id="ZzH-Wf-jgD"/>
@@ -758,7 +758,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQd-5e-BLh">
-                                <rect key="frame" x="57" y="304" width="260" height="30"/>
+                                <rect key="frame" x="57" y="318" width="260" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="pbW-k2-w6c"/>
                                     <constraint firstAttribute="width" constant="260" id="vvJ-2Q-5Qa"/>
@@ -768,7 +768,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sEc-wd-OUa">
-                                <rect key="frame" x="57" y="342" width="260" height="30"/>
+                                <rect key="frame" x="57" y="356" width="260" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Eba-CM-xjI"/>
                                     <constraint firstAttribute="width" constant="260" id="he1-LL-KXY"/>
@@ -778,7 +778,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zU-d9-9jG">
-                                <rect key="frame" x="282" y="78" width="77" height="16"/>
+                                <rect key="frame" x="282" y="78" width="77" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4cA-Ov-rVF"/>
                                     <constraint firstAttribute="width" constant="77" id="RJd-gU-qjA"/>
@@ -789,7 +789,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJY-ho-JYV">
-                                <rect key="frame" x="117" y="214" width="141" height="30"/>
+                                <rect key="frame" x="117" y="228" width="141" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Jp0-gw-y5H"/>
                                     <constraint firstAttribute="width" constant="141" id="hJ1-kg-BnG"/>
@@ -800,7 +800,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnY-mH-YUh">
-                                <rect key="frame" x="57" y="387" width="260" height="0.0"/>
+                                <rect key="frame" x="57" y="401" width="260" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="bSG-UN-H3G"/>
                                     <constraint firstAttribute="height" constant="30" id="v5N-Zo-qqx"/>
@@ -1440,7 +1440,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoImage" translatesAutoresizingMaskIntoConstraints="NO" id="3Ai-a3-t92">
-                                <rect key="frame" x="67" y="120" width="240" height="244"/>
+                                <rect key="frame" x="67" y="120" width="240" height="226"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="rp7-NW-1jL"/>
@@ -1470,9 +1470,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-bx-TWH">
-                                <rect key="frame" x="67" y="384" width="240" height="2"/>
-                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIv-cl-biH">
                                 <rect key="frame" x="117" y="517" width="141" height="30"/>
                                 <constraints>
@@ -1481,21 +1478,30 @@
                                 </constraints>
                                 <state key="normal" title="Upload"/>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-bx-TWH">
+                                <rect key="frame" x="67" y="366" width="240" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="DNo-Et-jSr"/>
+                                    <constraint firstAttribute="height" constant="20" id="e8Y-dZ-Yvx"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="Avc-Qj-eqD" secondAttribute="trailing" constant="68" id="31y-HD-CiC"/>
-                            <constraint firstItem="Avc-Qj-eqD" firstAttribute="top" secondItem="ktA-bx-TWH" secondAttribute="bottom" constant="19" id="3GE-w3-hit"/>
                             <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="CIv-cl-biH" secondAttribute="trailing" constant="117" id="FCz-a3-9Pp"/>
                             <constraint firstItem="ELz-gb-D5Z" firstAttribute="top" secondItem="Avc-Qj-eqD" secondAttribute="bottom" constant="22" id="G10-78-Scy"/>
+                            <constraint firstItem="ktA-bx-TWH" firstAttribute="top" secondItem="3Ai-a3-t92" secondAttribute="bottom" constant="20" id="Jab-zX-FCA"/>
                             <constraint firstItem="ELz-gb-D5Z" firstAttribute="top" secondItem="Avc-Qj-eqD" secondAttribute="bottom" constant="22" id="Jel-tH-rlV"/>
+                            <constraint firstItem="Avc-Qj-eqD" firstAttribute="top" secondItem="ktA-bx-TWH" secondAttribute="bottom" constant="19" id="K8M-rm-PMm"/>
                             <constraint firstItem="Avc-Qj-eqD" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="67" id="NFc-w1-T1b"/>
                             <constraint firstItem="ELz-gb-D5Z" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="67" id="RCb-CO-okd"/>
+                            <constraint firstItem="ktA-bx-TWH" firstAttribute="leading" secondItem="4cf-L0-IKI" secondAttribute="leadingMargin" constant="51" id="S3z-FI-14o"/>
                             <constraint firstItem="8ro-gV-Jvu" firstAttribute="bottom" secondItem="CIv-cl-biH" secondAttribute="bottom" constant="71" id="VyS-D8-tkk"/>
                             <constraint firstItem="CIv-cl-biH" firstAttribute="top" secondItem="ELz-gb-D5Z" secondAttribute="bottom" constant="30" id="X1M-80-n1T"/>
                             <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="ELz-gb-D5Z" secondAttribute="trailing" constant="68" id="YWt-Z4-TO3"/>
                             <constraint firstItem="CIv-cl-biH" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="117" id="aMD-XC-CdB"/>
-                            <constraint firstItem="ktA-bx-TWH" firstAttribute="top" secondItem="3Ai-a3-t92" secondAttribute="bottom" constant="20" id="c2f-UO-cwq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ktA-bx-TWH" secondAttribute="trailing" constant="52" id="eTT-GC-yzB"/>
                             <constraint firstItem="3Ai-a3-t92" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="67" id="iGB-XO-dvk"/>
                             <constraint firstItem="3Ai-a3-t92" firstAttribute="top" secondItem="8ro-gV-Jvu" secondAttribute="top" constant="56" id="mOX-Js-SWU"/>
                             <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="3Ai-a3-t92" secondAttribute="trailing" constant="68" id="wtK-ih-2FO"/>
@@ -1704,6 +1710,6 @@
         <image name="videoUpload" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jCS-Nm-Bse"/>
+        <segue reference="wmn-Zo-qQG"/>
     </inferredMetricsTieBreakers>
 </document>
