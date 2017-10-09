@@ -92,7 +92,7 @@ class UpdatesViewController: UIViewController {
                 
                 self.selectedGamer = newGamers
                 
-                print(newGamers)
+                //print(newGamers)
                 
                 
                 
@@ -134,7 +134,7 @@ class UpdatesViewController: UIViewController {
                 
                 //self.selectedUpdates = newUpdates
                
-                print(newUpdates)
+                //print(newUpdates)
                 
                
                 

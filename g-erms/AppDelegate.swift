@@ -59,11 +59,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func checkIfLoggedIn() {
         if Auth.auth().currentUser != nil {
-            window = UIWindow(frame: UIScreen.main.bounds)
-            window?.makeKeyAndVisible()
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            guard let vc = storyboard.instantiateViewController(withIdentifier: "tabBarController") as? UITabBarController else {return}
-            window?.rootViewController = vc
+//            window = UIWindow(frame: UIScreen.main.bounds)
+//            window?.makeKeyAndVisible()
+//            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//            guard let vc = storyboard.instantiateViewController(withIdentifier: "tabBarController") as? UITabBarController else {return}
+//            window?.rootViewController = vc
+            print("")
         } else {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.makeKeyAndVisible()

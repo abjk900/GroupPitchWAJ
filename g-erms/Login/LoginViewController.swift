@@ -137,7 +137,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 ref.child("Users").child(self.fbloginID).setValue(post)
                 
                 //self.navigationController?.popViewController(animated: true)
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AuthNavigationController") as? UINavigationController else { return }
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                guard let vc = storyboard.instantiateViewController(withIdentifier: "tabBarController") as? UITabBarController else { return }
                 
                 //skip login page straight to homepage
                 self.present(vc, animated:  true, completion:  nil)
@@ -179,11 +180,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
             if let validUser = user {
                 print(validUser)
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AuthNavigationController") as? UINavigationController else { return }
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                guard let vc = storyboard.instantiateViewController(withIdentifier: "tabBarController") as? UITabBarController else { return }
                 
-                
+                //skip login page straight to homepage
                 self.present(vc, animated:  true, completion:  nil)
-                
             }
             
         }
