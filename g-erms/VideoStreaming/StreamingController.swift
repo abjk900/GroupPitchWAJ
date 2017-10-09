@@ -137,6 +137,8 @@ extension StreamingController : UITableViewDataSource {
         
         cell.videoUrlName = videoInfo.videoUrlName
         cell.videoPlayButton.imageView?.loadImage(from: videoInfo.videoUrl)
+        //cell.videoPlayButton.setBackgroundImage(<#T##image: UIImage?##UIImage?#>, for: .normal)
+        cell.videoImageView.loadImage(from: videoInfo.videoUrl)
         cell.videoNameLabel.text = videoInfo.videoName
         cell.videoDescriptionLabel.text = videoInfo.videoDescription
         
@@ -177,4 +179,5 @@ extension StreamingController: StreamingTableViewCellDelegate {
     }
     
 }
+
 

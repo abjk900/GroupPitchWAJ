@@ -32,4 +32,7 @@ class StreamingTableViewCell: UITableViewCell {
         delegate?.videoButtonPressedWithUrl(videoUrlName: self.videoUrlName)
     }
     
+    @IBOutlet weak var videoImageView: UIImageView!
+    
+    
 }

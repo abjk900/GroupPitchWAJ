@@ -165,13 +165,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PdE-Pd-JP0">
+                                                    <rect key="frame" x="8" y="8" width="359" height="175"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5D-Dh-bC9">
                                                     <rect key="frame" x="8" y="8" width="359" height="175"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="175" id="nfH-cg-RSX"/>
                                                         <constraint firstAttribute="width" constant="359" id="njr-Z4-2EJ"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Play"/>
                                                     <connections>
                                                         <action selector="videoButtonPressed:" destination="Y1a-xN-mpm" eventType="touchUpInside" id="RIx-kF-TzS"/>
                                                     </connections>
@@ -184,19 +187,24 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="PdE-Pd-JP0" firstAttribute="trailing" secondItem="x5D-Dh-bC9" secondAttribute="trailing" id="0BL-Jz-c4r"/>
                                                 <constraint firstItem="1S7-eo-SSk" firstAttribute="leading" secondItem="ldj-6C-udo" secondAttribute="leading" id="37w-Nr-FcX"/>
                                                 <constraint firstItem="ldj-6C-udo" firstAttribute="top" secondItem="x5D-Dh-bC9" secondAttribute="bottom" id="5pR-p1-bLW"/>
+                                                <constraint firstItem="PdE-Pd-JP0" firstAttribute="bottom" secondItem="x5D-Dh-bC9" secondAttribute="bottom" id="Bwm-gT-Hwo"/>
                                                 <constraint firstItem="1S7-eo-SSk" firstAttribute="trailing" secondItem="ldj-6C-udo" secondAttribute="trailing" id="Gdz-mG-j1X"/>
                                                 <constraint firstItem="x5D-Dh-bC9" firstAttribute="leading" secondItem="BNk-xx-czW" secondAttribute="leadingMargin" id="UI8-zw-IDC"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="1S7-eo-SSk" secondAttribute="bottom" constant="9.5" id="Vnh-4u-GNF"/>
                                                 <constraint firstItem="ldj-6C-udo" firstAttribute="leading" secondItem="BNk-xx-czW" secondAttribute="leadingMargin" id="X7D-nf-nVI"/>
+                                                <constraint firstItem="PdE-Pd-JP0" firstAttribute="leading" secondItem="x5D-Dh-bC9" secondAttribute="leading" id="Z2V-PQ-whS"/>
                                                 <constraint firstItem="1S7-eo-SSk" firstAttribute="top" secondItem="ldj-6C-udo" secondAttribute="bottom" id="c5t-Ew-Ejv"/>
+                                                <constraint firstItem="PdE-Pd-JP0" firstAttribute="top" secondItem="x5D-Dh-bC9" secondAttribute="top" id="pcb-kt-6JW"/>
                                                 <constraint firstItem="x5D-Dh-bC9" firstAttribute="trailing" secondItem="BNk-xx-czW" secondAttribute="trailingMargin" id="zBo-63-I4y"/>
                                                 <constraint firstItem="x5D-Dh-bC9" firstAttribute="top" secondItem="BNk-xx-czW" secondAttribute="topMargin" id="zdO-gK-8kz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="videoDescriptionLabel" destination="1S7-eo-SSk" id="u4O-Tr-Tia"/>
+                                            <outlet property="videoImageView" destination="PdE-Pd-JP0" id="pPQ-ik-3EL"/>
                                             <outlet property="videoNameLabel" destination="ldj-6C-udo" id="6K8-HL-laH"/>
                                             <outlet property="videoPlayButton" destination="x5D-Dh-bC9" id="xm5-e3-Z58"/>
                                         </connections>

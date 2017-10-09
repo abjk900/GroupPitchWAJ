@@ -21,6 +21,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
     let imagePicketController = UIImagePickerController()
     var videoUrlName = ""
     var videoURL : URL?
+    var videoImageURL = ""
     
     @IBOutlet weak var videoNameTextField: UITextField!
     
@@ -91,9 +92,10 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                 return
             }
             
-            if let videoImageURL = meta?.downloadURL()?.absoluteString {
+            if let imageURL = meta?.downloadURL()?.absoluteString {
                 print("Successfully uploaded video image")
-                print(videoImageURL)
+                print(imageURL)
+                self.videoImageURL = imageURL
             }
         }
         
@@ -108,13 +110,13 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         
         let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
         
-        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(videoUrlName)"] as [String : Any]
+        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(videoUrlName)", "imageURL" : videoImageURL] as [String : Any]
         
         ref.updateChildValues(values) { (err, ref) in
             if let err = err {
                 print("Failed to save post to DB", err)
                 return
-            }
+            }  
             
             print("Successfully save post to DB")
             
