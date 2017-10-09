@@ -1448,7 +1448,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Ai-a3-t92">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoImage" translatesAutoresizingMaskIntoConstraints="NO" id="3Ai-a3-t92">
                                 <rect key="frame" x="67" y="120" width="240" height="244"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -1479,35 +1479,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIv-cl-biH">
-                                <rect key="frame" x="138" y="516" width="99" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="99" id="WjO-po-k06"/>
-                                    <constraint firstAttribute="height" constant="30" id="l5O-Ky-ukk"/>
-                                </constraints>
-                                <state key="normal" title="Upload"/>
-                            </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-bx-TWH">
                                 <rect key="frame" x="67" y="384" width="240" height="2"/>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIv-cl-biH">
+                                <rect key="frame" x="117" y="517" width="141" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1As-on-maP"/>
+                                    <constraint firstAttribute="width" constant="141" id="c3J-v1-PaT"/>
+                                </constraints>
+                                <state key="normal" title="Upload"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="Avc-Qj-eqD" secondAttribute="trailing" constant="68" id="31y-HD-CiC"/>
                             <constraint firstItem="Avc-Qj-eqD" firstAttribute="top" secondItem="ktA-bx-TWH" secondAttribute="bottom" constant="19" id="3GE-w3-hit"/>
-                            <constraint firstItem="8ro-gV-Jvu" firstAttribute="bottom" secondItem="CIv-cl-biH" secondAttribute="bottom" constant="72" id="DmU-hR-NXU"/>
+                            <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="CIv-cl-biH" secondAttribute="trailing" constant="117" id="FCz-a3-9Pp"/>
                             <constraint firstItem="ELz-gb-D5Z" firstAttribute="top" secondItem="Avc-Qj-eqD" secondAttribute="bottom" constant="22" id="G10-78-Scy"/>
-                            <constraint firstItem="CIv-cl-biH" firstAttribute="top" secondItem="ELz-gb-D5Z" secondAttribute="bottom" constant="29" id="Ios-mQ-QFt"/>
                             <constraint firstItem="ELz-gb-D5Z" firstAttribute="top" secondItem="Avc-Qj-eqD" secondAttribute="bottom" constant="22" id="Jel-tH-rlV"/>
                             <constraint firstItem="Avc-Qj-eqD" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="67" id="NFc-w1-T1b"/>
                             <constraint firstItem="ELz-gb-D5Z" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="67" id="RCb-CO-okd"/>
-                            <constraint firstItem="CIv-cl-biH" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="138" id="RDT-Hb-Jxr"/>
+                            <constraint firstItem="8ro-gV-Jvu" firstAttribute="bottom" secondItem="CIv-cl-biH" secondAttribute="bottom" constant="71" id="VyS-D8-tkk"/>
+                            <constraint firstItem="CIv-cl-biH" firstAttribute="top" secondItem="ELz-gb-D5Z" secondAttribute="bottom" constant="30" id="X1M-80-n1T"/>
                             <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="ELz-gb-D5Z" secondAttribute="trailing" constant="68" id="YWt-Z4-TO3"/>
+                            <constraint firstItem="CIv-cl-biH" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="117" id="aMD-XC-CdB"/>
                             <constraint firstItem="ktA-bx-TWH" firstAttribute="top" secondItem="3Ai-a3-t92" secondAttribute="bottom" constant="20" id="c2f-UO-cwq"/>
-                            <constraint firstItem="CIv-cl-biH" firstAttribute="top" secondItem="ELz-gb-D5Z" secondAttribute="bottom" constant="29" id="f0y-Mg-z7N"/>
                             <constraint firstItem="3Ai-a3-t92" firstAttribute="leading" secondItem="8ro-gV-Jvu" secondAttribute="leading" constant="67" id="iGB-XO-dvk"/>
                             <constraint firstItem="3Ai-a3-t92" firstAttribute="top" secondItem="8ro-gV-Jvu" secondAttribute="top" constant="56" id="mOX-Js-SWU"/>
-                            <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="CIv-cl-biH" secondAttribute="trailing" constant="138" id="uYu-kz-Bkv"/>
                             <constraint firstItem="8ro-gV-Jvu" firstAttribute="trailing" secondItem="3Ai-a3-t92" secondAttribute="trailing" constant="68" id="wtK-ih-2FO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8ro-gV-Jvu"/>
@@ -1534,7 +1533,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2407" y="1424"/>
+            <point key="canvasLocation" x="-2407.1999999999998" y="1423.5382308845578"/>
         </scene>
         <!--Leaderboard-->
         <scene sceneID="Gjg-KP-PvA">
@@ -1710,6 +1709,7 @@
         <image name="icons8-halloween_candy_filled" width="25" height="25"/>
         <image name="imageDefault" width="128" height="128"/>
         <image name="profileImage" width="128" height="128"/>
+        <image name="videoImage" width="256" height="256"/>
         <image name="videoUpload" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
