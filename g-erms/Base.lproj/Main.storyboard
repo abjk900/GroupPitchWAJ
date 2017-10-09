@@ -172,6 +172,9 @@
                                                         <constraint firstAttribute="width" constant="359" id="njr-Z4-2EJ"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="videoButtonPressed:" destination="Y1a-xN-mpm" eventType="touchUpInside" id="RIx-kF-TzS"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VideoDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S7-eo-SSk">
                                                     <rect key="frame" x="8" y="208" width="342" height="25"/>

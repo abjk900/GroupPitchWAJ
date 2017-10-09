@@ -17,7 +17,9 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet weak var videoUploadProgress: UIProgressView!
     
+    let streamingController = StreamingController()
     let imagePicketController = UIImagePickerController()
+    var videoName = ""
     var videoURL : URL?
     
     @IBOutlet weak var videoNameTextField: UITextField!
@@ -52,9 +54,44 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         
         guard let uploadData = UIImageJPEGRepresentation(image, 0.3) else { return }
         
-        let videoName = NSUUID().uuidString
+        videoName = NSUUID().uuidString
         
-        // 1.For video file
+        //1. For database
+        
+        //currently logined uid
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let userPostRef = Database.database().reference().child("PostVideo").child(uid)
+        
+        let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
+        
+        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : "\(videoName)"] as [String : Any]
+        
+        ref.updateChildValues(values) { (err, ref) in
+            if let err = err {
+                print("Failed to save post to DB", err)
+                return
+            }
+            
+            print("Successfully save post to DB")
+            
+        }
+        
+        // 2. For video image
+        let uploadVideoImageTask = Storage.storage().reference().child("gameVideoImage").child(videoName).putData(uploadData, metadata: nil) { (meta, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let videoImageURL = meta?.downloadURL()?.absoluteString {
+                print("Successfully uploaded video image")
+                print(videoImageURL)
+            }
+        }
+        
+        // 3.For video file
         let uploadVideoTask = Storage.storage().reference().child("gameVideo").child(videoName).putFile(from: videoURL, metadata: nil) { (meta, error) in
             
             if let error = error {
@@ -73,43 +110,15 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                 let total = snapshot.progress?.totalUnitCount{
                 self.videoUploadProgress.progress = Float(completedUnitCount)/Float(total)
             }
+            self.streamingController.reloadInputViews()
             
+            guard let vc = self.navigationController?.popViewController(animated: true) else { return }
+            
+            self.present(vc, animated:  true, completion:  nil)
         }
         
-        // 2. For video image
-        let uploadVideoImageTask = Storage.storage().reference().child("gameVideoImage").child(videoName).putData(uploadData, metadata: nil) { (meta, error) in
-            
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            if let videoImageURL = meta?.downloadURL()?.absoluteString {
-                print("Successfully uploaded video image")
-                print(videoImageURL)
-            }
-        }
         
-        //3. For database
         
-        //currently logined uid
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-        let userPostRef = Database.database().reference().child("PostVideo").child(uid)
-        
-        let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
-        
-        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
-        
-        ref.updateChildValues(values) { (err, ref) in
-            if let err = err {
-                print("Failed to save post to DB", err)
-                return
-            }
-            
-            print("Successfully save post to DB")
-            
-        }
 
 //        //the videoURL must be converted with string then can save in firebase.
 //        let uploadValue = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString] as [String : Any]
