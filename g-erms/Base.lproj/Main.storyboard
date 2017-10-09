@@ -252,6 +252,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="eCK-sq-am4" id="wIm-8m-L7O"/>
                         <outlet property="streamingTableView" destination="6Ok-zn-agO" id="62i-sH-WA4"/>
                     </connections>
                 </viewController>

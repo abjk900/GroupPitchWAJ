@@ -22,6 +22,9 @@ class StreamingController: UIViewController {
     var avPlayer : AVPlayer?
     var videoInfo = [VideoInfo]()
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
     @IBOutlet weak var streamingTableView: UITableView!
     
     override func viewDidLoad() {

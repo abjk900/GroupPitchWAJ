@@ -22,7 +22,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
     var videoUrlName = ""
     var videoURL : URL?
     var videoImageURL = ""
-    var currFilename : String = ""
+   
     
     @IBOutlet weak var videoNameTextField: UITextField!
     
