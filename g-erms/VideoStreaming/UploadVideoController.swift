@@ -22,6 +22,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
     var videoUrlName = ""
     var videoURL : URL?
     var videoImageURL = ""
+    var currFilename : String = ""
     
     @IBOutlet weak var videoNameTextField: UITextField!
     
@@ -84,8 +85,11 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
             
         }
         
-        // For video image Storage
+        
+        // For video image Storage    //videoURL   //videoUrlName
         let uploadVideoImageTask = Storage.storage().reference().child("gameVideoImage").child(videoUrlName).putData(uploadData, metadata: nil) { (meta, error) in
+
+         //   uploadToStorage(videoUrlName)
             
             if let error = error {
                 print(error.localizedDescription)
@@ -96,31 +100,32 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                 print("Successfully uploaded video image")
                 print(imageURL)
                 self.videoImageURL = imageURL
-            }
+                //*****save to database the image
+                // For database
+                
+                //currently logined uid
+                guard let uid = Auth.auth().currentUser?.uid else { return }
+                let userPostRef = Database.database().reference().child("PostVideo")   //.child(uid)
+                let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
+                
+                let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(self.videoUrlName)", "imageURL" : self.videoImageURL, "userId" : uid ] as [String : Any]
+                
+                ref.updateChildValues(values) { (err, ref) in
+                    if let err = err {
+                        print("Failed to save post to DB", err)
+                        return
+                    }
+                    
+                    print("Successfully save post to DB")
+                    
+                }
+                
+            } //end imageUrl
         }
         
         
         
-        // For database
-        
-        //currently logined uid
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-        let userPostRef = Database.database().reference().child("PostVideo")   //.child(uid)
-        
-        let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
-        
-        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(videoUrlName)", "imageURL" : self.videoImageURL, "userId" : uid ] as [String : Any]
-        
-        ref.updateChildValues(values) { (err, ref) in
-            if let err = err {
-                print("Failed to save post to DB", err)
-                return
-            }  
-            
-            print("Successfully save post to DB")
-            
-        }
+
         
         
     }
@@ -139,6 +144,9 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+
+    
     
     func previewImageFromVideo(url : URL) -> UIImage? {
         let asset = AVAsset(url: url)
