@@ -20,7 +20,7 @@ class StreamingController: UIViewController {
     var videoPosts : [VideoInfo] = []
     let avPlayerViewController = AVPlayerViewController()
     var avPlayer : AVPlayer?
-    
+    var videoInfo = [VideoInfo]()
     
     @IBOutlet weak var streamingTableView: UITableView!
     
@@ -34,7 +34,10 @@ class StreamingController: UIViewController {
         
     }
     
-    var videoInfo = [VideoInfo]()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        streamingTableView.reloadData()
+    }
     
     func fetchPosts() {
         
@@ -51,9 +54,10 @@ class StreamingController: UIViewController {
             if let videoName = dictionaries["videoName"] as? String,
                 let videoDescription = dictionaries["videoDescription"] as? String,
                 let videoUrlName = dictionaries["videoUrlName"] as? String,
-                let videoUrl = dictionaries["videoUrl"] as? String{
+                let videoUrl = dictionaries["videoUrl"] as? String,
+                let userId = dictionaries["userId"] as? String {
                 
-                let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName, aVideoUrl: videoUrl)
+                let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName, aVideoUrl: videoUrl, aUserId: userId)
                 
                 self.videoPosts.append(newVideo)
                 

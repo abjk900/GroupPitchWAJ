@@ -104,13 +104,13 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         // For database
         
         //currently logined uid
-      //  guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
         
         let userPostRef = Database.database().reference().child("PostVideo")   //.child(uid)
         
         let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
         
-        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(videoUrlName)", "imageURL" : videoImageURL] as [String : Any]
+        let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(videoUrlName)", "imageURL" : videoImageURL, "userId" : uid ] as [String : Any]
         
         ref.updateChildValues(values) { (err, ref) in
             if let err = err {
@@ -128,7 +128,16 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //dismiss keybaord when tap on vc
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func previewImageFromVideo(url : URL) -> UIImage? {
