@@ -53,6 +53,15 @@ class DateHelper {
         
         return dateFormatter.string(from: date)
     }
+    
+    static func createDateTimeString(_ timeStamp: Double) -> String {
+        let date = Date(timeIntervalSince1970: timeStamp)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "dd/MM/yyyy hh:mm a"
+        
+        return dateFormatter.string(from: date)
+    }
 }
 
 extension UIViewController {
