@@ -115,7 +115,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                 
                 let viewers = 0
                 
-                let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(self.videoUrlName)", "imageURL" : self.videoImageURL, "userId" : uid , "views" : viewers] as [String : Any]
+                let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(self.videoUrlName)", "imageURL" : self.videoImageURL, "userId" : uid , "views" : viewers, "viewCount" : viewers] as [String : Any]
             
                 
                 ref.updateChildValues(values) { (err, ref) in
@@ -124,7 +124,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                         return
                     }
                 
-                //Increment the Sweet Count
+                //*****Increment the Sweet Count
                 let sweetRef = Database.database().reference().child("Users").child(uid).child("sweets")
                 
                 sweetRef.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
@@ -139,6 +139,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                         print(error.localizedDescription)
                     }
                 }
+                //******* End Increment the Sweet Count
         
                 
             }

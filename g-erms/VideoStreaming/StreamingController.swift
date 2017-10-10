@@ -25,6 +25,7 @@ class StreamingController: UIViewController, UISearchBarDelegate {
     var videoInfo = [VideoInfo]()
     var userId : String = ""
     var selectedContact : Contact?
+    var selectedPost : VideoInfo?
     
     var searchActive : Bool = false
     var filtered:[VideoInfo] = []
@@ -108,9 +109,10 @@ class StreamingController: UIViewController, UISearchBarDelegate {
                 let videoUrlName = dictionaries["videoUrlName"] as? String,
                 let videoUrl = dictionaries["videoUrl"] as? String,
                 let userId = dictionaries["userId"] as? String,
-                let videoImageUrl = dictionaries["imageURL"] as? String {
+                let videoImageUrl = dictionaries["imageURL"] as? String,
+                let videoViewerCnt = dictionaries["viewCount"] as? Int {
                 
-                let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName, aVideoUrl: videoUrl, aUserId: userId, aVideoImageUrl: videoImageUrl)
+                let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName, aVideoUrl: videoUrl, aUserId: userId, aVideoImageUrl: videoImageUrl, aViewerCount: videoViewerCnt)
                 
                 
                 
@@ -190,6 +192,7 @@ extension StreamingController : UITableViewDataSource {
             //cell.videoImageView.loadImage(from: imageURL)
             cell.videoNameLabel.text = videoInfo.videoName
             cell.videoDescriptionLabel.text = videoInfo.videoDescription
+            cell.viewsCountLabel.text = ("\(videoInfo.viewerCount) views")
             
         } else {
             let videoInfo = videoPosts[indexPath.row]
@@ -201,6 +204,7 @@ extension StreamingController : UITableViewDataSource {
             cell.videoImageView.sd_setImage(with: URL(string: imageURL))
             cell.videoNameLabel.text = videoInfo.videoName
             cell.videoDescriptionLabel.text = videoInfo.videoDescription
+            cell.viewsCountLabel.text = ("\(videoInfo.viewerCount) views")
             
         }
             
@@ -212,8 +216,44 @@ extension StreamingController : UITableViewDataSource {
     
 }
 
+
 extension StreamingController: StreamingTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //guard let destination = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else {return}
+        
+        
+        selectedPost = videoInfo[indexPath.row]
+        
+        // destination.selectedContact = selectedContact
+        // navigationController?.pushViewController(destination, animated: true)
+        
+        
+    }
+    
     func videoButtonPressedWithUrl(videoUrlName: String) {
+        
+        //*****Increment the Viewers Count
+        guard let postId = self.selectedPost?.id else {return}
+        
+        let viewerRef = Database.database().reference().child("PostVideo").child(postId).child("viewCount")
+        
+        
+        viewerRef.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var viewerCount = currentData.value as? Int {
+                viewerCount += 2
+                currentData.value = viewerCount
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        //******* End Increment the Viewers Count
+        
+        
+        
         //Video
         let starsRef = Storage.storage().reference().child("gameVideo/\(videoUrlName)")
         
@@ -233,6 +273,9 @@ extension StreamingController: StreamingTableViewCellDelegate {
             }
             self.streamingTableView.reloadData()
         }
+        
+  
+
        
     }
     
