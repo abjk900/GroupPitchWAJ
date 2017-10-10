@@ -34,19 +34,10 @@ class FriendViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
 
         searchBar.delegate = self
-        
-        //dismiss keybaord when tap on vc
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        
-        
+       
         fetchContacts()
     }
 
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
     
     
     func fetchContacts() {

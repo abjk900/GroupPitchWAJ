@@ -39,13 +39,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             //skip login page straight to homepage
             present(vc, animated:  true, completion:  nil)
         }
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        
-        view.addGestureRecognizer(tapGesture)
-        
-        
-        
+     
         
     }
     
@@ -152,10 +146,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
     
     //****Normal Email Login ********
     @objc func loginUser() {

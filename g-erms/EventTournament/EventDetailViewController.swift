@@ -42,9 +42,6 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
         
         self.title = "Add New Event"
         
-        //dismiss keybaord when tap on vc
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
         
         //get current country
         let locale = Locale.current
@@ -74,10 +71,6 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
         }
     }
     
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
     
     @IBAction func buttonUploadTapped(_ sender: Any) {
         let imagePicker = UIImagePickerController()

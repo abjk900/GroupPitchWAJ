@@ -76,9 +76,7 @@ class ShowEventDetailViewController: UIViewController {
         // draw the result in a label
         playerCountry1.attributedText = fullString
         playerCountry2.attributedText = fullString1
-        
-  
-        
+   
         
     }
 

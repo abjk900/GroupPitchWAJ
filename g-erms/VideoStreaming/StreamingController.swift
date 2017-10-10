@@ -13,6 +13,7 @@ import FirebaseStorage
 import FirebaseAuth
 import AVFoundation
 import AVKit
+import SDWebImage
 
 
 class StreamingController: UIViewController, UISearchBarDelegate {
@@ -38,11 +39,7 @@ class StreamingController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         searchBar.delegate = self
-        
-        //dismiss keybaord when tap on vc
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
-        
+       
         
         // cell
         streamingTableView.dataSource = self
@@ -58,11 +55,7 @@ class StreamingController: UIViewController, UISearchBarDelegate {
         super.viewDidAppear(true)
         streamingTableView.reloadData()
     }
-    
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
+
     
     func addSweets() {
         //fetch user and add candy into the user
@@ -190,7 +183,8 @@ extension StreamingController : UITableViewDataSource {
             let imageURL = videoInfo.videoImageUrl
             cell.videoUrlName = videoInfo.videoUrlName
             cell.videoPlayButton.imageView?.loadImage(from: videoInfo.videoUrl)
-            cell.videoImageView.loadImage(from: imageURL)
+            cell.videoImageView.sd_setImage(with: URL(string: imageURL))
+            //cell.videoImageView.loadImage(from: imageURL)
             cell.videoNameLabel.text = videoInfo.videoName
             cell.videoDescriptionLabel.text = videoInfo.videoDescription
             
@@ -200,7 +194,8 @@ extension StreamingController : UITableViewDataSource {
             let imageURL = videoInfo.videoImageUrl
             cell.videoUrlName = videoInfo.videoUrlName
             cell.videoPlayButton.imageView?.loadImage(from: videoInfo.videoUrl)
-            cell.videoImageView.loadImage(from: imageURL)
+            //cell.videoImageView.loadImage(from: imageURL)
+            cell.videoImageView.sd_setImage(with: URL(string: imageURL))
             cell.videoNameLabel.text = videoInfo.videoName
             cell.videoDescriptionLabel.text = videoInfo.videoDescription
             

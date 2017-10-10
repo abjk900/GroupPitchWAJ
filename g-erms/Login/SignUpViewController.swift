@@ -45,9 +45,6 @@ class SignUpViewController: UIViewController, CountryPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //dismiss keybaord when tap on vc
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
         
         //get corrent country
         let locale = Locale.current
@@ -65,10 +62,7 @@ class SignUpViewController: UIViewController, CountryPickerDelegate {
        countryLabel.text = name
     }
     
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
+
     
     @objc func signUp() {
         
