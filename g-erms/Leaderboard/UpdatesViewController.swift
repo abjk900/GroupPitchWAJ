@@ -50,7 +50,7 @@ class UpdatesViewController: UIViewController {
     
     @IBOutlet weak var updateTableView: UITableView! {
         didSet {
-            updateTableView.rowHeight = 119
+            updateTableView.rowHeight = 150
         }
     }
     

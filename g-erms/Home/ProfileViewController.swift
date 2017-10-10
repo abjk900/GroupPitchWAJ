@@ -39,6 +39,14 @@ class ProfileViewController: UIViewController {
         
         //display Profile Details
         fetchProfile()
+        
+        
+      imageView.layer.borderWidth = 1
+        imageView.layer.masksToBounds = true
+        //cell.profileImageView.layer.borderColor = UIColor.black
+        imageView.layer.cornerRadius = imageView.frame.height/2
+        
+       imageView.clipsToBounds = true
        
     }
 
