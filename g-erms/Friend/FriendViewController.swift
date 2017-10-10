@@ -200,6 +200,12 @@ extension FriendViewController : UITableViewDataSource {
             
             let imageURL = contact.imageURL
             cell.profileImageView.loadImage(from: imageURL)
+            
+            cell.profileImageView.layer.borderWidth = 1
+           cell.profileImageView.layer.masksToBounds = false
+            //cell.profileImageView.layer.borderColor = UIColor.black
+            cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.height/2
+            cell.profileImageView.clipsToBounds = true
         }
         
         return cell

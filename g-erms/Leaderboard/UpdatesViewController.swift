@@ -48,7 +48,11 @@ class UpdatesViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var updateTableView: UITableView!
+    @IBOutlet weak var updateTableView: UITableView! {
+        didSet {
+            updateTableView.rowHeight = 119
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,9 +92,9 @@ class UpdatesViewController: UIViewController {
                 let profileImageURL = info["profileImageURL"] as? String
             {
                 
-                let newGamers = Gamer(aName: name, aGameTypes: game, aTournament: tournament, anEarnings: earnings, aPlayerID: playerID, aProfileImage: profileImageURL)
+
                 
-                self.selectedGamer = newGamers
+                
                 
                 //print(newGamers)
                 
@@ -100,6 +104,8 @@ class UpdatesViewController: UIViewController {
                 
                 // self.contacts.removeAll()
                 DispatchQueue.main.async {
+                    let newGamers = Gamer(aName: name, aGameTypes: game, aTournament: tournament, anEarnings: earnings, aPlayerID: playerID, aProfileImage: profileImageURL)
+                    self.selectedGamer = newGamers
                     self.gamers.append(newGamers)
                     
                     let index = self.gamers.count - 1
@@ -130,7 +136,7 @@ class UpdatesViewController: UIViewController {
                 let gameImageURL = info["gameImageURL"] as? String
             {
                 
-                let newUpdates = Updates(aName: name, anUpdatesURL: gameURL, aGameImage: gameImageURL)
+
                 
                 //self.selectedUpdates = newUpdates
                
@@ -141,7 +147,8 @@ class UpdatesViewController: UIViewController {
                 
                 // self.contacts.removeAll()
                 DispatchQueue.main.async {
-                     self.update.append(newUpdates)
+                    let newUpdates = Updates(aName: name, anUpdatesURL: gameURL, aGameImage: gameImageURL)
+                    self.update.append(newUpdates)
                     let index = self.update.count - 1
                     let indexPath = IndexPath(row: index, section: 0)
                     self.updateTableView.insertRows(at: [indexPath], with: .right)
