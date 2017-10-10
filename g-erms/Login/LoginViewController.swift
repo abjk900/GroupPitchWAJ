@@ -120,12 +120,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 let lastName = info["last_name"] as? String {
                 //let uid = info["id"] as? String {
                 
+                 let sweets = "0"
                 
                 
                 //save to FIRDatabase
                 let ref = Database.database().reference()
                 
-                let post : [String:Any] = ["id": self.fbloginID ,"name": name, "email": email, "firstName": firstName,"lastName": lastName, "imageURL": "","imageFilename": ""]
+                let post : [String:Any] = ["id": self.fbloginID ,"name": name, "email": email, "firstName": firstName,"lastName": lastName, "imageURL": "","imageFilename": "","sweets": sweets]
                 
                 //ref.child("Users").child(uid).setValue(post)
                 ref.child("Users").child(self.fbloginID).setValue(post)
