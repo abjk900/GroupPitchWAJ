@@ -15,8 +15,9 @@ import AVFoundation
 import AVKit
 
 
-class StreamingController: UIViewController {
+class StreamingController: UIViewController, UISearchBarDelegate {
     
+     //****** All the object library *******
     var videoPosts : [VideoInfo] = []
     let avPlayerViewController = AVPlayerViewController()
     var avPlayer : AVPlayer?
@@ -24,20 +25,29 @@ class StreamingController: UIViewController {
     var userId : String = ""
     var selectedContact : Contact?
     
+    var searchActive : Bool = false
+    var filtered:[VideoInfo] = []
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
+
     
     @IBOutlet weak var streamingTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        
         //dismiss keybaord when tap on vc
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
         
+        
         // cell
         streamingTableView.dataSource = self
         streamingTableView.delegate = self as? UITableViewDelegate
+       
         //fetchData
         fetchPosts()
         addSweets()
@@ -77,8 +87,7 @@ class StreamingController: UIViewController {
                 self.selectedContact = newContact
                 
                 //guard let sweetsCount = self.selectedContact?.sweets  else {return}
-                
-                
+
                 ref.child("Users").child(uid).setValue(newContact)
                 print("Successfully save post to DB")
                 
@@ -107,75 +116,64 @@ class StreamingController: UIViewController {
                 
                 let newVideo = VideoInfo(anID: snapshot.key, aViedoName: videoName, aVideoDescription: videoDescription, aVideoUrlName: videoUrlName, aVideoUrl: videoUrl, aUserId: userId, aVideoImageUrl: videoImageUrl)
                 
-                self.videoPosts.append(newVideo)
                 
-                let index = self.videoPosts.count - 1
-                let indexPath = IndexPath(row: index, section: 0)
-                self.streamingTableView.insertRows(at: [indexPath], with: .right)
+                
+                DispatchQueue.main.async {
+                    self.videoPosts.append(newVideo)
+                    let index = self.videoPosts.count - 1
+                    let indexPath = IndexPath(row: index, section: 0)
+                    self.streamingTableView.insertRows(at: [indexPath], with: .right)
+                }
+
             }
         }
             
     )}
-}
-
-//        }
-//            dictionaries.forEach({ (key, value) in
-//                guard let dictionary = value as? [String : Any] else { return }
-//                let videoInfo = VideoInfo(dictionary : dictionary)
-//                print(videoInfo.videoName)
-//                print(videoInfo.videoDescription)
-//                print(videoInfo.videoUrlName)
-//
-//                let newVideoInfo = VideoInfo(dictionary: dictionary)
-//
-//                self.videoInfo.append(newVideoInfo)
-//
-//                let index = self.videoPosts.count - 1
-//                let indexPath = IndexPath(row: index, section: 0)
-//                self.streamingTableView.insertRows(at: [indexPath], with: .right)
-//
-//
-//            })
-//            DispatchQueue.main.async {
-//                self.streamingTableView.reloadData()
-//            }
-//        }
-//
-//    )}
-//}
-        //look the data that in the database and snapshot these values
-//        let ref = Database.database().reference().child("PostVideo").child(uid)
-//        ref.observeSingleEvent(of: .value) { (snapshot) in
-//            //for saving whole value that in each uid(user)
-//            guard let dictionaries = snapshot.value as? [String:Any] else {return}
-//
-//            dictionaries.forEach({ (key, value) in
-//                //for saving each value in uid
-//                //dictionaries 에 모든 값을 저장시키고 그 값을 dictionary로 분류시키는데 여기서 데이터베이스에 있는 정보를 videoInfo에 넣는다.
-//                guard let dictionary = value as? [String:Any] else { return }
-//
-//                let videoInfo = VideoInfo(dictionary: dictionary)
-//                print(videoInfo.videoName)
-//                print(videoInfo.videoDescription)
-//                print(videoInfo.videoUrlName)
-//                //append to event array
-//                self.videoPosts.append(videoInfo)
-//
-//            })
-//
-//            DispatchQueue.main.async {
-//                self.streamingTableView?.reloadData()
-//            }
-//        }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        
+        //filtered = data.filter({ (text) -> Bool in
+        filtered = videoPosts.filter({ (videoInfo) -> Bool in
+            let tmp: NSString = videoInfo.videoName as NSString
+            let range = tmp.range(of: searchText, options: .caseInsensitive)
+            return range.location != NSNotFound
+        })
+        if(filtered.count == 0){
+            searchActive = false;
+        } else {
+            searchActive = true;
+        }
+        self.streamingTableView.reloadData()
+    }
     
     
-
+    
+} //end streaming controller
 
 
 extension StreamingController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(searchActive) {
+            return filtered.count
+        }
         return videoPosts.count
     }
     
@@ -184,28 +182,31 @@ extension StreamingController : UITableViewDataSource {
         guard let cell = streamingTableView.dequeueReusableCell(withIdentifier: "playingVideoCell", for: indexPath) as? StreamingTableViewCell  else { return UITableViewCell() }
         
         //2. setup
-        let videoInfo = videoPosts[indexPath.row]
+        cell.delegate = self
         
-        cell.delegate = self as StreamingTableViewCellDelegate
-        
-        let imageURL = videoInfo.videoImageUrl
-        
-        cell.videoUrlName = videoInfo.videoUrlName
-        cell.videoPlayButton.imageView?.loadImage(from: videoInfo.videoUrl)
-        //cell.videoPlayButton.setBackgroundImage(imageURL, for: .normal)
-        //cell.videoImageView.loadImage(from: videoInfo.videoUrl)
-        cell.videoImageView.loadImage(from: imageURL)
-        cell.videoNameLabel.text = videoInfo.videoName
-        cell.videoDescriptionLabel.text = videoInfo.videoDescription
-        
+        if searchActive {
+             let videoInfo = filtered[indexPath.row]
        
-       //self.imageView.loadImage(from: imageURL)
+            let imageURL = videoInfo.videoImageUrl
+            cell.videoUrlName = videoInfo.videoUrlName
+            cell.videoPlayButton.imageView?.loadImage(from: videoInfo.videoUrl)
+            cell.videoImageView.loadImage(from: imageURL)
+            cell.videoNameLabel.text = videoInfo.videoName
+            cell.videoDescriptionLabel.text = videoInfo.videoDescription
+            
+        } else {
+            let videoInfo = videoPosts[indexPath.row]
+           
+            let imageURL = videoInfo.videoImageUrl
+            cell.videoUrlName = videoInfo.videoUrlName
+            cell.videoPlayButton.imageView?.loadImage(from: videoInfo.videoUrl)
+            cell.videoImageView.loadImage(from: imageURL)
+            cell.videoNameLabel.text = videoInfo.videoName
+            cell.videoDescriptionLabel.text = videoInfo.videoDescription
+            
+        }
+            
         
-        //        let videoUrl = videoInfo.videoUrl
-        //        let url = URL(string : videoUrl)
-        //        let data = try? Data(contentsOf : url!)
-        //
-        //        cell.videoPlayButton.imageView?.image = UIImage(data: data!)
         
         
         return cell
