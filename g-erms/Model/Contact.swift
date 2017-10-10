@@ -29,6 +29,8 @@ class Contact {
     var country : String = ""
     var sweets : Int?
     
+    static var currentUser : Contact?
+    
     init(anID : String, aUsername : String, anEmail : String, anImageURL : String, anFilename : String, aFirstname : String, aLastname : String, aCountry : String   , aSweets : Int) {
         id = anID
         username = aUsername

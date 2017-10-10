@@ -32,7 +32,8 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
         
         //dismiss keybaord when tap on vc
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
+        //view.addGestureRecognizer(tapGesture)
+        //tableView.removeGestureRecognizer(tapGesture)
         
         tableView.dataSource = self
         tableView.delegate = self

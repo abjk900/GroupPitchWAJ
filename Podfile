@@ -16,6 +16,7 @@ target 'g-erms' do
    pod 'FBSDKLoginKit'
    pod 'SDWebImage'
    pod 'Onboard'
+   pod 'IQKeyboardManagerSwift', '5.0.0'
 
   target 'g-ermsTests' do
     inherit! :search_paths
