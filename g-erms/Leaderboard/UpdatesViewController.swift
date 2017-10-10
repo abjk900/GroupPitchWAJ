@@ -121,7 +121,7 @@ class UpdatesViewController: UIViewController {
         guard let uid = Auth.auth().currentUser?.uid else {return}
         userId2 = uid
         
-        ref.child("Updates").observe(.childAdded, with: { (snapshot) in
+        ref.child("Update").observe(.childAdded, with: { (snapshot) in
             
             guard let info = snapshot.value as? [String : Any] else {return}
             
@@ -196,7 +196,7 @@ extension UpdatesViewController : UITableViewDataSource {
     
             let updater = update[indexPath.row]
             
-            cell.gameLabel.text = "\(indexPath.row + 1). " + updater.name
+            //cell.gameLabel.text = "\(indexPath.row + 1). " + updater.name
             cell.gameImage.loadImage(from: updater.gameImage )
             
             
