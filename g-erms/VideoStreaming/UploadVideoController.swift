@@ -93,7 +93,6 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         // For video image Storage    //videoURL   //videoUrlName
         let uploadVideoImageTask = Storage.storage().reference().child("gameVideoImage").child(videoUrlName).putData(uploadData, metadata: nil) { (meta, error) in
 
-         //   uploadToStorage(videoUrlName)
             
             if let error = error {
                 print(error.localizedDescription)
@@ -107,18 +106,15 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                 //*****save to database the image
                 // For database
                 
-                //post the sweets here??
                 //currently logined uid
                 guard let uid = Auth.auth().currentUser?.uid else { return }
+                self.userId = uid
+                
                 let userPostRef = Database.database().reference().child("PostVideo")   //.child(uid)
                 let ref = userPostRef.childByAutoId() //each time to saving photo to create autoID.
                 
                 let values = ["videoName" : videoNameTextField, "videoDescription" : videoDescriptionTexField, "videoUrl" : videoURL.absoluteString, "videoUrlName" : "\(self.videoUrlName)", "imageURL" : self.videoImageURL, "userId" : uid ] as [String : Any]
-                let sweetRef = Database.database().reference().child("Users").child("id").child("sweets")
-                
-                let newSweetCount : [String] = []
-                
-               // sweetRef.updateChildValues(newSweetCount)
+            
                 
                 ref.updateChildValues(values) { (err, ref) in
                     if let err = err {
@@ -126,6 +122,21 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                         return
                     }
                 
+                //Increment the Sweet Count
+                let sweetRef = Database.database().reference().child("Users").child(uid).child("sweets")
+                
+                sweetRef.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+                    if var sweetCount = currentData.value as? Int {
+                        sweetCount += 2
+                        currentData.value = sweetCount
+                        return TransactionResult.success(withValue: currentData)
+                    }
+                    return TransactionResult.success(withValue: currentData)
+                }) { (error, committed, snapshot) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
+                }
                     
                    
                 
@@ -142,19 +153,11 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
 
         //dismiss keybaord when tap on vc
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
+        self.hideKeyboardWhenTappedAround()
         
         // Do any additional setup after loading the view.
     }
-    
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
-    
-
-    
+       
     
     func previewImageFromVideo(url : URL) -> UIImage? {
         let asset = AVAsset(url: url)
@@ -176,8 +179,6 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         //need this one "UIImagePickerControllerMediaURL" , not UIImagePickerControllerRefurenceURL
         
         videoURL = info["UIImagePickerControllerMediaURL"] as? URL
-        
-        print(videoURL)
         
         videoView.image = previewImageFromVideo(url: videoURL!)
         

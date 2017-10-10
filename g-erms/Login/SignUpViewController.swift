@@ -39,12 +39,14 @@ class SignUpViewController: UIViewController, CountryPickerDelegate {
     }
     
     
-     var profilePicURL : String = ""
+    var profilePicURL : String = ""
     var currFilename : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //dismiss keybaord when tap on vc
+        self.hideKeyboardWhenTappedAround()
         
         //get corrent country
         let locale = Locale.current

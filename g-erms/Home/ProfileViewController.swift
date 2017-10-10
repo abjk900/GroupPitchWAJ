@@ -34,6 +34,8 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //dismiss keybaord when tap on vc
+        self.hideKeyboardWhenTappedAround()
         
         //display Profile Details
         fetchProfile()

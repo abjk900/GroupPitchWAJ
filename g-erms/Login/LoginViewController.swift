@@ -28,9 +28,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        
-        
+
+        //dismiss keybaord when tap on vc
+        self.hideKeyboardWhenTappedAround()
         
         if Auth.auth().currentUser != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -41,7 +41,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
      
         
-    }
+    } //end viewDidLoad
     
     //******FB Login***************
     @IBOutlet weak var fbLoginButton: FBSDKLoginButton!{

@@ -35,8 +35,8 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
         super.viewDidLoad()
         
         //dismiss keybaord when tap on vc
-       // let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        //view.addGestureRecognizer(tapGesture)
+        self.hideKeyboardWhenTappedAround()
+
         //tableView.removeGestureRecognizer(tapGesture)
         
         tableView.dataSource = self
@@ -48,6 +48,7 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
         // Do any additional setup after loading the view.
     }
     
+
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;
