@@ -137,15 +137,26 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                         print(error.localizedDescription)
                     }
                 }
-                    
-                   
+        
                 
-            } //end imageUrl
-        }
             }
+        } //end imageUrl
+            } // end uploadVideoImageTask
+        
+        //Show alert popup ADD Sweets
+        let alert = UIAlertController(title: "Redeem 2 Sweets", message: "", preferredStyle: .alert)
+        
+        let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+            //get the name
+        }
+    
+        alert.addAction(dismiss)
+        
+        present(alert, animated: true, completion: nil)
+        
         
    
-    }
+    }  // end handleUpload
     
 
     
