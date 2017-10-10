@@ -34,6 +34,10 @@ class FriendViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
 
         searchBar.delegate = self
+        
+        //dismiss keybaord when tap on vc
+        self.hideKeyboardWhenTappedAround()
+        
        
         fetchContacts()
     }

@@ -40,6 +40,8 @@ class StreamingController: UIViewController, UISearchBarDelegate {
         
         searchBar.delegate = self
        
+        //dismiss keybaord when tap on vc
+        self.hideKeyboardWhenTappedAround()
         
         // cell
         streamingTableView.dataSource = self

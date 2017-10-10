@@ -142,19 +142,11 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
 
         //dismiss keybaord when tap on vc
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
+        self.hideKeyboardWhenTappedAround()
         
         // Do any additional setup after loading the view.
     }
-    
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
-    
-
-    
+       
     
     func previewImageFromVideo(url : URL) -> UIImage? {
         let asset = AVAsset(url: url)

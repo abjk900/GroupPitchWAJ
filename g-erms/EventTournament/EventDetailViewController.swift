@@ -42,6 +42,9 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
         
         self.title = "Add New Event"
         
+        //dismiss keybaord when tap on vc
+        self.hideKeyboardWhenTappedAround()
+        
         
         //get current country
         let locale = Locale.current
