@@ -99,12 +99,13 @@ class ProfileViewController: UIViewController {
                 let email = info["email"] as? String,
                 let country = info["country"] as? String,
                 let imageURL = info["imageURL"] as? String,
+                let sweetsCount = info["sweets"] as? Int,
                 let filename = info["imageFilename"] as? String {
                 
          //        let post : [String:Any] = ["name": userName, "email": email, "firstName": firstName ,"lastName": lastName, "imageURL": "","imageFilename": "","country": countryName]
                 
                 //create new contact object
-                let newContact = Contact(anID: snapshot.key, aUsername: name, anEmail: email, anImageURL: imageURL, anFilename: filename, aFirstname: firstName, aLastname: lastName, aCountry: country)
+                let newContact = Contact(anID: snapshot.key, aUsername: name, anEmail: email, anImageURL: imageURL, anFilename: filename, aFirstname: firstName, aLastname: lastName, aCountry: country, aSweets: sweetsCount)
                 
                 
                 //pass the var

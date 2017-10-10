@@ -690,6 +690,7 @@
                     </view>
                     <connections>
                         <outlet property="candyNumberLabel" destination="bb3-7C-0oX" id="kxB-Nb-Jc0"/>
+                        <outlet property="numberOfSweetsLabel" destination="bb3-7C-0oX" id="jas-GU-Z5b"/>
                         <outlet property="sweetsTableView" destination="aSz-JK-RFT" id="P6w-as-1us"/>
                     </connections>
                 </viewController>

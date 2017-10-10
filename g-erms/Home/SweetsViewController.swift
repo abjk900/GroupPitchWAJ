@@ -17,11 +17,15 @@ class SweetsViewController: UIViewController {
     var ref : DatabaseReference!
     var userId : String = ""
     var reward : [Rewards] = []
+    var selectedContact : Contact?
+    var contacts : [Contact] = []
+    var userId2 : String = ""
 
     @IBOutlet weak var candyNumberLabel: UILabel!
  
     @IBOutlet weak var sweetsTableView: UITableView!
     
+    @IBOutlet weak var numberOfSweetsLabel: UILabel!
     
     
     
@@ -30,6 +34,9 @@ class SweetsViewController: UIViewController {
 
         sweetsTableView.dataSource = self
         fetchGiftCards()
+        fetchSweets()
+        
+        
        
     }
     
@@ -39,6 +46,42 @@ class SweetsViewController: UIViewController {
         alert.addAction(action)
         
         present(alert, animated: true, completion:  nil)
+    }
+    
+    func fetchSweets () {
+        
+        ref = Database.database().reference()
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        userId2 = uid
+        
+        ref.child("Users").child(userId2).observe(.value, with: { (snapshot) in
+            
+            guard let info = snapshot.value as? [String : Any] else {return}
+            
+            if let sweetsCount = info["sweets"] as? Int,
+                let name = info["name"] as? String,
+                let firstName = info["firstName"] as? String,
+                let lastName = info["lastName"] as? String,
+                let email = info["email"] as? String,
+                let country = info["country"] as? String,
+                let imageURL = info["imageURL"] as? String,
+                let filename = info["imageFilename"] as? String  {
+                
+                let newContact = Contact(anID: snapshot.key, aUsername: name, anEmail: email, anImageURL: imageURL, anFilename: filename, aFirstname: firstName, aLastname: lastName, aCountry: country, aSweets: sweetsCount)
+                
+                self.selectedContact = newContact
+                //self.contacts.append(newContact)
+                
+                print(newContact.email)
+                
+                guard let sweetsCount = self.selectedContact?.sweets else {return}
+                
+                self.numberOfSweetsLabel.text = "Number of sweets : \(sweetsCount)"
+                
+               
+             }
+            })
+        
     }
     
     func fetchGiftCards () {

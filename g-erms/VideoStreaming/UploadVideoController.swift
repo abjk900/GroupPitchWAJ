@@ -13,6 +13,7 @@ import MobileCoreServices
 import Firebase
 import FirebaseStorage
 
+
 class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var videoUploadProgress: UIProgressView!
@@ -22,6 +23,8 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
     var videoUrlName = ""
     var videoURL : URL?
     var videoImageURL = ""
+    var userId : String = ""
+    var selectedContact : Contact?
    
     
     @IBOutlet weak var videoNameTextField: UITextField!
@@ -43,6 +46,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
      uploadVideoButton: UIButton!{
         didSet{
             uploadVideoButton.addTarget(self, action: #selector(handleUpload), for: .touchUpInside)
+            
         }
     }
     
@@ -103,6 +107,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                 //*****save to database the image
                 // For database
                 
+                //post the sweets here??
                 //currently logined uid
                 guard let uid = Auth.auth().currentUser?.uid else { return }
                 let userPostRef = Database.database().reference().child("PostVideo")   //.child(uid)
@@ -115,20 +120,18 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                         print("Failed to save post to DB", err)
                         return
                     }
+                
                     
-                    print("Successfully save post to DB")
-                    
-                }
+                   
                 
             } //end imageUrl
         }
+            }
         
-        
-        
-
-        
-        
+   
     }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -78,6 +78,7 @@ class SignUpViewController: UIViewController, CountryPickerDelegate {
             let confirmPassword = confirmPasswordTextField.text,
             let userName = usernameTextField.text,
             let firstName = firstnameTextField.text,
+           
             let lastName = lastnameTextField.text,
             
            let countryName = countryLabel.text
@@ -101,8 +102,10 @@ class SignUpViewController: UIViewController, CountryPickerDelegate {
             if let validUser = user {
                 let ref = Database.database().reference()
                 
+                let sweets = "0"
+                
                 // let post : [String:Any] = ["email": email, "name": userName]
-                let post : [String:Any] = ["name": userName, "email": email, "firstName": firstName ,"lastName": lastName, "imageURL": self.profilePicURL,"country": countryName,"imageFilename": self.currFilename]
+                let post : [String:Any] = ["name": userName, "email": email, "firstName": firstName ,"lastName": lastName, "imageURL": self.profilePicURL,"country": countryName,"imageFilename": self.currFilename,"sweets": sweets ]
                 
                 ref.child("Users").child(validUser.uid).setValue(post)
                 

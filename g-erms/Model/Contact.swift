@@ -27,8 +27,9 @@ class Contact {
     var firstname : String = ""
     var lastname : String = ""
     var country : String = ""
+    var sweets : Int?
     
-    init(anID : String, aUsername : String, anEmail : String, anImageURL : String, anFilename : String, aFirstname : String, aLastname : String, aCountry : String   ) {
+    init(anID : String, aUsername : String, anEmail : String, anImageURL : String, anFilename : String, aFirstname : String, aLastname : String, aCountry : String   , aSweets : Int) {
         id = anID
         username = aUsername
         email = anEmail
@@ -37,6 +38,7 @@ class Contact {
         firstname = aFirstname
         lastname = aLastname
         country = aCountry
+        sweets = aSweets
     }
     
 }

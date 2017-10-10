@@ -21,6 +21,8 @@ class StreamingController: UIViewController {
     let avPlayerViewController = AVPlayerViewController()
     var avPlayer : AVPlayer?
     var videoInfo = [VideoInfo]()
+    var userId : String = ""
+    var selectedContact : Contact?
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -38,6 +40,7 @@ class StreamingController: UIViewController {
         streamingTableView.delegate = self as? UITableViewDelegate
         //fetchData
         fetchPosts()
+        addSweets()
         
     }
     
@@ -49,6 +52,38 @@ class StreamingController: UIViewController {
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    func addSweets() {
+        //fetch user and add candy into the user
+      let  ref = Database.database().reference()
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        self.userId = uid
+        ref.child("Users").child(self.userId).observe(.childChanged , with: { (snapshot) in
+            
+            guard let info = snapshot.value as? [String : Any] else {return}
+            
+             if let sweetsCount = info["sweets"] as? Int,
+                let name = info["name"] as? String,
+                let firstName = info["firstName"] as? String,
+                let lastName = info["lastName"] as? String,
+                let email = info["email"] as? String,
+                let country = info["country"] as? String,
+                let imageURL = info["imageURL"] as? String,
+                let filename = info["imageFilename"] as? String  {
+                
+                let newContact = Contact(anID: snapshot.key, aUsername: name, anEmail: email, anImageURL: imageURL, anFilename: filename, aFirstname: firstName, aLastname: lastName, aCountry: country, aSweets: sweetsCount + 2)
+                
+                self.selectedContact = newContact
+                
+                //guard let sweetsCount = self.selectedContact?.sweets  else {return}
+                
+                
+                ref.child("Users").child(uid).setValue(newContact)
+                print("Successfully save post to DB")
+                
+            }
+        })
     }
     
     func fetchPosts() {
@@ -82,6 +117,7 @@ class StreamingController: UIViewController {
             
     )}
 }
+
 //        }
 //            dictionaries.forEach({ (key, value) in
 //                guard let dictionary = value as? [String : Any] else { return }
