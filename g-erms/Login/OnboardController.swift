@@ -33,21 +33,17 @@ class OnboardController: UIViewController {
     }
     
     func generateStandardOnboardingVC() {
-
-
-      
+   
         let firstPage = OnboardingContentViewController.content(
             withTitle: "Welcome to the world of G-ERMS ",
-            body: "G-ERMS is a platform where you can share and watch your mobile esports gameplay with the world, and get reward by doing it!",
+            body: "G-ERMS is a platform where you can share and watch your mobile esports gameplay with the world, and get rewarded by doing it!",
             image: UIImage(named: ""),
             buttonText: "", action: {() -> Void in
                 
         })
         
-        
         firstPage.movesToNextViewController = true
-       
-        
+
         
         let secondPage = OnboardingContentViewController.content(
             withTitle: "The Ecosystem",
@@ -65,7 +61,7 @@ class OnboardController: UIViewController {
        
         
         let thirdPage = OnboardingContentViewController.content(
-            withTitle: "HELLO",
+            withTitle: "Redeem Sweets!",
             body: """
  A collective amount of bacteria will provide you a certain amount of SWEETS!!!
 
@@ -79,10 +75,16 @@ class OnboardController: UIViewController {
         })
         
         
-        
+        //body: "Get started now , we welcome you to the world of G-ERMS",
         let fourthPage = OnboardingContentViewController.content(
             withTitle: "",
-            body: "Get started now , we welcome you to the world of G-ERMS",
+            body: """
+
+
+Welcome to the world of
+
+G-ERMS
+""",
             image: UIImage(named: ""),
             buttonText: "Get Started", action: {() -> Void in
                 self.onboardingCompletionHandler()
@@ -90,8 +92,8 @@ class OnboardController: UIViewController {
         })
         
         
-//        firstPage.titleLabel.textColor = UIColor.black
-//        firstPage.bodyLabel.textColor = UIColor.black
+  //      firstPage.titleLabel.textColor = UIColor.black
+ //       firstPage.bodyLabel.textColor = UIColor.black
 //        secondPage.titleLabel.textColor = UIColor.black
 //        secondPage.bodyLabel.textColor = UIColor.black
 //        thirdPage.titleLabel.font = UIFont.boldSystemFont(ofSize: 100)
@@ -106,11 +108,11 @@ class OnboardController: UIViewController {
         guard let onboardingVC = OnboardingViewController(backgroundImage: UIImage(named: "White2"), contents: [firstPage, secondPage, thirdPage, fourthPage]) else { return }
         
 
-        onboardingVC.shouldFadeTransitions = true
+        onboardingVC.shouldFadeTransitions = false
         onboardingVC.fadePageControlOnLastPage = true
         onboardingVC.fadeSkipButtonOnLastPage = true
         
-       // onboardingVC.view.backgroundColor = UIColor.white
+        onboardingVC.view.backgroundColor = UIColor.white
         //onboardingVC.shouldBlurBackground = true
         
         // Customization
