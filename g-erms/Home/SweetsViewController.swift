@@ -33,6 +33,11 @@ class SweetsViewController: UIViewController {
         super.viewDidLoad()
 
         sweetsTableView.dataSource = self
+        
+        ref = Database.database().reference()
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        userId = uid
+        
         fetchGiftCards()
         fetchSweets()
         
@@ -50,11 +55,11 @@ class SweetsViewController: UIViewController {
     
     func fetchSweets () {
         
-        ref = Database.database().reference()
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        userId2 = uid
+//        ref = Database.database().reference()
+//        guard let uid = Auth.auth().currentUser?.uid else {return}
+//        userId = uid
         
-        ref.child("Users").child(userId2).observe(.value, with: { (snapshot) in
+        ref.child("Users").child(userId).observe(.value, with: { (snapshot) in
             
             guard let info = snapshot.value as? [String : Any] else {return}
             
@@ -86,9 +91,9 @@ class SweetsViewController: UIViewController {
     
     func fetchGiftCards () {
         
-        ref = Database.database().reference()
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        userId = uid
+//        ref = Database.database().reference()
+//        guard let uid = Auth.auth().currentUser?.uid else {return}
+//        userId = uid
         
         ref.child("Redeem").observe(.childAdded, with: { (snapshot) in
             
