@@ -25,7 +25,11 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
             
         }
     }
-    @IBOutlet weak var searchTextFieldBar: UISearchBar!
+    @IBOutlet weak var searchTextFieldBar: UISearchBar! {
+        didSet {
+            searchTextFieldBar.inputAccessoryView = UIView(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

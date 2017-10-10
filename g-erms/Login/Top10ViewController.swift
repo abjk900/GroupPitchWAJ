@@ -26,7 +26,8 @@ class Top10ViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     
-
+    @IBOutlet weak var gameURLTextField: UITextField!
+    
     
     
     
@@ -36,14 +37,15 @@ class Top10ViewController: UIViewController {
     @IBAction func createBtn(_ sender: Any) {
         
         ref = Database.database().reference()
-        guard let description = nameTextField.text,
+        guard let name = nameTextField.text,
+              let gameURL = gameURLTextField.text,
               let profileImage = profileImageView.image
             
             else { return }
         
-        let post : [String:Any] = ["description": description,"giftCardsImageURL": self.profilePicURL]
+        let post : [String:Any] = ["name": name,"gameURL": gameURL,"gameImageURL": self.profilePicURL]
         
-        ref.child("Redeem").childByAutoId().updateChildValues(post)
+        ref.child("Update").childByAutoId().updateChildValues(post)
         
         
         self.navigationController?.popViewController(animated: true)
