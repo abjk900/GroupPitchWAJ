@@ -21,6 +21,7 @@ class StreamingTableViewCell: UITableViewCell {
     
     var videoUrlName = ""
     weak var delegate: StreamingTableViewCellDelegate?
+    @IBOutlet weak var viewsCountLabel: UILabel!
     
     @IBOutlet weak var videoPlayButton: UIButton!
     
