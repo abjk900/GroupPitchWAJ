@@ -25,11 +25,7 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
             
         }
     }
-    @IBOutlet weak var searchTextFieldBar: UISearchBar! {
-        didSet {
-            searchTextFieldBar.inputAccessoryView = UIView(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
-        }
-    }
+    @IBOutlet weak var searchTextFieldBar: UISearchBar! 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +39,13 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
         tableView.delegate = self
         searchTextFieldBar.delegate = self
         
-        fetchData2()
-        fetchData()
+        let urlString1 = "https://newsapi.org/v1/articles?source=polygon&sortBy=top&apiKey=11fd246c28ab411f98aa89868f674180"
+        let urlString2 = "https://newsapi.org/v1/articles?source=ign&sortBy=top&apiKey=11fd246c28ab411f98aa89868f674180"
+        
+        fetchData(urlString: urlString1)
+       
+        fetchData(urlString: urlString2)
+
         // Do any additional setup after loading the view.
     }
     
@@ -81,11 +82,11 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
             return range.location != NSNotFound
         })
         }
-//        if(filtered.count == 0){
-//            searchActive = false;
-//        } else {
-//            searchActive = true;
-//        }
+        if(filtered.count == 0){
+            searchActive = false;
+        } else {
+            searchActive = true;
+        }
         self.tableView.reloadData()
     }
     
@@ -100,10 +101,10 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
         }
     }
     
-    func fetchData() {
+    func fetchData(urlString : String) {
         //send API request
         //1.get the url
-        let urlString = "https://newsapi.org/v1/articles?source=ign&sortBy=top&apiKey=11fd246c28ab411f98aa89868f674180"
+        //let urlString = "https://newsapi.org/v1/articles?source=ign&sortBy=top&apiKey=11fd246c28ab411f98aa89868f674180"
         guard let url = URL(string: urlString)
             else { return }
         
@@ -144,67 +145,9 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
                 
                 
             }
-            self.filtered = self.news
+            //self.filtered = self.news
             
-            print(self.news.count)
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            
-            
-        }
-        //4. Start the task
-        task.resume()
-    }
-    
-    func fetchData2 () {
-        //send API request
-        //1.get the url
-        let urlString = "https://newsapi.org/v1/articles?source=polygon&sortBy=top&apiKey=11fd246c28ab411f98aa89868f674180"
-        guard let url = URL(string: urlString)
-            else { return }
-        
-        //2. Get a URLSession
-        let session = URLSession.shared
-        
-        //3.Create a URLTask
-        let task = session.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                print("DataTask Error : \(error.localizedDescription)")
-                return
-            }
-            
-            
-            guard let data = data
-                else{
-                    print("Invalid Data")
-                    return
-            }
-            
-            //print(data)
-            //Convert to Json
-            
-            guard let json = try? JSONSerialization.jsonObject(with: data, options: []),
-                let validJson = json as? [String : Any]
-                else {
-                    return
-            }
-            
-            guard let homeArray = validJson["articles"] as? [[String:Any]]
-                else { return }
-            
-            
-            for homeData in homeArray {
-                
-                let newHome = Home(homeData: homeData)
-                self.news.append(newHome)
-                
-                
-            }
-            self.filtered = self.news
-            
-            print(self.news.count)
+           // print(self.news.count)
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -222,7 +165,10 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
 
 extension HomeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filtered.count
+        if(searchActive) {
+            return filtered.count
+        }
+        return news.count
     }
     
     
@@ -231,11 +177,20 @@ extension HomeViewController : UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
         
         
-        let aNews = filtered[indexPath.row]
+        var aNews = news[indexPath.row]
+        
+        if searchActive {
+            aNews = filtered[indexPath.row]
+        } else {
+            aNews = news[indexPath.row]
+        }
+      
+        
         cell.newsArticleTitleLabel.text = aNews.title
         cell.newsSummaryTextView.text = aNews.description
         cell.newsPublishedTime.text = aNews.publishedTime
         cell.newsImageView.loadImage(from: aNews.urlImage ?? "")
+        
         //2.setup fot the time format
         let RFC3339DateFormatter = DateFormatter()
         RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
