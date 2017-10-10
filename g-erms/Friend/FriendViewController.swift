@@ -183,8 +183,8 @@ extension FriendViewController : UITableViewDataSource {
             cell.delegate = self
             cell.friend = filter
             
-            //let imageURL = filter.imageURL
-            //cell.searchImageView.loadImage(from: imageURL)
+            let imageURL = filter.imageURL
+            cell.profileImageView.loadImage(from: imageURL)
             
         } else {
             let contact = contacts[indexPath.row]
@@ -194,8 +194,8 @@ extension FriendViewController : UITableViewDataSource {
             cell.friend = contact
             
             
-            //let imageURL = contact.imageURL
-            //cell.searchImageView.loadImage(from: imageURL)
+            let imageURL = contact.imageURL
+            cell.profileImageView.loadImage(from: imageURL)
         }
         
         return cell

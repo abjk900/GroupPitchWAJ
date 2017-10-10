@@ -984,46 +984,38 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Zkh-js-s6s">
-                                                    <rect key="frame" x="5" y="0.0" width="44.5" height="46"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgd-of-R7e">
-                                                            <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-Yw-gp4">
-                                                            <rect key="frame" x="0.0" y="25.5" width="44.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyD-5j-8Mo">
-                                                    <rect key="frame" x="305" y="10" width="60" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Jiz-Fl-TP6"/>
-                                                        <constraint firstAttribute="height" constant="30" id="RBe-w2-gPB"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgd-of-R7e">
+                                                    <rect key="frame" x="66" y="13" width="221" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sD-Yw-gp4">
+                                                    <rect key="frame" x="66" y="37" width="221" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyD-5j-8Mo">
+                                                    <rect key="frame" x="312" y="10" width="53" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <state key="normal" title="Add Friend"/>
                                                     <connections>
                                                         <action selector="buttonAddFriend:" destination="pFj-7O-lPn" eventType="touchUpInside" id="VfX-AD-ofW"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Y3q-s6-ZlA">
+                                                    <rect key="frame" x="8" y="13" width="44" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Zkh-js-s6s" firstAttribute="top" secondItem="kDR-OS-P9a" secondAttribute="top" id="6Aj-RU-8sa"/>
-                                                <constraint firstItem="DyD-5j-8Mo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zkh-js-s6s" secondAttribute="trailing" constant="8" symbolic="YES" id="LEi-I1-lGH"/>
-                                                <constraint firstAttribute="trailing" secondItem="DyD-5j-8Mo" secondAttribute="trailing" constant="10" id="VcA-r5-TEW"/>
-                                                <constraint firstItem="Zkh-js-s6s" firstAttribute="leading" secondItem="kDR-OS-P9a" secondAttribute="leading" constant="5" id="ZUZ-qN-uMr"/>
-                                                <constraint firstItem="DyD-5j-8Mo" firstAttribute="top" secondItem="kDR-OS-P9a" secondAttribute="top" constant="10" id="zvW-bf-y0O"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="fullnameLabel" destination="9sD-Yw-gp4" id="uLg-iw-P4Q"/>
+                                            <outlet property="profileImageView" destination="Y3q-s6-ZlA" id="Mkd-Dp-zKq"/>
                                             <outlet property="usernameLabel" destination="sgd-of-R7e" id="d3I-w9-RbJ"/>
                                         </connections>
                                     </tableViewCell>
@@ -1056,7 +1048,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooC-UO-4Su" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="717"/>
+            <point key="canvasLocation" x="1732" y="716.49175412293857"/>
         </scene>
         <!--Events-->
         <scene sceneID="7QQ-2T-6Wh">
@@ -1729,6 +1721,6 @@
         <image name="video_thumbnail" width="1280" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IjY-XC-QBh"/>
+        <segue reference="7yA-c7-Mu4"/>
     </inferredMetricsTieBreakers>
 </document>

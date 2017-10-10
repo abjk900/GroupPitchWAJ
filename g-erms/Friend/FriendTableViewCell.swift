@@ -19,6 +19,9 @@ class FriendTableViewCell: UITableViewCell {
     
     @IBOutlet weak var fullnameLabel: UILabel!
     
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    
     var friend : Contact?
     var delegate: FriendsCellDelegate?
     
