@@ -107,7 +107,7 @@ G-ERMS
         
         guard let onboardingVC = OnboardingViewController(backgroundImage: UIImage(named: "White2"), contents: [firstPage, secondPage, thirdPage, fourthPage]) else { return }
         
-
+        onboardingVC.allowSkipping = true
         onboardingVC.shouldFadeTransitions = false
         onboardingVC.fadePageControlOnLastPage = true
         onboardingVC.fadeSkipButtonOnLastPage = true
