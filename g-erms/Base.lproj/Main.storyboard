@@ -136,7 +136,7 @@
         <!--Streaming-->
         <scene sceneID="Ogl-Ls-qht">
             <objects>
-                <viewController id="M1J-C6-ZyH" customClass="StreamingController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="M1J-C6-ZyH" customClass="StreamingController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="teO-AZ-4lX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -506,7 +506,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LOd-8A-oaD">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" rowHeight="353" id="1FL-Ey-dI2" customClass="HomeTableViewCell" customModule="g_erms" customModuleProvider="target">
@@ -545,7 +545,6 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="367" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="c42-Bp-XXY"/>
-                                                        <constraint firstAttribute="width" constant="367" id="n8Z-5k-2dm"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -584,12 +583,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SzY-SM-ecE" firstAttribute="trailing" secondItem="P81-Xb-ut5" secondAttribute="trailing" id="0O3-bF-TWa"/>
-                            <constraint firstItem="LOd-8A-oaD" firstAttribute="leading" secondItem="P81-Xb-ut5" secondAttribute="leading" id="9Yq-K7-jWT"/>
+                            <constraint firstItem="LOd-8A-oaD" firstAttribute="leading" secondItem="Irm-aa-OKt" secondAttribute="leading" id="9Yq-K7-jWT"/>
                             <constraint firstItem="SzY-SM-ecE" firstAttribute="top" secondItem="P81-Xb-ut5" secondAttribute="top" id="Qrx-jA-31s"/>
-                            <constraint firstItem="LOd-8A-oaD" firstAttribute="trailing" secondItem="P81-Xb-ut5" secondAttribute="trailing" id="YAR-pl-1zF"/>
+                            <constraint firstItem="LOd-8A-oaD" firstAttribute="top" secondItem="SzY-SM-ecE" secondAttribute="bottom" id="RSd-bF-9DJ"/>
+                            <constraint firstItem="LOd-8A-oaD" firstAttribute="trailing" secondItem="Irm-aa-OKt" secondAttribute="trailing" id="YAR-pl-1zF"/>
                             <constraint firstItem="SzY-SM-ecE" firstAttribute="leading" secondItem="P81-Xb-ut5" secondAttribute="leading" id="fTh-vZ-SHG"/>
-                            <constraint firstItem="LOd-8A-oaD" firstAttribute="top" secondItem="SzY-SM-ecE" secondAttribute="bottom" id="hVE-2s-fkW"/>
-                            <constraint firstAttribute="bottom" secondItem="LOd-8A-oaD" secondAttribute="bottom" id="yCg-Le-PMw"/>
+                            <constraint firstItem="P81-Xb-ut5" firstAttribute="bottom" secondItem="LOd-8A-oaD" secondAttribute="bottom" id="yCg-Le-PMw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P81-Xb-ut5"/>
                     </view>
@@ -750,7 +749,7 @@
         <!--Home Details View Controller-->
         <scene sceneID="1KO-aB-WH0">
             <objects>
-                <viewController storyboardIdentifier="HomeDetailsViewController" id="49q-YD-uGn" customClass="HomeDetailsViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeDetailsViewController" automaticallyAdjustsScrollViewInsets="NO" id="49q-YD-uGn" customClass="HomeDetailsViewController" customModule="g_erms" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZJ-bz-Jxy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -863,7 +862,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnY-mH-YUh">
-                                <rect key="frame" x="57" y="394" width="260" height="74"/>
+                                <rect key="frame" x="57" y="394" width="260" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="Cfb-Ve-uNO"/>
                                     <constraint firstAttribute="height" constant="30" id="aq5-cn-EjU"/>
@@ -1807,6 +1806,6 @@
         <image name="video_thumbnail" width="1280" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wmn-Zo-qQG"/>
+        <segue reference="jCS-Nm-Bse"/>
     </inferredMetricsTieBreakers>
 </document>

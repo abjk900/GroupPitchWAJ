@@ -124,9 +124,42 @@ class StreamingController: UIViewController, UISearchBarDelegate {
                 }
 
             }
-        }
+        })
+        
+        ref.child("PostVideo").observe(.childChanged, with: { (snapshot) in
+            guard let dictionaries = snapshot.value as? [String:Any] else {return}
             
-    )}
+            guard let videoName = dictionaries["videoName"] as? String,
+                let videoDescription = dictionaries["videoDescription"] as? String,
+//                let videoUrlName = dictionaries["videoUrlName"] as? String,
+//                let videoUrl = dictionaries["videoUrl"] as? String,
+//                let userId = dictionaries["userId"] as? String,
+//                let videoImageUrl = dictionaries["imageURL"] as? String,
+                let videoViewerCnt = dictionaries["viewCount"] as? Int
+            else {return}
+            
+            
+            
+            if let matchedIndex = self.videoPosts.index(where: { (videoInfo) -> Bool in
+                return videoInfo.id == snapshot.key
+            }) {
+                let changedVideo = self.videoPosts[matchedIndex]
+                changedVideo.videoName = videoName
+                changedVideo.videoDescription = videoDescription
+                changedVideo.viewerCount = videoViewerCnt
+               
+                
+                DispatchQueue.main.async {
+                    let indexPath = IndexPath(row: matchedIndex, section: 0)
+                    self.streamingTableView.reloadRows(at: [indexPath], with: .none)
+                }
+            }
+            
+            
+        })
+        
+            
+    }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;
@@ -182,6 +215,7 @@ extension StreamingController : UITableViewDataSource {
         //2. setup
         cell.delegate = self
         
+        
         if searchActive {
              let videoInfo = filtered[indexPath.row]
        
@@ -193,6 +227,7 @@ extension StreamingController : UITableViewDataSource {
             cell.videoNameLabel.text = videoInfo.videoName
             cell.videoDescriptionLabel.text = videoInfo.videoDescription
             cell.viewsCountLabel.text = ("\(videoInfo.viewerCount) views")
+            cell.videoPost = filtered[indexPath.row]
             
         } else {
             let videoInfo = videoPosts[indexPath.row]
@@ -205,6 +240,8 @@ extension StreamingController : UITableViewDataSource {
             cell.videoNameLabel.text = videoInfo.videoName
             cell.videoDescriptionLabel.text = videoInfo.videoDescription
             cell.viewsCountLabel.text = ("\(videoInfo.viewerCount) views")
+            cell.videoPost = videoPosts[indexPath.row]
+
             
         }
             
@@ -230,7 +267,7 @@ extension StreamingController: StreamingTableViewCellDelegate {
         
     }
     
-    func videoButtonPressedWithUrl(videoUrlName: String) {
+    func videoButtonPressedWithUrl(videoPost: VideoInfo) {
         
         //*****Increment the Viewers Count
 //        guard let postId = self.selectedPost?.id else {return}
@@ -255,12 +292,14 @@ extension StreamingController: StreamingTableViewCellDelegate {
         
         
         //Video
-        let starsRef = Storage.storage().reference().child("gameVideo/\(videoUrlName)")
+        let starsRef = Storage.storage().reference().child("gameVideo/\(videoPost.videoUrlName)")
         
         starsRef.downloadURL { (url, err) in
             if let err = err {
                 print("err", err)
             } else {
+                
+                
                 DispatchQueue.main.async {
                     let player = AVPlayer(url: url!)
                     let playerViewController = AVPlayerViewController()
@@ -269,6 +308,9 @@ extension StreamingController: StreamingTableViewCellDelegate {
                     
                     
                 }
+                
+                self.updateViewCount(videoPost.id)
+                
                 
             }
             //update the Viewcount
@@ -279,6 +321,26 @@ extension StreamingController: StreamingTableViewCellDelegate {
   
 
        
+    }
+    
+    func updateViewCount(_ id: String) {
+        //guard let postId = self.selectedPost?.id else {return}
+        
+        let viewerRef = Database.database().reference().child("PostVideo").child(id).child("viewCount")
+        
+        
+        viewerRef.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var viewerCount = currentData.value as? Int {
+                viewerCount += 2
+                currentData.value = viewerCount
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
     
 }
