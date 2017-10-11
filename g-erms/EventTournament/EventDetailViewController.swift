@@ -39,7 +39,7 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        IQKeyboardManager.sharedManager().enable = true
+    //    IQKeyboardManager.sharedManager().enable = true
         
         self.title = "Add New Event"
         
