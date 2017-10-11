@@ -169,10 +169,11 @@ extension SweetsViewController : SweetsCellDelegate {
         guard let totalSweet = friend.sweets else {return}
         //Show alert popup
         if totalSweet < 25 {
-            msgTitle = "Not enough to redeem!"
-            deductSweets()
+            msgTitle = "Sorry,you have not enough sweets."
+            
         } else {
-            msgTitle = "Redeem sweets"
+            msgTitle = "Congrats! You have redeemed your sweets!"
+            deductSweets()
         }
         
         let alert = UIAlertController(title: msgTitle, message: "", preferredStyle: .alert)
