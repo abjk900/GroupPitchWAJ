@@ -172,7 +172,7 @@ extension SweetsViewController : SweetsCellDelegate {
        // let totalRedeemCnt = reward.re
     
         if totalSweet < 25 || totalSweet == 0 {
-            msgTitle = "Sorry,you have not enough sweets."
+            msgTitle = "Sorry! Not enough sweets."
             
         } else {
             msgTitle = "Congrats! You have redeemed your sweets!"
