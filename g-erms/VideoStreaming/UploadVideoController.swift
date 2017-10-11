@@ -25,6 +25,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
     var videoImageURL = ""
     var userId : String = ""
     var selectedContact : Contact?
+    var isVideoUploadFinish : Bool = false
     
     
     @IBOutlet weak var videoNameTextField: UITextField!
@@ -84,22 +85,11 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                 
                 if self.videoUploadProgress.progress == 1 {
                     DispatchQueue.main.async {
-                        //Show alert popup ADD Sweets
-                        //isVideoUploadFinish
-                        let alert = UIAlertController(title: "Redeem 2 Sweets", message: "", preferredStyle: .alert)
-                        
-                        let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-                            //get the name
-                        }
-                        
-                        alert.addAction(dismiss)
-                        
-                        self.present(alert, animated: true, completion: nil)
-                        
                         //go back to Streaming Home Screen
                         self.navigationController?.popViewController(animated: true)
                         
-                        
+                        //Show alert popup ADD Sweets
+  
                     }
                 }
             }
@@ -164,18 +154,18 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
             } // end uploadVideoImageTask
         
         //Show alert popup ADD Sweets
-        //isVideoUploadFinish
-//        let alert = UIAlertController(title: "Redeem 2 Sweets", message: "", preferredStyle: .alert)
-//
-//        let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-//            //get the name
-//        }
-//
-//        alert.addAction(dismiss)
-//
-//        present(alert, animated: true, completion: nil)
+      // if isVideoUploadFinish == true {
+            let alert = UIAlertController(title: "Redeem 2 Sweets", message: "", preferredStyle: .alert)
+
+            let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+                //get the name
+            }
+
+            alert.addAction(dismiss)
+
+            present(alert, animated: true, completion: nil)
         
-        
+      //  }
    
     }  // end handleUpload
     
