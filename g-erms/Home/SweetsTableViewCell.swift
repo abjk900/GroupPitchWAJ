@@ -19,7 +19,7 @@ class SweetsTableViewCell: UITableViewCell{
     
     @IBAction func redeemBtnTapped(_ sender: UIButton) {
         
-        var alert = UIAlertView(title: "Sorry ", message: "You have not enough candy to redeem this item", delegate: nil, cancelButtonTitle: "Ok")
+        let alert = UIAlertView(title: "Sorry ", message: "You have not enough candy to redeem this item", delegate: nil, cancelButtonTitle: "Ok")
         alert.show()
     }
     

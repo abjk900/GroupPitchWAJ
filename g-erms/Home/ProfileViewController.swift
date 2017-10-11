@@ -30,6 +30,10 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var picker: UIPickerView!
     
+    @IBAction func signOutBtnTapped(_ sender: Any) {
+        signOutUser()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +86,16 @@ class ProfileViewController: UIViewController {
         imagePicker.delegate = self
         
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func signOutUser() {
+        do {
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+            
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
     func fetchProfile() {

@@ -15,9 +15,7 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
     var searchActive : Bool = false
     var filtered:[Home] = []
     
-    @IBAction func signOutButton(_ sender: Any) {
-        signOutUser()
-    }
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.estimatedRowHeight = 350
@@ -91,15 +89,7 @@ class HomeViewController: UIViewController , UISearchBarDelegate{
     }
     
     
-    func signOutUser() {
-        do {
-            try Auth.auth().signOut()
-            dismiss(animated: true, completion: nil)
-            
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-    }
+   
     
     func fetchData(urlString : String) {
         //send API request

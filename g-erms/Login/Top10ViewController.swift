@@ -38,8 +38,8 @@ class Top10ViewController: UIViewController {
         
         ref = Database.database().reference()
         guard let name = nameTextField.text,
-              let gameURL = gameURLTextField.text,
-              let profileImage = profileImageView.image
+              let gameURL = gameURLTextField.text
+              //let profileImage = profileImageView.image
             
             else { return }
         
