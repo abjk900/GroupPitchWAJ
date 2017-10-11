@@ -672,7 +672,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Requirements" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFl-2I-2pi">
                                                     <rect key="frame" x="102" y="64" width="184" height="32"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="184" id="96z-M7-2u9"/>
+                                                        <constraint firstAttribute="width" constant="184" id="OLg-XG-Ctg"/>
+                                                        <constraint firstAttribute="height" constant="32" id="l6L-g4-1Tj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -688,18 +689,19 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Anh-3w-5H5" secondAttribute="bottom" id="17S-C9-ThI"/>
-                                                <constraint firstItem="RFl-2I-2pi" firstAttribute="leading" secondItem="Anh-3w-5H5" secondAttribute="trailing" id="1AN-Fb-wlZ"/>
                                                 <constraint firstItem="3Ps-jV-t6A" firstAttribute="top" secondItem="WhQ-wf-4ke" secondAttribute="top" id="1g6-OH-BZY"/>
                                                 <constraint firstItem="Anh-3w-5H5" firstAttribute="leading" secondItem="WhQ-wf-4ke" secondAttribute="leading" id="7cS-aU-eNc"/>
                                                 <constraint firstItem="jY8-db-k9r" firstAttribute="leading" secondItem="3Ps-jV-t6A" secondAttribute="trailing" id="7qK-3H-grR"/>
                                                 <constraint firstItem="jY8-db-k9r" firstAttribute="top" secondItem="WhQ-wf-4ke" secondAttribute="topMargin" constant="30" id="Eec-TG-tTf"/>
+                                                <constraint firstItem="RFl-2I-2pi" firstAttribute="top" secondItem="3Ps-jV-t6A" secondAttribute="bottom" id="Ehn-fP-wkH"/>
                                                 <constraint firstItem="Anh-3w-5H5" firstAttribute="leading" secondItem="WhQ-wf-4ke" secondAttribute="leading" id="GSq-WT-MSg"/>
+                                                <constraint firstAttribute="bottom" secondItem="RFl-2I-2pi" secondAttribute="bottom" constant="2.5" id="KSq-7a-4ps"/>
+                                                <constraint firstAttribute="trailing" secondItem="RFl-2I-2pi" secondAttribute="trailing" constant="89" id="RPn-xN-WlZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="jY8-db-k9r" secondAttribute="trailing" id="Rj4-4T-ZzB"/>
                                                 <constraint firstItem="Anh-3w-5H5" firstAttribute="top" secondItem="WhQ-wf-4ke" secondAttribute="top" id="dti-4X-uqr"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="jY8-db-k9r" secondAttribute="bottom" constant="30" id="egt-Vf-q8j"/>
-                                                <constraint firstItem="RFl-2I-2pi" firstAttribute="top" secondItem="3Ps-jV-t6A" secondAttribute="bottom" id="f0X-tK-IW5"/>
                                                 <constraint firstItem="Anh-3w-5H5" firstAttribute="top" secondItem="WhQ-wf-4ke" secondAttribute="top" id="gE8-jS-8Be"/>
-                                                <constraint firstAttribute="bottom" secondItem="RFl-2I-2pi" secondAttribute="bottom" constant="2.5" id="tya-mz-eHm"/>
+                                                <constraint firstItem="RFl-2I-2pi" firstAttribute="leading" secondItem="Anh-3w-5H5" secondAttribute="trailing" id="sj7-ER-riB"/>
                                                 <constraint firstItem="3Ps-jV-t6A" firstAttribute="leading" secondItem="Anh-3w-5H5" secondAttribute="trailing" id="xL5-PI-Jm8"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -733,7 +735,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8z-ot-29n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="1549"/>
+            <point key="canvasLocation" x="1152.8" y="1548.5757121439281"/>
         </scene>
         <!--Home Details View Controller-->
         <scene sceneID="1KO-aB-WH0">

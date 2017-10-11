@@ -28,6 +28,7 @@ class SweetsViewController: UIViewController {
     
     @IBOutlet weak var numberOfSweetsLabel: UILabel!
     
+
     
     
     override func viewDidLoad() {
@@ -151,8 +152,8 @@ extension SweetsViewController : UITableViewDataSource {
         cell.requirementLabel.text = giftCards.requirements
         cell.sweetsImageView.loadImage(from: giftCards.imageURL!)
         cell.sweet = selectedContact
-//        cell.
         cell.delegate = self
+        
         
         return cell
     }
@@ -168,7 +169,9 @@ extension SweetsViewController : SweetsCellDelegate {
         var msgTitle = "Redeem sweets"
         guard let totalSweet = friend.sweets else {return}
         //Show alert popup
-        if totalSweet < 25 {
+       // let totalRedeemCnt = reward.re
+    
+        if totalSweet < 25 || totalSweet == 0 {
             msgTitle = "Sorry,you have not enough sweets."
             
         } else {

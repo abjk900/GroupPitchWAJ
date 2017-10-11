@@ -23,6 +23,7 @@ class SweetsTableViewCell: UITableViewCell{
     
     @IBOutlet weak var requirementLabel: UILabel!
         
+  
     
     @IBAction func redeemBtnTapped(_ sender: Any) {
         if delegate != nil,
