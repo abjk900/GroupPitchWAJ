@@ -100,7 +100,10 @@ class StreamingController: UIViewController, UISearchBarDelegate {
         //
         let ref = Database.database().reference()
         
-        //ref.child("PostVideo").child(uid).observe(.childAdded, with: { (snapshot) in
+        //ref.child("Users").queryOrdered(byChild: "gender").queryEqual(toValue: self.userGender).observe(.childAdded, with: { (snapshot) in
+        //ref.orderByChild("gender").equalTo("Male").on("child_added", function(snapshot) {
+        
+        //ref.child("PostVideo").child(uid).queryOrdered(byChild: "uid").observe(.childAdded, with: { (snapshot) in
         ref.child("PostVideo").observe(.childAdded, with: { (snapshot) in
             guard let dictionaries = snapshot.value as? [String:Any] else {return}
             
@@ -117,9 +120,10 @@ class StreamingController: UIViewController, UISearchBarDelegate {
                 
                 
                 DispatchQueue.main.async {
-                    self.videoPosts.append(newVideo)
-                    let index = self.videoPosts.count - 1
-                    let indexPath = IndexPath(row: index, section: 0)
+//                    self.videoPosts.append(newVideo)
+                    self.videoPosts.insert(newVideo, at: 0)
+//                    let index = self.videoPosts.count - 1
+                    let indexPath = IndexPath(row: 0, section: 0)
                     self.streamingTableView.insertRows(at: [indexPath], with: .right)
                 }
 
