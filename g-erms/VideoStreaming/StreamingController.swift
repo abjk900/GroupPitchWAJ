@@ -233,23 +233,23 @@ extension StreamingController: StreamingTableViewCellDelegate {
     func videoButtonPressedWithUrl(videoUrlName: String) {
         
         //*****Increment the Viewers Count
-        guard let postId = self.selectedPost?.id else {return}
-        
-        let viewerRef = Database.database().reference().child("PostVideo").child(postId).child("viewCount")
-        
-        
-        viewerRef.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
-            if var viewerCount = currentData.value as? Int {
-                viewerCount += 2
-                currentData.value = viewerCount
-                return TransactionResult.success(withValue: currentData)
-            }
-            return TransactionResult.success(withValue: currentData)
-        }) { (error, committed, snapshot) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-        }
+//        guard let postId = self.selectedPost?.id else {return}
+//
+//        let viewerRef = Database.database().reference().child("PostVideo").child(postId).child("viewCount")
+//
+//
+//        viewerRef.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+//            if var viewerCount = currentData.value as? Int {
+//                viewerCount += 2
+//                currentData.value = viewerCount
+//                return TransactionResult.success(withValue: currentData)
+//            }
+//            return TransactionResult.success(withValue: currentData)
+//        }) { (error, committed, snapshot) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            }
+//        }
         //******* End Increment the Viewers Count
         
         
@@ -271,6 +271,8 @@ extension StreamingController: StreamingTableViewCellDelegate {
                 }
                 
             }
+            //update the Viewcount
+            
             self.streamingTableView.reloadData()
         }
         
