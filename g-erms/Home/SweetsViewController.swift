@@ -20,6 +20,7 @@ class SweetsViewController: UIViewController {
     var selectedContact : Contact?
     var contacts : [Contact] = []
     var userId2 : String = ""
+    
 
     @IBOutlet weak var candyNumberLabel: UILabel!
  
@@ -149,10 +150,67 @@ extension SweetsViewController : UITableViewDataSource {
         cell.sweetsLabel.text = giftCards.description
         cell.requirementLabel.text = giftCards.requirements
         cell.sweetsImageView.loadImage(from: giftCards.imageURL!)
-        
-        
+        cell.sweet = selectedContact
+//        cell.
+        cell.delegate = self
         
         return cell
     }
 }
 
+extension SweetsViewController : SweetsCellDelegate {
+    func triggerPopUp(_ friend: Contact) {
+        
+//        let alert = UIAlertView(title: "Sorry ", message: "You have not enough candy to redeem this item", delegate: nil, cancelButtonTitle: "Ok")
+//        alert.show()
+//
+        
+        var msgTitle = "Redeem sweets"
+        guard let totalSweet = friend.sweets else {return}
+        //Show alert popup
+        if totalSweet < 25 {
+            msgTitle = "Not enough to redeem!"
+            deductSweets()
+        } else {
+            msgTitle = "Redeem sweets"
+        }
+        
+        let alert = UIAlertController(title: msgTitle, message: "", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+            //get the name
+        }
+        
+        alert.addAction(ok)
+        
+        present(alert, animated: true, completion: nil)
+        
+        
+        
+        
+        
+    }
+    
+    func deductSweets() {
+        
+        //let  ref = Database.database().reference()
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        self.userId = uid
+        //*****Increment the Sweet Count
+        let sweetRef = Database.database().reference().child("Users").child(uid).child("sweets")
+        
+        sweetRef.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var sweetCount = currentData.value as? Int {
+                sweetCount -= 25
+                currentData.value = sweetCount
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        //******* End Increment the Sweet Count
+    }
+}

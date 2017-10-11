@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol SweetsCellDelegate {
+    func triggerPopUp(_ friend: Contact)
+}
+
 class SweetsTableViewCell: UITableViewCell{
+    
+    var sweet : Contact?
+    var delegate: SweetsCellDelegate?
     
     @IBOutlet weak var sweetsImageView: UIImageView!
     
@@ -17,22 +24,20 @@ class SweetsTableViewCell: UITableViewCell{
     @IBOutlet weak var requirementLabel: UILabel!
         
     
-    @IBAction func redeemBtnTapped(_ sender: UIButton) {
+    @IBAction func redeemBtnTapped(_ sender: Any) {
+        if delegate != nil,
+            let validSweet = sweet {
+            delegate?.triggerPopUp(validSweet)
+        }
         
-        let alert = UIAlertView(title: "Sorry ", message: "You have not enough candy to redeem this item", delegate: nil, cancelButtonTitle: "Ok")
-        alert.show()
+        
+        //guard let button = sender as? UIButton else {return}
+        //button.isHidden = true
+ 
     }
     
     
-        
-    
-    
-    
-    
-    
-   
-    
-    
+
     
     
     override func awakeFromNib() {
