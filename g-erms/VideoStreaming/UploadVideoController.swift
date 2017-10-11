@@ -25,7 +25,7 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
     var videoImageURL = ""
     var userId : String = ""
     var selectedContact : Contact?
-   
+    
     
     @IBOutlet weak var videoNameTextField: UITextField!
     
@@ -83,7 +83,24 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                 self.videoUploadProgress.progress = Float(completedUnitCount)/Float(total)
                 
                 if self.videoUploadProgress.progress == 1 {
-                    self.navigationController?.popViewController(animated: true)
+                    DispatchQueue.main.async {
+                        //Show alert popup ADD Sweets
+                        //isVideoUploadFinish
+                        let alert = UIAlertController(title: "Redeem 2 Sweets", message: "", preferredStyle: .alert)
+                        
+                        let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+                            //get the name
+                        }
+                        
+                        alert.addAction(dismiss)
+                        
+                        self.present(alert, animated: true, completion: nil)
+                        
+                        //go back to Streaming Home Screen
+                        self.navigationController?.popViewController(animated: true)
+                        
+                        
+                    }
                 }
             }
             
@@ -140,22 +157,23 @@ class UploadVideoController: UIViewController, UIImagePickerControllerDelegate, 
                     }
                 }
                 //******* End Increment the Sweet Count
-        
+
                 
             }
         } //end imageUrl
             } // end uploadVideoImageTask
         
         //Show alert popup ADD Sweets
-        let alert = UIAlertController(title: "Redeem 2 Sweets", message: "", preferredStyle: .alert)
-        
-        let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
-            //get the name
-        }
-    
-        alert.addAction(dismiss)
-        
-        present(alert, animated: true, completion: nil)
+        //isVideoUploadFinish
+//        let alert = UIAlertController(title: "Redeem 2 Sweets", message: "", preferredStyle: .alert)
+//
+//        let dismiss = UIAlertAction(title: "Dismiss", style: .default) { (action) in
+//            //get the name
+//        }
+//
+//        alert.addAction(dismiss)
+//
+//        present(alert, animated: true, completion: nil)
         
         
    

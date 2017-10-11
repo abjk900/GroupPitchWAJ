@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 import CountryPicker
-
+import IQKeyboardManagerSwift
 
 class EventDetailViewController: UIViewController, CountryPickerDelegate {
     
@@ -39,11 +39,14 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        IQKeyboardManager.sharedManager().enable = true
         
         self.title = "Add New Event"
         
         //dismiss keybaord when tap on vc
         self.hideKeyboardWhenTappedAround()
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         
         //get current country
@@ -59,6 +62,32 @@ class EventDetailViewController: UIViewController, CountryPickerDelegate {
         picker2.setCountry(code!)
         
     } //end viewDidLoad
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        IQKeyboardManager.sharedManager().enable = false
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                DispatchQueue.main.async {
+                    self.view.frame.origin.y -= keyboardSize.height
+                }
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                DispatchQueue.main.async {
+                    self.view.frame.origin.y += keyboardSize.height
+                    
+                }
+            }
+        }
+    }
     
     // a picker item was selected
     func countryPhoneCodePicker(_ picker: CountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
@@ -162,6 +191,8 @@ extension EventDetailViewController : UIImagePickerControllerDelegate, UINavigat
         
     }
 }
+
+
 
 
 
