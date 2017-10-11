@@ -741,7 +741,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8z-ot-29n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="1549"/>
+            <point key="canvasLocation" x="-402" y="2748"/>
         </scene>
         <!--Home Details View Controller-->
         <scene sceneID="1KO-aB-WH0">
@@ -847,7 +847,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnY-mH-YUh">
-                                <rect key="frame" x="57" y="394" width="260" height="30"/>
+                                <rect key="frame" x="57" y="394" width="260" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="Cfb-Ve-uNO"/>
                                     <constraint firstAttribute="height" constant="30" id="aq5-cn-EjU"/>
@@ -902,7 +902,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJM-gK-8at" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="2480"/>
+            <point key="canvasLocation" x="1273" y="2748"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="n1V-TZ-Be2">
@@ -1775,7 +1775,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dd-Kv-edb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-331.19999999999999" y="660.71964017991013"/>
+            <point key="canvasLocation" x="-403" y="690"/>
         </scene>
     </scenes>
     <resources>
@@ -1794,7 +1794,7 @@
         <image name="video_thumbnail" width="1280" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lbS-gM-l1S"/>
-        <segue reference="Uyp-CN-Ny9"/>
+        <segue reference="Wf8-9y-3kH"/>
+        <segue reference="5Gr-oq-g84"/>
     </inferredMetricsTieBreakers>
 </document>
