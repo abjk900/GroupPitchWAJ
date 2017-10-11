@@ -98,7 +98,7 @@ class SignUpViewController: UIViewController, CountryPickerDelegate {
             if let validUser = user {
                 let ref = Database.database().reference()
                 
-                let sweets = "0"
+                let sweets = 0
                 
                 // let post : [String:Any] = ["email": email, "name": userName]
                 let post : [String:Any] = ["name": userName, "email": email, "firstName": firstName ,"lastName": lastName, "imageURL": self.profilePicURL,"country": countryName,"imageFilename": self.currFilename,"sweets": sweets ]

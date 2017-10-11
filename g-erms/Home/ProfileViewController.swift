@@ -22,7 +22,16 @@ class ProfileViewController: UIViewController {
     var contacts : [Contact] = []
     
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            imageView.layer.borderWidth = 1
+            imageView.layer.masksToBounds = true
+            //cell.profileImageView.layer.borderColor = UIColor.black
+            imageView.layer.cornerRadius = imageView.frame.height/2
+            
+            imageView.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -38,20 +47,12 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //display Profile Details
+        fetchProfile()
+
         //dismiss keybaord when tap on vc
         self.hideKeyboardWhenTappedAround()
         
-        //display Profile Details
-        fetchProfile()
-        
-        
-      imageView.layer.borderWidth = 1
-        imageView.layer.masksToBounds = true
-        //cell.profileImageView.layer.borderColor = UIColor.black
-        imageView.layer.cornerRadius = imageView.frame.height/2
-        
-       imageView.clipsToBounds = true
-       
     }
 
     
